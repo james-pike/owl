@@ -2,16 +2,11 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 import Hero from "~/components/widgets/Hero";
-import Features from "~/components/widgets/Features";
 import Steps from "~/components/widgets/Steps";
-import FAQs from "~/components/widgets/FAQs";
 import Stats from "~/components/widgets/Stats";
 
-import { qwikSerialized } from "~/utils/qwikSerialized";
 
 
-const IconRocket = qwikSerialized(() => import("../components/icons/IconRocket"));
-const IconArrowDownRight = qwikSerialized(() => import("../components/icons/IconArrowDownRight"));
 
 
 
@@ -43,54 +38,12 @@ export default component$(() => {
   subtitle="Mint one of six legendary KasLord character types."
   items={[]}/>
 
-      <Features
-  highlight="Features"
-  title="Reliable Locksmith Services You Can Trust"
-  subtitle="We provide fast, professional, and secure locksmith services tailored to your needs."
-  items={[
-    {
-      title: "24/7 Emergency Services",
-      description:
-        "Locked out of your home, office, or car? Our team is available around the clock to assist you anytime, anywhere.",
-      icon: IconRocket, // Replace with a relevant icon
-    },
-    {
-      title: "Residential & Commercial Security",
-      description:
-        "We offer expert lock installation, repair, and key duplication services to keep your home and business secure.",
-      icon: IconRocket, // Replace with a relevant icon
-    },
-    {
-      title: "Automotive Locksmithing",
-      description:
-        "Lost your car keys? Need a key fob replacement? We provide fast and reliable car key programming and lockout services.",
-      icon: IconRocket, // Replace with a relevant icon
-    },
-    {
-      title: "High-Security Locks & Safes",
-      description:
-        "Upgrade your security with high-quality locks, access control systems, and safe installations for added protection.",
-      icon: IconRocket, // Replace with a relevant icon
-    },
-    {
-      title: "Fast Response Time",
-      description:
-        "We prioritize quick service to get you back inside and secure your property with minimal wait time.",
-      icon: IconRocket, // Replace with a relevant icon
-    },
-    {
-      title: "Licensed & Trusted Professionals",
-      description:
-        "Our experienced locksmiths are fully licensed, insured, and dedicated to providing top-notch security solutions.",
-      icon: IconRocket, // Replace with a relevant icon
-    },
-  ]}
-/>
+
 
 
 
       <Steps />
-    <FAQs
+    {/* <FAQs
    
       title="Frequently Asked Questions"
       subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque."
@@ -133,7 +86,7 @@ export default component$(() => {
             "Yes, we offer professional safe opening and installation services while ensuring your valuables remain secure.",
         },
       ]}
-    />
+    /> */}
       <Stats />
       
     </>
