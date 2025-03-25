@@ -42,7 +42,11 @@ export default component$(() => {
 
 
 
-      <Steps />
+      <Steps    highlight="Roadmap"
+      title="Journey Of The KasLords"
+      subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility, there existed a legendary council known as the Six Kaslords. Inspired by the ancient tales of Middle-earth, these digital deities were born from a visionary NFT project, each token imbued with unique powers and lore. 
+      Forged by the enigmatic creators at xAI, the Kaslords were not mere collectibles but guardians of a decentralized kingdom, their essence etched into the immutable ledger of the blockchain." 
+      items={[]}/>
     {/* <FAQs
    
       title="Frequently Asked Questions"

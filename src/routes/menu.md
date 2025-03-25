@@ -12,8 +12,8 @@
 - [Warrior Lord](/services/automotive-locksmith)
 - [Dragon Lord](/services/safe-services)
 
-## [Armory](/reviews)
-## [Roadmap](/reviews)
+## [Inventory](/#inventory)
+## [Roadmap](/#roadmap)
 ## [Rarity Checker](/reviews)
 ## [FAQ](/faq)
 

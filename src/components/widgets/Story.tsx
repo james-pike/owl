@@ -31,31 +31,15 @@ export default component$((props: Props) => {
 
 
   // Signal to track visibility
-  const isVisible = useSignal(false);
 
   // Intersection Observer to trigger animation
-  useVisibleTask$(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          isVisible.value = true;
-          observer.disconnect(); // Disconnect after first intersection
-        }
-      },
-      { threshold: 0.2 } // Trigger when 10% of the section is visible
-    );
 
-    const element = document.querySelector("#steps-section");
-    if (element) observer.observe(element);
-
-    return () => observer.disconnect();
-  });
 
   return (
     <div class="max-w-7xl bg-gray-100 dark:bg-gray-900 mx-auto">
     <section
       id="story"
-      class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
+      class="mx-auto scroll-mt-16 max-w-5xl px-4 py-12 lg:py-20 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
     >
                 <Headline title={title} highlight={highlight} classes={classes?.headline} />
         

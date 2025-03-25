@@ -2,11 +2,32 @@ import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import { Image } from "@unpic/qwik";
 import { twMerge } from "tailwind-merge";
 import IconStar from "~/components/icons/IconStar";
+import { Headline } from "../ui/Headline";
+
+interface Item {
+  title?: string;
+  description?: string;
+  icon?: any;
+  classes?: Record<string, string>;
+}
+
+interface Props {
+  id?: string;
+  title?: any;
+  subtitle?: any;
+  highlight?: any;
+  items: Array<Item>;
+  isDark?: boolean;
+  classes?: any;
+}
+
 
 const sideImg =
   "/images/placeholder.png";
 
-export default component$(() => {
+export default component$((props: Props) => {
+  const { title = "", subtitle = "", highlight = "", classes = {}, } = props;
+
   const stepsData = {
     title: "Fast, Reliable Locksmith Services in Just a Few Steps",
     items: [
@@ -41,7 +62,7 @@ export default component$(() => {
     },
   };
 
-  const { title, items, image } = stepsData;
+  const { items, image } = stepsData;
 
   // Signal to track visibility
   const isVisible = useSignal(false);
@@ -65,14 +86,15 @@ export default component$(() => {
   });
 
   return (
-    <div class="max-w-7xl bg-gray-100 dark:bg-gray-900">
+    <div class="max-w-7xl bg-gray-100 dark:bg-gray-900 mx-auto">
     <section
-      id="steps-section"
-      class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
+      id="roadmap"
+      class="mx-auto  scroll-mt-16 max-w-6xl px-4 py-16 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
     >
+                      <Headline  title={title} highlight={highlight} classes={classes?.headline} />
+
       <div class="row-gap-10 grid gap-6 md:grid-cols-2">
         <div class="mb-4 md:mb-0 md:py-4 md:pr-16">
-          {title && <h2 class="font-heading mb-8 text-3xl font-bold lg:text-4xl">{title}</h2>}
           {Array.isArray(items) &&
             items.length &&
             items.map(({ title, description, icon: Icon }, index) => (
