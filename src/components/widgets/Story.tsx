@@ -39,7 +39,7 @@ export default component$((props: Props) => {
     <div class="max-w-7xl bg-gray-100 dark:bg-gray-900 mx-auto">
     <section
       id="story"
-      class="mx-auto scroll-mt-16 max-w-5xl px-4 py-12 md:py-14 lg:py-16 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
+      class="mx-auto scroll-mt-16 max-w-5xl px-4 py-12 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
     >
         <Headline title={title} subtitle={"Chapter 1: Dawn Of The KasLords"} highlight={highlight} classes={classes?.headline} />
         
