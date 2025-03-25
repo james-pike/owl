@@ -91,7 +91,7 @@ export default component$((props: Props) => {
       id="roadmap"
       class="mx-auto  scroll-mt-16 max-w-6xl px-4 py-16 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
     >
-                      <Headline  title={title} highlight={highlight} classes={classes?.headline} />
+                      <Headline  title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
 
       <div class="row-gap-10 grid gap-6 md:grid-cols-2">
         <div class="mb-4 md:mb-0 md:py-4 md:pr-16">

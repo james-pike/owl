@@ -1,4 +1,4 @@
-import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { Image } from "@unpic/qwik";
 
 import { Headline } from "../ui/Headline";
