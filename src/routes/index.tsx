@@ -38,6 +38,13 @@ export default component$(() => {
   subtitle="Mint one of six legendary KasLord character types."
   items={[]}/>
 
+<Services
+      id="inventory"
+  highlight="Inventory"
+  title="Inventory Items"
+  subtitle="Mint one of six legendary KasLord character types."
+  items={[]}/>
+
 
 
 
