@@ -20,16 +20,10 @@ export default component$(() => {
   const audioRef = useSignal<HTMLAudioElement>();
   const isPlaying = useSignal(false);
 
-  useVisibleTask$(async () => {
-    const audio = audioRef.value;
-    if (audio && !isPlaying.value) {
-      try {
-        await audio.play();
-        isPlaying.value = true;
-        console.log("Audio auto-started on visibility");
-      } catch (error) {
-        console.error("Failed to auto-play audio:", error);
-      }
+  useVisibleTask$(() => {
+    if (audioRef.value && !isPlaying.value) {
+      audioRef.value.play();
+      isPlaying.value = true;
     }
   });
 
@@ -98,20 +92,17 @@ export default component$(() => {
               Contact Us
             </a>
 
-            <button
-                type="button"
-                class="p-2 bg-blue-50 rounded-sm flex items-center h-full dark:bg-gray-800 border-2 border-blue-200 dark:border-gray-700"
-                aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
-                onClick$={toggleAudio}
-              >
-                {isPlaying.value ? <IconPause /> : <IconPlay />}
-              </button>
-              <audio
-                ref={audioRef}
-                src="/images/hero.mp3"
-                preload="auto"
-                onEnded$={handleAudioEnded}
-              />
+            <audio ref={audioRef} loop>
+        <source src="example.mp3" type="audio/mp3" />
+      </audio>
+      <button onClick$={() => {
+        if (audioRef.value) {
+          isPlaying.value ? audioRef.value.pause() : audioRef.value.play();
+          isPlaying.value = !isPlaying.value;
+        }
+      }}>
+        {isPlaying.value ? 'Pause' : 'Play'}
+      </button>
 
 
             <MenuModal />
