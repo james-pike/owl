@@ -3,7 +3,7 @@ import { Link } from "@builder.io/qwik-city"; // Import Link component
 
 const services = [
     {
-      title: "Emergency Lockout Assistance",
+      title: "Wizard Lord",
       description: "Fast and reliable 24/7 lockout services for homes, offices, and vehicles.",
       details: "Regain access to your property quickly with our professional lockout solutions.",
       image: "/images/placeholder.png",
@@ -11,7 +11,7 @@ const services = [
       slug: "emergency-lockout"
     },
     {
-      title: "Key Duplication & Replacement",
+      title: "Dark Lord",
       description: "Precision key cutting and duplication for all types of locks.",
       details: "Get spare keys for your home, office, or vehicle with accuracy and efficiency.",
       image: "/images/placeholder.png",
@@ -19,7 +19,7 @@ const services = [
       slug: "key-duplication"
     },
     {
-      title: "Lock Installation & Repair",
+      title: "Elf Lord",
       description: "Enhance security with professional lock installation and repair services.",
       details: "We install and fix all types of locks to keep your property secure.",
       image: "/images/placeholder.png",
@@ -27,7 +27,7 @@ const services = [
       slug: "lock-installation"
     },
     {
-      title: "Smart Lock & Security System",
+      title: "Orc Lord",
       description: "Upgrade your security with the latest smart locks and access control systems.",
       details: "We install high-tech security solutions for homes and businesses.",
       image: "/images/placeholder.png",
@@ -35,7 +35,7 @@ const services = [
       slug: "smart-locks"
     },
     {
-      title: "Automotive Locksmith Services",
+      title: "Warrior Lord",
       description: "Key programming, lock repairs, and ignition services for all vehicle models.",
       details: "We provide expert automotive locksmith solutions, including key fob replacement.",
       image: "/images/placeholder.png",
@@ -43,7 +43,7 @@ const services = [
       slug: "automotive-locksmith"
     },
     {
-      title: "Safe Opening & Installation",
+      title: "Dragon Lord",
       description: "Secure storage solutions and expert safe opening services.",
       details: "We install, repair, and unlock safes while maintaining their integrity.",
       image: "/images/placeholder.png",

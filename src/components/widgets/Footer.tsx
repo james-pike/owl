@@ -69,7 +69,7 @@ export default component$(() => {
           <div class="col-span-12 lg:col-span-4 pr-8">
             <div class="mb-2">
               <Link class="inline-block font-bold text-xl" href={"/"}>
-                TestLock - Safe & Auto Inc
+                KasLords Of The BlockDag
               </Link>
             </div>
             <div class="text-sm text-gray-600 mb-4 dark:text-gray-400">
@@ -136,7 +136,7 @@ export default component$(() => {
               {" "}
               onWidget
             </a>{" "}· All rights reserved. */}
-               © {new Date().getFullYear()} Testlock.com · All rights reserved
+               © {new Date().getFullYear()} KasLords Of The BlockDag · All rights reserved
             
           </div>
         </div>

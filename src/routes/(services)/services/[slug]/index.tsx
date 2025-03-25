@@ -12,7 +12,7 @@ interface Service {
 
 const services: Service[] = [
   {
-    title: "Emergency Lockout Assistance",
+    title: "Wizard Lord",
     description: "Fast and reliable 24/7 lockout services for homes, offices, and vehicles.",
     details: "Regain access to your property quickly with our professional lockout solutions. Regain access to your property quickly with our professional lockout solutions. Regain access to your property quickly with our professional lockout solutions. Regain access to your property quickly with our professional lockout solutions.",
     image: "/images/placeholder.png",
@@ -20,7 +20,7 @@ const services: Service[] = [
     slug: "emergency-lockout"
   },
   {
-    title: "Key Duplication & Replacement",
+    title: "Dark Lord",
     description: "Precision key cutting and duplication for all types of locks.",
     details: "Get spare keys for your home, office, or vehicle with accuracy and efficiency. Get spare keys for your home, office, or vehicle with accuracy and efficiency. Get spare keys for your home, office, or vehicle with accuracy and efficiency. Get spare keys for your home, office, or vehicle with accuracy and efficiency. Get spare keys for your home, office, or vehicle with accuracy and efficiency.",
     image: "/images/placeholder.png",
@@ -28,7 +28,7 @@ const services: Service[] = [
     slug: "key-duplication"
   },
   {
-    title: "Lock Installation & Repair",
+    title: "Elf Lord",
     description: "Enhance security with professional lock installation and repair services.",
     details: "We install and fix all types of locks to keep your property secure. We install and fix all types of locks to keep your property secure. We install and fix all types of locks to keep your property secure. We install and fix all types of locks to keep your property secure.",
     image: "/images/placeholder.png",
@@ -36,7 +36,7 @@ const services: Service[] = [
     slug: "lock-installation"
   },
   {
-    title: "Smart Lock & Security System Installation",
+    title: "Orc Lord",
     description: "Upgrade your security with the latest smart locks and access control systems.",
     details: " We install high-tech security solutions for homes and businesses. We install high-tech security solutions for homes and businesses. We install high-tech security solutions for homes and businesses. We install high-tech security solutions for homes and businesses.",
     image: "/images/placeholder.png",
@@ -44,7 +44,7 @@ const services: Service[] = [
     slug: "smart-locks"
   },
   {
-    title: "Automotive Locksmith Services",
+    title: "Warrior Lord",
     description: "Key programming, lock repairs, and ignition services for all vehicle models.",
     details: "We provide expert automotive locksmith solutions, including key fob replacement. We provide expert automotive locksmith solutions, including key fob replacement. We provide expert automotive locksmith solutions, including key fob replacement. We provide expert automotive locksmith solutions, including key fob replacement. We provide expert automotive locksmith solutions, including key fob replacement. We provide expert automotive locksmith solutions, including key fob replacement. We provide expert automotive locksmith solutions, including key fob replacement. We provide expert automotive locksmith solutions, including key fob replacement.",
     image: "/images/placeholder.png",
@@ -52,7 +52,7 @@ const services: Service[] = [
     slug: "automotive-locksmith"
   },
   {
-    title: "Safe Opening & Installation",
+    title: "Dragon Lord",
     description: "Secure storage solutions and expert safe opening services.",
     details: "We install, repair, and unlock safes while maintaining their integrity. We install, repair, and unlock safes while maintaining their integrity. We install, repair, and unlock safes while maintaining their integrity. We install, repair, and unlock safes while maintaining their integrity.",
     image: "/images/placeholder.png",
@@ -79,7 +79,7 @@ export default component$(() => {
 
   return (
     <div class="max-w-7xl  bg-gray-100 dark:bg-gray-800">
-    <section class="max-w-6xl mx-auto px-4 pb-8 md:py-16 bg-gray-100 dark:bg-gray-800">
+    <section class="max-w-5xl mx-auto px-4 pb-8 md:py-16 bg-gray-100 dark:bg-gray-800">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 items-start">
         {/* Image Section */}
         <div class="flex justify-center md:justify-start">

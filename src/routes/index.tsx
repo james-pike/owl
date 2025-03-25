@@ -20,6 +20,7 @@ import Services from "~/components/widgets/Services";
 import Reviews from "~/components/widgets/Reviews";
 import Contact from "~/components/widgets/Contact";
 import Hero2 from "~/components/widgets/Hero2";
+import Story from "~/components/widgets/Story";
 
 export default component$(() => {
   return (
@@ -30,11 +31,17 @@ export default component$(() => {
       <div class="block md:hidden">
       <Hero/>
       </div>
+      <Story
+      highlight="Story"
+      title="Story Of The KasLords"
+      subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility, there existed a legendary council known as the Six Kaslords. Inspired by the ancient tales of Middle-earth, these digital deities were born from a visionary NFT project, each token imbued with unique powers and lore. 
+      Forged by the enigmatic creators at xAI, the Kaslords were not mere collectibles but guardians of a decentralized kingdom, their essence etched into the immutable ledger of the blockchain." 
+      items={[]}/>
       <Services
       id="services"
-  highlight="Services"
-  title="Reliable Locksmith Services You Can Trust"
-  subtitle="We provide fast, professional, and secure locksmith services tailored to your needs."
+  highlight="Classes"
+  title="Character Classes"
+  subtitle="Mint one of six legendary KasLord character types."
   items={[]}/>
 
       <Features
@@ -82,11 +89,7 @@ export default component$(() => {
 />
 
 
-<Reviews
-  highlight="Reviews"
-  title="What Our Clients Say"
-  subtitle="These reviews are pulled from Google Reviews and filtered to only display 4-5 star ratings."
-  items={[]}/>
+
       <Steps />
     <FAQs
    
@@ -133,15 +136,7 @@ export default component$(() => {
       ]}
     />
       <Stats />
-       <Contact  
-            title="Get A Free Estimate"
-            subtitle="Get in touch for a service call or free estimate."
-            highlight="Contact Us"
-            classes={{
-              
-          
-            }}
-            />
+      
     </>
   );
 });

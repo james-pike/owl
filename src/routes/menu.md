@@ -1,19 +1,20 @@
 # Menu
 
-## [Home](/)
-## [About](/about)
 
-## Services
+## [Story](#story)
 
-- [Emergency Lockout Assistance](/services/emergency-lockout)
-- [Key Duplication & Replacement](/services/key-duplication)
-- [Lock Installation & Repair](/services/lock-installation)
-- [Smart Lock & Security System](/services/smart-locks)
-- [Automotive Locksmith Services](/services/automotive-locksmith)
-- [Safe Opening & Installation](/services/safe-services)
+## Classes
 
-## [Reviews](/reviews)
+- [Wizard Lord](/services/emergency-lockout)
+- [Dark Lord](/services/key-duplication)
+- [Elf Lord](/services/lock-installation)
+- [Orc Lord](/services/smart-locks)
+- [Warrior Lord](/services/automotive-locksmith)
+- [Dragon Lord](/services/safe-services)
+
+## [Armory](/reviews)
+## [Roadmap](/reviews)
+## [Rarity Checker](/reviews)
 ## [FAQ](/faq)
-## [Contact](/contact)
 
   

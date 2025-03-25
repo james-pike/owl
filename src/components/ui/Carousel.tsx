@@ -34,7 +34,13 @@ export default component$(() => {
     }
   `);
 
-  const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange', 'pink'];
+  // Array of slide objects
+  const slides = [
+    { src: '/images/slide1.jpg', alt: 'Locksmith Service 1' },
+    { src: '/images/slide2.jpg', alt: 'Security Installation' },
+    { src: '/images/slide3.jpg', alt: 'Emergency Lockout Assistance' },
+    { src: '/images/placeholder.png', alt: 'Placeholder Slide' }, // Fallback or additional slide
+  ];
 
   return (
     <Carousel.Root class="carousel-root" gap={30}>
@@ -43,9 +49,9 @@ export default component$(() => {
         <Carousel.Next>Next</Carousel.Next>
       </div>
       <div class="carousel-conditional">
-        {colors.map((color) => (
-          <Carousel.Slide key={color} class="carousel-slide">
-            <img src="/images/placeholder.png" alt={`Slide ${color}`} />
+        {slides.map((slide, index) => (
+          <Carousel.Slide key={index} class="carousel-slide">
+            <img src={slide.src} alt={slide.alt} />
           </Carousel.Slide>
         ))}
       </div>
