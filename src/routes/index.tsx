@@ -17,8 +17,7 @@ const IconArrowDownRight = qwikSerialized(() => import("../components/icons/Icon
 
 import { SITE } from "~/config.mjs";
 import Services from "~/components/widgets/Services";
-import Reviews from "~/components/widgets/Reviews";
-import Contact from "~/components/widgets/Contact";
+
 import Hero2 from "~/components/widgets/Hero2";
 import Story from "~/components/widgets/Story";
 
