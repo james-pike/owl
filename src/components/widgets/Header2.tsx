@@ -96,6 +96,21 @@ export default component$(() => {
               Contact Us
             </a>
 
+            <button
+                type="button"
+                class="p-2 bg-blue-50 rounded-sm flex items-center h-full dark:bg-gray-800 border-2 border-blue-200 dark:border-gray-700"
+                aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
+                onClick$={toggleAudio}
+              >
+                {isPlaying.value ? <IconGithub /> : <IconGithub />}
+              </button>
+              <audio
+                ref={audioRef}
+                src="/images/hero.mp3"
+                preload="auto"
+                onEnded$={handleAudioEnded}
+              />
+
 
             <MenuModal />
           </div>
