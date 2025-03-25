@@ -6,6 +6,8 @@ import MenuModal from "./MenuModal";
 import IconBrandTailwind from "../icons/IconBrandTailwind";
 import IconBrandGoogle from "../icons/IconBrandGoogle";
 import IconGithub from "../icons/IconGithub";
+import IconPause from "../icons/IconPause";
+import IconPlay from "../icons/IconPlay";
 
 export default component$(() => {
   const store = useStore({
@@ -102,7 +104,7 @@ export default component$(() => {
                 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
                 onClick$={toggleAudio}
               >
-                {isPlaying.value ? <IconGithub /> : <IconGithub />}
+                {isPlaying.value ? <IconPause /> : <IconPlay />}
               </button>
               <audio
                 ref={audioRef}
