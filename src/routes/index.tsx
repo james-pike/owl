@@ -15,6 +15,7 @@ import Services from "~/components/widgets/Services";
 
 import Hero2 from "~/components/widgets/Hero2";
 import Story from "~/components/widgets/Story";
+import Inventory from "~/components/widgets/Inventory";
 
 export default component$(() => {
   return (
@@ -38,7 +39,7 @@ export default component$(() => {
   subtitle="Mint one of six legendary KasLord character types."
   items={[]}/>
 
-<Services
+<Inventory
       id="inventory"
   highlight="Inventory"
   title="Inventory Items"
@@ -49,7 +50,8 @@ export default component$(() => {
 
 
 
-      <Steps    highlight="Roadmap"
+      <Steps id="roadmap"  
+       highlight="Roadmap"
       title="Journey Of The KasLords"
       subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility, there existed a legendary council known as the Six Kaslords. Inspired by the ancient tales of Middle-earth, these digital deities were born from a visionary NFT project, each token imbued with unique powers and lore. 
       Forged by the enigmatic creators at xAI, the Kaslords were not mere collectibles but guardians of a decentralized kingdom, their essence etched into the immutable ledger of the blockchain." 

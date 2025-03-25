@@ -12,9 +12,9 @@
 - [Warrior Lord](/services/automotive-locksmith)
 - [Dragon Lord](/services/safe-services)
 
-## [Inventory](/#inventory)
-## [Roadmap](/#roadmap)
-## [Rarity Checker](/reviews)
-## [FAQ](/faq)
+## [Inventory](#inventory)
+## [Roadmap](#roadmap)
+## [Rarity Checker](#reviews)
+## [Team](#team)
 
   

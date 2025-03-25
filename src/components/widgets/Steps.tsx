@@ -4,32 +4,31 @@ import { twMerge } from "tailwind-merge";
 import IconStar from "~/components/icons/IconStar";
 import { Headline } from "../ui/Headline";
 
-interface Item {
-  title?: string;
-  description?: string;
-  icon?: any;
-  classes?: Record<string, string>;
-}
-
-interface Props {
-  id?: string;
-  title?: any;
-  subtitle?: any;
-  highlight?: any;
-  items: Array<Item>;
-  isDark?: boolean;
-  classes?: any;
-}
-
-
 const sideImg =
   "/images/placeholder.png";
+
+  interface Item {
+    title?: string;
+    description?: string;
+    icon?: any;
+    classes?: Record<string, string>;
+  }
+  
+  interface Props {
+    id?: string;
+    title?: any;
+    subtitle?: any;
+    highlight?: any;
+    items: Array<Item>;
+    isDark?: boolean;
+    classes?: any;
+  }
 
 export default component$((props: Props) => {
   const { title = "", subtitle = "", highlight = "", classes = {}, } = props;
 
   const stepsData = {
-    title: "Fast, Reliable Locksmith Services in Just a Few Steps",
+    title1: "Fast, Reliable Locksmith Services in Just a Few Steps",
     items: [
       {
         title: "Step 1: Contact Us",
@@ -62,7 +61,7 @@ export default component$((props: Props) => {
     },
   };
 
-  const { items, image } = stepsData;
+  const { title1, items, image } = stepsData;
 
   // Signal to track visibility
   const isVisible = useSignal(false);
@@ -79,22 +78,23 @@ export default component$((props: Props) => {
       { threshold: 0.2 } // Trigger when 10% of the section is visible
     );
 
-    const element = document.querySelector("#steps-section");
+    const element = document.querySelector("#roadmap");
     if (element) observer.observe(element);
 
     return () => observer.disconnect();
   });
 
   return (
-    <div class="max-w-7xl bg-gray-100 dark:bg-gray-900 mx-auto">
+    <div class="max-w-7xl bg-gray-100 dark:bg-gray-900">
     <section
       id="roadmap"
-      class="mx-auto  scroll-mt-16 max-w-6xl px-4 py-16 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
+      class="mx-auto max-w-6xl scroll-mt-16 px-4 py-16 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
     >
-                      <Headline  title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
-
+              <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
+      
       <div class="row-gap-10 grid gap-6 md:grid-cols-2">
         <div class="mb-4 md:mb-0 md:py-4 md:pr-16">
+          {title && <h2 class="font-heading mb-8 text-3xl font-bold lg:text-4xl">{title}</h2>}
           {Array.isArray(items) &&
             items.length &&
             items.map(({ title, description, icon: Icon }, index) => (

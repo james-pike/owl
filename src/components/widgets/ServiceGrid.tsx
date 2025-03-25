@@ -6,7 +6,7 @@ const services = [
       title: "Wizard Lord",
       description: "Fast and reliable 24/7 lockout services for homes, offices, and vehicles.",
       details: "Regain access to your property quickly with our professional lockout solutions.",
-      image: "/images/placeholder.png",
+      image: "/images/wizard.jpg",
       alt: "Emergency Lockout Assistance",
       slug: "emergency-lockout"
     },

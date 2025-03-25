@@ -41,7 +41,7 @@ export default component$((props: Props) => {
       id="story"
       class="mx-auto scroll-mt-16 max-w-5xl px-4 py-12 lg:py-20 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
     >
-                <Headline title={title} highlight={highlight} classes={classes?.headline} />
+        <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
         
       <div class="row-gap-0 grid gap-0 md:grid-cols-2">
         <div class="mb-4 md:mb-0 md:py-4 md:pr-0 md:order-2">
