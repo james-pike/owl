@@ -88,7 +88,7 @@ export default component$((props: Props) => {
     <div class="max-w-7xl bg-gray-100 dark:bg-gray-900">
     <section
       id="roadmap"
-      class="mx-auto max-w-6xl scroll-mt-16 px-4 py-16 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
+      class="mx-auto max-w-6xl scroll-mt-16 px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
     >
               <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
       
