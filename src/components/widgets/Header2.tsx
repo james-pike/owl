@@ -92,7 +92,7 @@ export default component$(() => {
               Contact Us
             </a>
 
-            <audio ref={audioRef} loop>
+           <audio ref={audioRef} loop>
         <source src="example.mp3" type="audio/mp3" />
       </audio>
       <button onClick$={() => {
@@ -101,7 +101,7 @@ export default component$(() => {
           isPlaying.value = !isPlaying.value;
         }
       }}>
-        {isPlaying.value ? 'Pause' : 'Play'}
+        {isPlaying.value ? <IconPause/> : <IconPlay/>}
       </button>
 
 
