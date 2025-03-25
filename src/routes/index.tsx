@@ -3,7 +3,6 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 
 import Hero from "~/components/widgets/Hero";
 import Steps from "~/components/widgets/Steps";
-import Stats from "~/components/widgets/Stats";
 
 
 
@@ -16,6 +15,8 @@ import Services from "~/components/widgets/Services";
 import Hero2 from "~/components/widgets/Hero2";
 import Story from "~/components/widgets/Story";
 import Inventory from "~/components/widgets/Inventory";
+import Team from "~/components/widgets/Team";
+import Rarity from "~/components/widgets/Rarity";
 
 export default component$(() => {
   return (
@@ -34,7 +35,7 @@ export default component$(() => {
       items={[]}/>
       <Services
       id="services"
-  highlight="Classes"
+  highlight="classes"
   title="Character Classes"
   subtitle="Mint one of six legendary KasLord character types."
   items={[]}/>
@@ -53,8 +54,7 @@ export default component$(() => {
       <Steps id="roadmap"  
        highlight="Roadmap"
       title="Journey Of The KasLords"
-      subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility, there existed a legendary council known as the Six Kaslords. Inspired by the ancient tales of Middle-earth, these digital deities were born from a visionary NFT project, each token imbued with unique powers and lore. 
-      Forged by the enigmatic creators at xAI, the Kaslords were not mere collectibles but guardians of a decentralized kingdom, their essence etched into the immutable ledger of the blockchain." 
+      subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility." 
       items={[]}/>
     {/* <FAQs
    
@@ -100,7 +100,20 @@ export default component$(() => {
         },
       ]}
     /> */}
-      <Stats />
+       <Rarity
+       id="rarity"
+      highlight="Rarity"
+      title="KasLord Rarity Guide"
+      subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility. "
+     
+      items={[]}/>
+         <Team
+      id="team"
+  highlight="Classes"
+  title="Character Classes"
+  subtitle="Mint one of six legendary KasLord character types."
+  items={[]}/>
+  
       
     </>
   );

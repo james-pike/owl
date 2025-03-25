@@ -5,7 +5,7 @@ import IconStar from "~/components/icons/IconStar";
 import { Headline } from "../ui/Headline";
 
 const sideImg =
-  "/images/placeholder.png";
+  "/images/wixard.png";
 
   interface Item {
     title?: string;
@@ -94,7 +94,7 @@ export default component$((props: Props) => {
       
       <div class="row-gap-10 grid gap-6 md:grid-cols-2">
         <div class="mb-4 md:mb-0 md:py-4 md:pr-16">
-          {title && <h2 class="font-heading mb-8 text-3xl font-bold lg:text-4xl">{title}</h2>}
+          {/* {title && <h2 class="font-heading mb-8 text-3xl font-bold lg:text-4xl">{title}</h2>} */}
           {Array.isArray(items) &&
             items.length &&
             items.map(({ title, description, icon: Icon }, index) => (
@@ -110,15 +110,15 @@ export default component$((props: Props) => {
                 <div class="mr-4 flex flex-col items-center">
                   <div>
                     {index !== items.length - 1 ? (
-                      <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary-900">
+                      <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-secondary-900">
                         {typeof Icon !== "undefined" ? (
-                          <Icon class="h-6 w-6 text-primary-800 dark:text-slate-200" />
+                          <Icon class="h-6 w-6 text-secondary-800 dark:text-slate-200" />
                         ) : (
-                          <IconStar class="h-6 w-6 text-primary-800 dark:text-slate-200" />
+                          <IconStar class="h-6 w-6 text-secondary-800 dark:text-slate-200" />
                         )}
                       </div>
                     ) : (
-                      <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary-900 bg-primary-900">
+                      <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-secondary-900 bg-secondary-900">
                         {typeof Icon !== "undefined" ? (
                           <Icon class="h-6 w-6 text-white dark:text-slate-200" />
                         ) : (

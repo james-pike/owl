@@ -15,7 +15,18 @@ module.exports = {
           '4.5xl': ['2.625rem', { lineHeight: '2.75rem' }],
       colors: {
         primary: colors.red,
-        secondary: colors.gray,
+          secondary: {
+          50: '#E6FAF5',
+          100: '#C7F5EA',
+          200: '#A0F0E0',
+          300: '#49EACB',
+          400: '#4DD9C4',
+          500: '#70C7BA',
+          600: '#5AA9A0',
+          700: '#468C85',
+          800: '#346F68',
+          900: '#23544F',
+        },
       },
       fontFamily: {
         sans: ["'Inter Variable'", ...defaultTheme.fontFamily.sans],

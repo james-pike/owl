@@ -55,12 +55,20 @@ export default component$(() => {
     },
 
     {
-      title: "Reviews",
-      href: "/reviews/",
+      title: "Inventory",
+      href: "#inventory",
+    },
+    {
+      title: "Roadmap",
+      href: "#roadmap",
+    },
+    {
+      title: "Rarity Guide",
+      href: "#rarity",
     },
 
-    { title: "FAQ", href: "/faq/", badge: null },
-    { title: "Contact Us", href: "/contact/", badge: null }
+    
+    { title: "Team", href: "#team", badge: null }
   ];
 
   // Get services subitems safely
@@ -85,7 +93,7 @@ export default component$(() => {
             </Modal.Title>
 
             <Modal.Description class="text-lg font-medium px-2 py-1 text-gray-700 dark:text-gray-200">
-              Safe & Auto Inc           </Modal.Description>
+              KasLords Of The BlockDag          </Modal.Description>
           </div>
 
 

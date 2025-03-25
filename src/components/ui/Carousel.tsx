@@ -1,5 +1,11 @@
-import { component$, useStyles$ } from '@builder.io/qwik';
+import { component$, useSignal, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
 import { Carousel } from '@qwik-ui/headless';
+
+const slides = [
+  { src: '/images/wizard.jpg', alt: 'Locksmith Service 1' },
+  { src: '/images/wixard.png', alt: 'Security Installation' },
+// Fallback or additional slide
+];
 
 export default component$(() => {
   useStyles$(`
@@ -35,15 +41,18 @@ export default component$(() => {
   `);
 
   // Array of slide objects
-  const slides = [
-    { src: '/images/slide1.jpg', alt: 'Locksmith Service 1' },
-    { src: '/images/slide2.jpg', alt: 'Security Installation' },
-    { src: '/images/slide3.jpg', alt: 'Emergency Lockout Assistance' },
-    { src: '/images/placeholder.png', alt: 'Placeholder Slide' }, // Fallback or additional slide
-  ];
+
+
+  const isPlaying = useSignal<boolean>(false);
+
+  useVisibleTask$(() => {
+    isPlaying.value = true;
+  })
 
   return (
-    <Carousel.Root class="carousel-root" gap={30}>
+    <Carousel.Root class="carousel-root" gap={30}   autoPlayIntervalMs={3500}
+    bind:autoplay={isPlaying}
+    >
       <div class="carousel-buttons">
         <Carousel.Previous>Prev</Carousel.Previous>
         <Carousel.Next>Next</Carousel.Next>

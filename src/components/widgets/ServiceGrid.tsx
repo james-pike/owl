@@ -14,7 +14,7 @@ const services = [
       title: "Dark Lord",
       description: "Precision key cutting and duplication for all types of locks.",
       details: "Get spare keys for your home, office, or vehicle with accuracy and efficiency.",
-      image: "/images/placeholder.png",
+      image: "/images/wixard.png",
       alt: "Key Duplication & Replacement",
       slug: "key-duplication"
     },
@@ -22,7 +22,7 @@ const services = [
       title: "Elf Lord",
       description: "Enhance security with professional lock installation and repair services.",
       details: "We install and fix all types of locks to keep your property secure.",
-      image: "/images/placeholder.png",
+      image: "/images/wizard.jpg",
       alt: "Lock Installation & Repair",
       slug: "lock-installation"
     },
@@ -30,7 +30,7 @@ const services = [
       title: "Orc Lord",
       description: "Upgrade your security with the latest smart locks and access control systems.",
       details: "We install high-tech security solutions for homes and businesses.",
-      image: "/images/placeholder.png",
+      image: "/images/wixard.png",
       alt: "Smart Lock & Security Systems",
       slug: "smart-locks"
     },
@@ -38,7 +38,7 @@ const services = [
       title: "Warrior Lord",
       description: "Key programming, lock repairs, and ignition services for all vehicle models.",
       details: "We provide expert automotive locksmith solutions, including key fob replacement.",
-      image: "/images/placeholder.png",
+      image: "/images/wizard.jpg",
       alt: "Automotive Locksmith Services",
       slug: "automotive-locksmith"
     },
@@ -46,7 +46,7 @@ const services = [
       title: "Dragon Lord",
       description: "Secure storage solutions and expert safe opening services.",
       details: "We install, repair, and unlock safes while maintaining their integrity.",
-      image: "/images/placeholder.png",
+      image: "/images/wixard.png",
       alt: "Safe Opening & Installation",
       slug: "safe-services"
     },

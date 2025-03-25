@@ -3,7 +3,7 @@
 
 ## [Story](#story)
 
-## Classes
+## Classes 
 
 - [Wizard Lord](/services/emergency-lockout)
 - [Dark Lord](/services/key-duplication)
@@ -14,7 +14,7 @@
 
 ## [Inventory](#inventory)
 ## [Roadmap](#roadmap)
-## [Rarity Checker](#reviews)
+## [Rarity Checker](#rarity)
 ## [Team](#team)
 
   

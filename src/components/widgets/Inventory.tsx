@@ -1,8 +1,11 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
 
 import ServiceGrid from "./ServiceGrid";
+import ClassSelect from "./ClassSelect";
+import Items from "./Items";
+import { Label } from "../ui/Label";
 
 interface Item {
   title?: string;
@@ -24,6 +27,9 @@ interface Props {
 export default component$((props: Props) => {
   const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;
 
+  const selectedClass = useSignal('Wizard'); // Default class
+
+
   return (
     <section  class="relative scroll-mt-16" {...(id ? { id } : {})}>
       <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
@@ -33,14 +39,23 @@ export default component$((props: Props) => {
       </div>
       <div
         class={twMerge(
-          "relative mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default",
+          "relative mx-auto max-w-3xl px-4 md:px-6 py-12 md:py-14 lg:py-16 text-default",
           classes?.container,
           isDark ? "dark" : ""
         )}
       >
         <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
-     <ServiceGrid/>
-      </div>
+<div class="grid md:grid-cols-2">
+    <div class="md:mr-4 flex justify-end">
+        <Label>Select a class:</Label>
+<ClassSelect selectedClass={selectedClass} />
+</div>
+
+        <div></div>
+
+        </div>
+        <Items selectedClass={selectedClass.value} />
+        </div>
     </section>
   );
 });

@@ -9,40 +9,41 @@ import ToggleTheme from "../common/ToggleTheme";
 export default component$(() => {
   const links = [
     {
-      title: "Product",
+      title: "About",
       items: [
-        { title: "Features", href: "#" },
-        { title: "Security", href: "#" },
+        { title: "Story", href: "#" },
+        { title: "Roadmap", href: "#" },
         { title: "Team", href: "#" },
-    
-     
     
       ],
     },
+
     {
-      title: "Platform",
+      title: "Tools",
       items: [
-        { title: "Developer API", href: "#" },
-        { title: "Partners", href: "#" },
-        { title: "Atom", href: "#" },
+        { title: "Rarity Guide", href: "#" },
+        { title: "Inventory Items", href: "#" },
+        { title: "Professional Services", href: "#" },
+   
+      ],
+    },
+    {
+      title: "Classes",
+      items: [
+        { title: "Wizard", href: "#" },
+        { title: "Dark Lord", href: "#" },
+        { title: "Elf", href: "#" },
+        { title: "Orc", href: "#" },
+        { title: "Warrior", href: "#" },
+        { title: "Dragon", href: "#" },
  
       ],
     },
     {
-      title: "Services",
+      title: "Resources",
       items: [
-        { title: "Docs", href: "#" },
-        { title: "Community Forum", href: "#" },
-        { title: "Professional Services", href: "#" },
-        { title: "Skills", href: "#" },
-        { title: "Status", href: "#" },
-      ],
-    },
-    {
-      title: "Company",
-      items: [
-        { title: "About", href: "#" },
-        { title: "Blog", href: "#" },
+        { title: "KaspaCom", href: "#" },
+        { title: "KRCscan", href: "#" },
         { title: "Careers", href: "#" },
         { title: "Press", href: "#" },
    

@@ -1,8 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
+import TeamCards from "./TeamCards";
 
-import ServiceGrid from "./ServiceGrid";
 
 interface Item {
   title?: string;
@@ -39,7 +39,7 @@ export default component$((props: Props) => {
         )}
       >
         <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
-     <ServiceGrid/>
+     <TeamCards/>
       </div>
     </section>
   );

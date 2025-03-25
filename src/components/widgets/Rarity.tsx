@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
 
 import ServiceGrid from "./ServiceGrid";
+import RarityChecker from "./RarityChecker";
 
 interface Item {
   title?: string;
@@ -39,7 +40,7 @@ export default component$((props: Props) => {
         )}
       >
         <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
-     <ServiceGrid/>
+     <RarityChecker/>
       </div>
     </section>
   );
