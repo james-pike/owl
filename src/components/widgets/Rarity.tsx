@@ -2,7 +2,6 @@ import { component$ } from "@builder.io/qwik";
 import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
 
-import ServiceGrid from "./ServiceGrid";
 import RarityChecker from "./RarityChecker";
 
 interface Item {

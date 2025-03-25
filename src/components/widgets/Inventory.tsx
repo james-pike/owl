@@ -2,7 +2,6 @@ import { component$, useSignal } from "@builder.io/qwik";
 import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
 
-import ServiceGrid from "./ServiceGrid";
 import ClassSelect from "./ClassSelect";
 import Items from "./Items";
 import { Label } from "../ui/Label";
