@@ -1,7 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
-import Hero from "~/components/widgets/Hero";
 import Steps from "~/components/widgets/Steps";
 
 
@@ -21,12 +20,12 @@ import Rarity from "~/components/widgets/Rarity";
 export default component$(() => {
   return (
     <>
-    <div class="hidden md:block">
+    <div class="">
       <Hero2/>
       </div>
-      <div class="block md:hidden">
+      {/* <div class="block md:hidden">
       <Hero/>
-      </div>
+      </div> */}
       <Story
       highlight="Story"
       title="Story Of The KasLords"

@@ -86,7 +86,7 @@ export default component$(() => {
   return (
     <header
       id="header"
-      class={`sticky top-0 z-40 flex-none mx-auto bg-gradient-to-r from-gray-200 to-gray-100 dark:from-gray-950 dark:to-gray-800 w-full border-b border-gray-300 dark:border-gray-800 transition-[opacity] ease-in-out ${
+      class={`sticky top-0 z-40 flex-none mx-auto bg-gradient-to-r from-gray-200 to-gray-100 dark:from-gray-950 dark:to-gray-900 w-full border-b border-gray-300 dark:border-gray-800 transition-[opacity] ease-in-out ${
         store.isScrolling ? "" : ""
       }`}
       window:onScroll$={() => {

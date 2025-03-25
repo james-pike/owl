@@ -123,9 +123,9 @@ export default component$(() => {
   ];
 
   return (
-    <div class="min-h-screen bg-[#f4f4f4]">
+    <div class=" bg-[#f4f4f4]">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 min-h-screen items-center">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4  items-center">
           {teamMembers.map((member, index) => (
             <div key={index} class="flex justify-center">
               <TeamCard name={member.name} title={member.title} imageSrc={member.imageSrc} />
