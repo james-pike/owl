@@ -61,7 +61,7 @@ export default component$((props: Props) => {
     },
   };
 
-  const { title1, items, image } = stepsData;
+  const { items, image } = stepsData;
 
   // Signal to track visibility
   const isVisible = useSignal(false);
