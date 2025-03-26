@@ -11,10 +11,10 @@ export default component$(() => {
     <section class="px-4 py-8 text-center">
       
             <div class="mb-7">
-                       <h1 class="text-4.5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 animate-hero-text">
+                       <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 animate-hero-text">
                          <span class="text-secondary-800">KasLords</span> <br class="hidden lg:block" />Of The <span class="text-secondary-800">BlockDag</span> <br class="hidden lg:block" />{" "}
                        </h1>
-                       <div class="max-w-3xl mx-auto lg:max-w-none">
+                       <div class="max-w-4xl mx-auto lg:max-w-none">
                          <p class="text-xl text-muted mb-5 dark:text-slate-300 animate-hero-subtitle">
                          Own a piece of this legendary saga, forged in the fires of creativity and secured on the blockchain—join the Kaslords and claim your dominion today!
                          </p>
