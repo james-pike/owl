@@ -80,10 +80,10 @@ const services = [
         id="services-grid"
         class="grid mx-auto max-w-screen-xl mt-2 mb-2 md:mb-16 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
       >
-        {services.map(({ title, description, details, image, alt, slug }, index) => (
+        {services.map(({ title, description, details, image, alt }, index) => (
           
           <Link
-            href={`/services/${slug}`}
+          
             key={index}
             class={`
               group relative overflow-hidden rounded-lg shadow-md no-underline

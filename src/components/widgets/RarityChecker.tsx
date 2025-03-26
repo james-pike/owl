@@ -120,7 +120,7 @@ export default component$(() => {
               </div>
 
               <h2 class="text-xl font-semibold mb-2">{nftData.value.metadata.name}</h2>
-              <p class="text-gray-600 mb-4">{nftData.value.metadata.description}</p>
+              {/* <p class="text-gray-600 mb-4">{nftData.value.metadata.description}</p> */}
 
               <h3 class="text-lg font-semibold mb-2">Attributes</h3>
               <ul class="list-disc pl-5 text-sm">
