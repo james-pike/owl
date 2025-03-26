@@ -8,7 +8,7 @@ const styles = `
     position: relative;
     overflow: hidden;
     text-align: center;
-    max-width: 300px; /* Increased from implicit 210px (image-wrapper) */
+    max-width: 400px; /* Kept wider as requested */
     width: 100%; /* Ensure it takes full available width */
   }
   .box:before {
@@ -43,8 +43,8 @@ const styles = `
   }
   .image-wrapper {
     position: relative;
-    max-width: 250px; /* Increased from 210px */
-    max-height: 250px; /* Increased from 210px */
+    max-width: 250px; /* Reduced from 350px to make image smaller */
+    max-height: 250px; /* Reduced from 350px to maintain square aspect and reduce height */
     margin: 0 auto;
     overflow: hidden;
     border-radius: 50%;
@@ -130,8 +130,8 @@ export default component$(() => {
 
   return (
     <div class="bg-gray-700">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-center">
+      <div class="container mx-auto px-0">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
           {teamMembers.map((member, index) => (
             <div key={index} class="flex justify-center">
               <TeamCard name={member.name} title={member.title} imageSrc={member.imageSrc} />

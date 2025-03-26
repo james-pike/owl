@@ -64,20 +64,18 @@ export default component$(() => {
       <section class="p-2 max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Left Column (Image on md and up) */}
-          <div class="md:order-1 order-2 hidden md:flex justify-start">
+          <div class="md:order-1 order-2 hidden md:flex justify-center">
             {nftData.value ? (
               <img
                 src={nftData.value.metadata.image}
                 alt={nftData.value.metadata.name}
-                class="md:max-h-[300px] w-auto object-contain"
+                class="w-full max-w-[400px] md:max-w-[500px] max-h-[400px] md:max-h-[500px] rounded-md object-contain shadow-lg"
                 onError$={() => {
                   console.log(`Failed to load image: ${nftData.value.metadata.image}`);
-                  // Optional fallback
-                  // e.target.src = 'https://via.placeholder.com/150?text=Image+Not+Found';
                 }}
               />
             ) : (
-              <div class="md:max-h-[300px] w-auto bg-gray-200 flex items-center justify-center text-gray-500">
+              <div class="w-full max-w-[400px] md:max-w-[500px] max-h-[400px] md:max-h-[500px] rounded-md bg-gray-200 flex items-center justify-center text-gray-500">
                 Loading...
               </div>
             )}
@@ -111,7 +109,7 @@ export default component$(() => {
                   <img
                     src={nftData.value.metadata.image}
                     alt={nftData.value.metadata.name}
-                    class=""
+                    class="w-full max-w-[300px] max-h-[300px] rounded-md object-contain"
                     onError$={() => {
                       console.log(`Failed to load image: ${nftData.value.metadata.image}`);
                     }}

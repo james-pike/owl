@@ -84,13 +84,13 @@ export default component$(() => {
                 href="tel:+16132188063"
                 class=" px-4 py-2 btn-primary text-white font-semibold rounded-md transition-colors"
               >
-                Call Now
+                Mint KasLords
               </a>
               <a
                 href="/contact"
                 class=" btn-secondary px-4 py-2 dark:text-white font-semibold rounded-md transition-colors"
               >
-                Get An Estimate
+                Join The Clan
               </a>
             </div>
           </div>
