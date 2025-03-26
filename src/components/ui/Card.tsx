@@ -7,7 +7,7 @@ const Root = component$<PropsOf<'div'>>((props) => {
       {...props}
       class={cn(
         'relative rounded-sm max-w-7xl p-2 mx-auto shadow-sm',
-        'border-[12px] border-gray-700', // Lighter stone color (gray-600)
+        'border-[12px] border-gray-800', // Lighter stone color (gray-600)
         'shadow-[inset_0_0_25px_rgba(0,0,0,0.9),0_0_15px_rgba(0,0,0,0.7),0_0_5px_rgba(17,24,39,0.5)]', // Shadows for carved effect
         props.class,
       )}
