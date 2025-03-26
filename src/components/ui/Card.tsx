@@ -4,25 +4,25 @@ import { cn } from '@qwik-ui/utils';
 const styles = `
   .fancy-border {
     box-shadow: 
-      inset 0 0 25px rgba(0, 0, 0, 0.9), /* Deeper carved effect */
-      0 0 15px rgba(0, 0, 0, 0.7), /* Outer shadow for depth */
-      0 0 5px rgba(17, 24, 39, 0.5); /* Subtle glow (gray-900 tint) */
+      inset 0 0 22px rgba(0, 0, 0, 0.85), /* Slightly scaled-down carved effect */
+      0 0 13px rgba(0, 0, 0, 0.65), /* Slightly scaled-down outer shadow */
+      0 0 5px rgba(17, 24, 39, 0.45); /* Subtle glow with slightly lower opacity */
   }
   .fancy-border-sm {
     box-shadow: 
-      inset 0 0 15px rgba(0, 0, 0, 0.7), /* Scaled-down carved effect */
-      0 0 10px rgba(0, 0, 0, 0.5), /* Scaled-down outer shadow */
-      0 0 5px rgba(17, 24, 39, 0.5); /* Same subtle glow */
+      inset 0 0 15px rgba(0, 0, 0, 0.7), /* Unchanged, already scaled */
+      0 0 10px rgba(0, 0, 0, 0.5), /* Unchanged, already scaled */
+      0 0 5px rgba(17, 24, 39, 0.5); /* Unchanged */
   }
   .inner-border {
     box-shadow: 
-      inset 0 0 10px rgba(0, 0, 0, 0.5), /* Subtle carved effect for inner sections */
-      0 0 5px rgba(0, 0, 0, 0.3); /* Light outer shadow */
+      inset 0 0 10px rgba(0, 0, 0, 0.5), /* Unchanged */
+      0 0 5px rgba(0, 0, 0, 0.3); /* Unchanged */
   }
   .button-border {
     box-shadow: 
-      0 0 5px rgba(55, 65, 81, 0.4), /* Subtle gray-700 glow */
-      inset 0 0 3px rgba(255, 255, 255, 0.2); /* Light shine for depth */
+      0 0 5px rgba(55, 65, 81, 0.4), /* Unchanged */
+      inset 0 0 3px rgba(255, 255, 255, 0.2); /* Unchanged */
   }
 `;
 
@@ -33,25 +33,25 @@ const Root = component$<PropsOf<'div'>>((props) => {
     <div
       {...props}
       class={cn(
-        'fancy-border relative rounded-sm max-w-7xl p-2 mx-2 my-1.5 mx-auto shadow-sm',
-        'border-[12px] border-gray-800',
-        'before:content-[""] before:absolute before:-top-[6px] before:-left-[6px] before:-right-[6px] before:-bottom-[6px]',
-        'before:border-[3px] before:border-transparent before:bg-gradient-to-r before:from-gray-900 before:to-gray-800',
-        'before:shadow-inner before:shadow-[inset_0_0_10px_rgba(0,0,0,0.7)] before:opacity-60 before:-z-10',
+        'fancy-border relative rounded-sm max-w-7xl p-[7px] mx-[7px] my-[5px] mx-auto',
+        'border-[10px] border-gray-800',
+        'before:content-[""] before:absolute before:-top-[5px] before:-left-[5px] before:-right-[5px] before:-bottom-[5px]',
+        'before:border-[2.5px] before:border-transparent before:bg-gradient-to-r before:from-gray-900 before:to-gray-800',
+        'before:shadow-inner before:shadow-[inset_0_0_9px_rgba(0,0,0,0.7)] before:opacity-55 before:-z-10',
         props.class,
       )}
     >
       <div
-        class="absolute w-5 h-5 bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -top-[10px] -left-[10px] rotate-45"
+        class="absolute w-[18px] h-[18px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -top-[9px] -left-[9px] rotate-45"
       ></div>
       <div
-        class="absolute w-5 h-5 bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -top-[10px] -right-[10px] rotate-[135deg]"
+        class="absolute w-[18px] h-[18px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -top-[9px] -right-[9px] rotate-[135deg]"
       ></div>
       <div
-        class="absolute w-5 h-5 bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -bottom-[10px] -left-[10px] rotate-[315deg]"
+        class="absolute w-[18px] h-[18px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -bottom-[9px] -left-[9px] rotate-[315deg]"
       ></div>
       <div
-        class="absolute w-5 h-5 bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -bottom-[10px] -right-[10px] rotate-[225deg]"
+        class="absolute w-[18px] h-[18px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -bottom-[9px] -right-[9px] rotate-[225deg]"
       ></div>
       <Slot />
     </div>
