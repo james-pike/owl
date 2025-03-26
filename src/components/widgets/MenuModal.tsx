@@ -24,32 +24,32 @@ export default component$(() => {
 
     {
       title: "Classes",
-      href: "/services/",
+      href: "#classes",
       hasSubmenu: true,
       subitems: [
         {
-          title: "Safe Opening & Installation",
-          href: "/services/safe-services"
+          title: "Wizard Lord",
+          href: "#classes"
         },
         {
-          title: "Emergency Lockout Assistance",
-          href: "/services/emergency-lockout"
+          title: "Dark Lord",
+          href: "#classes"
         },
         {
-          title: "Key Duplication & Replacement",
-          href: "/services/key-duplication"
+          title: "Elf lord",
+          href: "#classes"
         },
         {
-          title: "Lock Installation & Repair",
-          href: "/services/lock-installation"
+          title: "Orc Lord",
+          href: "#classes"
         },
         {
-          title: "Smart Lock & Security System Installation",
-          href: "/services/smart-locks"
+          title: "Warrior Lord",
+          href: "#classes"
         },
         {
-          title: "Automotive Locksmith Services",
-          href: "/services/automotive-locksmith"
+          title: "Dragon Lord",
+          href: "#classes"
         },
 
       ]
