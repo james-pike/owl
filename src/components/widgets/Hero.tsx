@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import HeroCarousel from "./HeroCarousel";
 import IconBrandTailwind from "../icons/IconBrandTailwind";
 import IconBrandGoogle from "../icons/IconBrandGoogle";
 import { Card } from "../ui/Card";
