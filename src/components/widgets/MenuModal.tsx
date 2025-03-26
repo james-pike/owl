@@ -8,6 +8,7 @@ import IconHamburger from "../icons/IconHamburger";
 import { buttonVariants } from "../ui/Button";
 import IconBrandTailwind from "../icons/IconBrandTailwind";
 import IconBrandGoogle from "../icons/IconBrandGoogle";
+import { Card } from "../ui/Card";
 
 export default component$(() => {
   const show = useSignal(false);
@@ -84,6 +85,7 @@ export default component$(() => {
           </Modal.Trigger>
         </div>
         <Modal.Panel position={"left"} class="dark:bg-gray-950 border-0">
+          <Card.Root>
           {/* Header */}
           <div class="border border-gray-200 dark:border-gray-700 bg-gray-200 dark:bg-gray-900 p-1">
             <Modal.Title class="pt-1">
@@ -202,6 +204,7 @@ export default component$(() => {
           >
             <LuX class="h-6 w-6" />
           </Modal.Close>
+          </Card.Root>
         </Modal.Panel>
       </Modal.Root>
     </>
