@@ -15,7 +15,6 @@ import Services from "~/components/widgets/Services";
 import Hero2 from "~/components/widgets/Hero2";
 import Story from "~/components/widgets/Story";
 import Inventory from "~/components/widgets/Inventory";
-import Team from "~/components/widgets/Team";
 import Rarity from "~/components/widgets/Rarity";
 
 export default component$(() => {
@@ -24,9 +23,9 @@ export default component$(() => {
     <div class="hidden md:block">
       <Hero2/>
       </div>
-      <div class="block md:hidden">
+      {/* <div class="block md:hidden">
       <Hero/>
-      </div>
+      </div> */}
       <Story
       highlight="Story"
       title="Story Of The KasLords"
@@ -107,12 +106,12 @@ export default component$(() => {
       subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility. "
      
       items={[]}/>
-         <Team
+         {/* <Team
       id="team"
   highlight="Classes"
   title="Character Classes"
   subtitle="Mint one of six legendary KasLord character types."
-  items={[]}/>
+  items={[]}/> */}
   
       
     </>
