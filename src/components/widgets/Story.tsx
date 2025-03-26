@@ -39,7 +39,7 @@ export default component$((props: Props) => {
               highlight={highlight}
               classes={classes?.headline}
             />
-            <div class="row-gap-0 grid gap-0 md:grid-cols-2">
+            <div class="row-gap-0 grid gap-8 md:grid-cols-2">
               <div class="mb-4 md:mb-0 md:py-4 md:pr-0 md:order-2">
                 {title && (
                   <h2 class="font-heading mb-8 text-xl lg:text-xl">{subtitle}</h2>

@@ -15,6 +15,7 @@ import Story from "~/components/widgets/Story";
 import Inventory from "~/components/widgets/Inventory";
 import Rarity from "~/components/widgets/Rarity";
 import Hero2 from "~/components/widgets/Hero2";
+import Hero from "~/components/widgets/Hero";
 
 export default component$(() => {
   return (
@@ -22,9 +23,9 @@ export default component$(() => {
     <div class="hidden md:block">
       <Hero2/>
       </div>
-      {/* <div class="block md:hidden">
+      <div class="block md:hidden">
       <Hero/>
-      </div> */}
+      </div>
       <Story
       highlight="Story"
       title="Story Of The KasLords"
@@ -32,7 +33,7 @@ export default component$(() => {
       Forged by the enigmatic creators at xAI, the Kaslords were not mere collectibles but guardians of a decentralized kingdom, their essence etched into the immutable ledger of the blockchain." 
       items={[]}/>
       <Services
-      id="services"
+      id="classes"
   highlight="classes"
   title="Character Classes"
   subtitle="Mint one of six legendary KasLord character types."
