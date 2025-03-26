@@ -6,10 +6,25 @@ const Root = component$<PropsOf<'div'>>((props) => {
     <div
       {...props}
       class={cn(
-        'rounded-sm border-2 max-w-6xl bg-gray-100 p-2 mx-4 my-4 mx-auto border-gray-200 dark:bg-gray-800 dark:border-gray-700 shadow-sm',
+        'relative rounded-sm max-w-7xl p-2 mx-auto shadow-sm',
+        'border-[12px] border-gray-700', // Lighter stone color (gray-600)
+        'shadow-[inset_0_0_25px_rgba(0,0,0,0.9),0_0_15px_rgba(0,0,0,0.7),0_0_5px_rgba(17,24,39,0.5)]', // Shadows for carved effect
         props.class,
       )}
     >
+      {/* Corner decorations (vines) */}
+      <div
+        class="absolute w-5 h-5 bg-gradient-to-br from-gray-700 to-gray-600 rounded-sm opacity-70 -top-[10px] -left-[10px] rotate-45"
+      ></div>
+      <div
+        class="absolute w-5 h-5 bg-gradient-to-br from-gray-700 to-gray-600 rounded-sm opacity-70 -top-[10px] -right-[10px] rotate-[135deg]"
+      ></div>
+      <div
+        class="absolute w-5 h-5 bg-gradient-to-br from-gray-700 to-gray-600 rounded-sm opacity-70 -bottom-[10px] -left-[10px] rotate-[315deg]"
+      ></div>
+      <div
+        class="absolute w-5 h-5 bg-gradient-to-br from-gray-700 to-gray-600 rounded-sm opacity-70 -bottom-[10px] -right-[10px] rotate-[225deg]"
+      ></div>
       <Slot />
     </div>
   );
@@ -17,7 +32,7 @@ const Root = component$<PropsOf<'div'>>((props) => {
 
 const Header = component$<PropsOf<'div'>>((props) => {
   return (
-    <div {...props} class={cn('flex flex-col space-y-0 bg-white dark:bg-gray-900 p-4', props.class)}>
+    <div {...props} class={cn('flex flex-col space-y-0 bg-gray-700 dark:bg-gray-700 p-4', props.class)}>
       <Slot />
     </div>
   );
@@ -25,7 +40,7 @@ const Header = component$<PropsOf<'div'>>((props) => {
 
 const Title = component$<PropsOf<'h3'>>((props) => {
   return (
-    <h3 {...props} class={cn('font-medium leading-none tracking-tight', props.class)}>
+    <h3 {...props} class={cn('font-medium leading-none tracking-tight text-gray-100', props.class)}>
       <Slot />
     </h3>
   );
@@ -33,7 +48,7 @@ const Title = component$<PropsOf<'h3'>>((props) => {
 
 const Description = component$<PropsOf<'p'>>((props) => {
   return (
-    <p {...props} class={cn('text-sm text-muted-foreground', props.class)}>
+    <p {...props} class={cn('text-sm text-gray-400', props.class)}>
       <Slot />
     </p>
   );
@@ -41,7 +56,7 @@ const Description = component$<PropsOf<'p'>>((props) => {
 
 const Content = component$<PropsOf<'div'>>((props) => {
   return (
-    <div {...props} class={cn('p-4 bg-gray-50 dark:bg-gray-850', props.class)}>
+    <div {...props} class={cn('p-4 bg-gray-800 dark:bg-gray-800', props.class)}>
       <Slot />
     </div>
   );
@@ -55,7 +70,6 @@ const Footer = component$<PropsOf<'div'>>(({ ...props }) => {
   );
 });
 
-// Experimental API
 const Image = component$<PropsOf<'img'>>(({ ...props }) => {
   return <img {...props} class={cn('w-full object-cover', props.class)} />;
 });
