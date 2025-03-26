@@ -107,6 +107,8 @@ export default component$(() => {
                 {/* Image on mobile only */}
                 <div class="md:hidden flex justify-center mb-4">
                   <img
+                  width={300}
+                  height={300}
                     src={nftData.value.metadata.image}
                     alt={nftData.value.metadata.name}
                     class="w-full max-w-[300px] max-h-[300px] rounded-md object-contain"

@@ -11,7 +11,6 @@ import Steps from "~/components/widgets/Steps";
 import { SITE } from "~/config.mjs";
 import Services from "~/components/widgets/Services";
 
-import Hero2 from "~/components/widgets/Hero2";
 import Story from "~/components/widgets/Story";
 import Inventory from "~/components/widgets/Inventory";
 import Rarity from "~/components/widgets/Rarity";
