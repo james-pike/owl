@@ -31,7 +31,7 @@ export default component$((props: Props) => {
         <Card.Root class="bg-gray-900">
           <section
             id="story"
-            class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
+            class="mx-auto scroll-mt-16 max-w-5xl px-4 py-8 md:py-12 lg:py-12 sm:px-6 lg:px-8"
           >
             <Headline
               title={title}
@@ -39,7 +39,7 @@ export default component$((props: Props) => {
               highlight={highlight}
               classes={classes?.headline}
             />
-            <div class="row-gap-0 grid gap-8 md:grid-cols-2">
+            <div class="row-gap-0 grid md:gap-8 md:grid-cols-2">
               <div class="mb-4 md:mb-0 md:py-4 md:pr-0 md:order-2">
                 {title && (
                   <h2 class="font-heading mb-8 text-xl lg:text-xl">{subtitle}</h2>

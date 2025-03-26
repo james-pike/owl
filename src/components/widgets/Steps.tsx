@@ -90,7 +90,7 @@ export default component$((props: Props) => {
    <Card.Root>
     <section
       id="roadmap"
-      class="mx-auto max-w-6xl scroll-mt-16 px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8 "
+      class="mx-auto max-w-6xl scroll-mt-16 px-4 pb-6 pt-8 md:py-12 lg:py-12 sm:px-6 lg:px-8 "
     >
               <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
       

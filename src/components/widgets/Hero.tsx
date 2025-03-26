@@ -6,11 +6,11 @@ import HeroCarousel from "./HeroCarousel";
 
 export default component$(() => {
   return (
-    <Card.Root class="border-t-0 -mt-4 pt-5">
+    <Card.Root class="">
     
-    <section class="px-4 py-8 text-center">
+    <section class="px-2 pt-8 pb-4 text-center">
       
-            <div class="mb-7">
+            <div class="mb-7 px-2">
                        <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 animate-hero-text">
                          <span class="text-secondary-800">KasLords</span> <br class="hidden lg:block" />Of The <span class="text-secondary-800">BlockDag</span> <br class="hidden lg:block" />{" "}
                        </h1>
