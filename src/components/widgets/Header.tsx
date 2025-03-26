@@ -121,7 +121,7 @@ export default component$(() => {
             />
             <a
               href="/contact"
-              class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm ml-2 mr-1.5 h-12 py-2.5 px-4 md:px-4 font-semibold shadow-none text-md w-auto"
+              class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm mr-1.5 h-12 py-2.5 px-4 md:px-4 font-semibold shadow-none text-md w-auto"
             >
               Mint
             </a>
