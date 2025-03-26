@@ -6,7 +6,7 @@ import HeroCarousel from "./HeroCarousel";
 
 export default component$(() => {
   return (
-    <Card.Root class="">
+    <Card.Root class="border-t-0 -mt-4 pt-5">
       <HeroCarousel/>
     <section class="px-4 py-8 text-center">
       
