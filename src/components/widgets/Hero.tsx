@@ -7,10 +7,10 @@ import HeroCarousel from "./HeroCarousel";
 export default component$(() => {
   return (
     <Card.Root class="border-t-0 -mt-4 pt-5">
-      <HeroCarousel/>
+    
     <section class="px-4 py-8 text-center">
       
-            <div>
+            <div class="mb-7">
                        <h1 class="text-4.5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 animate-hero-text">
                          <span class="text-secondary-800">KasLords</span> <br class="hidden lg:block" />Of The <span class="text-secondary-800">BlockDag</span> <br class="hidden lg:block" />{" "}
                        </h1>
@@ -32,6 +32,7 @@ export default component$(() => {
                          </div>
                        </div>
                      </div>
+                     <HeroCarousel/>
     </section>
     </Card.Root>
   );
