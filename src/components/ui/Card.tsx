@@ -1,29 +1,43 @@
-import { component$, type PropsOf, Slot } from '@builder.io/qwik';
+import { component$, type PropsOf, Slot, useStyles$ } from '@builder.io/qwik';
 import { cn } from '@qwik-ui/utils';
 
+const styles = `
+  .fancy-border {
+    box-shadow: 
+      inset 0 0 25px rgba(0, 0, 0, 0.9), /* Deeper carved effect */
+      0 0 15px rgba(0, 0, 0, 0.7), /* Outer shadow for depth */
+      0 0 5px rgba(17, 24, 39, 0.5); /* Subtle glow (gray-900 tint) */
+  }
+`;
+
 const Root = component$<PropsOf<'div'>>((props) => {
+  useStyles$(styles);
+
   return (
     <div
       {...props}
       class={cn(
-        'relative rounded-sm max-w-7xl p-2 mx-auto shadow-sm',
-        'border-[12px] border-gray-800', // Lighter stone color (gray-600)
-        'shadow-[inset_0_0_25px_rgba(0,0,0,0.9),0_0_15px_rgba(0,0,0,0.7),0_0_5px_rgba(17,24,39,0.5)]', // Shadows for carved effect
+        'fancy-border relative rounded-sm max-w-7xl p-2 mx-2 my-2 mx-auto shadow-sm',
+        'border-[12px] border-gray-800', // Solid gray-800 border, adjustable via props.class
+        // Vine-like etched effect (converted to Tailwind)
+        'before:content-[""] before:absolute before:-top-[6px] before:-left-[6px] before:-right-[6px] before:-bottom-[6px]',
+        'before:border-[3px] before:border-transparent before:bg-gradient-to-r before:from-gray-900 before:to-gray-800',
+        'before:shadow-inner before:shadow-[inset_0_0_10px_rgba(0,0,0,0.7)] before:opacity-60 before:-z-10',
         props.class,
       )}
     >
-      {/* Corner decorations (vines) */}
+      {/* Vine decorations (converted to Tailwind, using simple rotated squares) */}
       <div
-        class="absolute w-5 h-5 bg-gradient-to-br from-gray-700 to-gray-600 rounded-sm opacity-70 -top-[10px] -left-[10px] rotate-45"
+        class="absolute w-5 h-5 bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -top-[10px] -left-[10px] rotate-45"
       ></div>
       <div
-        class="absolute w-5 h-5 bg-gradient-to-br from-gray-700 to-gray-600 rounded-sm opacity-70 -top-[10px] -right-[10px] rotate-[135deg]"
+        class="absolute w-5 h-5 bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -top-[10px] -right-[10px] rotate-[135deg]"
       ></div>
       <div
-        class="absolute w-5 h-5 bg-gradient-to-br from-gray-700 to-gray-600 rounded-sm opacity-70 -bottom-[10px] -left-[10px] rotate-[315deg]"
+        class="absolute w-5 h-5 bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -bottom-[10px] -left-[10px] rotate-[315deg]"
       ></div>
       <div
-        class="absolute w-5 h-5 bg-gradient-to-br from-gray-700 to-gray-600 rounded-sm opacity-70 -bottom-[10px] -right-[10px] rotate-[225deg]"
+        class="absolute w-5 h-5 bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -bottom-[10px] -right-[10px] rotate-[225deg]"
       ></div>
       <Slot />
     </div>

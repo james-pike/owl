@@ -5,6 +5,7 @@ import IconTwitter from "~/components/icons/IconTwitter"
 import IconInstagram from "~/components/icons/IconInstagram"
 import IconFacebook from "~/components/icons/IconFacebook"
 import ToggleTheme from "../common/ToggleTheme";
+import { Card } from "../ui/Card";
 
 export default component$(() => {
   const links = [
@@ -64,7 +65,8 @@ export default component$(() => {
   ];
 
   return (
-    <footer class="border-t dark:border-gray-700 border-gray-300 bg-gray-200 dark:bg-gray-900">
+    <Card.Root>
+    <footer class=" ">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
           <div class="col-span-12 lg:col-span-4 pr-8">
@@ -143,5 +145,6 @@ export default component$(() => {
         </div>
       </div>
     </footer>
+    </Card.Root>
   );
 });

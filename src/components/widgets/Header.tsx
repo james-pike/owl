@@ -6,6 +6,7 @@ import MenuModal from "./MenuModal";
 import IconPause from "../icons/IconPause";
 import IconPlay from "../icons/IconPlay";
 import ToggleTheme from "../common/ToggleTheme";
+import { Card } from "../ui/Card";
 
 export default component$(() => {
   const store = useStore({
@@ -84,9 +85,10 @@ export default component$(() => {
   const location = useLocation();
 
   return (
+  
     <header
       id="header"
-      class={`sticky top-0 z-40 flex-none mx-auto bg-gradient-to-r from-gray-200 to-gray-100 dark:from-gray-950 dark:to-gray-900 w-full border-b border-gray-300 dark:border-gray-800 transition-[opacity] ease-in-out ${
+      class={`sticky top-0 z-40 flex-none mx-auto bg-gradient-to-r from-gray-200 to-gray-100 dark:from-gray-950 dark:to-gray-900 w-full border-gray-300 dark:border-gray-800 transition-[opacity] ease-in-out ${
         store.isScrolling ? "" : ""
       }`}
       window:onScroll$={() => {
@@ -97,7 +99,8 @@ export default component$(() => {
         }
       }}
     >
-      <div class="relative text-default py-2 px-2 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl">
+      <Card.Root>
+      <div class="relative text-default  md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl">
         <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
           <Link class="flex items-center" href={"/"}>
             <Logo2 />
@@ -119,7 +122,7 @@ export default component$(() => {
             </button>
             <audio
               ref={audioRef}
-              src="/images/hero.mp3"
+              src="/images/hero4.mp3"
               preload="auto"
               onEnded$={handleAudioEnded}
             />
@@ -281,6 +284,8 @@ export default component$(() => {
           </div>
         </div>
       </div>
+      </Card.Root>
     </header>
+   
   );
 });

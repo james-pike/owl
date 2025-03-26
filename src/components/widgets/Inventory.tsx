@@ -31,16 +31,16 @@ export default component$((props: Props) => {
 
 
   return (
-    <section  class="relative scroll-mt-16 mx-auto max-w-7xl bg-gray-900 mb-6 " {...(id ? { id } : {})}>
-      <Card.Root>
-      <div class="absolute inset-0 max-w-7xl bg-gray-800 pointer-events-none -z-[1]" aria-hidden="true">
+    <section  class="relative scroll-mt-16 mx-auto max-w-7xlmb-6 " {...(id ? { id } : {})}>
+      <Card.Root class="bg-gray-800">
+      <div class="absolute inset-0 max-w-7xl pointer-events-none -z-[1]" aria-hidden="true">
         <slot name="bg">
-          <div class={twMerge("absolute inset-0 bg-gray-100 max-w-6xl dark:bg-gray-800", isDark ? "bg-dark dark:bg-transparent" : "")}></div>
+          <div class={twMerge("absolute inset-0  max-w-6xl dark:bg-gray-800", isDark ? "bg-dark dark:bg-transparent" : "")}></div>
         </slot>
       </div>
       <div
         class={twMerge(
-          "relative mx-auto max-w-3xl px-4 md:px-6 py-10 md:py-12  bg-gray-800 lg:py-12 text-default",
+          "relative mx-auto max-w-3xl px-4 md:px-6 py-10 md:py-12   lg:py-12 text-default",
           classes?.container,
           isDark ? "dark" : ""
         )}

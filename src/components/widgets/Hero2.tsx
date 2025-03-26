@@ -3,11 +3,13 @@ import IconBrandTailwind from "../icons/IconBrandTailwind";
 import IconBrandGoogle from "../icons/IconBrandGoogle";
 import Carousel from "../ui/Carousel";
 import LogoClouds from "./LogoClouds";
+import { Card } from "../ui/Card";
 
 export default component$(() => {
   return (
+    <Card.Root class="">
     <section>
-      <div class="grid grid-cols-2 grid-rows-[84%_16%] h-[calc(100vh-85.66667px)]">
+      <div class="grid grid-cols-2 grid-rows-[84%_16%] h-[calc(100vh-160.66667px)]">
         <div class="bg-gradient-to-r from-gray-200 to-gray-50 dark:from-gray-950 dark:to-gray-800 flex items-center px-8">
           <div>
             <h1 class="text-4.5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 animate-hero-text">
@@ -40,5 +42,6 @@ export default component$(() => {
         </div>
       </div>
     </section>
+    </Card.Root>
   );
 });

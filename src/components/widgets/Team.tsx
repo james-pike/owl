@@ -26,11 +26,11 @@ export default component$((props: Props) => {
   const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;
 
   return (
-    <section class="relative scroll-mt-16 bg-gray-900" {...(id ? { id } : {})}>
+    <section class="relative scroll-mt-16" {...(id ? { id } : {})}>
       <Card.Root>
       <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
         <slot name="bg">
-          <div class={twMerge("absolute inset-0 bg-gray-100 dark:bg-gray-800", isDark ? "bg-dark dark:bg-transparent" : "")}></div>
+          <div class={twMerge("absolute inset-0 ", isDark ? "bg-dark dark:bg-transparent" : "")}></div>
         </slot>
       </div>
       <div
