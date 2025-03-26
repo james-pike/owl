@@ -2,8 +2,8 @@ import { component$, useSignal, useStyles$, useVisibleTask$ } from '@builder.io/
 import { Carousel } from '@qwik-ui/headless';
 
 const slides = [
-  { src: '/images/wizard.jpg', alt: 'Locksmith Service 1' },
-  { src: '/images/wixard.png', alt: 'Security Installation' },
+  { src: '/images/wizard.jpg', alt: 'Locksmith Service 1', width: 800, height: 600 },
+  { src: '/images/wixard.png', alt: 'Security Installation', width: 800, height: 600 },
   // Fallback or additional slide
 ];
 
@@ -11,8 +11,8 @@ export default component$(() => {
   useStyles$(`
     .carousel-root {
       width: 100%;
-      height: 50vh; /* Set a viewport-based height */
-      min-height: 300px; /* Ensure a minimum height for mobile */
+      height: 50vh; /* Keep viewport-based height for desktop */
+      min-height: 300px; /* Ensure a minimum height */
       position: relative;
     }
     .carousel-slide {
@@ -26,6 +26,7 @@ export default component$(() => {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      aspect-ratio: 4/3; /* Adjust based on your images' aspect ratio */
     }
     .carousel-buttons {
       position: absolute;
@@ -69,8 +70,8 @@ export default component$(() => {
     /* Responsive adjustments */
     @media (max-width: 640px) {
       .carousel-root {
-        height: 40vh; /* Smaller height on mobile */
-        min-height: 250px; /* Ensure visibility */
+        height: 250px; /* Fixed height on mobile to prevent CLS */
+        min-height: 250px; /* Consistent height */
       }
       .carousel-button {
         width: 40px; /* Smaller buttons on mobile */
@@ -101,7 +102,12 @@ export default component$(() => {
       <div class="carousel-conditional">
         {slides.map((slide, index) => (
           <Carousel.Slide key={index} class="carousel-slide">
-            <img src={slide.src} alt={slide.alt} />
+            <img
+              src={slide.src}
+              alt={slide.alt}
+              width={slide.width}
+              height={slide.height}
+            />
           </Carousel.Slide>
         ))}
       </div>
