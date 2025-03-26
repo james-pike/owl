@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
 import TeamCards from "./TeamCards";
+import { Card } from "../ui/Card";
 
 
 interface Item {
@@ -25,7 +26,8 @@ export default component$((props: Props) => {
   const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;
 
   return (
-    <section class="relative scroll-mt-16" {...(id ? { id } : {})}>
+    <section class="relative scroll-mt-16 bg-gray-900" {...(id ? { id } : {})}>
+      <Card.Root>
       <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
         <slot name="bg">
           <div class={twMerge("absolute inset-0 bg-gray-100 dark:bg-gray-800", isDark ? "bg-dark dark:bg-transparent" : "")}></div>
@@ -41,6 +43,7 @@ export default component$((props: Props) => {
         <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
      <TeamCards/>
       </div>
+      </Card.Root>
     </section>
   );
 });

@@ -5,7 +5,7 @@ const styles = `
     background-color: #f4f4f4;
   }
   .box {
-    border-radius: 0.125rem; /* Changed from 150px to match rounded-sm */
+    border-radius: 0.125rem; /* Matches rounded-sm */
     background: #fff;
     position: relative;
     overflow: hidden;
@@ -18,10 +18,10 @@ const styles = `
     top: 0px;
     width: 0px;
     height: 100%;
-    border-radius: 0.125rem; /* Changed from 150px to match rounded-sm */
+    border-radius: 0.125rem; /* Matches rounded-sm */
     box-shadow: inset 0 0 25px rgba(0,0,0,0.30);
     transition: all 0.3s ease;
-    background-image: linear-gradient(to right, #3c70a4 0%, #64b2cd 100%);
+    background-image: linear-gradient(to right, #468C85 0%, #4DD9C4 100%); /* Updated to green palette */
   }
   .box:hover:before {
     width: 100%;
@@ -70,7 +70,7 @@ const styles = `
     position: relative;
     width: 36px;
     height: 36px;
-    background-image: linear-gradient(to right, #3c70a4 0%, #64b2cd 100%);
+    background-image: linear-gradient(to right, #468C85 0%, #4DD9C4 100%); /* Updated to green palette */
     display: inline-block;
     line-height: 36px;
     border-radius: 50%;

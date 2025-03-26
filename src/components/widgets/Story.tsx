@@ -2,6 +2,8 @@ import { component$ } from "@builder.io/qwik";
 import { Image } from "@unpic/qwik";
 
 import { Headline } from "../ui/Headline";
+import { Card } from "../ui/Card";
+
 
 const sideImg =
   "/images/wizard.jpg";
@@ -36,8 +38,10 @@ export default component$((props: Props) => {
 
 
   return (
-    <div class="max-w-7xl bg-gray-100 dark:bg-gray-800 mx-auto">
+    <div class="max-w-7xl bg-gray-100 dark:bg-gray-900 mx-auto">
+     
       <div class="max-w-6xl bg-gray-800 mx-auto">
+      <Card.Root>
     <section
       id="story"
       class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
@@ -63,7 +67,9 @@ export default component$((props: Props) => {
         </div>
       </div>
     </section>
+    </Card.Root>
     </div>
+  
     </div>
   );
 });

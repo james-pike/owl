@@ -14,7 +14,7 @@
 
 ## [Inventory](#inventory)
 ## [Roadmap](#roadmap)
-## [Rarity Checker](#rarity)
+## [Rarity Guide](#rarity)
 ## [Team](#team)
 
   

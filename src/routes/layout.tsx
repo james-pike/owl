@@ -7,7 +7,7 @@ export default component$(() => {
   return (
     <>
       <Header />
-      <main>
+      <main class="bg-gray-900">
         <Slot />
       </main>
       <Footer />

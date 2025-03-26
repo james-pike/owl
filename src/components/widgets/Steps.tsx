@@ -3,6 +3,7 @@ import { Image } from "@unpic/qwik";
 import { twMerge } from "tailwind-merge";
 import IconStar from "~/components/icons/IconStar";
 import { Headline } from "../ui/Headline";
+import { Card } from "../ui/Card";
 
 const sideImg =
   "/images/wixard.png";
@@ -86,6 +87,7 @@ export default component$((props: Props) => {
 
   return (
     <div class="max-w-7xl bg-gray-100 dark:bg-gray-900">
+   <Card.Root>
     <section
       id="roadmap"
       class="mx-auto max-w-6xl scroll-mt-16 px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
@@ -166,6 +168,7 @@ export default component$((props: Props) => {
         </div>
       </div>
     </section>
+    </Card.Root>
     </div>
   );
 });
