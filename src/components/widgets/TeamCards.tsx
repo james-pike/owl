@@ -123,7 +123,7 @@ export default component$(() => {
   ];
 
   return (
-    <div class=" bg-[#f4f4f4]">
+    <div class=" bg-gray-700">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4  items-center">
           {teamMembers.map((member, index) => (

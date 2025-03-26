@@ -5,6 +5,7 @@ import { Headline } from "~/components/ui/Headline";
 import ClassSelect from "./ClassSelect";
 import Items from "./Items";
 import { Label } from "../ui/Label";
+import { Card } from "../ui/Card";
 
 interface Item {
   title?: string;
@@ -31,6 +32,7 @@ export default component$((props: Props) => {
 
   return (
     <section  class="relative scroll-mt-16 mx-auto max-w-7xl bg-gray-900 mb-6 " {...(id ? { id } : {})}>
+      <Card.Root>
       <div class="absolute inset-0 max-w-7xl bg-gray-800 pointer-events-none -z-[1]" aria-hidden="true">
         <slot name="bg">
           <div class={twMerge("absolute inset-0 bg-gray-100 max-w-6xl dark:bg-gray-800", isDark ? "bg-dark dark:bg-transparent" : "")}></div>
@@ -55,6 +57,7 @@ export default component$((props: Props) => {
         </div>
         <Items selectedClass={selectedClass.value} />
         </div>
+        </Card.Root>
     </section>
   );
 });

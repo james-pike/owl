@@ -90,7 +90,7 @@ export default component$(() => {
               value={nftSearchId.value}
               onInput$={(e) => (nftSearchId.value = (e.target as HTMLInputElement).value)}
               placeholder="Enter NFT Edition (e.g., 1)"
-              class="border p-2 rounded w-full max-w-xs"
+              class="border p-2 rounded bg-gray-900 border-gray-700 w-full max-w-xs"
             />
             <button
               onClick$={handleNFTSearch}
@@ -103,7 +103,7 @@ export default component$(() => {
           {error.value && <p class="text-red-500">{error.value}</p>}
 
           {nftData.value && (
-            <div class="bg-gray-100 p-4 rounded-xl shadow-md">
+            <div class="bg-gray-900 p-4 rounded-xl shadow-md">
               {/* Image on mobile only */}
               <div class="md:hidden flex justify-center mb-4">
                 <img
