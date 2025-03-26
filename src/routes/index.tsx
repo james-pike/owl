@@ -14,13 +14,13 @@ import Services from "~/components/widgets/Services";
 import Story from "~/components/widgets/Story";
 import Inventory from "~/components/widgets/Inventory";
 import Rarity from "~/components/widgets/Rarity";
-import Team from "~/components/widgets/Team";
+import Hero2 from "~/components/widgets/Hero2";
 
 export default component$(() => {
   return (
     <>
     <div class="hidden md:block">
-      {/* <Hero2/> */}
+      <Hero2/>
       </div>
       {/* <div class="block md:hidden">
       <Hero/>
@@ -105,12 +105,12 @@ export default component$(() => {
       subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility. "
      
       items={[]}/>
-         <Team
+         {/* <Team
       id="team"
   highlight="Classes"
   title="Character Classes"
   subtitle="Mint one of six legendary KasLord character types."
-  items={[]}/>
+  items={[]}/> */}
   
       
     </>
