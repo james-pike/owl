@@ -8,6 +8,16 @@ const styles = `
       0 0 15px rgba(0, 0, 0, 0.7), /* Outer shadow for depth */
       0 0 5px rgba(17, 24, 39, 0.5); /* Subtle glow (gray-900 tint) */
   }
+  .inner-border {
+    box-shadow: 
+      inset 0 0 10px rgba(0, 0, 0, 0.5), /* Subtle carved effect for inner sections */
+      0 0 5px rgba(0, 0, 0, 0.3); /* Light outer shadow */
+  }
+  .button-border {
+    box-shadow: 
+      0 0 5px rgba(55, 65, 81, 0.4), /* Subtle gray-700 glow */
+      inset 0 0 3px rgba(255, 255, 255, 0.2); /* Light shine for depth */
+  }
 `;
 
 const Root = component$<PropsOf<'div'>>((props) => {
@@ -18,15 +28,15 @@ const Root = component$<PropsOf<'div'>>((props) => {
       {...props}
       class={cn(
         'fancy-border relative rounded-sm max-w-7xl p-2 mx-2 my-2 mx-auto shadow-sm',
-        'border-[12px] border-gray-800', // Solid gray-800 border, adjustable via props.class
-        // Vine-like etched effect (converted to Tailwind)
+        'border-[12px] border-gray-800', // Solid gray-800 border
+        // Vine-like etched effect
         'before:content-[""] before:absolute before:-top-[6px] before:-left-[6px] before:-right-[6px] before:-bottom-[6px]',
         'before:border-[3px] before:border-transparent before:bg-gradient-to-r before:from-gray-900 before:to-gray-800',
         'before:shadow-inner before:shadow-[inset_0_0_10px_rgba(0,0,0,0.7)] before:opacity-60 before:-z-10',
         props.class,
       )}
     >
-      {/* Vine decorations (converted to Tailwind, using simple rotated squares) */}
+      {/* Vine decorations */}
       <div
         class="absolute w-5 h-5 bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm opacity-70 -top-[10px] -left-[10px] rotate-45"
       ></div>
@@ -46,7 +56,14 @@ const Root = component$<PropsOf<'div'>>((props) => {
 
 const Header = component$<PropsOf<'div'>>((props) => {
   return (
-    <div {...props} class={cn('flex flex-col space-y-0 bg-gray-700 dark:bg-gray-700 p-4', props.class)}>
+    <div
+      {...props}
+      class={cn(
+        'inner-border flex flex-col space-y-0 bg-gray-700 dark:bg-gray-700 p-4',
+        'border-[3px] border-gray-700 rounded-sm', // Thinner, lighter border
+        props.class
+      )}
+    >
       <Slot />
     </div>
   );
@@ -70,21 +87,51 @@ const Description = component$<PropsOf<'p'>>((props) => {
 
 const Content = component$<PropsOf<'div'>>((props) => {
   return (
-    <div {...props} class={cn('p-4 bg-gray-800 dark:bg-gray-800', props.class)}>
+    <div
+      {...props}
+      class={cn(
+        'inner-border p-4 bg-gray-800 dark:bg-gray-800',
+        'border-[3px] border-gray-700 rounded-sm', // Thinner, lighter border
+        props.class
+      )}
+    >
       <Slot />
     </div>
   );
 });
 
-const Footer = component$<PropsOf<'div'>>(({ ...props }) => {
+const Footer = component$<PropsOf<'div'>>((props) => {
   return (
-    <div {...props} class={cn('flex items-center p-6 pt-0', props.class)}>
+    <div
+      {...props}
+      class={cn(
+        'inner-border flex items-center p-6 pt-0',
+        'border-[3px] border-gray-700 rounded-sm', // Thinner, lighter border
+        props.class
+      )}
+    >
       <Slot />
     </div>
   );
 });
 
-const Image = component$<PropsOf<'img'>>(({ ...props }) => {
+const Button = component$<PropsOf<'button'>>((props) => {
+  return (
+    <button
+      {...props}
+      class={cn(
+        'button-border px-4 py-2 font-semibold rounded-sm',
+        'border-[2px] border-gray-600', // Thin, lighter border for buttons
+        'bg-gray-700 text-gray-100 hover:bg-gray-600 transition-colors',
+        props.class
+      )}
+    >
+      <Slot />
+    </button>
+  );
+});
+
+const Image = component$<PropsOf<'img'>>((props) => {
   return <img {...props} class={cn('w-full object-cover', props.class)} />;
 });
 
@@ -95,5 +142,6 @@ export const Card = {
   Description,
   Content,
   Footer,
+  Button,
   Image,
 };

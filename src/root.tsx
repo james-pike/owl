@@ -35,6 +35,9 @@ export default component$(() => {
     
         <link rel="preload" href="/images/placeholder.png" as="image" />
         <link rel="preload" href="/images/contact.jpg" as="image" />
+        <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet"/>
+
+
       </head>
       <body class="text-gray-900 dark:text-slate-300 tracking-tight border-gray-300 dark:border-gray-800 bg-white max-w-7xl mx-auto  dark:bg-gray-900 antialiased">
       <ObserverProvider>
