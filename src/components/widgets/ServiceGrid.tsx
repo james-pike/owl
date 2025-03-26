@@ -93,7 +93,7 @@ const services = [
               transitionDelay: `${index * 100}ms`,
             }}
           >
-            <Card.Content class="">
+            <Card.Content class="p-1">
             <div class="relative aspect-[2/1]">
               <img
                 width={700}
@@ -101,7 +101,7 @@ const services = [
                 src={image}
                 alt={alt}
                 loading="eager"
-                class="w-full h-full object-cover transition-transform bg-primary-50 duration-300 "
+                class="w-full h-full object-cover rounded-sm transition-transform bg-primary-50 duration-300 "
               />
               {/* group-hover:scale-105 */}
               <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">

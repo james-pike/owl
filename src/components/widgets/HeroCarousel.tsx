@@ -63,10 +63,7 @@ export default component$(() => {
     .carousel-next1 {
       margin-right: 10px;
     }
-         .carousel-conditional1 {
-      height: 100%;
-      width: 100%;
-    }
+      
    
     /* Responsive adjustments */
     @media (max-width: 640px) {

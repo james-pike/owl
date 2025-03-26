@@ -26,7 +26,7 @@ export default component$((props: Props) => {
   const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;
 
   return (
-    <section class="relative scroll-mt-16" {...(id ? { id } : {})}>
+    <section class="relative scroll-mt-10" {...(id ? { id } : {})}>
       <Card.Root>
       <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
         <slot name="bg">
