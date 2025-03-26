@@ -22,12 +22,12 @@ export default component$(() => {
               <div class="max-w-xs sm:max-w-md animate-hero-buttons m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-3 lg:justify-start lg:m-0 lg:max-w-7xl">
                 <div class="flex w-full sm:w-auto">
                   <a class="btn btn-primary sm:mb-0 w-full" href="tel:+16132188063">
-                  Mint KasLords
+                    <IconBrandTailwind class="mr-1" /> Mint KasLords
                   </a>
                 </div>
                 <div class="flex w-full sm:w-auto">
                   <a class="btn btn-secondary sm:mb-0 w-full" href="/contact">
-                  Join The Clan
+                    <IconBrandGoogle class="mr-1" /> Join The Clan
                   </a>
                 </div>
               </div>
