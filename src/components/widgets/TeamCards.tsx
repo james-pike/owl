@@ -1,15 +1,15 @@
 import { component$, useStyles$ } from '@builder.io/qwik';
+import { Card } from '../ui/Card';
 
 const styles = `
-  body {
-    background-color: #f4f4f4;
-  }
   .box {
     border-radius: 0.125rem; /* Matches rounded-sm */
-    background: #fff;
+    background: #1f2937; /* Tailwind gray-800 */
     position: relative;
     overflow: hidden;
     text-align: center;
+    max-width: 300px; /* Increased from implicit 210px (image-wrapper) */
+    width: 100%; /* Ensure it takes full available width */
   }
   .box:before {
     position: absolute;
@@ -21,7 +21,7 @@ const styles = `
     border-radius: 0.125rem; /* Matches rounded-sm */
     box-shadow: inset 0 0 25px rgba(0,0,0,0.30);
     transition: all 0.3s ease;
-    background-image: linear-gradient(to right, #468C85 0%, #4DD9C4 100%); /* Updated to green palette */
+    background-image: linear-gradient(to right, #374151 0%, #4b5563 100%); /* Gray-700 to Gray-600 */
   }
   .box:hover:before {
     width: 100%;
@@ -30,21 +30,21 @@ const styles = `
     padding: 0;
   }
   .box:hover .box-desc {
-    color: #fff;
+    color: #f3f4f6; /* Tailwind gray-100 */
   }
   .box:hover .social li a {
-    background: #fff;
+    background: #f3f4f6; /* Tailwind gray-100 */
     background-image: none;
-    color: #000;
+    color: #1f2937; /* Tailwind gray-800 */
   }
   .box:hover .social li a:hover {
-    background: #1d1d1d;
-    color: #fff;
+    background: #111827; /* Tailwind gray-900 */
+    color: #f3f4f6; /* Tailwind gray-100 */
   }
   .image-wrapper {
     position: relative;
-    max-width: 210px;
-    max-height: 210px;
+    max-width: 250px; /* Increased from 210px */
+    max-height: 250px; /* Increased from 210px */
     margin: 0 auto;
     overflow: hidden;
     border-radius: 50%;
@@ -58,6 +58,10 @@ const styles = `
   }
   .box-desc {
     position: relative;
+    color: #d1d5db; /* Tailwind gray-300 */
+  }
+  .box-desc h5 {
+    color: #f3f4f6; /* Tailwind gray-100 */
   }
   ul.social {
     padding: 0;
@@ -70,11 +74,11 @@ const styles = `
     position: relative;
     width: 36px;
     height: 36px;
-    background-image: linear-gradient(to right, #468C85 0%, #4DD9C4 100%); /* Updated to green palette */
+    background-image: linear-gradient(to right, #374151 0%, #4b5563 100%); /* Gray-700 to Gray-600 */
     display: inline-block;
     line-height: 36px;
     border-radius: 50%;
-    color: #fff;
+    color: #f3f4f6; /* Tailwind gray-100 */
     transition: all .5s ease;
   }
 `;
@@ -82,32 +86,34 @@ const styles = `
 // TeamCard component for each card
 const TeamCard = component$<{ name: string; title: string; imageSrc: string }>(({ name, title, imageSrc }) => {
   return (
-    <div class="box shadow-sm p-4">
-      <div class="image-wrapper mb-3">
-        <img class="img-fluid w-full h-full object-cover" src={imageSrc} alt={name} />
+    <Card.Content>
+      <div class="box shadow-sm p-4">
+        <div class="image-wrapper mb-3">
+          <img class="img-fluid w-full h-full object-cover" src={imageSrc} alt={name} />
+        </div>
+        <div class="box-desc">
+          <h5>{name}</h5>
+          <p>{title}</p>
+        </div>
+        <ul class="social">
+          <li>
+            <a href="#">
+              <i class="fab fa-facebook-f" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-pinterest-p" />
+            </a>
+          </li>
+        </ul>
       </div>
-      <div class="box-desc">
-        <h5>{name}</h5>
-        <p>{title}</p>
-      </div>
-      <ul class="social">
-        <li>
-          <a href="#">
-            <i class="fab fa-facebook-f" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fab fa-instagram" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fab fa-pinterest-p" />
-          </a>
-        </li>
-      </ul>
-    </div>
+    </Card.Content>
   );
 });
 
@@ -123,9 +129,9 @@ export default component$(() => {
   ];
 
   return (
-    <div class=" bg-gray-700">
+    <div class="bg-gray-700">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4  items-center">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-center">
           {teamMembers.map((member, index) => (
             <div key={index} class="flex justify-center">
               <TeamCard name={member.name} title={member.title} imageSrc={member.imageSrc} />

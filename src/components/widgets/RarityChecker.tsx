@@ -1,5 +1,6 @@
 import { component$, useSignal, $, useVisibleTask$ } from '@builder.io/qwik';
 import jeetsMetadata from '~/data/jeetsMetadata.json';
+import { Card } from '../ui/Card';
 
 export default component$(() => {
   const nftSearchId = useSignal('');
@@ -59,7 +60,9 @@ export default component$(() => {
   });
 
   return (
-    <section class="p-4 max-w-5xl mx-auto">
+    <Card.Content>
+    <section class="p-2 max-w-5xl mx-auto">
+      
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Left Column (Image on md and up) */}
         <div class="md:order-1 order-2 hidden md:flex justify-start ">
@@ -131,6 +134,8 @@ export default component$(() => {
           )}
         </div>
       </div>
+    
     </section>
+    </Card.Content>
   );
 });
