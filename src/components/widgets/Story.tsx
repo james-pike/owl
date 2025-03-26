@@ -41,7 +41,7 @@ export default component$((props: Props) => {
     <div class="max-w-7xl  mx-auto">
      
       <div class="max-w-7xl  mx-auto">
-      <Card.Root class="bg-gray-800">
+      <Card.Root class="bg-gray-900">
     <section
       id="story"
       class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"

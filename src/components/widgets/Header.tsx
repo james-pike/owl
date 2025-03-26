@@ -5,7 +5,6 @@ import { Logo2 } from "../common/Logo2";
 import MenuModal from "./MenuModal";
 import IconPause from "../icons/IconPause";
 import IconPlay from "../icons/IconPlay";
-import ToggleTheme from "../common/ToggleTheme";
 import { Card } from "../ui/Card";
 
 export default component$(() => {
@@ -134,7 +133,7 @@ export default component$(() => {
           aria-label="Main navigation"
         >
           {menu && menu.items ? (
-            <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium">
+            <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[1.1rem] tracking-[0.01rem] font-medium">
               {menu.items.map(({ text, href, items }, key) => {
                 const isActive =
                   (href?.startsWith("#") && store.activeSection === href) ||
@@ -268,7 +267,7 @@ export default component$(() => {
         <div class="hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0">
           <div class="items-center flex justify-between w-full md:w-auto">
             <div class="flex"></div>
-            <ToggleTheme />
+          
             <a
               href="/contact"
               class="btn btn-secondary ml-2 py-2.5 px-5.5 md:px-4 font-semibold shadow-none text-sm w-auto"

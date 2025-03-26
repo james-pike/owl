@@ -9,8 +9,8 @@ export default component$(() => {
   return (
     <Card.Root class="">
     <section>
-      <div class="grid grid-cols-2 grid-rows-[84%_16%] h-[calc(100vh-160.66667px)]">
-        <div class="bg-gradient-to-r from-gray-200 to-gray-50 dark:from-gray-950 dark:to-gray-800 flex items-center px-8">
+      <div class="grid grid-cols-2  h-[calc(100vh-180.66667px)]">
+        <div class="bg-gradient-to-r from-gray-200 to-gray-50 dark:from-gray-950 dark:to-gray-900 flex items-center px-8">
           <div>
             <h1 class="text-4.5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 animate-hero-text">
               <span class="text-secondary-800">KasLords</span> <br class="hidden lg:block" />Of The <span class="text-secondary-800">BlockDag</span> <br class="hidden lg:block" />{" "}
@@ -37,9 +37,7 @@ export default component$(() => {
         <div class="bg-red-400 h-full w-full">
           <Carousel />
         </div>
-        <div class="bg-gradient-to-r from-gray-200 to-gray-50 dark:from-gray-900 dark:to-gray-700 col-span-2 flex items-center">
-            <LogoClouds/>
-        </div>
+    
       </div>
     </section>
     </Card.Root>

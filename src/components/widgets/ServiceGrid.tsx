@@ -81,7 +81,7 @@ const services = [
         class="grid mx-auto max-w-screen-xl mt-2 mb-2 md:mb-16 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
       >
         {services.map(({ title, description, details, image, alt, slug }, index) => (
-          <Card.Content class="">
+          
           <Link
             href={`/services/${slug}`}
             key={index}
@@ -93,6 +93,7 @@ const services = [
               transitionDelay: `${index * 100}ms`,
             }}
           >
+            <Card.Content class="">
             <div class="relative aspect-[2/1]">
               <img
                 width={700}
@@ -111,8 +112,9 @@ const services = [
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
               <p class="text-sm text-gray-600 dark:text-gray-400">{description}</p>
             </div>
+            </Card.Content>
           </Link>
-          </Card.Content>
+         
         ))}
       </div>
     );
