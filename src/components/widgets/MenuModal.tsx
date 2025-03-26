@@ -80,14 +80,14 @@ export default component$(() => {
     <>
       <Modal.Root bind:show={show}>
         <div class="flex items-center hover:bg-primary-100 dark:hover:bg-gray-700">
-          <Modal.Trigger class=" rounded-sm p-2 bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-900">
+          <Modal.Trigger class=" rounded-sm p-2 bg-gray-200 dark:bg-gray-800  border-gray-300 dark:border-gray-900">
             <IconHamburger class="w-8 h-8 md:w-5 md:h-5 md:inline-block" />
           </Modal.Trigger>
         </div>
-        <Modal.Panel position={"left"} class="dark:bg-gray-950 border-0">
+        <Modal.Panel position={"left"} class=" border-0">
           <Card.Root>
           {/* Header */}
-          <div class="border border-gray-200 dark:border-gray-700 bg-gray-200 dark:bg-gray-900 p-1">
+          <div class=" border-gray-200 dark:border-gray-700  p-1">
             <Modal.Title class="pt-1">
               <a href="/" class="focus:outline-none">
                 <LogoStatic />
@@ -101,7 +101,7 @@ export default component$(() => {
 
 
           {/* Navigation Content */}
-          <nav class="mt-0 space-y-4 border border-t-0 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
+          <nav class="mt-0 space-y-4  border-t-0 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
             {isServicesSection.value ? (
               // Services Section
               <div class="flex flex-col h-full">
@@ -171,7 +171,7 @@ export default component$(() => {
 
             )}
           </nav>
-          <div class="border border-t-0 pb-3 border-gray-200 dark:border-gray-700 bg-gray-200 dark:bg-gray-900">
+          <div class="border-t-0 pb-3 border-gray-200 dark:border-gray-700 ">
           <div class=" sm:max-w-md mx-3 pt-3 flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-3 lg:justify-start lg:m-0 lg:max-w-7xl">
             <div class="flex w-full sm:w-auto">
               <a
