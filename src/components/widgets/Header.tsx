@@ -105,13 +105,7 @@ export default component$(() => {
             <Logo2 />
           </Link>
           <div class="flex items-center md:hidden">
-            <a
-              href="/contact"
-              class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm ml-2 mr-1.5 h-12 py-2.5 px-4 md:px-4 font-semibold shadow-none text-md w-auto"
-            >
-              Contact Us
-            </a>
-            <button
+          <button
               type="button"
               class="p-2 bg-blue-50 rounded-sm flex items-center h-full dark:bg-gray-800 border-2 border-blue-200 dark:border-gray-700"
               aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
@@ -125,6 +119,13 @@ export default component$(() => {
               preload="auto"
               onEnded$={handleAudioEnded}
             />
+            <a
+              href="/contact"
+              class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm ml-2 mr-1.5 h-12 py-2.5 px-4 md:px-4 font-semibold shadow-none text-md w-auto"
+            >
+              Mint
+            </a>
+       
             <MenuModal />
           </div>
         </div>
