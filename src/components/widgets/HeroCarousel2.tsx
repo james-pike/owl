@@ -9,7 +9,7 @@ export default component$(() => {
            </Carousel.Slide>
 
       <Carousel.Slide>
-        <img class="object-cover h-full w-full" src="/images/wixard.png" alt="..." />
+        <img class="object-cover h-full w-full" src="/images/wixard.png" alt="..." width={902} height={902}/>
       </Carousel.Slide>
        
   

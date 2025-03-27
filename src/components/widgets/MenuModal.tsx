@@ -25,34 +25,34 @@ export default component$(() => {
     {
       title: "Classes",
       href: "#classes",
-      hasSubmenu: true,
-      subitems: [
-        {
-          title: "Wizard Lord",
-          href: "#classes"
-        },
-        {
-          title: "Dark Lord",
-          href: "#classes"
-        },
-        {
-          title: "Elf lord",
-          href: "#classes"
-        },
-        {
-          title: "Orc Lord",
-          href: "#classes"
-        },
-        {
-          title: "Warrior Lord",
-          href: "#classes"
-        },
-        {
-          title: "Dragon Lord",
-          href: "#classes"
-        },
+      // hasSubmenu: true,
+      // subitems: [
+      //   {
+      //     title: "Wizard Lord",
+      //     href: "#classes"
+      //   },
+      //   {
+      //     title: "Dark Lord",
+      //     href: "#classes"
+      //   },
+      //   {
+      //     title: "Elf lord",
+      //     href: "#classes"
+      //   },
+      //   {
+      //     title: "Orc Lord",
+      //     href: "#classes"
+      //   },
+      //   {
+      //     title: "Warrior Lord",
+      //     href: "#classes"
+      //   },
+      //   {
+      //     title: "Dragon Lord",
+      //     href: "#classes"
+      //   },
 
-      ]
+      // ]
     },
 
     {
@@ -73,8 +73,8 @@ export default component$(() => {
   ];
 
   // Get services subitems safely
-  const servicesItem = menuItems.find(item => item.hasSubmenu);
-  const servicesSubitems = servicesItem?.subitems ?? [];
+  // const servicesItem = menuItems.find(item => item.hasSubmenu);
+  // const servicesSubitems = servicesItem?.subitems ?? [];
 
   return (
     <>
@@ -115,7 +115,7 @@ export default component$(() => {
                   <h2 class="text-lg font-medium dark:text-gray-200 text-gray-700">Services</h2>
                 </div>
                 <ul class="flex flex-col gap-0 text-lg">
-                  {servicesSubitems.map((subitem) => (
+                  {/* {servicesSubitems.map((subitem) => (
                     <li key={subitem.title}>
                       <a
                         href={subitem.href}
@@ -128,7 +128,7 @@ export default component$(() => {
                         {subitem.title}
                       </a>
                     </li>
-                  ))}
+                  ))} */}
                 </ul>
               </div>
             ) : (
@@ -137,7 +137,7 @@ export default component$(() => {
                 <ul class="flex flex-col gap-0 text-xl">
                   {menuItems.map((item) => (
                     <li key={item.title}>
-                      {item.hasSubmenu ? (
+                      {/* {item.hasSubmenu ? (
                         <button
                           class={cn(
                             "block w-full text-left text-gray-700 dark:text-gray-200  p-2 px-3 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium transition-all duration-200 flex items-center justify-between",
@@ -148,7 +148,7 @@ export default component$(() => {
                           <span>{item.title}</span>
                           <LuChevronRight class="h-5 w-5 text-gray-500 group-hover:text-primary-800" />
                         </button>
-                      ) : (
+                      ) : ( */}
                         <a
                           href={item.href}
                           class={cn(
@@ -160,7 +160,7 @@ export default component$(() => {
                           {item.title}
                           {item.badge}
                         </a>
-                      )}
+                      {/* )} */}
                     </li>
                   ))}
 

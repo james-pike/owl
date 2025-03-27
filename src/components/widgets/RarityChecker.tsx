@@ -83,7 +83,6 @@ export default component$(() => {
 
           {/* Right Column (Search + Stats + Image on mobile) */}
           <div class="md:order-2 order-1 flex flex-col gap-4">
-            <h1 class="text-2xl font-bold mb-4">Toxik NFT Checker</h1>
             <div class="flex gap-2">
               <input
                 type="number"
@@ -94,7 +93,7 @@ export default component$(() => {
               />
               <button
                 onClick$={handleNFTSearch}
-                class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+                class="bg-secondary-800 text-white p-2 rounded hover:bg-secondary-700"
               >
                 Search
               </button>
