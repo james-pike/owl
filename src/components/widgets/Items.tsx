@@ -69,7 +69,7 @@ export default component$(({ selectedClass }: ItemsProps) => {
                         <div class="flex-1 md:w-1/2 flex flex-col space-y-1 order-2 md:order-1">
                         
                             {/* Category Tabs */}
-                            <div class="grid grid-cols-4 sm:flex sm:space-x-4 w-full border-gray-800 border-2 shadow-md p-2 rounded-sm">
+                            <div class="grid grid-cols-4 md:mx-4 sm:flex sm:space-x-4 w-full border-gray-700  shadow-md p-0 mt-2 rounded-sm">
                                 {filteredCategories.map((category, index) => (
                                     <button
                                         key={index}
@@ -85,7 +85,7 @@ export default component$(({ selectedClass }: ItemsProps) => {
                             </div>
 
                             {/* Item Grid */}
-                            <div class="grid grid-cols-3 border-gray-800 border-2 p-4 lg:grid-cols-3 gap-0.5 md:gap-4 xl:gap-4 md:min-h-[220px] lg:min-h-[220px]">
+                            <div class="grid grid-cols-3 border-gray-800 border-2 p-2 md:p-4 lg:grid-cols-3 gap-2 md:gap-4 xl:gap-4 md:min-h-[220px] lg:min-h-[220px]">
                                 {currentCategory.items.map((item, index) => (
                                     <div
                                         key={index}
@@ -95,8 +95,8 @@ export default component$(({ selectedClass }: ItemsProps) => {
                                         <div class="relative flex items-center justify-center">
                                             <div class={twMerge(
                                                 "absolute inset-[-2px] rounded-none transition-all duration-300 bg-blue-100/50 dark:bg-blue-900/50 border border-gray-300 dark:border-gray-800",
-                                                selectedItem.value === index && "bg-blue-300/70 dark:bg-blue-800/70 breathing-glow",
-                                                "group-hover:bg-blue-200/70 dark:group-hover:bg-blue-800/70 group-hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.4)]"
+                                                selectedItem.value === index && "bg-secondary-300/70 dark:bg-secondary-800/70 breathing-glow",
+                                                "group-hover:bg-secondary-200/70 dark:group-hover:bg-secondary-800/70 group-hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.4)]"
                                             )} />
                                             <div class={twMerge(
                                                 "relative bg-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 w-full p-2 transition-transform duration-300",
