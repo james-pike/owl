@@ -1,5 +1,5 @@
 import { component$, useSignal } from "@builder.io/qwik";
-import { LuX, LuArrowLeft, LuChevronRight } from "@qwikest/icons/lucide";
+import { LuX, LuArrowLeft } from "@qwikest/icons/lucide";
 import { cn } from "@qwik-ui/utils";
 import {  LogoStatic } from "../common/Logo2";
 import { useLocation } from "@builder.io/qwik-city";

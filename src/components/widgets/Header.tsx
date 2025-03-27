@@ -266,7 +266,7 @@ export default component$(() => {
               <div class="flex"></div>
               <a
 
-class="btn  border-gray-300 dark:bg-gray-800 rounded-md bg-secondary-800 dark:border-gray-900 ml-2 h-11 py-2.5 px-4 md:px-4 font-semibold shadow-none text-md w-auto"
+class="btn  border-gray-300 dark:bg-secondary-800 rounded-md bg-secondary-800 dark:border-gray-900 ml-2 h-11 py-2.5 px-4 md:px-4 font-semibold shadow-none text-md w-auto"
 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
 onClick$={toggleAudio}
 >
