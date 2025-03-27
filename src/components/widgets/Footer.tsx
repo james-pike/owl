@@ -4,7 +4,6 @@ import { Link } from "@builder.io/qwik-city";
 import IconTwitter from "~/components/icons/IconTwitter"
 import IconInstagram from "~/components/icons/IconInstagram"
 import IconFacebook from "~/components/icons/IconFacebook"
-import ToggleTheme from "../common/ToggleTheme";
 import { Card } from "../ui/Card";
 
 export default component$(() => {
@@ -116,7 +115,7 @@ export default component$(() => {
         </div>
         <div class="md:flex md:items-center  dark:border-gray-700 md:justify-between pb-6 pt-0 md:py-8">
           <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0">
-          <ToggleTheme/>
+        
             {social.map(({ label, href, icon: Icon }, index) => (
               <li key={index}>
                 <Link
