@@ -26,7 +26,7 @@ export default component$((props: Props) => {
   const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;
 
   return (
-    <section class="relative scroll-mt-10" {...(id ? { id } : {})}>
+    <section class="relative scroll-mt-16" {...(id ? { id } : {})}>
       <Card.Root>
       <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
         <slot name="bg">
@@ -35,7 +35,7 @@ export default component$((props: Props) => {
       </div>
       <div
         class={twMerge(
-          "relative mx-auto max-w-5xl px-2 md:px-6 pb-4 pt-8 md:py-12 lg:py-12 text-default",
+          "relative mx-auto max-w-5xl px-2 md:px-6 pb-4 pt-10 md:py-12 lg:py-12 text-default",
           classes?.container,
           isDark ? "dark" : ""
         )}

@@ -33,7 +33,7 @@ export default component$(() => {
             </div>
           </div>
         </div>
-        <div class="bg-red-400 h-full w-full">
+        <div class=" h-full w-full">
           <Carousel />
         </div>
     
