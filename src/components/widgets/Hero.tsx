@@ -2,7 +2,6 @@ import { component$ } from "@builder.io/qwik";
 import IconBrandTailwind from "../icons/IconBrandTailwind";
 import IconBrandGoogle from "../icons/IconBrandGoogle";
 import { Card } from "../ui/Card";
-import HeroCarousel from "./HeroCarousel";
 import HeroCarousel2 from "./HeroCarousel2";
 
 export default component$(() => {
