@@ -39,7 +39,7 @@ export default component$(() => {
 
 
       </head>
-      <body class="text-gray-900 dark:text-slate-300 tracking-tight border-gray-300  overflow-x-hidden dark:border-gray-800 bg-white max-w-7xl mx-auto  dark:bg-gray-950 antialiased">
+      <body class="text-gray-900 dark:text-slate-300 tracking-tight border-gray-300 mx-1  overflow-x-hidden dark:border-gray-800 bg-white max-w-7xl  dark:bg-gray-950 antialiased">
       <ObserverProvider>
         <RouterOutlet />
         </ObserverProvider>

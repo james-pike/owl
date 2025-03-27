@@ -46,13 +46,13 @@ export default component$((props: Props) => {
                 )}
               </div>
               <div class="relative md:order-1">
-                <Image
-                  layout="constrained"
+                <img
+                  
                   src={sideImg}
                   width={532} // Square base width
                   height={532} // Square base height (equal to width)
                   class="inset-0 w-full rounded-md bg-gray-500 object-cover shadow-lg dark:bg-slate-700 aspect-square md:aspect-[532/704] md:absolute md:h-full"
-                  breakpoints={[320, 480, 640, 1024]}
+                 
                 />
               </div>
             </div>
