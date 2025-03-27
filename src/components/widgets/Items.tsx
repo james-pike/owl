@@ -64,7 +64,7 @@ export default component$(({ selectedClass }: ItemsProps) => {
         <section class="scroll-mt-16">
             <div class="max-w-5xl mx-auto">
                 {filteredCategories.length > 0 ? (
-                    <div class="flex flex-col md:flex-row md:space-x-4">
+                    <div class="flex flex-col md:flex-row md:space-x-4 min-h-[284px] lg:min-h-[363px]">
                         {/* Left Column: Category Tabs and Item Grid */}
                         <div class="flex-1 md:w-1/2 flex flex-col space-y-1 order-2 md:order-1">
                         
@@ -85,7 +85,7 @@ export default component$(({ selectedClass }: ItemsProps) => {
                             </div>
 
                             {/* Item Grid */}
-                            <div class="grid grid-cols-3 border-gray-800 border-2 p-4 lg:grid-cols-4 gap-0.5 md:gap-4 xl:gap-8">
+                            <div class="grid grid-cols-3 border-gray-800 border-2 p-4 lg:grid-cols-3 gap-0.5 md:gap-4 xl:gap-4 md:min-h-[220px] lg:min-h-[220px]">
                                 {currentCategory.items.map((item, index) => (
                                     <div
                                         key={index}
@@ -94,7 +94,7 @@ export default component$(({ selectedClass }: ItemsProps) => {
                                     >
                                         <div class="relative flex items-center justify-center">
                                             <div class={twMerge(
-                                                "absolute inset-[-2px] rounded-none transition-all duration-300 bg-blue-100/50 dark:bg-blue-900/50 border border-gray-300 dark:border-gray-700",
+                                                "absolute inset-[-2px] rounded-none transition-all duration-300 bg-blue-100/50 dark:bg-blue-900/50 border border-gray-300 dark:border-gray-800",
                                                 selectedItem.value === index && "bg-blue-300/70 dark:bg-blue-800/70 breathing-glow",
                                                 "group-hover:bg-blue-200/70 dark:group-hover:bg-blue-800/70 group-hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.4)]"
                                             )} />
@@ -112,15 +112,15 @@ export default component$(({ selectedClass }: ItemsProps) => {
                         </div>
 
                         {/* Right Column: Item Showcase */}
-                        <div class="md:w-1/2 mt-4  order-1 md:order-2 md:-mt-9">
-                            <div class="rounded-sm p-4 shadow-md border-2 border-gray-800">
-                                <div class="flex flex-col items-center gap-4">
+                        <div class="md:w-1/2 mt-4  order-1 md:order-2 md:-mt-6">
+                            <div class="rounded-sm pt-4 shadow-md border-2 items-center border-gray-800">
+                                <div class="flex flex-col items-center gap-4 px-4 mb-2">
                                     <div class="rotating-item flex-shrink-0 max-w-[150px] max-h-[150px]">
                                         {currentItem.icon}
                                     </div>
                                     <div class="flex-1 w-full">
                                         <h3 class="text-xl font-bold mb-1">{currentItem.title}</h3>
-                                        <p class="text-sm text-gray-400 mb-2">{currentItem.description}</p>
+                                        <p class="text-sm text-gray-400 mb-2 md:mb-4 min-h-[40px] lg:min-h-[50px]">{currentItem.description}</p>
                                         <div class="grid grid-cols-2 gap-2 text-sm text-gray-400">
                                             {currentItem.metadata.weight && (
                                                 <div>
@@ -203,7 +203,7 @@ const categories: Category[] = [
             },
             {
                 title: "Mystic Guardian Helm",
-                description: "A towering hat imbued with arcane runes, amplifying the wearer’s spellcasting prowess."
+                description: "A towering hat imbued with arcane"
 
                 ,
                 icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-10 10 10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z" /></svg>),

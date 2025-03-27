@@ -50,8 +50,8 @@ export default component$((props: Props) => {
           <div class="grid md:grid-cols-2">
           
               <div class="md:mr-4 flex justify-end">
-                <Label>Select a class:</Label>
-                <ClassSelect selectedClass={selectedClass} />
+                <Label class="mt-1.5">Select a class:</Label>
+                <ClassSelect  selectedClass={selectedClass} />
               </div>
 
               <div></div>
