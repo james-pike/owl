@@ -5,7 +5,6 @@ import MenuModal from "./MenuModal";
 import IconPause from "../icons/IconPause";
 import IconPlay from "../icons/IconPlay";
 import { Card } from "../ui/Card";
-import ToggleTheme from "../common/ToggleTheme";
 
 export default component$(() => {
   const store = useStore({
