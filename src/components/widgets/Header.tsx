@@ -1,7 +1,6 @@
 import { $, component$, useSignal, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import { Link, useContent, useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
-import { Logo2 } from "../common/Logo2";
 import MenuModal from "./MenuModal";
 import IconPause from "../icons/IconPause";
 import IconPlay from "../icons/IconPlay";
@@ -125,7 +124,7 @@ export default component$(() => {
               >
                 Mint
               </a>
-<ToggleTheme/>
+
               <MenuModal />
             </div>
           </div>
