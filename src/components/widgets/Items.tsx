@@ -11,20 +11,7 @@ const styles = `
     .breathing-glow { 
         animation: breathe 2s ease-in-out infinite; 
     }
-    @keyframes spin3d {
-        0% { 
-            transform: perspective(1000px) rotateY(0deg) rotateZ(0deg);
-        }
-        100% { 
-            transform: perspective(1000px) rotateY(360deg) rotateZ(0deg);
-        }
-    }
-    .rotating-item { 
-        animation: spin3d 6s linear infinite;
-        transform-style: preserve-3d;
-        perspective: 1000px; /* Keeps 3D depth */
-        transform-origin: center center;
-    }
+  
 `;
 
 export default component$(({ selectedClass }: ItemsProps) => {
@@ -165,7 +152,7 @@ const categories: Category[] = [
                 description: "A towering hat imbued with arcane runes, amplifying the wearer’s spellcasting prowess."
 
                 ,
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" /></svg>),
+                icon: (<img src="/images/broom.png" alt="Icon" class="w-full h-full" />),
                 metadata: {
                     weight: "5%",
                     durability: "High",
@@ -178,7 +165,7 @@ const categories: Category[] = [
                 description: "A towering hat imbued with arcane runes, amplifying the wearer’s spellcasting prowess."
 
                 ,
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-10 10 10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z" /></svg>),
+                icon: (<img src="/images/maskX.png" alt="Icon" class="w-full h-full" />),
                 metadata: {
                     weight: "20%",
                     durability: "Medium",
