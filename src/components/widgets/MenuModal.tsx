@@ -1,7 +1,6 @@
 import { component$, useSignal } from "@builder.io/qwik";
 import { LuX, LuArrowLeft } from "@qwikest/icons/lucide";
 import { cn } from "@qwik-ui/utils";
-import {  LogoStatic } from "../common/Logo2";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import { Modal } from "../ui/Modal";
 import IconHamburger from "../icons/IconHamburger";
