@@ -1,5 +1,5 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city"; // Import Link component
+import { Link } from "@builder.io/qwik-city";
 import { Card } from "../ui/Card";
 
 const services = [
@@ -51,71 +51,62 @@ const services = [
       alt: "Safe Opening & Installation",
       slug: "safe-services"
     },
-  ];
+];
 
+export default component$(() => {
+  const isVisible = useSignal(false);
 
+  useVisibleTask$(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          isVisible.value = true;
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
 
-  export default component$(() => {
-    const isVisible = useSignal(false);
-  
-    useVisibleTask$(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            isVisible.value = true;
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.1 }
-      );
-  
-      const element = document.querySelector('#services-grid');
-      if (element) observer.observe(element);
-  
-      return () => observer.disconnect();
-    });
-  
-    return (
-      <div 
-        id="services-grid"
-        class="grid mx-auto max-w-screen-xl mt-2 mb-2 md:mb-16 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-      >
-        {services.map(({ title, description, details, image, alt }, index) => (
-          
-          <Link
-          
-            key={index}
-            class={`
-              group relative overflow-hidden rounded-lg shadow-md no-underline
-              transition-all duration-500
-              ${isVisible.value ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-            style={{
-              transitionDelay: `${index * 100}ms`,
-            }}
-          >
-            <Card.Content class="p-1">
+    const element = document.querySelector('#services-grid');
+    if (element) observer.observe(element);
+
+    return () => observer.disconnect();
+  });
+
+  return (
+    <div 
+      id="services-grid"
+      class="grid mx-auto max-w-screen-xl mt-2 mb-2 md:mb-16 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {services.map(({ title, description, image, alt }, index) => (
+        <Link
+          key={index}
+          class={`
+            group relative overflow-hidden rounded-lg shadow-md no-underline
+            transition-all duration-500
+            ${isVisible.value ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          style={{
+            transitionDelay: `${index * 100}ms`,
+          }}
+        >
+          <Card.Content class="p-1">
             <div class="relative aspect-[2/1]">
               <img
                 width={700}
-                height={350} // Explicit height for 2/1 aspect ratio
+                height={350}
                 src={image}
                 alt={alt}
                 loading="eager"
-                class="w-full h-full object-cover rounded-sm transition-transform bg-primary-50 duration-300 "
+                class="w-full h-full object-cover rounded-sm transition-transform bg-primary-50 duration-300"
               />
-              {/* group-hover:scale-105 */}
-              <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">
-                <p class="text-white text-center px-4">{details}</p>
-              </div>
             </div>
             <div class="px-4 py-3 bg-gray-100 dark:bg-gray-800">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
               <p class="text-sm text-gray-600 dark:text-gray-400">{description}</p>
             </div>
-            </Card.Content>
-          </Link>
-         
-        ))}
-      </div>
-    );
-  });
+          </Card.Content>
+        </Link>
+      ))}
+    </div>
+  );
+});
