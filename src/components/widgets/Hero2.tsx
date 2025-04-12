@@ -20,12 +20,12 @@ export default component$(() => {
               </p>
               <div class="max-w-xs sm:max-w-md animate-hero-buttons m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-3 lg:justify-start lg:m-0 lg:max-w-7xl">
                 <div class="flex w-full sm:w-auto">
-                  <a class="btn btn-primary sm:mb-0 w-full" href="/">
+                  <a class="btn btn-primary sm:mb-0 w-full" href="https://www.kaspa.com/nft/mint">
                     Mint KasLords
                   </a>
                 </div>
                 <div class="flex w-full sm:w-auto">
-                  <a class="btn btn-secondary sm:mb-0 w-full" href="/">
+                  <a class="btn btn-secondary sm:mb-0 w-full" href="https://t.me/+pHZ9UA7XIDA2YmIx">
                     Join The Clan
                   </a>
                 </div>
