@@ -35,7 +35,7 @@ export default component$(() => {
     
         <link rel="preload" href="/images/placeholder.png" as="image" />
         <link rel="preload" href="/images/contact.jpg" as="image" />
-        <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=MedievalSharp&display=swap" rel="stylesheet"/>
 
 
       </head>

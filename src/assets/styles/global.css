@@ -11,7 +11,7 @@
 @tailwind utilities;
 
 html, body, [class] {
-  font-family: 'UnifrakturMaguntia', serif !important;
+  font-family: 'MedievalSharp', serif !important;
 }
 
 @layer components {

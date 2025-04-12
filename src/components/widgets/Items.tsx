@@ -150,125 +150,28 @@ const categories: Category[] = [
                 icon: (<img src="/images/broom.png" alt="Sorcerer’s Conical Crown" class="w-full h-full" />),
                 metadata: { weight: "5%", durability: "High", rarity: "Rare", class: "Wizard" }
             },
+
             {
-                title: "Mystic Guardian Helm",
-                description: "A sturdy helm that protects and enhances magical focus.",
-                icon: (<img src="/images/maskX.png" alt="Mystic Guardian Helm" class="w-full h-full" />),
-                metadata: { weight: "20%", durability: "Medium", rarity: "Common", class: "Wizard" }
-            },
-            {
-                title: "Archmage’s Tiara",
-                description: "A delicate tiara radiating arcane power.",
-                icon: (<img src="/images/orcnecklace.png" alt="Archmage’s Tiara" class="w-full h-full" />),
+                title: "qwdqwdqwd",
+                description: "qwdqwdqwd",
+                icon: (<img src="/images/orcnecklace.png" alt="asdasd" class="w-full h-full" />),
                 metadata: { weight: "5%", durability: "High", rarity: "Rare", class: "Wizard" }
             },
-            {
-                title: "Mystic Guardian Helm",
-                description: "A towering hat imbued with arcane"
 
-                ,
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-10 10 10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z" /></svg>),
-                metadata: {
-                    weight: "20%",
-                    durability: "Medium",
-                    rarity: "Common",
-                    class: "Wizard"
-                }
-            },
             {
-                title: "Sorcerer’s Conical Crown"
+                title: "qqwewd",
+                description: "qwqwewd",
+                icon: (<img src="/images/orcshoulders.png" alt="qweqwe" class="w-full h-full" />),
+                metadata: { weight: "5%", durability: "High", rarity: "Rare", class: "Wizard" }
+            },
 
-                ,
-                description: "A towering hat imbued with arcane runes, amplifying the wearer’s spellcasting prowess."
-
-                ,
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" /></svg>),
-                metadata: {
-                    weight: "5%",
-                    durability: "High",
-                    rarity: "Rare",
-                    class: "Wizard"
-                }
-            },
             {
-                title: "Mystic Guardian Helm",
-                description: "A towering hat imbued with arcane runes, amplifying the wearer’s spellcasting prowess."
-
-                ,
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-10 10 10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z" /></svg>),
-                metadata: {
-                    weight: "20%",
-                    durability: "Medium",
-                    rarity: "Common",
-                    class: "Wizard"
-                }
+                title: "Sorcerer’s Conical Crown",
+                description: "A towering hat imbued with arcane runes, amplifying the wearer’s spellcasting prowess.",
+                icon: (<img src="/images/contact.jpg" alt="Sorcerer’s Conical Crown" class="w-full h-full" />),
+                metadata: { weight: "5%", durability: "High", rarity: "Rare", class: "Wizard" }
             },
-            {
-                title: "Elf Hat",
-                description: "Enhances magical abilities",
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" /></svg>),
-                metadata: {
-                    weight: "20%",
-                    durability: "High",
-                    rarity: "Common",
-                    class: "Elf"
-                }
-            },
-            {
-                title: "Orc Helmet",
-                description: "Heavy armor for combat",
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-10 10 10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z" /></svg>),
-                metadata: {
-                    weight: "5%",
-                    durability: "Medium",
-                    rarity: "Rare",
-                    class: "Orc"
-                }
-            },
-            {
-                title: "Warrior Helmet",
-                description: "Heavy armor for combat",
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-10 10 10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z" /></svg>),
-                metadata: {
-                    weight: "5%",
-                    durability: "Medium",
-                    rarity: "Rare",
-                    class: "Orc"
-                }
-            },
-            {
-                title: "Dark Lord Helmet",
-                description: "Heavy armor for combat",
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-10 10 10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z" /></svg>),
-                metadata: {
-                    weight: "5%",
-                    durability: "Medium",
-                    rarity: "Rare",
-                    class: "Dark Lord"
-                }
-            },
-            {
-                title: "Warrior Helmet",
-                description: "Heavy armor for combat",
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-10 10 10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z" /></svg>),
-                metadata: {
-                    weight: "5%",
-                    durability: "Medium",
-                    rarity: "Rare",
-                    class: "Warrior"
-                }
-            },
-            {
-                title: "Dragon Helmet",
-                description: "Heavy armor for combat",
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-10 10 10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z" /></svg>),
-                metadata: {
-                    weight: "5%",
-                    durability: "Medium",
-                    rarity: "Rare",
-                    class: "Dragon"
-                }
-            },
+           
             // Add more items with class specifications
         ]
     },

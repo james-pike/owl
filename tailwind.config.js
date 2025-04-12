@@ -30,7 +30,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["'Inter Variable'", ...defaultTheme.fontFamily.sans],
-        blackletter: ["'UnifrakturMaguntia'", 'serif'], // Fallback to serif
+        display: ['"MedievalSharp"', 'cursive'],
 
       },
       fontSize: {

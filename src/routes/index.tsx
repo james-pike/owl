@@ -12,7 +12,6 @@ import { SITE } from "~/config.mjs";
 import Services from "~/components/widgets/Services";
 
 import Story from "~/components/widgets/Story";
-import Inventory from "~/components/widgets/Inventory";
 import Rarity from "~/components/widgets/Rarity";
 import Hero2 from "~/components/widgets/Hero2";
 import Hero from "~/components/widgets/Hero";
@@ -26,6 +25,7 @@ export default component$(() => {
       <div class="block md:hidden">
       <Hero/>
       </div>
+      {/* <NewTabs/> */}
       <Story
       highlight="Story"
       title="Story Of The KasLords"
@@ -39,12 +39,12 @@ export default component$(() => {
   subtitle="Mint one of six legendary KasLord character types."
   items={[]}/>
 
-<Inventory
+{/* <Inventory
       id="inventory"
   highlight="Inventory"
   title="Inventory Items"
   subtitle="Mint one of six legendary KasLord character types."
-  items={[]}/>
+  items={[]}/> */}
 
 
 

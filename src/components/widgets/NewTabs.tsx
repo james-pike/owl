@@ -1,0 +1,61 @@
+import { component$, useSignal } from '@builder.io/qwik';
+import { Tabs } from './Tabs';
+import { Card } from '../ui/Card';
+import { Label } from '../ui/Label';
+import { WizardTabs } from './WizardTabs';
+import { ElfTabs } from './ElfTabs';
+
+// Separate component for the nested tabs
+
+
+// Main component
+export default component$(() => {
+  return (
+    <Tabs.Root class="max-w-6xl">
+      <Tabs.List class="grid w-full grid-cols-6">
+        <Tabs.Tab>Account</Tabs.Tab>
+        <Tabs.Tab>Wizard</Tabs.Tab>
+        <Tabs.Tab>Elf </Tabs.Tab>
+      </Tabs.List>
+
+
+      <Tabs.Panel>
+        <Card.Root>
+      
+          <Card.Content>
+            {/* Render the nested tabs */}
+            <WizardTabs />
+          </Card.Content>
+       
+        </Card.Root>
+      </Tabs.Panel>
+
+
+
+
+      <Tabs.Panel>
+        <Card.Root>
+      
+          <Card.Content>
+            {/* Render the nested tabs */}
+            <WizardTabs />
+          </Card.Content>
+       
+        </Card.Root>
+      </Tabs.Panel>
+
+
+
+      <Tabs.Panel>
+        <Card.Root>
+      
+          <Card.Content>
+            {/* Render the nested tabs */}
+            <ElfTabs />
+          </Card.Content>
+       
+        </Card.Root>
+      </Tabs.Panel>
+    </Tabs.Root>
+  );
+});
