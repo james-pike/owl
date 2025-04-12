@@ -11,9 +11,9 @@ export default component$(() => {
     {
       title: "About",
       items: [
-        { title: "Story", href: "#" },
-        { title: "Roadmap", href: "#" },
-        { title: "Team", href: "#" },
+        { title: "Story", href: "#story" },
+        { title: "Roadmap", href: "#roadmap" },
+        { title: "Team", href: "#team" },
     
       ],
     },
@@ -21,21 +21,21 @@ export default component$(() => {
     {
       title: "Tools",
       items: [
-        { title: "Rarity Guide", href: "#" },
-        { title: "Inventory Items", href: "#" },
-        { title: "Professional Services", href: "#" },
+        { title: "Rarity Guide", href: "#rarity" },
+        { title: "Inventory Items", href: "#inventory" },
+       
    
       ],
     },
     {
       title: "Classes",
       items: [
-        { title: "Wizard", href: "#" },
-        { title: "Dark Lord", href: "#" },
-        { title: "Elf", href: "#" },
-        { title: "Orc", href: "#" },
-        { title: "Warrior", href: "#" },
-        { title: "Dragon", href: "#" },
+        { title: "Wizard", href: "#classes" },
+        { title: "Dark Lord", href: "#classes" },
+        { title: "Elf", href: "#classes" },
+        { title: "Orc", href: "#classes" },
+        { title: "Warrior", href: "#classes" },
+        { title: "Dragon", href: "#classes" },
  
       ],
     },
