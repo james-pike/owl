@@ -2,7 +2,6 @@ import { component$, useSignal } from '@builder.io/qwik';
 import { Tabs } from './Tabs';
 import { Card } from '../ui/Card';
 import { Label } from '../ui/Label';
-import { Button } from '../ui/Button';
 
 // Define the single wizard image for the entire set
 const wizardImage = {

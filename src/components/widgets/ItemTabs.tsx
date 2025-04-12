@@ -1,6 +1,5 @@
 import { component$, JSX, useSignal, useStyles$ } from '@builder.io/qwik';
 import { twMerge } from 'tailwind-merge';
-import { cn } from '@qwik-ui/utils';
 import { Tabs } from './Tabs';
 
 // Define interfaces (assuming these are similar to your original setup)

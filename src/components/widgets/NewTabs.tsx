@@ -1,7 +1,6 @@
-import { component$, useSignal } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import { Tabs } from './Tabs';
 import { Card } from '../ui/Card';
-import { Label } from '../ui/Label';
 import { WizardTabs } from './WizardTabs';
 import { ElfTabs } from './ElfTabs';
 
