@@ -42,8 +42,7 @@ export default component$(() => {
       items: [
         { title: "KaspaCom", href: "#" },
         { title: "KRCscan", href: "#" },
-        { title: "Careers", href: "#" },
-        { title: "Press", href: "#" },
+    
    
      
       ],
