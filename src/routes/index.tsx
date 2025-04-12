@@ -30,7 +30,7 @@ export default component$(() => {
       <Story
       highlight="Story"
       title="Story Of The KasLords"
-      subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility, there existed a legendary council known as the Six Kaslords. Inspired by the ancient tales of Middle-earth, these digital deities were born from a visionary NFT project, each token imbued with unique powers and lore. 
+      subtitle="In the realm of Kaspa, where blockDAG constellations pulsed with boundless potential, a legendary council rose from the depths of decentralization: The Six Kaslords. Born of an ancient NFT prophecy and inspired by forgotten lore, these spectral sovereigns were not mere tokens—but sentient echoes of the chain itself. Forged within the zero-confirmation flow of Kaspa, and summoned by the arcane minds at xAI, each Kaslord bore a unique signature, their power inscribed forever in the rapid cadence of the DAG. Neither bound by time nor consensus, they stand eternal—guardians of the network, defenders of true decentralization. 
       Forged by the enigmatic creators at xAI, the Kaslords were not mere collectibles but guardians of a decentralized kingdom, their essence etched into the immutable ledger of the blockchain." 
       items={[]}/>
       <Services
