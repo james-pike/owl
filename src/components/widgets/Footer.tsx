@@ -53,9 +53,8 @@ export default component$(() => {
   ];
 
   const social = [
-    { label: "Twitter", icon: IconTwitter, href: "#" },
-    { label: "Instagram", icon: IconInstagram, href: "/" },
-    { label: "Facebook", icon: IconFacebook, href: "#" },
+    { label: "Twitter", icon: IconTwitter, href: "https://x.com/kaslords" },
+   
     // {
     //   label: "Github",
     //   icon: IconGithub,
