@@ -3,6 +3,8 @@ import { Tabs } from './Tabs';
 import { Card } from '../ui/Card';
 import { WizardTabs } from './WizardTabs';
 import { ElfTabs } from './ElfTabs';
+import { DragonTabs } from './DragonTabs';
+import { WarriorTabs } from './WarriorTabs';
 
 // Separate component for the nested tabs
 
@@ -15,6 +17,7 @@ export default component$(() => {
         <Tabs.Tab>Account</Tabs.Tab>
         <Tabs.Tab>Wizard</Tabs.Tab>
         <Tabs.Tab>Elf </Tabs.Tab>
+        <Tabs.Tab>Warrior </Tabs.Tab>
       </Tabs.List>
 
 
@@ -23,7 +26,18 @@ export default component$(() => {
       
           <Card.Content>
             {/* Render the nested tabs */}
-            <WizardTabs />
+            <DragonTabs />
+          </Card.Content>
+       
+        </Card.Root>
+      </Tabs.Panel>
+
+      <Tabs.Panel>
+        <Card.Root>
+      
+          <Card.Content>
+            {/* Render the nested tabs */}
+            <WarriorTabs />
           </Card.Content>
        
         </Card.Root>
