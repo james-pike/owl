@@ -115,20 +115,7 @@ export default component$(() => {
                   <h2 class="text-lg font-medium dark:text-gray-200 text-gray-700">Services</h2>
                 </div>
                 <ul class="flex flex-col gap-0 text-lg">
-                  {/* {servicesSubitems.map((subitem) => (
-                    <li key={subitem.title}>
-                      <a
-                        href={subitem.href}
-                        class={cn(
-                          "block text-gray-700 dark:text-gray-200 p-2 px-3 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium transition-all duration-200",
-                          location.url.pathname === subitem.href && "bg-gray-200 dark:bg-gray-700 "
-                        )}
-                        onClick$={() => (show.value = false)}
-                      >
-                        {subitem.title}
-                      </a>
-                    </li>
-                  ))} */}
+         
                 </ul>
               </div>
             ) : (
