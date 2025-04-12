@@ -4,7 +4,6 @@ import { Headline } from "~/components/ui/Headline";
 
 import ClassSelect from "./ClassSelect";
 import Items from "./Items";
-import { Label } from "../ui/Label";
 import { Card } from "../ui/Card";
 
 interface Item {
