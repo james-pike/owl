@@ -16,6 +16,7 @@ import Rarity from "~/components/widgets/Rarity";
 import Hero2 from "~/components/widgets/Hero2";
 import Hero from "~/components/widgets/Hero";
 import Team from "~/components/widgets/Team";
+import NewTabs from "~/components/widgets/NewTabs";
 
 export default component$(() => {
   return (
@@ -26,7 +27,7 @@ export default component$(() => {
       <div class="block md:hidden">
       <Hero/>
       </div>
-      {/* <NewTabs/> */}
+      <NewTabs/>
       <Story
       highlight="Story"
       title="Story Of The KasLords"

@@ -78,13 +78,13 @@ export default component$(() => {
             <div class="flex gap-2">
               <a
                 href="/"
-                class=" px-4 py-2 btn-primary text-white font-semibold rounded-md transition-colors"
+                class=" px-2 py-2 btn-primary text-white font-semibold rounded-md transition-colors"
               >
                 Mint KasLords
               </a>
               <a
                 href="/"
-                class=" btn-secondary px-4 py-2 dark:text-white font-semibold rounded-md transition-colors"
+                class=" btn-secondary px-2 py-2 dark:text-white font-semibold rounded-md transition-colors"
               >
                 Join The Clan
               </a>
