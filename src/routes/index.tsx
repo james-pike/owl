@@ -15,6 +15,7 @@ import Story from "~/components/widgets/Story";
 import Rarity from "~/components/widgets/Rarity";
 import Hero2 from "~/components/widgets/Hero2";
 import Hero from "~/components/widgets/Hero";
+import Team from "~/components/widgets/Team";
 
 export default component$(() => {
   return (
@@ -106,12 +107,12 @@ export default component$(() => {
       subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility. "
      
       items={[]}/>
-         {/* <Team
+         <Team
       id="team"
-  highlight="Classes"
-  title="Character Classes"
-  subtitle="Mint one of six legendary KasLord character types."
-  items={[]}/> */}
+  highlight="Team"
+  title="Founding KasLords"
+  subtitle="Meet the founding four."
+  items={[]}/>
   
       
     </>

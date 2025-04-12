@@ -1,7 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-
-import IconTwitter from "~/components/icons/IconTwitter"
+import { LuTwitter, LuSend } from '@qwikest/icons/lucide';
 
 import { Card } from "../ui/Card";
 
@@ -52,7 +51,8 @@ export default component$(() => {
   ];
 
   const social = [
-    { label: "Twitter", icon: IconTwitter, href: "https://x.com/kaslords" },
+    { label: "Twitter", icon: LuTwitter, href: "https://x.com/kaslords" },
+    { label: "Telegram", icon: LuSend, href: "https://t.me/+pHZ9UA7XIDA2YmIx" },
    
     // {
     //   label: "Github",
@@ -73,8 +73,8 @@ export default component$(() => {
               </Link>
             </div>
             <div class="text-sm text-gray-600 mb-4 dark:text-gray-400">
-            TestLock provides expert locksmith services for homes, businesses, and vehicles.
-            From emergency lockouts to advanced security installations, we ensure your safety with precision and care.
+            Own a piece of this legendary saga, forged in the fires of creativity and secured on the BlockDag—join the Kaslords and claim your dominion today!
+
             </div>
             <div class="flex gap-2">
               <a

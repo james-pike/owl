@@ -1,9 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
-import TeamCards from "./TeamCards";
-import { Card } from "../ui/Card";
 
+import ServiceGrid from "./ServiceGrid";
+import { Card } from "../ui/Card";
+import TeamGrid from "./TeamGrid";
 
 interface Item {
   title?: string;
@@ -35,13 +36,13 @@ export default component$((props: Props) => {
       </div>
       <div
         class={twMerge(
-          "relative mx-auto max-w-5xl px-4 md:px-6 py-10 md:py-12 lg:py-12 text-default",
+          "relative mx-auto max-w-5xl px-2 md:px-6 pb-4 pt-10 md:py-12 lg:py-12 text-default",
           classes?.container,
           isDark ? "dark" : ""
         )}
       >
         <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
-     <TeamCards/>
+     <TeamGrid/>
       </div>
       </Card.Root>
     </section>
