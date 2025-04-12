@@ -6,6 +6,7 @@ import {
   LuFlame,
   LuSkull,
   LuLeaf,
+
 } from '@qwikest/icons/lucide';
 import { twMerge } from 'tailwind-merge';
 
@@ -28,22 +29,21 @@ export default component$(({ selectedClass }: ClassSelectProps) => {
 
   const classes = [
     { name: 'Wizard', icon: LuWand2 },
+    { name: 'Elf', icon: LuLeaf },
     { name: 'Orc', icon: LuShield },
     { name: 'Warrior', icon: LuSword },
     { name: 'Dragon', icon: LuFlame },
     { name: 'Dark Lord', icon: LuSkull },
-    { name: 'Elf', icon: LuLeaf },
   ];
 
   return (
     <div class="w-full border-gray-700 shadow-md rounded-sm p-1 bg-gray-800 overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory">
-      <div class="flex flex-nowrap w-max">
+      <div class="flex flex-nowrap md:flex-wrap w-max md:w-full">
         {classes.map(({ name: className, icon: Icon }) => (
           <button
             key={className}
             class={twMerge(
-              'p-2 bg-transparent text-gray-400 transition-colors duration-200 flex items-center justify-center gap-2 text-sm min-w-[80px] snap-center flex-shrink-0',
-              'md:flex-row flex-col',
+              'p-2 bg-transparent text-gray-400 transition-colors duration-200 flex items-center justify-center gap-2 text-sm min-w-[80px] snap-center flex-shrink-0 md:flex-1 md:flex-row flex-col',
               selectedClass.value === className &&
                 'bg-gray-700 rounded-sm text-secondary-500 '
             )}

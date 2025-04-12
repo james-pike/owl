@@ -23,10 +23,23 @@ interface Props {
   classes?: any;
 }
 
+const classImages = [
+  { name: 'Wizard', image: '/images/wizard.jpg' },
+  { name: 'Elf', image: '/images/elf.jpg' },
+  { name: 'Rogue', image: '/images/rogue.png' },
+  { name: 'Cleric', image: '/images/cleric.png' },
+  { name: 'Ranger', image: '/images/ranger.png' },
+  { name: 'Paladin', image: '/images/paladin.png' },
+];
+
 export default component$((props: Props) => {
   const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;
 
   const selectedClass = useSignal('Wizard'); // Default class
+
+  const selectedImage = classImages.find(
+    (c) => c.name === selectedClass.value
+  )?.image;
 
   return (
     <section class="relative scroll-mt-16 mx-auto max-w-7xl mb-6" {...(id ? { id } : {})}>
@@ -38,22 +51,42 @@ export default component$((props: Props) => {
         </div>
         <div
           class={twMerge(
-            "relative mx-auto px-4 sm:px-6 pt-10 pb-6 md:py-12 lg:py-12 text-default",
+            "relative mx-auto px-4 max-w-5xl sm:px-6 pt-10 pb-6 md:py-12 lg:py-12 text-default",
             classes?.container,
             isDark ? "dark" : ""
           )}
         >
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
-          <Card.Content>
-            <div class="w-full">
-              <div class="w-full">
-                <ClassSelect selectedClass={selectedClass} />
-              </div>
+          <div class="md:grid md:grid-cols-3 md:gap-2">
+            <div class="hidden md:block">
+              <Card.Content class="h-full">
+                {selectedImage ? (
+                  <img
+                    src={selectedImage}
+                    alt={selectedClass.value}
+                    class=" w-full h-full object-cover"
+                  />
+                ) : (
+                  <div class="text-gray-500">No image available</div>
+                )}
+              </Card.Content>
             </div>
-          </Card.Content>
-          <Card.Content>
-            <Items selectedClass={selectedClass.value} />
-          </Card.Content>
+            {/* Left 2/3: stacked Card.Contents */}
+            <div class="md:col-span-2 flex flex-col gap-2">
+              <Card.Content>
+                <div class="w-full">
+                  <ClassSelect selectedClass={selectedClass} />
+                </div>
+              </Card.Content>
+              <Card.Content>
+                <Items selectedClass={selectedClass.value} />
+              </Card.Content>
+            </div>
+
+            {/* Right 1/3: full-height Card.Content */}
+
+          </div>
+
         </div>
       </Card.Root>
     </section>

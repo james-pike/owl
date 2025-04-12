@@ -50,7 +50,7 @@ export default component$(({ selectedClass }: ItemsProps) => {
         <section class="scroll-mt-16">
             <div class="max-w-5xl mx-auto">
                 {filteredCategories.length > 0 ? (
-                    <div class="flex flex-col md:flex-row md:space-x-4 min-h-[284px] lg:min-h-[363px]">
+                    <div class="flex flex-col md:flex-row md:space-x-4 min-h-[284px] items-center lg:min-h-[363px]">
                         {/* Left Column: Category Tabs and Item Grid */}
                         <div class="flex-1 md:w-1/2 flex flex-col space-y-1 order-2 md:order-1">
                         
@@ -98,8 +98,8 @@ export default component$(({ selectedClass }: ItemsProps) => {
                         </div>
 
                         {/* Right Column: Item Showcase */}
-                        <div class="md:w-1/2 mt-4  order-1 md:order-2 ">
-                            <div class="rounded-sm pt-4 shadow-md border-2 items-center border-gray-800">
+                        <div class="md:w-1/2  order-1 md:order-2 ">
+                            <div class="rounded-sm shadow-md border-2 items-center border-gray-800">
                                 <div class="flex flex-col items-center gap-4 px-4 mb-2">
                                     <div class="rotating-item flex-shrink-0 max-w-[150px] max-h-[150px]">
                                         {currentItem.icon}
@@ -145,47 +145,22 @@ const categories: Category[] = [
         name: "Head",
         items: [
             {
-                title: "Sorcerer’s Conical Crown"
-
-                ,
-                description: "A towering hat imbued with arcane runes, amplifying the wearer’s spellcasting prowess."
-
-                ,
-                icon: (<img src="/images/broom.png" alt="Icon" class="w-full h-full" />),
-                metadata: {
-                    weight: "5%",
-                    durability: "High",
-                    rarity: "Rare",
-                    class: "Wizard"
-                }
+                title: "Sorcerer’s Conical Crown",
+                description: "A towering hat imbued with arcane runes, amplifying the wearer’s spellcasting prowess.",
+                icon: (<img src="/images/broom.png" alt="Sorcerer’s Conical Crown" class="w-full h-full" />),
+                metadata: { weight: "5%", durability: "High", rarity: "Rare", class: "Wizard" }
             },
             {
                 title: "Mystic Guardian Helm",
-                description: "A towering hat imbued with arcane runes, amplifying the wearer’s spellcasting prowess."
-
-                ,
-                icon: (<img src="/images/maskX.png" alt="Icon" class="w-full h-full" />),
-                metadata: {
-                    weight: "20%",
-                    durability: "Medium",
-                    rarity: "Common",
-                    class: "Wizard"
-                }
+                description: "A sturdy helm that protects and enhances magical focus.",
+                icon: (<img src="/images/maskX.png" alt="Mystic Guardian Helm" class="w-full h-full" />),
+                metadata: { weight: "20%", durability: "Medium", rarity: "Common", class: "Wizard" }
             },
             {
-                title: "Sorcerer’s Conical Crown"
-
-                ,
-                description: "A towering hat imbued with arcane runes, amplifying the wearer’s spellcasting prowess."
-
-                ,
-                icon: (<svg class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" /></svg>),
-                metadata: {
-                    weight: "5%",
-                    durability: "High",
-                    rarity: "Rare",
-                    class: "Wizard"
-                }
+                title: "Archmage’s Tiara",
+                description: "A delicate tiara radiating arcane power.",
+                icon: (<img src="/images/orcnecklace.png" alt="Archmage’s Tiara" class="w-full h-full" />),
+                metadata: { weight: "5%", durability: "High", rarity: "Rare", class: "Wizard" }
             },
             {
                 title: "Mystic Guardian Helm",
