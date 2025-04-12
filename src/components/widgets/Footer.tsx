@@ -80,13 +80,13 @@ export default component$(() => {
             </div>
             <div class="flex gap-2">
               <a
-                href="tel:+16132188063"
+                href="/"
                 class=" px-4 py-2 btn-primary text-white font-semibold rounded-md transition-colors"
               >
                 Mint KasLords
               </a>
               <a
-                href="/contact"
+                href="/"
                 class=" btn-secondary px-4 py-2 dark:text-white font-semibold rounded-md transition-colors"
               >
                 Join The Clan
