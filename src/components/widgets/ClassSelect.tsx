@@ -37,13 +37,13 @@ export default component$(({ selectedClass }: ClassSelectProps) => {
 
   return (
     <div class="w-full border-gray-700 shadow-md rounded-sm p-1 bg-gray-800 overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory">
-      <div class="flex flex-nowrap">
+      <div class="flex flex-nowrap w-max">
         {classes.map(({ name: className, icon: Icon }) => (
           <button
             key={className}
             class={twMerge(
-              'flex-1 p-2 bg-transparent text-gray-400 transition-colors duration-200 flex items-center justify-center gap-2 text-sm min-w-[80px] snap-center',
-              'md:flex-row flex-col', // Stack on mobile, row on desktop
+              'p-2 bg-transparent text-gray-400 transition-colors duration-200 flex items-center justify-center gap-2 text-sm min-w-[80px] snap-center flex-shrink-0',
+              'md:flex-row flex-col',
               selectedClass.value === className &&
                 'bg-gray-700 rounded-sm text-secondary-500 breathing-glow'
             )}
