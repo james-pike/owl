@@ -5,7 +5,7 @@ import { Card } from "../ui/Card";
 const services = [
     {
       title: "Wizard Lord",
-      description: "Fast and reliable 24/7 lockout services for homes, offices, and vehicles.",
+      description: "A mysterious sorcerer who channels ancient Kaspa energy to maintain balance—or disrupt it.",
       details: "Regain access to your property quickly with our professional lockout solutions.",
       image: "/images/wizard.jpg",
       alt: "Emergency Lockout Assistance",
@@ -13,7 +13,7 @@ const services = [
     },
     {
       title: "Dark Lord",
-      description: "Precision key cutting and duplication for all types of locks.",
+      description: "A tyrant born of shadow, wielding corrupted Kaspa to bend the realm to his will.",
       details: "Get spare keys for your home, office, or vehicle with accuracy and efficiency.",
       image: "/images/wixard.png",
       alt: "Key Duplication & Replacement",
@@ -21,7 +21,7 @@ const services = [
     },
     {
       title: "Elf Lord",
-      description: "Enhance security with professional lock installation and repair services.",
+      description: "A radiant forest goddess whose beauty rivals starlight, yet her arrows strike with divine precision.",
       details: "We install and fix all types of locks to keep your property secure.",
       image: "/images/wizard.jpg",
       alt: "Lock Installation & Repair",
@@ -29,7 +29,7 @@ const services = [
     },
     {
       title: "Orc Lord",
-      description: "Upgrade your security with the latest smart locks and access control systems.",
+      description: "A savage warlord driven by fury and ambition, feared for both brawn and cunning.",
       details: "We install high-tech security solutions for homes and businesses.",
       image: "/images/wixard.png",
       alt: "Smart Lock & Security Systems",
@@ -37,7 +37,7 @@ const services = [
     },
     {
       title: "Warrior Lord",
-      description: "Key programming, lock repairs, and ignition services for all vehicle models.",
+      description: "A wandering warrior seeking redemption with a rune-forged blade and a haunted past.",
       details: "We provide expert automotive locksmith solutions, including key fob replacement.",
       image: "/images/wizard.jpg",
       alt: "Automotive Locksmith Services",
@@ -45,7 +45,7 @@ const services = [
     },
     {
       title: "Dragon Lord",
-      description: "Secure storage solutions and expert safe opening services.",
+      description: "A molten-scaled dragon born in fire, untamed by gods or kings.",
       details: "We install, repair, and unlock safes while maintaining their integrity.",
       image: "/images/wixard.png",
       alt: "Safe Opening & Installation",
