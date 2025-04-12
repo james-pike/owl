@@ -45,7 +45,7 @@ export default component$(({ selectedClass }: ClassSelectProps) => {
               'p-2 bg-transparent text-gray-400 transition-colors duration-200 flex items-center justify-center gap-2 text-sm min-w-[80px] snap-center flex-shrink-0',
               'md:flex-row flex-col',
               selectedClass.value === className &&
-                'bg-gray-700 rounded-sm text-secondary-500 breathing-glow'
+                'bg-gray-700 rounded-sm text-secondary-500 '
             )}
             onClick$={() => {
               selectedClass.value = className;
