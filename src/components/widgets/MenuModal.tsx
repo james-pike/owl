@@ -2,7 +2,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import { LuX, LuArrowLeft } from "@qwikest/icons/lucide";
 import { cn } from "@qwik-ui/utils";
 import {  LogoStatic } from "../common/Logo2";
-import { useLocation } from "@builder.io/qwik-city";
+import { Link, useLocation } from "@builder.io/qwik-city";
 import { Modal } from "../ui/Modal";
 import IconHamburger from "../icons/IconHamburger";
 import { buttonVariants } from "../ui/Button";
@@ -89,9 +89,9 @@ export default component$(() => {
           {/* Header */}
           <div class=" border-gray-200 dark:border-gray-700  p-1">
             <Modal.Title class="pt-1">
-              <a href="/" class="focus:outline-none">
-                <LogoStatic />
-              </a>
+                <Link class="flex items-center" href={"/"}>
+                            <h1 class="font-bold text-3xl">KasLords</h1>
+                          </Link>
             </Modal.Title>
 
             <Modal.Description class="text-lg font-medium px-2 py-1 text-gray-700 dark:text-gray-200">
