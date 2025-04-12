@@ -47,18 +47,23 @@ export default component$((props: Props) => {
         >
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
           <Card.Content>
-          <div class="grid md:grid-cols-2">
+          <div class="grid md:grid-cols-1">
           
               <div class="md:mr-4 flex justify-end">
-                <Label class="mt-1.5">Select a class:</Label>
+               
                 <ClassSelect  selectedClass={selectedClass} />
               </div>
 
               <div></div>
 
           </div>
-          <Items selectedClass={selectedClass.value} />
           </Card.Content>
+          <Card.Content>
+
+          <Items selectedClass={selectedClass.value} />
+
+          </Card.Content>
+     
         </div>
       </Card.Root>
     </section>

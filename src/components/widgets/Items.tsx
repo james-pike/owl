@@ -4,14 +4,13 @@ import { twMerge } from "tailwind-merge";
 // ... (your existing interfaces remain the same) ...
 
 const styles = `
-    @keyframes breathe {
-        0%, 100% { box-shadow: 0 0 15px 5px rgba(59, 130, 246, 0.3); }
-        50% { box-shadow: 0 0 25px 10px rgba(59, 130, 246, 0.5); }
-    }
-    .breathing-glow { 
-        animation: breathe 2s ease-in-out infinite; 
-    }
-  
+  @keyframes breathe {
+    0%, 100% { box-shadow: 0 0 15px 5px rgba(112, 199, 186, 0.3); }
+    50% { box-shadow: 0 0 25px 10px rgba(112, 199, 186, 0.5); }
+  }
+  .breathing-glow { 
+    animation: breathe 2s ease-in-out infinite; 
+  }
 `;
 
 export default component$(({ selectedClass }: ItemsProps) => {
@@ -81,7 +80,7 @@ export default component$(({ selectedClass }: ItemsProps) => {
                                     >
                                         <div class="relative flex items-center justify-center">
                                             <div class={twMerge(
-                                                "absolute inset-[-2px] rounded-none transition-all duration-300 bg-blue-100/50 dark:bg-blue-900/50 border border-gray-300 dark:border-gray-800",
+                                                "absolute inset-[-2px] rounded-none transition-all duration-300 bg-blue-100/50 dark:bg-gray-700/50 border border-gray-300 dark:border-gray-800",
                                                 selectedItem.value === index && "bg-secondary-300/70 dark:bg-secondary-800/70 breathing-glow",
                                                 "group-hover:bg-secondary-200/70 dark:group-hover:bg-secondary-800/70 group-hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.4)]"
                                             )} />
@@ -99,7 +98,7 @@ export default component$(({ selectedClass }: ItemsProps) => {
                         </div>
 
                         {/* Right Column: Item Showcase */}
-                        <div class="md:w-1/2 mt-4  order-1 md:order-2 md:-mt-6">
+                        <div class="md:w-1/2 mt-4  order-1 md:order-2 ">
                             <div class="rounded-sm pt-4 shadow-md border-2 items-center border-gray-800">
                                 <div class="flex flex-col items-center gap-4 px-4 mb-2">
                                     <div class="rotating-item flex-shrink-0 max-w-[150px] max-h-[150px]">
