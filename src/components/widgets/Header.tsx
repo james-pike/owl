@@ -278,13 +278,13 @@ preload="auto"
 onEnded$={handleAudioEnded}
 />
               <a
-                href="/contact"
+                href="https://t.me/+pHZ9UA7XIDA2YmIx"
                 class="btn btn-secondary ml-2 py-2.5 px-5.5 md:px-4 font-semibold shadow-none text-sm w-auto"
               >
                 Join Clan
               </a>
               <a
-                href="tel:+16132188063"
+                href="https://www.kaspa.com/nft/mint"
                 class="btn btn-primary ml-2 py-2.5 px-5.5 md:px-4 font-semibold shadow-none text-sm w-auto"
               >
                 Mint KasLords
