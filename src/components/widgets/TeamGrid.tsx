@@ -6,7 +6,7 @@ const teamMembers = [
   {
     name: "CryptoNinja",
     role: "Flamebearer of the First Spark",
-    bio: "Originator of the KasLords prophecy, shadow guardian of the Guilded Gate, and bearer of the line between vision and vigilance.",
+    bio: "Originator of the KasLords prophecy, shadow guardian of the Guilded Gate, and bearer of vision and vigilance.",
     image: "/images/ninja.jpg",
     alt: "Aria Windwalker portrait",
     twitter: "https://twitter.com/cninja75788",
@@ -15,7 +15,7 @@ const teamMembers = [
   {
     name: "zooJersey",
     role: "Mythforger of Aetheric Realms",
-    bio: "Master of rune and logic, engineer of scared form, crafter of the visual soul through enchanted code and design.",
+    bio: "Master of rune and logic, engineer of scared form, crafter of the visual soul through enchanted design.",
     image: "/images/zoo.jpg",
     alt: "Lyra Moonshadow portrait",
     twitter: "https://x.com/njFloater",

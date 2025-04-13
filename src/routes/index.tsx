@@ -47,14 +47,14 @@ export default component$(() => {
       <Steps id="roadmap"  
        highlight="Roadmap"
       title="Journey Of The KasLords"
-      subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility." 
+      subtitle="In the realm of Kasparion, where the blockchain skies shimmer with infinite possibility." 
       items={[]}/>
     
        <Rarity
        id="rarity"
       highlight="Rarity"
       title="KasLord Rarity Guide"
-      subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility. "
+     
      
       items={[]}/>
          <Team
