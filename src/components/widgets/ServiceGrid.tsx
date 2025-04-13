@@ -15,7 +15,7 @@ const services = [
       title: "Dark Lord",
       description: "A tyrant born of shadow, wielding corrupted Kaspa to bend the realm to his will.",
       details: "Get spare keys for your home, office, or vehicle with accuracy and efficiency.",
-      image: "/images/wixard.png",
+      image: "/images/darklord.png",
       alt: "Key Duplication & Replacement",
       slug: "key-duplication"
     },
@@ -23,7 +23,7 @@ const services = [
       title: "Elf Lord",
       description: "A radiant forest goddess whose beauty rivals starlight, yet her arrows strike with divine precision.",
       details: "We install and fix all types of locks to keep your property secure.",
-      image: "/images/wizard.jpg",
+      image: "/images/elf.jpg",
       alt: "Lock Installation & Repair",
       slug: "lock-installation"
     },
@@ -31,7 +31,7 @@ const services = [
       title: "Orc Lord",
       description: "A savage warlord driven by fury and ambition, feared for both brawn and cunning.",
       details: "We install high-tech security solutions for homes and businesses.",
-      image: "/images/wixard.png",
+      image: "/images/orc.png",
       alt: "Smart Lock & Security Systems",
       slug: "smart-locks"
     },
@@ -39,7 +39,7 @@ const services = [
       title: "Warrior Lord",
       description: "A wandering warrior seeking redemption with a rune-forged blade and a haunted past.",
       details: "We provide expert automotive locksmith solutions, including key fob replacement.",
-      image: "/images/wizard.jpg",
+      image: "/images/warrior.jpg",
       alt: "Automotive Locksmith Services",
       slug: "automotive-locksmith"
     },
@@ -47,7 +47,7 @@ const services = [
       title: "Dragon Lord",
       description: "A molten-scaled dragon born in fire, untamed by gods or kings.",
       details: "We install, repair, and unlock safes while maintaining their integrity.",
-      image: "/images/wixard.png",
+      image: "/images/dragon.png",
       alt: "Safe Opening & Installation",
       slug: "safe-services"
     },
