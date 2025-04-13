@@ -88,7 +88,7 @@ export default component$(() => {
           {/* Header */}
           <div class=" border-gray-200 dark:border-gray-700  p-1">
             <Modal.Title class="pt-1">
-                <Link class="flex items-center" href={"/"}>
+                <Link class="flex items-center focus:outline-none focus:ring-0" href={"/"}>
                             <h1 class="font-bold text-3xl">KasLords</h1>
                           </Link>
             </Modal.Title>
