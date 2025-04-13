@@ -17,7 +17,7 @@ export default component$(() => {
                        </h1>
                        <div class="max-w-4xl mx-auto lg:max-w-none">
                          <p class="text-xl text-muted mb-5 dark:text-slate-300 animate-hero-subtitle">
-                         Own a piece of this legendary saga, forged in the fires of creativity and secured on the blockchain—join the KasLords and claim your dominion today!
+                         Own a piece of this legendary saga, forged in the fires of creativity and secured on the BlockDag—join the KasLords and claim your dominion today!
                          </p>
                          <div class="max-w-xs sm:max-w-md animate-hero-buttons m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-3 lg:justify-start lg:m-0 lg:max-w-7xl">
                            <div class="flex w-full sm:w-auto">

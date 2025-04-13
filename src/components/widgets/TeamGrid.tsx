@@ -33,7 +33,7 @@ const teamMembers = [
 
   {
     name: "NFTCX",
-    role: "Warden Of The Web",
+    role: "Warden of the Web",
     bio: "Architect of the digital frontier, crafting inventory systems with web wizardry and ux magic.",
     image: "/images/nftcx.jpg",
     alt: "NFTCX portrait",
