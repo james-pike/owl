@@ -105,7 +105,7 @@ export default component$(() => {
       id="team"
   highlight="Team"
   title="Founding KasLords"
-  subtitle="Meet the founding four."
+  subtitle="Meet the founding four KasLords."
   items={[]}/>
   
       

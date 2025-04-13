@@ -279,13 +279,13 @@ onEnded$={handleAudioEnded}
 />
               <a
                 href="https://t.me/+pHZ9UA7XIDA2YmIx"
-                class="btn btn-secondary ml-2 py-2 px-5.5 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"
+                class="btn btn-secondary ml-1.5 py-2 px-5.5 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"
               >
                 Join Clan
               </a>
               <a
                 href="https://www.kaspa.com/nft/mint"
-                class="btn btn-primary ml-2 py-2 px-5.5 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"
+                class="btn btn-primary ml-1.5 py-2 px-5.5 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"
               >
                 Mint
               </a>

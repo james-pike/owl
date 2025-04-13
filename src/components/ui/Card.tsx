@@ -34,7 +34,7 @@ const Root = component$<PropsOf<'div'>>((props) => {
       {...props}
       class={cn(
         'fancy-border relative rounded-sm max-w-7xl p-[7px] mx-[7px] my-[5px] mx-auto',
-        'border-[10px] border-gray-800',
+        'border-[8px] md:border-[10px] border-gray-800',
         'before:content-[""] before:absolute before:-top-[5px] before:-left-[5px] before:-right-[5px] before:-bottom-[5px]',
         'before:border-[2.5px] before:border-transparent before:bg-gradient-to-r before:from-gray-900 before:to-gray-800',
         'before:shadow-inner before:shadow-[inset_0_0_9px_rgba(0,0,0,0.7)] before:opacity-55 before:-z-10',
