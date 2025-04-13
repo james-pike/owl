@@ -11,7 +11,7 @@ const teamMembers = [
     bio: "Originator of the KasLords prophecy, shadow guardian of the Guilded Gate, and bearer of the line between vision and vigilance.",
     image: "/images/ninja.jpg",
     alt: "Aria Windwalker portrait",
-    twitter: "https://twitter.com/ariawindwalker",
+    twitter: "https://twitter.com/cninja75788",
     telegram: "https://t.me/ariawindwalker",
   },
   {
@@ -20,8 +20,8 @@ const teamMembers = [
     bio: "Quillwarden of the realm, vessel of insight, wise keeper of the scrolls, and compass to the Council’s course.",
     image: "/images/nola.jpg",
     alt: "Dorian Flame portrait",
-    twitter: "https://twitter.com/dorianflame",
-    telegram: "https://t.me/dorianflame",
+    twitter: "https://twitter.com/nolagirl_73",
+    telegram: "https://t.me/nolagirl73",
   },
   {
     name: "zooJersey",
@@ -29,8 +29,8 @@ const teamMembers = [
     bio: "Master of rune and logic, engineer of scared form, crafter of the visual soul through enchanted code and design.",
     image: "/images/zoo.jpg",
     alt: "Lyra Moonshadow portrait",
-    twitter: "https://twitter.com/lyramoon",
-    telegram: "https://t.me/lyramoon",
+    twitter: "https://x.com/njFloater",
+    telegram: "https://t.me/zoojersey",
   },
   {
     name: "NFTCX",
@@ -38,8 +38,8 @@ const teamMembers = [
     bio: "Architect of the digital frontier with web wizardry and ux magic.",
     image: "/images/nftcx.jpg",
     alt: "Kael Storm portrait",
-    twitter: "https://twitter.com/nftcx",
-    telegram: "https://t.me/nftcx",
+    twitter: "https://twitter.com/nftcx_",
+    telegram: "https://t.me/nft_cx",
   },
 ];
 
