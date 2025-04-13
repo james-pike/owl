@@ -65,7 +65,7 @@ export default component$(() => {
     <footer class=" ">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
-          <div class="col-span-12 lg:col-span-4 pr-8">
+          <div class="col-span-12 lg:col-span-4 pr-4">
             <div class="mb-2">
               <Link class="inline-block font-bold text-xl" href={"/"}>
                 KasLords Of The BlockDag
