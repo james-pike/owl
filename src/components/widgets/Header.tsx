@@ -118,7 +118,7 @@ export default component$(() => {
                 onEnded$={handleAudioEnded}
               />
               <a
-                href="/contact"
+                href="https://www.kaspa.com/nft/mint"
                 class="btn bg-gray-200 border-gray-300 dark:bg-secondary-800 dark:border-gray-900 rounded-sm mr-1 h-10 py-2 px-3 md:px-4 font-semibold shadow-none text-md w-auto"
               >
                 Mint
