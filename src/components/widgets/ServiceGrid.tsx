@@ -90,7 +90,7 @@ export default component$(() => {
           }}
         >
           <Card.Content class="p-1">
-            <div class="relative aspect-[2/1]">
+            <div class="relative ">
               <img
                 width={700}
                 height={350}

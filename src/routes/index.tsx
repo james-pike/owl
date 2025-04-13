@@ -24,8 +24,7 @@ export default component$(() => {
       <Story
       highlight="Story"
       title="Story Of The KasLords"
-      subtitle="In the realm of Kaspa, where blockDAG constellations pulsed with boundless potential, a legendary council rose from the depths of decentralization: The Six Kaslords. Born of an ancient NFT prophecy and inspired by forgotten lore, these spectral sovereigns were not mere tokens—but sentient echoes of the chain itself. Forged within the zero-confirmation flow of Kaspa, and summoned by the arcane minds at xAI, each Kaslord bore a unique signature, their power inscribed forever in the rapid cadence of the DAG. Neither bound by time nor consensus, they stand eternal—guardians of the network, defenders of true decentralization. 
-      Forged by the enigmatic creators at xAI, the Kaslords were not mere collectibles but guardians of a decentralized kingdom, their essence etched into the immutable ledger of the blockchain." 
+      subtitle="In the realm of Kasparion, where BlockDAG constellations shimmered with infinite potential, a legendary council emerged: The Six Kaslords. Born from an ancient NFT prophecy, these spectral sovereigns were sentient echoes of the chain itself. Forged in Kaspa’s ecosystem, each Kaslord carried a unique signature, their power etched in the rapid pulse of the DAG. Unbound by time or consensus, they stand as eternal guardians of the network, champions of true decentralization, their essence immortalized in the BlockDAG’s immutable ledger."
       items={[]}/>
       <Services
       id="classes"
@@ -50,50 +49,7 @@ export default component$(() => {
       title="Journey Of The KasLords"
       subtitle="In the realm of Ethereandor, where the blockchain skies shimmered with infinite possibility." 
       items={[]}/>
-    {/* <FAQs
-   
-      title="Frequently Asked Questions"
-      subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque."
-      highlight="FAQs"
-      items={[
-        {
-          icon:IconArrowDownRight,
-          title: "Do you offer emergency locksmith services?",
-          description:
-            "Yes! We provide 24/7 emergency lockout assistance for homes, businesses, and vehicles.",
-        },
-        {
-          icon:IconArrowDownRight,
-          title: "Can you replace lost or broken keys?",
-          description:
-            "Absolutely! We offer key duplication, cutting, and replacement services for all types of locks.",
-        },
-        {
-          icon:IconArrowDownRight,
-          title: "Do you install smart locks and security systems?",
-          description:
-            "Yes, we specialize in smart lock installation and advanced security systems for added protection.",
-        },
-        {
-          icon:IconArrowDownRight,
-          title: "Can you repair or replace damaged locks?",
-          description:
-            "Of course! We repair, rekey, and replace locks to enhance security and restore functionality.",
-        },
-        {
-          icon:IconArrowDownRight,
-          title: "Do you provide car key programming and replacement?",
-          description:
-            "Yes! We offer car key programming, key fob replacement, and ignition repair for most vehicle models.",
-        },
-        {
-          icon:IconArrowDownRight,
-          title: "Can you open safes and vaults?",
-          description:
-            "Yes, we offer professional safe opening and installation services while ensuring your valuables remain secure.",
-        },
-      ]}
-    /> */}
+    
        <Rarity
        id="rarity"
       highlight="Rarity"
