@@ -15,7 +15,7 @@ const services = [
       title: "Dark Lord",
       description: "A tyrant born of shadow, wielding corrupted Kaspa to bend the realm to his will.",
       details: "Get spare keys for your home, office, or vehicle with accuracy and efficiency.",
-      image: "/images/darklord.png",
+      image: "/images/darklord.jpg",
       alt: "Key Duplication & Replacement",
       slug: "key-duplication"
     },
@@ -31,7 +31,7 @@ const services = [
       title: "Orc Lord",
       description: "A savage warlord driven by fury and ambition, feared for both brawn and cunning.",
       details: "We install high-tech security solutions for homes and businesses.",
-      image: "/images/orc.png",
+      image: "/images/orc.jpg",
       alt: "Smart Lock & Security Systems",
       slug: "smart-locks"
     },
@@ -47,7 +47,7 @@ const services = [
       title: "Dragon Lord",
       description: "A molten-scaled dragon born in fire, untamed by gods or kings.",
       details: "We install, repair, and unlock safes while maintaining their integrity.",
-      image: "/images/dragon.png",
+      image: "/images/dragon.jpg",
       alt: "Safe Opening & Installation",
       slug: "safe-services"
     },
