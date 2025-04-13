@@ -1,8 +1,6 @@
-import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { Card } from "../ui/Card";
 import { LuTwitter, LuSend } from '@qwikest/icons/lucide';
-
-// Importing Lucide icons
 
 const teamMembers = [
   {
@@ -44,25 +42,6 @@ const teamMembers = [
 ];
 
 export default component$(() => {
-  const isVisible = useSignal(false);
-
-  useVisibleTask$(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          isVisible.value = true;
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.querySelector('#team-grid');
-    if (element) observer.observe(element);
-
-    return () => observer.disconnect();
-  });
-
   return (
     <div 
       id="team-grid"
@@ -71,10 +50,7 @@ export default component$(() => {
       {teamMembers.map(({ name, role, bio, image, alt, twitter, telegram }, index) => (
         <div
           key={index}
-          class={`group relative overflow-hidden rounded-lg shadow-md transition-all duration-500 ${
-            isVisible.value ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-          style={{ transitionDelay: `${index * 100}ms` }}
+          class="group relative overflow-hidden rounded-lg shadow-md"
         >
           <Card.Content class="p-1">
             <div class="relative aspect-[2/2.2]">
