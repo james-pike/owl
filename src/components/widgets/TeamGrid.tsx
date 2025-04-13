@@ -6,7 +6,7 @@ const teamMembers = [
   {
     name: "CryptoNinja",
     role: "Flamebearer of First Spark",
-    bio: "Originator of the KasLords prophecy, shadow guardian of the Guilded Gate, and bearer of vision and vigilance.",
+    bio: "Originator of the KasLords prophecy, guardian of the Guilded Gate, and bearer of vision and vigilance.",
     image: "/images/ninja.jpg",
     alt: "Aria Windwalker portrait",
     twitter: "https://twitter.com/cninja75788",
@@ -24,7 +24,7 @@ const teamMembers = [
   {
     name: "NolaGirl",
     role: "Sentinel of the Silent Star",
-    bio: "Quillwarden of the realm, vessel of insight, wise keeper of the scrolls, and compass to the Council’s course.",
+    bio: "Quillwarden of the realm, vessel of insight, keeper of the scrolls, and compass to the Council’s course.",
     image: "/images/nola.jpg",
     alt: "Dorian Flame portrait",
     twitter: "https://twitter.com/nolagirl_73",
