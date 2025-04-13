@@ -7,8 +7,8 @@ import { LuTwitter, LuSend } from '@qwikest/icons/lucide';
 const teamMembers = [
   {
     name: "CryptoNinja",
-    role: "Creative Director",
-    bio: "Leads the vision and creative strategy with a focus on storytelling and aesthetics.",
+    role: "Flamebearer of the First Spark",
+    bio: "Originator of the KasLords prophecy, shadow guardian of the Guilded Gate, and bearer of the line between vision and vigilance.",
     image: "/images/ninja.jpg",
     alt: "Aria Windwalker portrait",
     twitter: "https://twitter.com/ariawindwalker",
@@ -16,8 +16,8 @@ const teamMembers = [
   },
   {
     name: "NolaGirl",
-    role: "Lead Developer",
-    bio: "Architects and develops robust systems with performance and scalability in mind.",
+    role: "Sentinel of the Silent Star",
+    bio: "Quillwarden of the realm, vessel of insight, wise keeper of the scrolls, and compass to the Council’s course.",
     image: "/images/nola.jpg",
     alt: "Dorian Flame portrait",
     twitter: "https://twitter.com/dorianflame",
@@ -25,8 +25,8 @@ const teamMembers = [
   },
   {
     name: "zooJersey",
-    role: "UX Designer",
-    bio: "Designs intuitive and accessible user experiences for modern interfaces.",
+    role: "Mythforger of Aetheric Realms",
+    bio: "Master of rune and logic, engineer of scared form, crafter of the visual soul through enchanted code and design.",
     image: "/images/zoo.jpg",
     alt: "Lyra Moonshadow portrait",
     twitter: "https://twitter.com/lyramoon",
@@ -35,7 +35,7 @@ const teamMembers = [
   {
     name: "NFTCX",
     role: "Warden Of The Web",
-    bio: "Guards the digital frontier with web wizardry and ux magic.",
+    bio: "Architect of the digital frontier with web wizardry and ux magic.",
     image: "/images/nftcx.jpg",
     alt: "Kael Storm portrait",
     twitter: "https://twitter.com/nftcx",
