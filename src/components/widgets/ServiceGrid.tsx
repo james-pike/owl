@@ -28,7 +28,7 @@ const services = [
   },
   {
     title: "Orc Lord",
-    description: "A savage warlord driven by fury and ambition, feared for both brawn and cunning.",
+    description: "A savage warlord driven by fury and ambition, feared for both brawn and strategy.",
     details: "We install high-tech security solutions for homes and businesses.",
     image: "/images/orc.jpg",
     alt: "Smart Lock & Security Systems",
