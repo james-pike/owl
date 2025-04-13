@@ -1,5 +1,5 @@
 import { component$, useSignal } from "@builder.io/qwik";
-import { LuX, LuArrowLeft } from "@qwikest/icons/lucide";
+import { LuX, LuArrowLeft, LuUsers, LuSparkles } from "@qwikest/icons/lucide";
 import { cn } from "@qwik-ui/utils";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import { Modal } from "../ui/Modal";
@@ -164,7 +164,7 @@ export default component$(() => {
                 class="btn btn-primary sm:mb-0 w-full"
                 href="https://www.kaspa.com/nft/mint"
               >
-                <IconBrandTailwind class="mr-1"/> Mint KasLords
+                 <LuSparkles class="w-5 h-5 mr-2" /> Mint KasLords
               </a>
             </div>
             <div class="flex w-full sm:w-auto">
@@ -172,6 +172,7 @@ export default component$(() => {
                 class="btn btn-primary btn-secondary sm:mb-0 w-full"
                 href="https://t.me/+pHZ9UA7XIDA2YmIx"
               >
+                   <LuUsers class="w-5 h-5 mr-2" />
                 <IconBrandGoogle  class="mr-1"/> Join The Clan
               </a>
             </div>
