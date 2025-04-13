@@ -25,23 +25,12 @@ export default component$(() => {
    
       ],
     },
-    {
-      title: "Classes",
-      items: [
-        { title: "Wizard", href: "#classes" },
-        { title: "Dark Lord", href: "#classes" },
-        { title: "Elf", href: "#classes" },
-        { title: "Orc", href: "#classes" },
-        { title: "Warrior", href: "#classes" },
-        { title: "Dragon", href: "#classes" },
- 
-      ],
-    },
+  
     {
       title: "Resources",
       items: [
-        { title: "KaspaCom", href: "#" },
-        { title: "KRCscan", href: "#" },
+        { title: "KaspaCom", href: "https://www.kaspa.com/nft/mint" },
+        { title: "KRCscan", href: "https://krcscan.io/nft/kaslords" },
     
    
      

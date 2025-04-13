@@ -28,36 +28,35 @@ export default component$((props: Props) => {
   const { title = "", subtitle = "", highlight = "", classes = {} } = props;
 
   const stepsData = {
-    title1: "Fast, Reliable Locksmith Services in Just a Few Steps",
     items: [
       {
-        title: "Step 1: Contact Us",
+        title: "Phase 1: Awakening of Kasparion",
         description:
-          "Locked out or need a security upgrade? Call us or book an appointment online, and our expert locksmiths will be on their way.",
+          "Initial launch of the KasLords.",
         icon: IconStar,
       },
       {
-        title: "Step 2: Assessment & Quote",
+        title: "Phase 2: Fellowship of the Block",
         description:
-          "Our team evaluates your situation—whether it's a lockout, key replacement, or security installation—and provides a transparent, upfront quote.",
+          "Launch minting incentives for holders of all six KasLord character types.",
         icon: IconStar,
       },
       {
-        title: "Step 3: Professional Service",
+        title: "Phase 3: Strongholds and Legends",
         description:
-          "We quickly and efficiently handle your locksmith needs, ensuring top-quality security solutions for your home, business, or vehicle.",
+          "Foster fan-fiction and meme culture around KasLords, for fans of fantasy RPG's.",
         icon: IconStar,
       },
       {
-        title: "Ready! You're Secure",
+        title: "Phase 4: The Lore Deepens",
         description:
-          "With your locks fixed, keys replaced, or security upgraded, you can rest easy knowing you're in safe hands with AdeptLock.",
+          "What lies ahead will not be forged in silence or secrecy, but in open scrolls and shared vision.",
         icon: IconStar,
       },
     ],
     image: {
       src: sideImg,
-      alt: "Locksmith service process",
+     
     },
   };
 
@@ -118,7 +117,7 @@ export default component$((props: Props) => {
                   src={image.src}
                   width={532}
                   height={704}
-                  alt={image.alt}
+                 
                   class="inset-0 w-full rounded-md bg-gray-500 hidden sm:block object-cover object-top shadow-lg dark:bg-slate-700 md:absolute md:h-full"
                   breakpoints={[320, 480, 640, 1024]}
                 />
@@ -129,7 +128,7 @@ export default component$((props: Props) => {
                   src={image.src}
                   width={400}
                   height={400}
-                  alt={image.alt}
+                
                   class="inset-0 w-full rounded-md bg-gray-500 block sm:hidden mx-auto object-cover object-top shadow-lg dark:bg-slate-700 md:absolute md:h-full"
                   breakpoints={[320, 480, 640, 1024]}
                 />
