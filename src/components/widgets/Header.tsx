@@ -287,7 +287,7 @@ onEnded$={handleAudioEnded}
                 href="https://www.kaspa.com/nft/mint"
                 class="btn btn-primary ml-2 py-2.5 px-5.5 md:px-4 font-semibold shadow-none text-sm w-auto"
               >
-                Mint KasLords
+                Mint
               </a>
             </div>
           </div>

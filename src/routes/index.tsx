@@ -2,12 +2,6 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 import Steps from "~/components/widgets/Steps";
-
-
-
-
-
-
 import { SITE } from "~/config.mjs";
 import Services from "~/components/widgets/Services";
 
