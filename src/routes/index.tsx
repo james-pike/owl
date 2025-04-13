@@ -26,7 +26,7 @@ export default component$(() => {
       <div class="block md:hidden">
       <Hero/>
       </div>
-     
+      {/* <NewTabs/> */}
       <Story
       highlight="Story"
       title="Story Of The KasLords"

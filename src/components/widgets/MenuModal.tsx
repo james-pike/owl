@@ -162,15 +162,15 @@ export default component$(() => {
             <div class="flex w-full sm:w-auto">
               <a
                 class="btn btn-primary sm:mb-0 w-full"
-                href="tel:+16132188063"
+                href="https://www.kaspa.com/nft/mint"
               >
-                <IconBrandTailwind class="mr-1" /> Mint KasLords
+                <IconBrandTailwind class="mr-1"/> Mint KasLords
               </a>
             </div>
             <div class="flex w-full sm:w-auto">
               <a
                 class="btn btn-primary btn-secondary sm:mb-0 w-full"
-                href="/contact"
+                href="https://t.me/+pHZ9UA7XIDA2YmIx"
               >
                 <IconBrandGoogle  class="mr-1"/> Join The Clan
               </a>
