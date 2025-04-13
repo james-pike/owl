@@ -61,7 +61,7 @@ export default component$(() => {
               </Link>
             </div>
             <div class="text-sm text-gray-600 mb-4 dark:text-gray-400">
-            Own a piece of this legendary saga, forged in the fires of creativity and secured on the BlockDag—join the Kaslords and claim your dominion today!
+            Own a piece of this legendary saga, forged in the fires of creativity and secured on the BlockDag—join the KasLords and claim your dominion today!
 
             </div>
             <div class="flex gap-2">

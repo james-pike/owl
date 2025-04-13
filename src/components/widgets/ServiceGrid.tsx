@@ -44,7 +44,7 @@ const services = [
   },
   {
     title: "Dragon Lord",
-    description: "A molten-scaled dragon born in fire, untamed by gods or kings.",
+    description: "A molten-scaled dragon born in fire, hardened by chaos, and untamed by gods or kings.",
     details: "We install, repair, and unlock safes while maintaining their integrity.",
     image: "/images/dragon.jpg",
     alt: "Safe Opening & Installation",
