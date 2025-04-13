@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
 import { Card } from "../ui/Card";
 
 const services = [
@@ -9,7 +8,7 @@ const services = [
     details: "Regain access to your property quickly with our professional lockout solutions.",
     image: "/images/wizard.jpg",
     alt: "Emergency Lockout Assistance",
-    slug: "emergency-lockout"
+    
   },
   {
     title: "Dark Lord",
@@ -17,7 +16,7 @@ const services = [
     details: "Get spare keys for your home, office, or vehicle with accuracy and efficiency.",
     image: "/images/darklord.jpg",
     alt: "Key Duplication & Replacement",
-    slug: "key-duplication"
+    
   },
   {
     title: "Elf Lord",
@@ -25,7 +24,7 @@ const services = [
     details: "We install and fix all types of locks to keep your property secure.",
     image: "/images/elf.jpg",
     alt: "Lock Installation & Repair",
-    slug: "lock-installation"
+   
   },
   {
     title: "Orc Lord",
@@ -33,7 +32,7 @@ const services = [
     details: "We install high-tech security solutions for homes and businesses.",
     image: "/images/orc.jpg",
     alt: "Smart Lock & Security Systems",
-    slug: "smart-locks"
+   
   },
   {
     title: "Warrior Lord",
@@ -41,7 +40,7 @@ const services = [
     details: "We provide expert automotive locksmith solutions, including key fob replacement.",
     image: "/images/warrior.jpg",
     alt: "Automotive Locksmith Services",
-    slug: "automotive-locksmith"
+   
   },
   {
     title: "Dragon Lord",
@@ -49,7 +48,7 @@ const services = [
     details: "We install, repair, and unlock safes while maintaining their integrity.",
     image: "/images/dragon.jpg",
     alt: "Safe Opening & Installation",
-    slug: "safe-services"
+   
   },
 ];
 
@@ -59,11 +58,10 @@ export default component$(() => {
       id="services-grid"
       class="grid mx-auto max-w-screen-xl mt-2 mb-2 md:mb-16 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     >
-      {services.map(({ title, description, image, alt, slug }, index) => (
-        <Link
+      {services.map(({ title, description, image, alt }, index) => (
+        <div
           key={index}
-          href={slug}
-          class="group relative overflow-hidden rounded-lg shadow-md no-underline"
+          class="group relative overflow-hidden rounded-lg shadow-md"
         >
           <Card.Content class="p-1">
             <div class="relative">
@@ -81,7 +79,7 @@ export default component$(() => {
               <p class="text-sm text-gray-600 dark:text-gray-400">{description}</p>
             </div>
           </Card.Content>
-        </Link>
+        </div>
       ))}
     </div>
   );
