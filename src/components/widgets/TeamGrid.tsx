@@ -34,7 +34,7 @@ const teamMembers = [
   {
     name: "NFTCX",
     role: "Warden Of The Web",
-    bio: "Architect of the digital frontier with web wizardry and ux magic.",
+    bio: "Architect of the digital frontier, crafting inventory items with web wizardry and ux magic.",
     image: "/images/nftcx.jpg",
     alt: "Kael Storm portrait",
     twitter: "https://twitter.com/nftcx_",
