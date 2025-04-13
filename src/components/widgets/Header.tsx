@@ -105,7 +105,7 @@ export default component$(() => {
             <div class="flex items-center md:hidden">
               <a
 
-                class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm ml-2 mr-1 h-12 py-2.5 px-4 md:px-4 font-semibold shadow-none text-md w-auto"
+                class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm ml-2 mr-1 h-10 py-2 px-2 md:px-4 font-semibold shadow-none text-md w-auto"
                 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
                 onClick$={toggleAudio}
               >
@@ -119,7 +119,7 @@ export default component$(() => {
               />
               <a
                 href="/contact"
-                class="btn bg-gray-200 border-gray-300 dark:bg-secondary-800 dark:border-gray-900 rounded-sm mr-1 h-12 py-2.5 px-4 md:px-4 font-semibold shadow-none text-md w-auto"
+                class="btn bg-gray-200 border-gray-300 dark:bg-secondary-800 dark:border-gray-900 rounded-sm mr-1 h-10 py-2 px-3 md:px-4 font-semibold shadow-none text-md w-auto"
               >
                 Mint
               </a>
@@ -265,7 +265,7 @@ export default component$(() => {
               <div class="flex"></div>
               <a
 
-class="btn  border-gray-300 dark:bg-secondary-800 rounded-md bg-secondary-800 dark:border-gray-900 ml-2 h-11 py-2.5 px-4 md:px-4 font-semibold shadow-none text-md w-auto"
+class="btn  border-gray-300 dark:bg-secondary-800 rounded-sm bg-secondary-800 dark:border-gray-900 ml-2 h-10 py-2 px-4 md:px-4 font-semibold shadow-none text-md w-auto"
 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
 onClick$={toggleAudio}
 >
@@ -279,13 +279,13 @@ onEnded$={handleAudioEnded}
 />
               <a
                 href="https://t.me/+pHZ9UA7XIDA2YmIx"
-                class="btn btn-secondary ml-2 py-2.5 px-5.5 md:px-4 font-semibold shadow-none text-sm w-auto"
+                class="btn btn-secondary ml-2 py-2 px-5.5 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"
               >
                 Join Clan
               </a>
               <a
                 href="https://www.kaspa.com/nft/mint"
-                class="btn btn-primary ml-2 py-2.5 px-5.5 md:px-4 font-semibold shadow-none text-sm w-auto"
+                class="btn btn-primary ml-2 py-2 px-5.5 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"
               >
                 Mint
               </a>

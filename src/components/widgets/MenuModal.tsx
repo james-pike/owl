@@ -79,7 +79,7 @@ export default component$(() => {
     <>
       <Modal.Root bind:show={show}>
         <div class="flex items-center hover:bg-primary-100 dark:hover:bg-gray-700">
-          <Modal.Trigger class=" rounded-sm p-2 bg-gray-200 dark:bg-gray-800  border-gray-300 dark:border-gray-900">
+          <Modal.Trigger class=" rounded-sm p-1 bg-gray-200 dark:bg-gray-800  border-gray-300 dark:border-gray-900">
             <IconHamburger class="w-8 h-8 md:w-5 md:h-5 md:inline-block" />
           </Modal.Trigger>
         </div>
