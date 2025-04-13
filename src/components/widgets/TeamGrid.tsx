@@ -89,7 +89,7 @@ export default component$(() => {
             </div>
             <div class="px-4 py-3 bg-gray-100 dark:bg-gray-800">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{name}</h3>
-              <p class="text-sm text-primary-600 dark:text-primary-400">{role}</p>
+              <p class="text-sm text-secondary-700 dark:text-secondary-600">{role}</p>
               <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{bio}</p>
 
               <div class="flex space-x-4">
@@ -98,7 +98,7 @@ export default component$(() => {
                     href={twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-primary-600 dark:text-primary-400 hover:text-blue-500 transition-colors"
+                    class="text-primary-600 dark:text-secondary-700 hover:text-secondary-600 transition-colors"
                     aria-label={`${name} on Twitter`}
                   >
                     <LuTwitter class="w-5 h-5" />
@@ -109,7 +109,7 @@ export default component$(() => {
                     href={telegram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-primary-600 dark:text-primary-400 hover:text-blue-500 transition-colors"
+                    class="text-primary-600 dark:text-secondary-700 hover:text-secondary-600 transition-colors"
                     aria-label={`${name} on Telegram`}
                   >
                     <LuSend class="w-5 h-5" />
