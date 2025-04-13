@@ -6,7 +6,7 @@ import { Headline } from "../ui/Headline";
 import { Card } from "../ui/Card";
 
 const sideImg =
-  "/images/roadmap.png";
+  "/images/roadmap.jpg";
 
   interface Item {
     title?: string;
