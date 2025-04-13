@@ -5,7 +5,6 @@ import { Link, useLocation } from "@builder.io/qwik-city";
 import { Modal } from "../ui/Modal";
 import IconHamburger from "../icons/IconHamburger";
 import { buttonVariants } from "../ui/Button";
-import IconBrandTailwind from "../icons/IconBrandTailwind";
 import IconBrandGoogle from "../icons/IconBrandGoogle";
 import { Card } from "../ui/Card";
 
