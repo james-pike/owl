@@ -93,7 +93,7 @@ export default component$(() => {
                           </Link>
             </Modal.Title>
 
-            <Modal.Description class="text-lg font-medium px-2 py-1 text-gray-700 dark:text-gray-200">
+            <Modal.Description class="text-lg font-medium px-0 py-1 text-gray-700 dark:text-gray-200">
               KasLords Of The BlockDag          </Modal.Description>
           </div>
 
