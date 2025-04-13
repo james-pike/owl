@@ -66,7 +66,7 @@ export default component$(() => {
   return (
     <div 
       id="team-grid"
-      class="grid mx-auto max-w-screen-xl mt-2 mb-16 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+      class="grid mx-auto max-w-screen-xl mt-2 md:mb-12 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
     >
       {teamMembers.map(({ name, role, bio, image, alt, twitter, telegram }, index) => (
         <div
