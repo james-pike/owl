@@ -5,6 +5,7 @@ import MenuModal from "./MenuModal";
 import IconPause from "../icons/IconPause";
 import IconPlay from "../icons/IconPlay";
 import { Card } from "../ui/Card";
+import { LuSend, LuTwitter } from "@qwikest/icons/lucide";
 
 export default component$(() => {
   const store = useStore({
@@ -97,7 +98,7 @@ export default component$(() => {
       }}
     >
       <Card.Root>
-        <div class="relative text-default  md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl">
+        <div class="relative text-default  md:px-2 mx-auto w-full md:flex md:justify-between max-w-7xl">
           <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
             <Link class="flex items-center" href={"/"}>
               <h1 class="font-bold text-3xl tracking-tighter">KasLords</h1>
@@ -263,6 +264,22 @@ export default component$(() => {
           <div class="hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0">
             <div class="items-center flex justify-between w-full md:w-auto">
               <div class="flex"></div>
+               <Link
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                    aria-label={"label"}
+                    title={"title"}
+                    href={"https://t.me/+pHZ9UA7XIDA2YmIx"}
+                  >
+                     <LuSend class="w-5 h-5" />
+                  </Link>
+                    <Link
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                    aria-label={"label"}
+                    title={"title"}
+                    href={"https://x.com/kaslords"}
+                  >
+                     <LuTwitter class="w-5 h-5" />
+                  </Link>
               <a
 
 class="btn  border-gray-300 dark:bg-secondary-800 rounded-sm bg-secondary-800 dark:border-gray-900 ml-2 h-10 py-2 px-4 md:px-4 font-semibold shadow-none text-md w-auto"
