@@ -282,7 +282,7 @@ export default component$(() => {
                   </Link>
               <a
 
-class="btn  border-gray-300 dark:bg-secondary-800 rounded-sm bg-secondary-800 dark:border-gray-900 ml-2 h-10 py-2 px-3 md:px-4 font-semibold shadow-none text-md w-auto"
+class="btn  border-gray-300 dark:bg-secondary-800 rounded-sm bg-secondary-800 dark:border-gray-900 ml-2 h-10 py-2 px-3 md:px-3 font-semibold shadow-none text-md w-auto"
 aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
 onClick$={toggleAudio}
 >

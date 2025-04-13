@@ -13,15 +13,6 @@ const teamMembers = [
     telegram: "https://t.me/ariawindwalker",
   },
   {
-    name: "NolaGirl",
-    role: "Sentinel of the Silent Star",
-    bio: "Quillwarden of the realm, vessel of insight, wise keeper of the scrolls, and compass to the Council’s course.",
-    image: "/images/nola.jpg",
-    alt: "Dorian Flame portrait",
-    twitter: "https://twitter.com/nolagirl_73",
-    telegram: "https://t.me/nolagirl73",
-  },
-  {
     name: "zooJersey",
     role: "Mythforger of Aetheric Realms",
     bio: "Master of rune and logic, engineer of scared form, crafter of the visual soul through enchanted code and design.",
@@ -30,6 +21,16 @@ const teamMembers = [
     twitter: "https://x.com/njFloater",
     telegram: "https://t.me/zoojersey",
   },
+  {
+    name: "NolaGirl",
+    role: "Sentinel of the Silent Star",
+    bio: "Quillwarden of the realm, vessel of insight, wise keeper of the scrolls, and compass to the Council’s course.",
+    image: "/images/nola.jpg",
+    alt: "Dorian Flame portrait",
+    twitter: "https://twitter.com/nolagirl_73",
+    telegram: "https://t.me/nolagirl73",
+  },
+
   {
     name: "NFTCX",
     role: "Warden Of The Web",
