@@ -1,4 +1,4 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
 
@@ -35,11 +35,7 @@ const classImages = [
 export default component$((props: Props) => {
   const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;
 
-  const selectedClass = useSignal('Wizard'); // Default class
 
-  const selectedImage = classImages.find(
-    (c) => c.name === selectedClass.value
-  )?.image;
 
   return (
     <section class="relative scroll-mt-16 mx-auto max-w-7xl mb-6" {...(id ? { id } : {})}>
