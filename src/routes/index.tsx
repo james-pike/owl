@@ -35,6 +35,7 @@ export default component$(() => {
   items={[]}/>
   <div class="hidden sm:block">
       <Inventory
+      id="inventory"
         highlight="inventory"
         title="Item Inventory"
         subtitle="Browse inventory items and rarities."
