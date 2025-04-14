@@ -12,7 +12,7 @@ import { DarkLordTabs } from './DarkLordTabs';
 // Main component
 export default component$(() => {
   return (
-    <Card.Content>
+    
     <Tabs.Root class="max-w-6xl">
     
     <Tabs.List class="flex flex-row flex-nowrap overflow-x-auto md:grid md:grid-cols-6 w-full">
@@ -50,6 +50,6 @@ export default component$(() => {
       </Tabs.Panel>
 
     </Tabs.Root>
-    </Card.Content>
+   
   );
 });
