@@ -10,6 +10,7 @@ import Rarity from "~/components/widgets/Rarity";
 import Hero2 from "~/components/widgets/Hero2";
 import Hero from "~/components/widgets/Hero";
 import Team from "~/components/widgets/Team";
+import Inventory from "~/components/widgets/Inventory";
 
 export default component$(() => {
   return (
@@ -20,6 +21,7 @@ export default component$(() => {
       <div class="block md:hidden">
       <Hero/>
       </div>
+  
       <Story
       highlight="Story"
       title="Story Of The KasLords"
@@ -31,13 +33,15 @@ export default component$(() => {
   title="Character Classes"
   subtitle="Mint one of six legendary KasLord character types."
   items={[]}/>
+  <div class="hidden sm:block">
+      <Inventory
+        highlight="inventory"
+        title="Item Inventory"
+        subtitle="Browse inventory items and rarities."
+        items={[]}
+      />
+      </div>
 
-{/* <Inventory
-      id="inventory"
-  highlight="Inventory"
-  title="Inventory Items"
-  subtitle="Mint one of six legendary KasLord character types."
-  items={[]}/> */}
 
 
 

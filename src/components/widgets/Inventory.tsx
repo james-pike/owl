@@ -5,6 +5,7 @@ import { Headline } from "~/components/ui/Headline";
 import ClassSelect from "./ClassSelect";
 import Items from "./Items";
 import { Card } from "../ui/Card";
+import NewTabs from "./NewTabs";
 
 interface Item {
   title?: string;
@@ -51,41 +52,13 @@ export default component$((props: Props) => {
         </div>
         <div
           class={twMerge(
-            "relative mx-auto px-4 max-w-5xl sm:px-6 pt-10 pb-6 md:py-12 lg:py-12 text-default",
+            "relative mx-auto px-4 max-w-4xl sm:px-6 pt-10 pb-6 md:py-12 lg:py-12 text-default",
             classes?.container,
             isDark ? "dark" : ""
           )}
         >
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
-          <div class="md:grid md:grid-cols-3 md:gap-2">
-            <div class="hidden md:block">
-              <Card.Content class="h-full">
-                {selectedImage ? (
-                  <img
-                    src={selectedImage}
-                    alt={selectedClass.value}
-                    class=" w-full h-full object-cover"
-                  />
-                ) : (
-                  <div class="text-gray-500">No image available</div>
-                )}
-              </Card.Content>
-            </div>
-            {/* Left 2/3: stacked Card.Contents */}
-            <div class="md:col-span-2 flex flex-col gap-2">
-              <Card.Content>
-                <div class="w-full">
-                  <ClassSelect selectedClass={selectedClass} />
-                </div>
-              </Card.Content>
-              <Card.Content>
-                <Items selectedClass={selectedClass.value} />
-              </Card.Content>
-            </div>
-
-            {/* Right 1/3: full-height Card.Content */}
-
-          </div>
+         <NewTabs/>
 
         </div>
       </Card.Root>
