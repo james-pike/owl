@@ -3,7 +3,7 @@ import { Card } from "../ui/Card";
 
 const services = [
   {
-    title: "Wizard Lord",
+    title: "Wizard ",
     description: "A mysterious sorcerer who channels ancient Kaspa energy to maintain balance—or disrupt it.",
     details: "Regain access to your property quickly with our professional lockout solutions.",
     image: "/images/wizard.jpg",
@@ -19,7 +19,7 @@ const services = [
     
   },
   {
-    title: "Elf Lord",
+    title: "Elf ",
     description: "A radiant forest goddess whose beauty rivals starlight, yet her arrows strike with divine precision.",
     details: "We install and fix all types of locks to keep your property secure.",
     image: "/images/elf.jpg",
@@ -27,7 +27,7 @@ const services = [
    
   },
   {
-    title: "Orc Lord",
+    title: "Orc ",
     description: "A savage warlord driven by fury and ambition, feared for both brawn and strategy.",
     details: "We install high-tech security solutions for homes and businesses.",
     image: "/images/orc.jpg",
@@ -35,7 +35,7 @@ const services = [
    
   },
   {
-    title: "Warrior Lord",
+    title: "Man",
     description: "A wandering warrior seeking redemption with a rune-forged blade and a haunted past.",
     details: "We provide expert automotive locksmith solutions, including key fob replacement.",
     image: "/images/warrior.jpg",
@@ -43,7 +43,7 @@ const services = [
    
   },
   {
-    title: "Dragon Lord",
+    title: "Dragon ",
     description: "A molten-scaled dragon born in fire, hardened by chaos, and untamed by gods or kings.",
     details: "We install, repair, and unlock safes while maintaining their integrity.",
     image: "/images/dragon.jpg",
