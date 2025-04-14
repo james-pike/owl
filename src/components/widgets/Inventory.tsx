@@ -23,14 +23,7 @@ interface Props {
   classes?: any;
 }
 
-const classImages = [
-  { name: 'Wizard', image: '/images/wizard.jpg' },
-  { name: 'Elf', image: '/images/elf.jpg' },
-  { name: 'Rogue', image: '/images/rogue.png' },
-  { name: 'Cleric', image: '/images/cleric.png' },
-  { name: 'Ranger', image: '/images/ranger.png' },
-  { name: 'Paladin', image: '/images/paladin.png' },
-];
+
 
 export default component$((props: Props) => {
   const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;
