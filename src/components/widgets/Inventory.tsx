@@ -2,8 +2,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
 
-import ClassSelect from "./ClassSelect";
-import Items from "./Items";
+
 import { Card } from "../ui/Card";
 import NewTabs from "./NewTabs";
 

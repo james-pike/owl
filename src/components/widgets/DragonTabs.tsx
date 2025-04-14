@@ -1,7 +1,6 @@
 import { component$, useSignal, useTask$ } from '@builder.io/qwik';
 import { Tabs } from '../ui/Tabs';
 import { Card } from '../ui/Card';
-import { Label } from '../ui/Label';
 
 // Define the single wizard image for the entire set
 const wizardImage = {
