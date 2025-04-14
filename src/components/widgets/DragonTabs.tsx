@@ -198,10 +198,10 @@ export const DragonTabs = component$(() => {
   };
 
   return (
-    <div class="flex w-full space-x-2">
+    <div class="flex w-full space-x-0 sm:space-x-2">
       {/* Far Left: Single wizard image (outside tabs, 1/4 width) */}
       <div class="hidden sm:block w-1/4 space-y-2 h-full items-end flex">
-        <Card.Content class="space-y-2">
+        <Card.Content class="space-y-2 p-0">
           <div class="flex items-center justify-center">
             <img
               src={wizardImage.src}
@@ -209,81 +209,85 @@ export const DragonTabs = component$(() => {
               class="max-w-full max-h-full rounded-sm object-contain mx-auto"
             />
           </div>
-          <p class="text-xs text-gray-400">{wizardImage.description}</p>
+          <p class="text-xs p-2 pt-0 text-gray-400">{wizardImage.description}</p>
         </Card.Content>
       </div>
 
       {/* Right 3/4: Tabs and content */}
-      <div class="w-full sm:w-3/4">
+      <div class="w-full sm:w-3/4 m-0">
         <Tabs.Root class="w-full">
           {/* Dynamically generate tabs */}
-            <Tabs.List class="grid w-full grid-cols-4 p-0">
-                     {wizardCategories.map((wizard, index) => (
-                       <Tabs.Tab class="py-1"  key={index} onClick$={() => (activeTab.value = index)}>
-                         {wizard.category}
-                       </Tabs.Tab>
-                     ))}
-                   </Tabs.List>
+          <Tabs.List class="grid w-full grid-cols-4 p-0">
+            {wizardCategories.map((wizard, index) => (
+              <Tabs.Tab class="py-1" key={index} onClick$={() => (activeTab.value = index)}>
+                {wizard.category}
+              </Tabs.Tab>
+            ))}
+          </Tabs.List>
 
           {/* Dynamically generate panels */}
           {wizardCategories.map((wizard, index) => (
             <Tabs.Panel key={index}>
-              <Card.Content class="flex space-x-3 px-0 py-1 items-center">
-                {/* Middle: Image thumbnails */}
-                <div class="flex-1 space-y-2">
-                  <div class="grid grid-cols-3 gap-2.5">
-                    {wizard.images.map((img, imgIndex) => (
-                      <button
-                        key={imgIndex}
-                        class={`p-2 border-2 rounded flex items-center justify-center ${
-                          selectedImage.value?.src === img.src
-                            ? 'border-secondary-800 shadow-[0_0_8px_2px_rgba(136,153,255,0.6)]'
-                            : 'border-gray-700'
-                        }`}
-                      >
-                        <img
-                          src={img.src}
-                          alt={img.alt}
-                          class="w-16 h-16 object-contain mx-auto"
-                          onClick$={() => (selectedImage.value = img)}
-                        />
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                {/* Right: Selected image preview with metadata */}
-                <div class="flex-1 space-y-2">
-                  <div
-                    class={`p-2 border rounded h-48 flex flex-col items-center justify-center ${
-                      selectedImage.value
-                        ? 'border-secondary-800 shadow-[0_0_8px_2px_rgba(136,153,255,0.6)]'
-                        : 'border-gray-700'
-                    }`}
-                  >
-                    {selectedImage.value ? (
-                      <div class="text-center flex flex-col items-center">
-                        <img
-                          src={selectedImage.value.src}
-                          alt={selectedImage.value.alt}
-                          class="max-w-full max-h-24 object-contain mx-auto mb-2"
-                        />
-                        <div class="text-sm">
-                          <div class="font-semibold">{selectedImage.value.title}</div>
-                          <div class="text-gray-500">{selectedImage.value.description}</div>
-                          <div class="text-gray-400 pt-1">
-                            Rarity: {selectedImage.value.rarity}%{' '} - {' '}
-                           
-                            {selectedImage.value.rarity != null && (
-                              <span class={getRarityClass(selectedImage.value.rarity).color}>
-                                {getRarityClass(selectedImage.value.rarity).text}
-                              </span>
-                            )}
+              <Card.Content class="p-0">
+                {/* Mobile: Stack showcase above grid; Desktop: Side-by-side */}
+                <div class="flex flex-col sm:flex-row sm:space-x-3 w-full m-0">
+                  {/* Showcase: Selected image preview with metadata */}
+                  <div class="w-full mx-auto space-y-1 sm:space-y-2 sm:order-2 p-3">
+                    <div
+                      class={`p-2 border rounded h-48 flex flex-col items-center justify-center w-full ${
+                        selectedImage.value
+                          ? 'border-secondary-800 shadow-[0_0_8px_2px_rgba(136,153,255,0.6)]'
+                          : 'border-gray-700'
+                      }`}
+                    >
+                      {selectedImage.value ? (
+                        <div class="text-center flex flex-col items-center">
+                          <img
+                            src={selectedImage.value.src}
+                            alt={selectedImage.value.alt}
+                            class="max-w-full max-h-24 object-contain mx-auto mb-2"
+                          />
+                          <div class="text-sm">
+                            <div class="font-semibold">{selectedImage.value.title}</div>
+                            <div class="text-gray-500">{selectedImage.value.description}</div>
+                            <div class="text-gray-400 pt-1">
+                              Rarity: {selectedImage.value.rarity}% -{' '}
+                              {selectedImage.value.rarity != null && (
+                                <span class={getRarityClass(selectedImage.value.rarity).color}>
+                                  {getRarityClass(selectedImage.value.rarity).text}
+                                </span>
+                              )}
+                            </div>
                           </div>
                         </div>
+                      ) : (
+                        <span class="text-gray-500">Select an image to preview</span>
+                      )}
+                    </div>
+                  </div>
+                  {/* Grid: Image thumbnails */}
+                  <div class="w-full mx-auto space-y-1 sm:space-y-2 sm:order-1 p-3 pt-0 md:p-3 md:px-0">
+                    <div class="flex items-center h-48 w-full">
+                      <div class="grid grid-cols-3 grid-rows-2 gap-2.5 w-full h-full">
+                        {wizard.images.map((img, imgIndex) => (
+                          <button
+                            key={imgIndex}
+                            class={`p-1 border-2 rounded flex items-center justify-center w-full h-full ${
+                              selectedImage.value?.src === img.src
+                                ? 'border-secondary-800 shadow-[0_0_8px_2px_rgba(136,153,255,0.6)]'
+                                : 'border-gray-700'
+                            }`}
+                          >
+                            <img
+                              src={img.src}
+                              alt={img.alt}
+                              class="max-w-[5rem] max-h-[5rem] object-contain mx-auto"
+                              onClick$={() => (selectedImage.value = img)}
+                            />
+                          </button>
+                        ))}
                       </div>
-                    ) : (
-                      <span class="text-gray-500">Select an image to preview</span>
-                    )}
+                    </div>
                   </div>
                 </div>
               </Card.Content>

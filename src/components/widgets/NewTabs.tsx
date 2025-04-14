@@ -9,16 +9,13 @@ import { OrcTabs } from './OrcTabs';
 import { DarkLordTabs } from './DarkLordTabs';
 
 
-// Separate component for the nested tabs
-
-
 // Main component
 export default component$(() => {
   return (
     <Card.Content>
     <Tabs.Root class="max-w-6xl">
     
-      <Tabs.List class="grid w-full grid-cols-6">
+    <Tabs.List class="flex flex-row flex-nowrap overflow-x-auto md:grid md:grid-cols-6 w-full">
 
         <Tabs.Tab class="data-[state=selected]:bg-secondary-900"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon mr-1 icon-tabler icons-tabler-outline icon-tabler-wand"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 21l15 -15l-3 -3l-15 15l3 3" /><path d="M15 6l3 3" /><path d="M9 3a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" /><path d="M19 13a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" /></svg>  Wizard</Tabs.Tab>
         <Tabs.Tab class="data-[state=selected]:bg-secondary-900"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon mr-1 icon-tabler icons-tabler-outline icon-tabler-leaf"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 21c.5 -4.5 2.5 -8 7 -10" /><path d="M9 18c6.218 0 10.5 -3.288 11 -12v-2h-4.014c-9 0 -11.986 4 -12 9c0 1 0 3 2 5h3z" /></svg> Elf </Tabs.Tab>
@@ -29,70 +26,28 @@ export default component$(() => {
       </Tabs.List>
 
       <Tabs.Panel>
-      
-
-        
-            {/* Render the nested tabs */}
             <WizardTabs />
-        
-
-       
       </Tabs.Panel>
 
-
-
       <Tabs.Panel>
-      
-
-         
-            {/* Render the nested tabs */}
             <ElfTabs />
-         
-
-       
       </Tabs.Panel>
 
-
       <Tabs.Panel>
-        
-            {/* Render the nested tabs */}
             <WarriorTabs />
-     
       </Tabs.Panel>
 
       <Tabs.Panel>
-      
-            {/* Render the nested tabs */}
             <OrcTabs />
-        
       </Tabs.Panel>
 
       <Tabs.Panel>
-      
-
-    
-        {/* Render the nested tabs */}
         <DragonTabs />
-    
-
-   
   </Tabs.Panel>
 
-
       <Tabs.Panel>
-       
-            {/* Render the nested tabs */}
             <DarkLordTabs />
-        
       </Tabs.Panel>
-
-
-
-
-
-
-
-
 
     </Tabs.Root>
     </Card.Content>

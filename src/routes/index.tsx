@@ -33,7 +33,7 @@ export default component$(() => {
   title="Character Classes"
   subtitle="Mint one of six legendary KasLord character types."
   items={[]}/>
-  <div class="hidden sm:block">
+ 
       <Inventory
       id="inventory"
         highlight="inventory"
@@ -41,7 +41,7 @@ export default component$(() => {
         subtitle="Browse inventory items and rarities."
         items={[]}
       />
-      </div>
+     
 
 
 
