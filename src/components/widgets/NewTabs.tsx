@@ -1,6 +1,5 @@
 import { component$ } from '@builder.io/qwik';
 import { Tabs } from '../ui/Tabs';
-import { Card } from '../ui/Card';
 import { WizardTabs } from './WizardTabs';
 import { ElfTabs } from './ElfTabs';
 import { DragonTabs } from './DragonTabs';
