@@ -14,7 +14,7 @@ export default component$(() => {
       const ipfsBase = 'bafybeif6ba2mj6utneenc6dob7jnvxc2oexplrwsxjwmxm3fgy7e36smqu';
       const imageFile = defaultNft.image.split('/').pop(); // "1.png"
       const tokenURI = `ipfs://${ipfsBase}/${imageFile}`;
-      const imageUrl = `https://gateway.pinata.cloud/ipfs/${ipfsBase}/${imageFile}`;
+      const imageUrl = `https://${ipfsBase}.ipfs.w3s.link/${imageFile}`; // Use w3s.link Trustless Gateway
 
       nftData.value = {
         metadata: {
@@ -40,7 +40,7 @@ export default component$(() => {
       const ipfsBase = 'bafybeif6ba2mj6utneenc6dob7jnvxc2oexplrwsxjwmxm3fgy7e36smqu';
       const imageFile = nft.image.split('/').pop(); // "1.png", "4.png", etc.
       const tokenURI = `ipfs://${ipfsBase}/${imageFile}`;
-      const imageUrl = `https://gateway.pinata.cloud/ipfs/${ipfsBase}/${imageFile}`;
+      const imageUrl = `https://${ipfsBase}.ipfs.w3s.link/${imageFile}`; // Use w3s.link Trustless Gateway
 
       console.log('Image URL:', imageUrl); // Debug log
       console.log('Token URI:', tokenURI); // Debug log
@@ -106,8 +106,8 @@ export default component$(() => {
                 {/* Image on mobile only */}
                 <div class="md:hidden flex justify-center mb-4">
                   <img
-                  width={300}
-                  height={300}
+                    width={300}
+                    height={300}
                     src={nftData.value.metadata.image}
                     alt={nftData.value.metadata.name}
                     class="w-full max-w-[300px] max-h-[300px] rounded-md object-contain"
