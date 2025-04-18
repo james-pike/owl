@@ -52,13 +52,13 @@ const wizardCategories = [
         description: 'Orb wielding raw elemental power.',
         rarity: 5,
       },
-      {
-        src: '/images/goldtrident.png',
-        alt: 'Trident of Wisdom',
-        title: 'Trident of Wisdom',
-        description: 'Trident enhancing sharp magical intellect.',
-        rarity: 0.5,
-      },
+      // {
+      //   src: '/images/goldtrident.png',
+      //   alt: 'Trident of Wisdom',
+      //   title: 'Trident of Wisdom',
+      //   description: 'Trident enhancing sharp magical intellect.',
+      //   rarity: 0.5,
+      // },
     ],
   },
   {
@@ -99,13 +99,13 @@ const wizardCategories = [
         description: 'Gown shimmering with radiant astral light.',
         rarity: 25,
       },
-      {
-        src: '/images/goldcloak.png',
-        alt: 'Gold Radiant Spellcloak',
-        title: 'Gold Radiant Spellcloak',
-        description: 'Cloak radiating brilliant golden magic.',
-        rarity: 0.01,
-      },
+      // {
+      //   src: '/images/goldcloak.png',
+      //   alt: 'Gold Radiant Spellcloak',
+      //   title: 'Gold Radiant Spellcloak',
+      //   description: 'Cloak radiating brilliant golden magic.',
+      //   rarity: 0.01,
+      // },
     ],
   },
 
@@ -140,13 +140,13 @@ const wizardCategories = [
         description: 'Pendant amplifying strong magical power.',
         rarity: 25,
       },
-      {
-        src: '/images/celestialpin.png',
-        alt: 'Celestial Pin',
-        title: 'Celestial Pin',
-        description: 'Pin imbued with pure celestial energy.',
-        rarity: 0.01,
-      },
+      // {
+      //   src: '/images/celestialpin.png',
+      //   alt: 'Celestial Pin',
+      //   title: 'Celestial Pin',
+      //   description: 'Pin imbued with pure celestial energy.',
+      //   rarity: 0.01,
+      // },
     ],
   },
   {
@@ -180,20 +180,20 @@ const wizardCategories = [
         description: 'Eyes glowing with deep blue clarity.',
         rarity: 20,
       },
-      {
-        src: '/images/darkbrowneyes.png',
-        alt: 'Dark Brown Eyes',
-        title: 'Dark Brown Eyes',
-        description: 'Eyes with warm, friendly earthy tones.',
-        rarity: 25,
-      },
-      {
-        src: '/images/goldeyes.png',
-        alt: 'Gold Glowing Eyes',
-        title: 'Gold Glowing Eyes',
-        description: 'Eyes shimmering with radiant golden light.',
-        rarity: 0.05,
-      },
+      // {
+      //   src: '/images/darkbrowneyes.png',
+      //   alt: 'Dark Brown Eyes',
+      //   title: 'Dark Brown Eyes',
+      //   description: 'Eyes with warm, friendly earthy tones.',
+      //   rarity: 25,
+      // },
+      // {
+      //   src: '/images/goldeyes.png',
+      //   alt: 'Gold Glowing Eyes',
+      //   title: 'Gold Glowing Eyes',
+      //   description: 'Eyes shimmering with radiant golden light.',
+      //   rarity: 0.05,
+      // },
     ],
   },
 ];
@@ -219,13 +219,13 @@ export const WizardTabs = component$(() => {
   // Function to determine rarity class and color
   const getRarityClass = (rarity: number) => {
     if (rarity <= 1) {
-      return { text: 'legendary', color: 'text-yellow-400' };
-    } else if (rarity <= 10) {
+      return { text: 'legendary', color: 'text-orange-400' };
+    } else if (rarity <= 5.1) {
       return { text: 'rare', color: 'text-yellow-400' };
-    } else if (rarity <= 20) {
-      return { text: 'uncommon', color: 'text-green-400' };
+    } else if (rarity <= 15.1) {
+      return { text: 'uncommon', color: 'text-blue-400' };
     } else {
-      return { text: 'common', color: 'text-blue-400' };
+      return { text: 'common', color: 'text-green-400' };
     }
   };
 
@@ -283,7 +283,7 @@ export const WizardTabs = component$(() => {
                             <div class="font-semibold">{selectedImage.value.title}</div>
                             <div class="text-gray-500">{selectedImage.value.description}</div>
                             <div class="text-gray-400 pt-1">
-                              Rarity: {selectedImage.value.rarity}% -{' '}
+                              Class Rarity: {selectedImage.value.rarity}% -{' '}
                               {selectedImage.value.rarity != null && (
                                 <span class={getRarityClass(selectedImage.value.rarity).color}>
                                   {getRarityClass(selectedImage.value.rarity).text}

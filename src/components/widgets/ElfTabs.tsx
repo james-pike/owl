@@ -50,13 +50,13 @@ const wizardCategories = [
         description: 'Ethereal staff summons ghostly forces.',
         rarity: 5,
       },
-      {
-        src: '/images/crescentscepter.png',
-        alt: 'Crescent Moon Scepter',
-        title: 'Crescent Moon Scepter',
-        description: 'Crescent scepter channels lunar power.',
-        rarity: 0.5,
-      },
+      // {
+      //   src: '/images/crescentscepter.png',
+      //   alt: 'Crescent Moon Scepter',
+      //   title: 'Crescent Moon Scepter',
+      //   description: 'Crescent scepter channels lunar power.',
+      //   rarity: 0.5,
+      // },
     ],
   },
   {
@@ -97,13 +97,13 @@ const wizardCategories = [
         description: 'Emerald gown flickers with flames.',
         rarity: 25,
       },
-      {
-        src: '/images/goldgown.png',
-        alt: 'Gold Celestial Raiment',
-        title: 'Gold Celestial Raiment',
-        description: 'Golden raiment shines with divinity.',
-        rarity: 0.5,
-      },
+      // {
+      //   src: '/images/goldgown.png',
+      //   alt: 'Gold Celestial Raiment',
+      //   title: 'Gold Celestial Raiment',
+      //   description: 'Golden raiment shines with divinity.',
+      //   rarity: 0.5,
+      // },
     ],
   },
   {
@@ -137,13 +137,13 @@ const wizardCategories = [
         description: 'Spectral necklace binds ghostly essence.',
         rarity: 10,
       },
-      {
-        src: '/images/celestialcollar.png',
-        alt: 'Celestial Collar',
-        title: 'Celestial Collar',
-        description: 'Starry collar gleams with power.',
-        rarity: 0.5,
-      },
+      // {
+      //   src: '/images/celestialcollar.png',
+      //   alt: 'Celestial Collar',
+      //   title: 'Celestial Collar',
+      //   description: 'Starry collar gleams with power.',
+      //   rarity: 0.5,
+      // },
     ],
   },
   {
@@ -177,13 +177,13 @@ const wizardCategories = [
         description: 'Lush crown sprouts verdant blossoms.',
         rarity: 25,
       },
-      {
-        src: '/images/goldendiaden.png',
-        alt: 'Golden Leaf Diaden',
-        title: 'Golden Leaf Diaden',
-        description: 'Golden diaden sprouts radiant leaves.',
-        rarity: 0.5,
-      },
+      // {
+      //   src: '/images/goldendiaden.png',
+      //   alt: 'Golden Leaf Diaden',
+      //   title: 'Golden Leaf Diaden',
+      //   description: 'Golden diaden sprouts radiant leaves.',
+      //   rarity: 0.5,
+      // },
     ],
   },
 ];
@@ -207,13 +207,13 @@ export const ElfTabs = component$(() => {
   // Function to determine rarity class and color
   const getRarityClass = (rarity: number) => {
     if (rarity <= 1) {
-      return { text: 'legendary', color: 'text-yellow-400' };
-    } else if (rarity <= 10) {
+      return { text: 'legendary', color: 'text-orange-400' };
+    } else if (rarity <= 5.1) {
       return { text: 'rare', color: 'text-yellow-400' };
-    } else if (rarity <= 20) {
-      return { text: 'uncommon', color: 'text-green-400' };
+    } else if (rarity <= 15.1) {
+      return { text: 'uncommon', color: 'text-blue-400' };
     } else {
-      return { text: 'common', color: 'text-blue-400' };
+      return { text: 'common', color: 'text-green-400' };
     }
   };
 
@@ -271,7 +271,7 @@ export const ElfTabs = component$(() => {
                             <div class="font-semibold">{selectedImage.value.title}</div>
                             <div class="text-gray-500">{selectedImage.value.description}</div>
                             <div class="text-gray-400 pt-1">
-                              Rarity: {selectedImage.value.rarity}% -{' '}
+                              Class Rarity: {selectedImage.value.rarity}% -{' '}
                               {selectedImage.value.rarity != null && (
                                 <span class={getRarityClass(selectedImage.value.rarity).color}>
                                   {getRarityClass(selectedImage.value.rarity).text}

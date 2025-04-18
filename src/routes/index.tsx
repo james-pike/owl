@@ -24,7 +24,7 @@ export default component$(() => {
   
       <Story
       highlight="Story"
-      title="Story Of The KasLords"
+      title="KasLord Origins"
       subtitle="In the realm of Kasparion, where BlockDAG constellations shimmered with infinite potential, a legendary council emerged: The Six KasLords. Born from an ancient NFT prophecy, these spectral sovereigns were sentient echoes of the chain itself. Forged in Kaspa’s ecosystem, each KasLord carries a unique signature, their power etched in the rapid pulse of the DAG. Unbound by time or consensus, they stand as eternal guardians of the network, champions of true decentralization, their essence immortalized in Kaspa's immutable ledger."
       items={[]}/>
       <Services

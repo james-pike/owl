@@ -12,6 +12,24 @@ export default component$(() => {
       <Carousel.Slide>
         <img class="object-cover h-full w-full" src="/images/elf1.jpg" alt="..." width={902} height={902}/>
       </Carousel.Slide>
+
+      <Carousel.Slide>
+        <img class="object-cover h-full w-full" src="/images/warrior1.png" alt="..." width={902} height={902}/>
+      </Carousel.Slide>
+
+      <Carousel.Slide>
+        <img class="object-cover h-full w-full" src="/images/darklord1.png" alt="..." width={902} height={902}/>
+      </Carousel.Slide>
+       
+
+      <Carousel.Slide>
+        <img class="object-cover h-full w-full" src="/images/orc1.png" alt="..." width={902} height={902}/>
+      </Carousel.Slide>
+       
+
+   
+       
+
        
 
 

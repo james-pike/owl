@@ -5,6 +5,9 @@ const slides = [
 
   { src: '/images/wizard1.png', alt: 'Wizard', type: 'image' },
   { src: '/images/elf1.jpg', alt: 'Elf', type: 'image' },
+  { src: '/images/warrior1.png', alt: 'Warrior', type: 'image' },
+  { src: '/images/darklord1.png', alt: 'Dark Lord', type: 'image' },
+  { src: '/images/orc1.png', alt: 'Orc', type: 'image' },
   { src: '/images/dragon.mp4', alt: 'Dragon', type: 'video' },
 
 ];

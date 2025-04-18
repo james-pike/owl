@@ -4,6 +4,7 @@ import { Headline } from "~/components/ui/Headline";
 
 import RarityChecker from "./RarityChecker";
 import { Card } from "../ui/Card";
+import RarityCheck from "./RarityCheck";
 
 interface Item {
   title?: string;
@@ -41,7 +42,7 @@ export default component$((props: Props) => {
         )}
       >
         <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
-     <RarityChecker/>
+     <RarityCheck/>
       </div>
       </Card.Root>
     </section>

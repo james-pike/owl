@@ -31,7 +31,7 @@ export default component$((props: Props) => {
 
 
   return (
-    <section class="relative scroll-mt-16 mx-auto max-w-7xl mb-6" {...(id ? { id } : {})}>
+    <section class="relative scroll-mt-16 mx-auto max-w-7xl mb-0" {...(id ? { id } : {})}>
       <Card.Root class="bg-gray-900">
         <div class="absolute inset-0 max-w-7xl pointer-events-none -z-[1]" aria-hidden="true">
           <slot name="bg">

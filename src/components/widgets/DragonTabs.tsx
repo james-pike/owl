@@ -120,15 +120,15 @@ const wizardCategories = [
       {
         src: '/images/crystalcrest.png',
         alt: 'Mystic Pendant',
-        title: 'Mystic Pendant',
-        description: 'Crystal pendant enhances sorcerous power.',
+        title: 'Crystal Crest',
+        description: 'Crystal laden crest of mystery.',
         rarity: 20,
       },
       {
         src: '/images/horncrown.png',
         alt: 'Leather Bracelet',
-        title: 'Leather Bracelet',
-        description: 'Rugged bracelet binds earthy strength.',
+        title: 'Horn Crown',
+        description: 'Horn spiked crown of majesty.',
         rarity: 20,
       },
     ],
@@ -187,13 +187,13 @@ export const DragonTabs = component$(() => {
   // Function to determine rarity class and color
   const getRarityClass = (rarity: number) => {
     if (rarity <= 1) {
-      return { text: 'legendary', color: 'text-yellow-400' };
-    } else if (rarity <= 10) {
+      return { text: 'legendary', color: 'text-orange-400' };
+    } else if (rarity <= 5.1) {
       return { text: 'rare', color: 'text-yellow-400' };
-    } else if (rarity <= 20) {
-      return { text: 'uncommon', color: 'text-green-400' };
+    } else if (rarity <= 15.1) {
+      return { text: 'uncommon', color: 'text-blue-400' };
     } else {
-      return { text: 'common', color: 'text-blue-400' };
+      return { text: 'common', color: 'text-green-400' };
     }
   };
 
@@ -251,7 +251,7 @@ export const DragonTabs = component$(() => {
                             <div class="font-semibold">{selectedImage.value.title}</div>
                             <div class="text-gray-500">{selectedImage.value.description}</div>
                             <div class="text-gray-400 pt-1">
-                              Rarity: {selectedImage.value.rarity}% -{' '}
+                              Class Rarity: {selectedImage.value.rarity}% -{' '}
                               {selectedImage.value.rarity != null && (
                                 <span class={getRarityClass(selectedImage.value.rarity).color}>
                                   {getRarityClass(selectedImage.value.rarity).text}
