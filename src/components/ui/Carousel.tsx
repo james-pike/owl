@@ -76,7 +76,7 @@ export default component$(() => {
   });
 
   return (
-    <Carousel.Root class="carousel-root" gap={30} autoPlayIntervalMs={3500} bind:autoplay={isPlaying}>
+    <Carousel.Root class="carousel-root" gap={30} autoPlayIntervalMs={4000} bind:autoplay={isPlaying}>
       <div class="carousel-buttons">
         <Carousel.Previous class="carousel-button carousel-prev">
           <i class="fas fa-arrow-left" />
