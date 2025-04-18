@@ -2,9 +2,10 @@ import { component$, useSignal, useStyles$, useVisibleTask$ } from '@builder.io/
 import { Carousel } from '@qwik-ui/headless';
 
 const slides = [
-  { src: '/images/wizard1.jpg', alt: 'Wizard' },
-  { src: '/images/elf1.jpg', alt: 'Elf' },
-  // Fallback or additional slide
+  { src: '/images/dragon.mp4', alt: 'Dragon', type: 'video' },
+
+  { src: '/images/wizard1.png', alt: 'Wizard', type: 'image' },
+  { src: '/images/elf1.jpg', alt: 'Elf', type: 'image' },
 ];
 
 export default component$(() => {
@@ -21,10 +22,11 @@ export default component$(() => {
       align-items: center;
       justify-content: center;
     }
-    .carousel-slide img {
+    .carousel-slide img,
+    .carousel-slide video {
       height: 100%;
       width: 100%;
-      object-fit: cover;
+      object-fit: cover; /* or use object-fit: contain if distortion occurs */
     }
     .carousel-buttons {
       position: absolute;
@@ -39,9 +41,9 @@ export default component$(() => {
     }
     .carousel-button {
       pointer-events: auto;
-      width: 50px; /* Increased from 40px */
-      height: 50px; /* Increased from 40px */
-      background: rgba(128, 128, 128, 0.7); /* Gray with transparency */
+      width: 50px;
+      height: 50px;
+      background: rgba(128, 128, 128, 0.7);
       color: white;
       display: flex;
       align-items: center;
@@ -50,10 +52,10 @@ export default component$(() => {
       transition: background 0.3s ease;
     }
     .carousel-button:hover {
-      background: rgba(128, 128, 128, 1); /* Solid gray on hover */
+      background: rgba(128, 128, 128, 1);
     }
     .carousel-button i {
-      font-size: 24px; /* Larger arrows */
+      font-size: 24px;
     }
     .carousel-prev {
       margin-left: 10px;
@@ -86,7 +88,17 @@ export default component$(() => {
       <div class="carousel-conditional">
         {slides.map((slide, index) => (
           <Carousel.Slide key={index} class="carousel-slide">
-            <img src={slide.src} alt={slide.alt} />
+            {slide.type === 'video' ? (
+              <video
+                src={slide.src}
+                autoplay
+                loop
+                muted
+                playsInline
+              />
+            ) : (
+              <img src={slide.src} alt={slide.alt} loading="eager" />
+            )}
           </Carousel.Slide>
         ))}
       </div>
