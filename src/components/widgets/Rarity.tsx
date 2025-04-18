@@ -1,8 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
-
-import RarityChecker from "./RarityChecker";
 import { Card } from "../ui/Card";
 import RarityCheck from "./RarityCheck";
 
