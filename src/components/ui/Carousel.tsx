@@ -2,10 +2,11 @@ import { component$, useSignal, useStyles$, useVisibleTask$ } from '@builder.io/
 import { Carousel } from '@qwik-ui/headless';
 
 const slides = [
-  { src: '/images/dragon.mp4', alt: 'Dragon', type: 'video' },
 
   { src: '/images/wizard1.png', alt: 'Wizard', type: 'image' },
   { src: '/images/elf1.jpg', alt: 'Elf', type: 'image' },
+  { src: '/images/dragon.mp4', alt: 'Dragon', type: 'video' },
+
 ];
 
 export default component$(() => {
