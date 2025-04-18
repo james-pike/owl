@@ -5,7 +5,7 @@ export const SITE = {
     "KasLords Of The BlockDag ",
   description:
 "KasLords Of The BlockDag ",
-  origin: "https://qwind.pages.dev",
+  origin: "https://kaslords.com",
   basePathname: "/",
   trailingSlash: true,
 };

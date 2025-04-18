@@ -3,7 +3,7 @@ import { Carousel } from 'flowbite-qwik'
 
 export default component$(() => {
   return (
-    <Carousel pauseOnHover slideInterval={4000} class="mb-2">
+    <Carousel pauseOnHover slideInterval={3500} class="mb-2">
       
            <Carousel.Slide>
            <img class="object-cover h-full w-full" src="/images/wizard1.png" alt="..." />

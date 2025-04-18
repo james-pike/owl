@@ -30,7 +30,7 @@ export default component$(() => {
     .carousel-slide video {
       height: 100%;
       width: 100%;
-      object-fit: cover; /* or use object-fit: contain if distortion occurs */
+      object-fit: contain; /* or use object-fit: contain if distortion occurs */
     }
     .carousel-buttons {
       position: absolute;
@@ -80,15 +80,8 @@ export default component$(() => {
   });
 
   return (
-    <Carousel.Root class="carousel-root" gap={30} autoPlayIntervalMs={4000} bind:autoplay={isPlaying}>
-      <div class="carousel-buttons">
-        <Carousel.Previous class="carousel-button carousel-prev">
-          <i class="fas fa-arrow-left" />
-        </Carousel.Previous>
-        <Carousel.Next class="carousel-button carousel-next">
-          <i class="fas fa-arrow-right" />
-        </Carousel.Next>
-      </div>
+    <Carousel.Root class="carousel-root" gap={30} autoPlayIntervalMs={3500} bind:autoplay={isPlaying}>
+  
       <div class="carousel-conditional">
         {slides.map((slide, index) => (
           <Carousel.Slide key={index} class="carousel-slide">

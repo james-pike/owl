@@ -6,12 +6,13 @@ import { LuSparkles, LuUsers } from '@qwikest/icons/lucide';
 export default component$(() => {
   return (
     <Card.Root class="">
-      <section>
-        <div class="grid grid-cols-1 lg:grid-cols-2">
-          <div class="bg-gradient-to-r from-gray-200 to-gray-50 dark:from-gray-950 dark:to-gray-900 flex items-center px-8">
-            <div>
-              <h1 class="text-4.5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 animate-hero-text">
-                <span class="text-secondary-800">KasLords</span> <br class="hidden lg:block" />Of The <span class="text-secondary-800">BlockDag</span> <br class="hidden lg:block" />{" "}
+      <section class="min-h-[80vh] flex items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 w-full h-full">
+          <div class="bg-gradient-to-r from-gray-200 to-gray-50 dark:from-gray-950 dark:to-gray-900 h-full flex items-center px-8">
+            <div class="w-full">
+              <h1 class="text-4.5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 animate-hero-text">
+                <span class="text-secondary-800">KasLords</span> <br class="hidden lg:block" />
+                Of The <span class="text-secondary-800">BlockDag</span> <br class="hidden lg:block" />
               </h1>
               <div class="max-w-3xl mx-auto lg:max-w-none">
                 <p class="text-xl text-muted mb-5 dark:text-slate-300 animate-hero-subtitle">

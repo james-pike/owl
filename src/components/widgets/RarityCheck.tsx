@@ -64,13 +64,13 @@ const nftRanks = computeNftRanks(traitRarity);
 // Determine text color class based on rarity percentage
 const getRarityColorClass = (rarity: number): string => {
   if (rarity < 1) {
-    return 'text-orange-500';
+    return 'text-orange-400';
   } else if (rarity < 2) {
-    return 'text-yellow-500';
+    return 'text-yellow-400';
   } else if (rarity < 5) {
-    return 'text-blue-500';
+    return 'text-blue-400';
   } else {
-    return 'text-green-500';
+    return 'text-green-400';
   }
 };
 
@@ -113,7 +113,7 @@ export default component$(() => {
     try {
       const nft = metadata.find((n) => n.name === nftSearchId.value);
       if (!nft) {
-        throw new Error(`NFT with ID ${nftSearchId.value} not found`);
+        throw new Error(`KasLord ID ${nftSearchId.value} not found`);
       }
 
       const ipfsBase = 'bafybeiaa6rock4x4u32yefrz5w2brl44d2sq2llpe7gbrmq3qwn5zi6yee';
@@ -169,7 +169,7 @@ export default component$(() => {
                 onInput$={(e) => (nftSearchId.value = (e.target as HTMLInputElement).value)}
                 onWheel$={(e) => e.preventDefault()} // Prevent scroll increment/decrement
                 placeholder="Enter NFT ID"
-                class="border p-2 rounded bg-gray-900 border-gray-700 w-full max-w-xs"
+                class="border p-2 rounded focus:ring-secondary-700 bg-gray-900 border-gray-700 w-full max-w-xs"
               />
               <button
                 onClick$={handleNFTSearch}
@@ -226,12 +226,12 @@ export default component$(() => {
             )}
 
             {/* Rarity Legend - Desktop Only */}
-            <div class="hidden md:block mt-0 text-center">
+            <div class="hidden md:block mt-10 text-center">
               <div class="flex text-sm flex-wrap justify-start gap-4 px-2">
-              <span class="text-green-500 font-medium">Common (≥5%)</span>
-      <span class="text-blue-500 font-medium">Uncommon (&lt;5%)</span>
-      <span class="text-yellow-500 font-medium">Rare (&lt;2%)</span>
-      <span class="text-orange-500 font-medium">Legendary (&lt;1%)</span>
+              <span class="text-green-400 font-medium">Common (≥5%)</span>
+      <span class="text-blue-400 font-medium">Uncommon (&lt;5%)</span>
+      <span class="text-yellow-400 font-medium">Rare (&lt;2%)</span>
+      <span class="text-orange-400 font-medium">Legendary (&lt;1%)</span>
               </div>
             </div>
           </div>
@@ -240,10 +240,10 @@ export default component$(() => {
         {/* Rarity Legend - Mobile Only */}
         <div class="md:hidden mt-6 text-center">
           <div class="flex text-xs flex-wrap justify-center gap-2">
-          <span class="text-green-500 font-medium">Common (≥5%)</span>
-      <span class="text-blue-500 font-medium">Uncommon (&lt;5%)</span>
-      <span class="text-yellow-500 font-medium">Rare (&lt;2%)</span>
-      <span class="text-orange-500 font-medium">Legendary (&lt;1%)</span>
+          <span class="text-green-400 font-medium">Common (≥5%)</span>
+      <span class="text-blue-400 font-medium">Uncommon (&lt;5%)</span>
+      <span class="text-yellow-400 font-medium">Rare (&lt;2%)</span>
+      <span class="text-orange-400 font-medium">Legendary (&lt;1%)</span>
           </div>
         </div>
       </section>
