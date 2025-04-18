@@ -3,7 +3,7 @@ import { Carousel } from 'flowbite-qwik'
 
 export default component$(() => {
   return (
-    <Carousel pauseOnHover class="mb-2">
+    <Carousel pauseOnHover slideInterval={4000} class="mb-2">
             <Carousel.Slide>
   <video
     class="h-full w-full object-cover"
