@@ -163,14 +163,19 @@ export default component$(() => {
           {/* Right Column (Search + Stats + Image on mobile) */}
           <div class="md:order-2 order-1 flex flex-col gap-4">
             <div class="flex gap-2">
-              <input
-                type="number"
-                value={nftSearchId.value}
-                onInput$={(e) => (nftSearchId.value = (e.target as HTMLInputElement).value)}
-                onWheel$={(e) => e.preventDefault()} // Prevent scroll increment/decrement
-                placeholder="Enter NFT ID"
-                class="border p-2 rounded focus:ring-secondary-700 bg-gray-900 border-gray-700 w-full max-w-xs"
-              />
+            <input
+  type="number"
+  value={nftSearchId.value}
+  onInput$={(e) => (nftSearchId.value = (e.target as HTMLInputElement).value)}
+  onKeyDown$={(e) => {
+    if (e.key === 'Enter') {
+      handleNFTSearch();
+    }
+  }}
+  onWheel$={(e) => e.preventDefault()} // Prevent scroll increment/decrement
+  placeholder="Enter NFT ID"
+  class="border p-2 rounded focus:ring-secondary-700 bg-gray-900 border-gray-700 w-full max-w-xs"
+/>
               <button
                 onClick$={handleNFTSearch}
                 class="bg-secondary-800 text-white p-2 rounded hover:bg-secondary-700"
