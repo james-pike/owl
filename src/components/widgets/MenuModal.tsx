@@ -91,7 +91,7 @@ export default component$(() => {
                 <div class="flex w-full sm:w-auto">
                   <a
                     class="btn btn-primary sm:mb-0 w-full"
-                    href="https://www.kaspa.com/nft/mint"
+                    href="https://www.kaspa.com/nft/collections/Kaslords"
                   >
                     <LuSparkles class="w-5 h-5 mr-2" /> Mint KasLords
                   </a>

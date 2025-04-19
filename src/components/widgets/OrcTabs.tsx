@@ -50,6 +50,13 @@ const wizardCategories = [
         description: 'Mystic spear pierces with magic.',
         rarity: 10,
       },
+      {
+        src: '/images/radiantaxeofembergrasp.png',
+        alt: 'Radiant enchanted axe of Embergrasp',
+        title: 'Radiant Axe Of Embergrasp',
+        description: 'Flaming axe cleaves with radiant fury.',
+        rarity: 0.4,
+      }
     ],
   },
   {
@@ -90,6 +97,13 @@ const wizardCategories = [
         description: 'Regal robe commands tribal loyalty.',
         rarity: 25,
       },
+      {
+        src: '/images/doomforgedarmor.png',
+        alt: 'Doomforged enchanted armor',
+        title: 'Doomforged Armor',
+        description: 'Cursed armor radiates unholy molten power.',
+        rarity: 0.4,
+      }
     ],
   },
   {
@@ -123,6 +137,7 @@ const wizardCategories = [
         description: 'Battle beads pulse with courage.',
         rarity: 20,
       },
+
     ],
   },
   {
@@ -162,6 +177,13 @@ const wizardCategories = [
         title: 'Battle Helmet',
         description: 'Sturdy helmet shields brave warriors.',
         rarity: 20,
+      },
+      {
+        src: '/images/flameboundtopknot.png',
+        alt: 'Enchanted Spear',
+        title: 'Flamebound Topknot',
+        description: 'Mystic topknot blazes with ancient fire.',
+        rarity: 0.4,
       },
     ],
   },
