@@ -231,7 +231,7 @@ export default component$(() => {
             )}
 
             {/* Rarity Legend - Desktop Only */}
-            <div class="hidden md:block mt-10 text-center">
+            <div class="hidden md:block mt-2 text-center">
               <div class="flex text-sm flex-wrap justify-start gap-4 px-2">
               <span class="text-green-400 font-medium">Common (≥5%)</span>
       <span class="text-blue-400 font-medium">Uncommon (&lt;5%)</span>
