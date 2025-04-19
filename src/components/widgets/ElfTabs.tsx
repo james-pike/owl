@@ -137,13 +137,13 @@ const wizardCategories = [
         description: 'Spectral necklace binds ghostly essence.',
         rarity: 10,
       },
-      // {
-      //   src: '/images/celestialcollar.png',
-      //   alt: 'Celestial Collar',
-      //   title: 'Celestial Collar',
-      //   description: 'Starry collar gleams with power.',
-      //   rarity: 0.5,
-      // },
+      {
+        src: '/images/celestialcollar.png',
+        alt: 'Celestial Collar',
+        title: 'Celestial Collar',
+        description: 'Starry collar gleams with power.',
+        rarity: 0.4,
+      },
     ],
   },
   {
