@@ -29,7 +29,7 @@ export default component$(() => {
     {
       title: "Resources",
       items: [
-        { title: "KaspaCom", href: "https://www.kaspa.com/nft/mint" },
+        { title: "KaspaCom", href: "https://www.kaspa.com/nft/collections/Kaslords" },
         { title: "KRCscan", href: "https://krcscan.io/nft/kaslords" },
     
    
@@ -42,11 +42,6 @@ export default component$(() => {
     { label: "Twitter", icon: LuTwitter, href: "https://x.com/kaslords" },
     { label: "Telegram", icon: LuSend, href: "https://t.me/+pHZ9UA7XIDA2YmIx" },
    
-    // {
-    //   label: "Github",
-    //   icon: IconGithub,
-    //   href: "https://github.com/onwidget/qwind",
-    // },
   ];
 
   return (
@@ -77,8 +72,6 @@ export default component$(() => {
               >
                 Join The Clan
               </a>
-
-
            </div>
            </div>
 
