@@ -178,13 +178,13 @@ const wizardCategories = [
         description: 'Mystic eyes glow with enigma.',
         rarity: 10,
       },
-      // {
-      //   src: '/images/browneyes.png',
-      //   alt: 'Brown Eyes',
-      //   title: 'Brown Eyes',
-      //   description: 'Earthy eyes radiate warm kindness.',
-      //   rarity: 25,
-      // },
+      {
+        src: '/images/browneyes.png',
+        alt: 'Brown Eyes',
+        title: 'Brown Eyes',
+        description: 'Earthy eyes radiate warm kindness.',
+        rarity: 25,
+      },
       {
         src: '/images/redeyes.png',
         alt: 'Red Eyes',
