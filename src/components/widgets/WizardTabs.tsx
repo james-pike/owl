@@ -140,13 +140,13 @@ const wizardCategories = [
         description: 'Pendant amplifying strong magical power.',
         rarity: 25,
       },
-      // {
-      //   src: '/images/celestialpin.png',
-      //   alt: 'Celestial Pin',
-      //   title: 'Celestial Pin',
-      //   description: 'Pin imbued with pure celestial energy.',
-      //   rarity: 0.01,
-      // },
+      {
+        src: '/images/celestialpin.png',
+        alt: 'Celestial Pin',
+        title: 'Celestial Pin',
+        description: 'Pin imbued with pure celestial energy.',
+        rarity: 0.4,
+      },
     ],
   },
   {

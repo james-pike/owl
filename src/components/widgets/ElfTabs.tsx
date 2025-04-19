@@ -50,13 +50,13 @@ const wizardCategories = [
         description: 'Ethereal staff summons ghostly forces.',
         rarity: 5,
       },
-      // {
-      //   src: '/images/crescentscepter.png',
-      //   alt: 'Crescent Moon Scepter',
-      //   title: 'Crescent Moon Scepter',
-      //   description: 'Crescent scepter channels lunar power.',
-      //   rarity: 0.5,
-      // },
+      {
+        src: '/images/crescentscepter.png',
+        alt: 'Crescent Moon Scepter',
+        title: 'Crescent Moon Scepter',
+        description: 'Crescent scepter channels lunar power.',
+        rarity: 0.4,
+      },
     ],
   },
   {
@@ -97,13 +97,13 @@ const wizardCategories = [
         description: 'Emerald gown flickers with flames.',
         rarity: 25,
       },
-      // {
-      //   src: '/images/goldgown.png',
-      //   alt: 'Gold Celestial Raiment',
-      //   title: 'Gold Celestial Raiment',
-      //   description: 'Golden raiment shines with divinity.',
-      //   rarity: 0.5,
-      // },
+      {
+        src: '/images/goldgown.png',
+        alt: 'Gold Celestial Raiment',
+        title: 'Gold Celestial Raiment',
+        description: 'Golden raiment shines with divinity.',
+        rarity: 0.4,
+      },
     ],
   },
   {
@@ -177,13 +177,13 @@ const wizardCategories = [
         description: 'Lush crown sprouts verdant blossoms.',
         rarity: 25,
       },
-      // {
-      //   src: '/images/goldendiaden.png',
-      //   alt: 'Golden Leaf Diaden',
-      //   title: 'Golden Leaf Diaden',
-      //   description: 'Golden diaden sprouts radiant leaves.',
-      //   rarity: 0.5,
-      // },
+      {
+        src: '/images/goldendiaden.png',
+        alt: 'Golden Leaf Diaden',
+        title: 'Golden Leaf Diaden',
+        description: 'Golden diaden sprouts radiant leaves.',
+        rarity: 0.4,
+      },
     ],
   },
 ];
