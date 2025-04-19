@@ -119,7 +119,7 @@ export default component$(() => {
                 onEnded$={handleAudioEnded}
               />
               <a
-                href="https://www.kaspa.com/nft/mint"
+                href="https://www.kaspa.com/nft/collections/Kaslords"
                 class="btn bg-gray-200 border-gray-300 dark:bg-secondary-800 dark:border-gray-900 rounded-sm mr-1 h-10 py-2 px-3 md:px-4 font-semibold shadow-none text-md w-auto"
               >
                 Mint
@@ -301,7 +301,7 @@ onEnded$={handleAudioEnded}
                 Join Clan
               </a>
               <a
-                href="https://www.kaspa.com/nft/mint"
+                href="https://www.kaspa.com/nft/collections/Kaslords"
                 class="btn btn-primary ml-1.5 py-2 px-4 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"
               >
                 Mint

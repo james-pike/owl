@@ -66,7 +66,7 @@ export default component$(() => {
             </div>
             <div class="flex gap-2">
               <a
-                  href="https://www.kaspa.com/nft/mint"
+                  href="https://www.kaspa.com/nft/collections/Kaslords"
                 class=" px-2 py-2 btn-primary text-white font-semibold rounded-md transition-colors"
               >
                 Mint KasLords
