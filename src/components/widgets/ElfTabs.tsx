@@ -138,6 +138,13 @@ const wizardCategories = [
         rarity: 10,
       },
       {
+        src: '/images/wisdomowl.png',
+        alt: 'Spirit Necklace',
+        title: 'Wisdom Owl Seeker',
+        description: 'Kaspian seeker owl of wisdom.',
+        rarity: 5,
+      },
+      {
         src: '/images/celestialcollar.png',
         alt: 'Celestial Collar',
         title: 'Celestial Collar',

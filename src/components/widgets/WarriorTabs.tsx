@@ -50,13 +50,13 @@ const wizardCategories = [
         description: 'Heavy hammer crushes with force.',
         rarity: 15,
       },
-      // {
-      //   src: '/images/claidheamh.png',
-      //   alt: 'Claidheamh Mòr Longsword',
-      //   title: 'Claidheamh Mòr Longsword',
-      //   description: 'Ancient longsword hums with power.',
-      //   rarity: 0.5,
-      // },
+      {
+        src: '/images/mansword.png',
+        alt: 'Claidheamh Mòr Longsword',
+        title: 'Claidheamh Mòr Longsword',
+        description: 'Ancient longsword hums with power.',
+        rarity: 0.4,
+      },
     ],
   },
   {
@@ -97,13 +97,13 @@ const wizardCategories = [
         description: 'Sturdy armor shields brave knights.',
         rarity: 20,
       },
-      // {
-      //   src: '/images/goldarmor.png',
-      //   alt: 'Gold Divine Armor',
-      //   title: 'Gold Divine Armor',
-      //   description: 'Golden armor shines with divinity.',
-      //   rarity: 0.5,
-      // },
+      {
+        src: '/images/manarmor.png',
+        alt: 'Gold Divine Armor',
+        title: 'Gold Divine Armor',
+        description: 'Golden armor shines with divinity.',
+        rarity: 0.4,
+      },
     ],
   },
  
@@ -145,13 +145,13 @@ const wizardCategories = [
         description: 'Simple cap offers sturdy protection.',
         rarity: 20,
       },
-      // {
-      //   src: '/images/goldcirclet.png',
-      //   alt: 'Gold Leaf Circlet',
-      //   title: 'Gold Leaf Circlet',
-      //   description: 'Golden circlet gleams with elegance.',
-      //   rarity: 20,
-      // },
+      {
+        src: '/images/manhead.png',
+        alt: 'Gold Leaf Circlet',
+        title: 'Gold Leaf Circlet',
+        description: 'Golden circlet gleams with elegance.',
+        rarity: 0.4,
+      },
     ],
   },
   {
@@ -192,13 +192,13 @@ const wizardCategories = [
         description: 'Crimson eyes blaze with intensity.',
         rarity: 15,
       },
-      // {
-      //   src: '/images/goldeyes.png',
-      //   alt: 'Gold Glowing Eyes',
-      //   title: 'Gold Glowing Eyes',
-      //   description: 'Golden eyes shimmer with radiant light.',
-      //   rarity: 0.5,
-      // },
+      {
+        src: '/images/goldeyes.png',
+        alt: 'Gold Glowing Eyes',
+        title: 'Gold Glowing Eyes',
+        description: 'Golden eyes shimmer with radiant light.',
+        rarity: 0.5,
+      },
     ],
   },
 ];
