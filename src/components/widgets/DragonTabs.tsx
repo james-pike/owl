@@ -18,7 +18,7 @@ const wizardCategories = [
       {
         src: '/images/kaspabreath.png',
         alt: 'Kaspa Arcan Burst',
-        title: 'Kaspa Arcan Burst',
+        title: 'Kaspa Arcane Burst',
         description: 'Kaspian breath surges with power.',
         rarity: 5,
       },
@@ -179,7 +179,7 @@ const wizardCategories = [
         rarity: 30,
       },
       {
-        src: '/images/22.gif',
+        src: '/images/24.gif',
         alt: 'Yellow Eyes',
         title: 'Gold Glowing Eyes',
         description: 'Legendary golden eyes of fury.',

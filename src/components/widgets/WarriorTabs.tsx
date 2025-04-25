@@ -197,7 +197,7 @@ const wizardCategories = [
         alt: 'Gold Glowing Eyes',
         title: 'Gold Glowing Eyes',
         description: 'Golden eyes shimmer with radiant light.',
-        rarity: 0.5,
+        rarity: 0.4,
       },
     ],
   },
