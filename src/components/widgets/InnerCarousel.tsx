@@ -11,7 +11,7 @@ const innerRealm = [
     },
     {
         name: "Kaspa Queen",
-        role: "Flamebearer of First Spark",
+        role: "First Queen of the Realm",
         // bio: "Originator of the KasLords prophecy, guardian of the Guilded Gate, and bearer of vision and vigilance.",
         image: "/images/queen.jpg",
         alt: "CryptoNinja portrait",
@@ -27,7 +27,7 @@ export default component$(() => {
             id="team-grid"
             class="grid mx-auto max-w-screen-xl mt-2 md:mb-12 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"
         >
-            {innerRealm.map(({ name, role, image, alt, }, index) => (
+            {innerRealm.map(({ name, image, alt, }, index) => (
                 <div
                     key={index}
                     class="group relative overflow-hidden rounded-lg shadow-md"
