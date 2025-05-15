@@ -11,6 +11,7 @@ import Hero2 from "~/components/widgets/Hero2";
 import Hero from "~/components/widgets/Hero";
 import Team from "~/components/widgets/Team";
 import Inventory from "~/components/widgets/Inventory";
+import Inner from "~/components/widgets/Inner";
 
 export default component$(() => {
   return (
@@ -61,11 +62,18 @@ export default component$(() => {
      
      
       items={[]}/>
+
+<Inner
+      id="inner"
+  // highlight="Team"
+  title="Inner Realm"
+  subtitle="Members of the Inner Realm."
+  items={[]}/>
          <Team
       id="team"
   highlight="Team"
   title="Founding KasLords"
-  subtitle="Meet the founding four KasLords."
+  subtitle="The founding four KasLords."
   items={[]}/>
   
       
