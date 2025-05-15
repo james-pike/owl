@@ -1,6 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 import { Card } from "../ui/Card";
-import { LuTwitter, LuSend } from '@qwikest/icons/lucide';
 
 const innerRealm = [
     {
