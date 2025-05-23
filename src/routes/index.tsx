@@ -72,7 +72,7 @@ export default component$(() => {
          <Team
       id="team"
   highlight="Team"
-  title="Founding Four KasLords"
+  title="Founding KasLords"
   // subtitle="The founding four KasLords."
   items={[]}/>
   
