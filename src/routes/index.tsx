@@ -58,7 +58,7 @@ export default component$(() => {
        <Rarity
        id="rarity"
       highlight="Rarity"
-      title="KasLord Rarity Guide"
+      title="Rarity Guide"
      
      
       items={[]}/>
@@ -69,6 +69,7 @@ export default component$(() => {
   title="Inner Realm"
   subtitle="Members of the Inner Realm."
   items={[]}/>
+
          <Team
       id="team"
   highlight="Team"
