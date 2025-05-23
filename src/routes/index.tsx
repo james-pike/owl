@@ -39,7 +39,7 @@ export default component$(() => {
       id="inventory"
         highlight="inventory"
         title="Item Inventory"
-        subtitle="Browse inventory items and rarities."
+        // subtitle="Browse inventory items and rarities."
         items={[]}
       />
      
@@ -72,8 +72,8 @@ export default component$(() => {
          <Team
       id="team"
   highlight="Team"
-  title="Founding KasLords"
-  subtitle="The founding four KasLords."
+  title="Founding Four KasLords"
+  // subtitle="The founding four KasLords."
   items={[]}/>
   
       
