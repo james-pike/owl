@@ -42,12 +42,6 @@ export default component$(() => {
         // subtitle="Browse inventory items and rarities."
         items={[]}
       />
-     
-
-
-
-
-
 
       <Steps id="roadmap"  
        highlight="Roadmap"

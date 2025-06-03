@@ -22,6 +22,7 @@ const innerRealm = [
     image: "/images/dragon.mp4",
     alt: "bc portrait",
     badge: "/images/dragonmaster.webp",
+    badgeText: "Dragon Master", // Added badgeText
   },
   {
     name: "Andrew",
@@ -30,15 +31,23 @@ const innerRealm = [
     alt: "Andrew portrait",
     badge: null,
   },
+  {
+    name: "Bob",
+    role: "Realm Master Wizard",
+    image: "/images/Bob.jpg",
+    alt: "Bob portrait",
+    badge: "/images/ironwill.png",
+    badgeText: "Iron Will Crest", // Added badgeText
+  },
 ];
 
 export default component$(() => {
   return (
     <div
       id="team-grid"
-      class="grid mx-auto max-w-screen-xl mt-2 md:mb-12 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"
+      class="grid mx-auto max-w-screen-xl mt-2 md:mb-12 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5"
     >
-      {innerRealm.map(({ name, role, image, alt, badge }, index) => (
+      {innerRealm.map(({ name, role, image, alt, badge, badgeText }, index) => (
         <div
           key={index}
           class="group relative overflow-hidden rounded-lg shadow-md"
@@ -79,11 +88,11 @@ export default component$(() => {
                     alt={`${name} badge`}
                     class="w-12 h-12 object-contain"
                   />
-                  {/* Tooltip for hover only */}
+                  {/* Dynamic tooltip based on badgeText */}
                   <div
                     class="absolute right-0 bottom-full mb-2 px-3 py-1 text-sm text-white bg-gray-900 dark:bg-gray-700 rounded-md transition-opacity duration-200 whitespace-nowrap opacity-0 group-hover:opacity-100 z-10"
                   >
-                    Dragon Master
+                    {badgeText}
                   </div>
                 </div>
               )}
