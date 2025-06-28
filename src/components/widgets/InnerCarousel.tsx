@@ -11,7 +11,7 @@ const innerRealm = [
   },
   {
     name: "Kaspa Queen",
-    role: "First Queen of the Realm",
+    role: "Queen of the Realm",
     image: "/images/queen.jpg",
     alt: "Kaspa Queen portrait",
     badge: null,
@@ -26,7 +26,7 @@ const innerRealm = [
   },
   {
     name: "Andrew",
-    role: "Commander of the Realm",
+    role: "Realm Commander",
     image: "/images/andrew.png",
     alt: "Andrew portrait",
     badge: null,
@@ -38,6 +38,37 @@ const innerRealm = [
     alt: "Bob portrait",
     badge: "/images/ironwill.png",
     badgeText: "Iron Will Crest", // Added badgeText
+  },
+  {
+    name: "Bellroc𐤊",
+    role: "Realm Zoolander",
+    image: "/images/belroc.png",
+    alt: "Belroc portrait",
+ // Added badgeText
+  },
+  {
+    name: "Jeff",
+    role: "Realm Admiral",
+    image: "/images/admiral.jpg",
+    alt: " portrait",
+// Added badgeText
+  },
+  {
+    name: "Damian Z",
+    role: "Realm Dragon Rider",
+    image: "/images/damian.jpg",
+    alt: "Damian portrait",
+ 
+  },
+ 
+
+  {
+    name: "JP",
+    role: "Realm Legendary",
+    image: "/images/dl.png",
+    alt: "JP portrait",
+    // badge: "/images/ironwill.png",
+    // badgeText: "Iron Will Crest", // Added badgeText
   },
 ];
 
