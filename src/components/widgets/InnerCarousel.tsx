@@ -70,6 +70,15 @@ const innerRealm = [
     // badge: "/images/ironwill.png",
     // badgeText: "Iron Will Crest", // Added badgeText
   },
+
+    {
+    name: "Fuzion",
+    role: "Lord of Kaspadûr",
+    image: "/images/fuzion.png",
+    alt: "Fuzion portrait",
+    // badge: "/images/ironwill.png",
+    // badgeText: "Iron Will Crest", // Added badgeText
+  },
 ];
 
 export default component$(() => {
