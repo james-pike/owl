@@ -24,7 +24,7 @@ export default component$(() => {
   items={[]}
 />
       <Services
-      id="classes"
+      id="services"
   highlight="classes"
   title="Character Classes"
   subtitle="Mint one of six legendary KasLord character types."
