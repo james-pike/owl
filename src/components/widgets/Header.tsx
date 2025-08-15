@@ -84,7 +84,7 @@ export default component$(() => {
 
     <header
       id="header"
-      class={`sticky top-0 z-40 flex-none mx-auto bg-gradient-to-r from-gray-200 to-gray-100 dark:from-gray-950 dark:to-gray-900 w-full border-gray-300 dark:border-gray-800 transition-[opacity] ease-in-out ${store.isScrolling ? "" : ""
+      class={`sticky top-0 z-40 flex-none mx-auto bg-[url('/images/background.jpg')] bg-cover  dark:from-gray-950 dark:to-gray-900 w-full border-gray-300 dark:border-gray-800 transition-[opacity] ease-in-out ${store.isScrolling ? "" : ""
         }`}
       window:onScroll$={() => {
         if (!store.isScrolling && window.scrollY >= 10) {
@@ -98,11 +98,11 @@ export default component$(() => {
         <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
           <Link class="flex items-center" href={"/"}>
             <img
-              src="/images/kritterlogo.jpg"
+              src="/images/frontface-logo.jpg"
               alt="KasKritterz Logo"
               class="w-8 h-8 rounded-full mr-2"
             />
-            <h1 class="font-bold text-2xl tracking-tighter">KasKritterz</h1>
+            <h1 class="font-bold text-white text-2xl tracking-tighter">KasKritterz</h1>
           </Link>
           <div class="flex items-center md:hidden">
             {/* <a

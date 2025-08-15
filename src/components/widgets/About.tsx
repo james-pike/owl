@@ -24,7 +24,6 @@ export default component$((props: Props) => {
   const { title = "", subtitle = "", highlight = "", classes = {} } = props;
 
   return (
-    <div class="max-w-7xl mx-auto">
       <div class="max-w-7xl mx-auto">
           <section
             id="about"
@@ -55,6 +54,5 @@ export default component$((props: Props) => {
             </div>
           </section>
       </div>
-    </div>
   );
 });

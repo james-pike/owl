@@ -25,7 +25,7 @@ export default component$((props: Props) => {
   const { title = "", subtitle = "", highlight = "", classes = {} } = props;
 
   return (
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto bg-teal-200">
       <div class="max-w-7xl mx-auto">
         <section
           id="faq"
@@ -41,7 +41,7 @@ export default component$((props: Props) => {
             <div class="mb-4 md:mb-0 md:py-4 md:pr-0 md:order-2">
               <Accordion.Root collapsible class="w-full">
                 <Accordion.Item id="item-1">
-                  <Accordion.Trigger>
+                  <Accordion.Trigger class="text-left">
                     What are the KAS rewards in KasKritterz?
                   </Accordion.Trigger>
                   <Accordion.Content>
@@ -49,7 +49,7 @@ export default component$((props: Props) => {
                   </Accordion.Content>
                 </Accordion.Item>
                 <Accordion.Item id="item-2">
-                  <Accordion.Trigger>
+                  <Accordion.Trigger class="text-left">
                     What do I get for holding multiple KasKritterz?
                   </Accordion.Trigger>
                   <Accordion.Content>
@@ -57,7 +57,7 @@ export default component$((props: Props) => {
                   </Accordion.Content>
                 </Accordion.Item>
                 <Accordion.Item id="item-3">
-                  <Accordion.Trigger>
+                  <Accordion.Trigger class="text-left">
                     How much does it cost to mint a KasKritterz NFT?
                   </Accordion.Trigger>
                   <Accordion.Content>
@@ -65,7 +65,7 @@ export default component$((props: Props) => {
                   </Accordion.Content>
                 </Accordion.Item>
                 <Accordion.Item id="item-4">
-                  <Accordion.Trigger>
+                  <Accordion.Trigger class="text-left">
                     What’s the future of KasKritterz?
                   </Accordion.Trigger>
                   <Accordion.Content>
