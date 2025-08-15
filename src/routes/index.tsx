@@ -1,33 +1,28 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-
 import Steps from "~/components/widgets/Steps";
 import { SITE } from "~/config.mjs";
 import Services from "~/components/widgets/Services";
-
-import Story from "~/components/widgets/Story";
+import About from "~/components/widgets/About";
 import Rarity from "~/components/widgets/Rarity";
 import Hero2 from "~/components/widgets/Hero2";
-import Hero from "~/components/widgets/Hero";
-import Team from "~/components/widgets/Team";
-import Inventory from "~/components/widgets/Inventory";
-import Inner from "~/components/widgets/Inner";
+import FAQ from "~/components/widgets/FAQ";
+
 
 export default component$(() => {
   return (
     <>
-    <div class="hidden md:block">
+    <div class="">
       <Hero2/>
       </div>
-      <div class="block md:hidden">
-      <Hero/>
-      </div>
+    
   
-      <Story
-      highlight="Story"
-      title="KasLord Origins"
-      subtitle="In the realm of Kasparion, where BlockDAG constellations shimmered with infinite potential, a legendary council emerged: The Six KasLords. Born from an ancient NFT prophecy, these spectral sovereigns were sentient echoes of the chain itself. Forged in Kaspa’s ecosystem, each KasLord carries a unique signature, their power etched in the rapid pulse of the DAG. Unbound by time or consensus, they stand as eternal guardians of the network, champions of true decentralization, their essence immortalized in Kaspa's immutable ledger."
-      items={[]}/>
+    <About
+  highlight="About"
+  title="WHAT IS KASKRITTERZ?"
+  subtitle="KasKritterz is a fun and collectible NFT series built on the Kaspa blockchain. It started with 250 hand-crafted Mice, each one unique, full of character, and ready to explore a world where Kaspa has already won. But this is just the beginning…"
+  items={[]}
+/>
       <Services
       id="classes"
   highlight="classes"
@@ -35,13 +30,13 @@ export default component$(() => {
   subtitle="Mint one of six legendary KasLord character types."
   items={[]}/>
  
-      <Inventory
+      {/* <Inventory
       id="inventory"
         highlight="inventory"
         title="Item Inventory"
         // subtitle="Browse inventory items and rarities."
         items={[]}
-      />
+      /> */}
 
       <Steps id="roadmap"  
        highlight="Roadmap"
@@ -57,20 +52,15 @@ export default component$(() => {
      
       items={[]}/>
 
-<Inner
-      id="inner"
-  // highlight="Team"
-  title="Inner Realm"
-  subtitle="Members of the Inner Realm."
-  items={[]}/>
+        <FAQ
+       id="faq"
+      highlight="FAQs"
+      title="Frequently Asked Questions"
+     
+     
+      items={[]}/>
 
-         <Team
-      id="team"
-  highlight="Team"
-  title="Founding KasLords"
-  // subtitle="The founding four KasLords."
-  items={[]}/>
-  
+
       
     </>
   );

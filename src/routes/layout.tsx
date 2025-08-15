@@ -12,7 +12,7 @@ export default component$(() => {
   return (
     <>
       <Header />
-      <main class="bg-gray-900">
+      <main class="bg-gray-200">
         <Slot />
       </main>
       <Footer />

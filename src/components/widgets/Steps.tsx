@@ -64,7 +64,6 @@ export default component$((props: Props) => {
 
   return (
     <div class="max-w-7xl">
-      <Card.Root>
         <section
           id="roadmap"
           class="mx-auto max-w-6xl scroll-mt-16 px-4 pb-6 pt-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
@@ -136,7 +135,6 @@ export default component$((props: Props) => {
             </div>
           </div>
         </section>
-      </Card.Root>
     </div>
   );
 });

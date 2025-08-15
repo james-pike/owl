@@ -11,7 +11,7 @@
 @tailwind utilities;
 
 html, body, [class] {
-  font-family: 'MedievalSharp', serif !important;
+  font-family: 'Rock Salt', cursive !important;
 }
 
 @layer components {

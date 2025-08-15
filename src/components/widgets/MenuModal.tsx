@@ -15,12 +15,11 @@ export default component$(() => {
   // Menu items array structure
   const menuItems = [
     { title: "Home", href: "/", badge: null },
-    { title: "Story", href: "#story", badge: null },
-    { title: "Classes", href: "#classes", badge: null },
-    { title: "Inventory", href: "#inventory", badge: null },
+    { title: "About", href: "#about", badge: null },
+    { title: "What We Do", href: "#services", badge: null },
     { title: "Roadmap", href: "#roadmap", badge: null },
-    { title: "Rarity Guide", href: "#rarity", badge: null },
-    { title: "Team", href: "#team", badge: null },
+    { title: "Rarity", href: "#rarity", badge: null },
+    { title: "FAQ", href: "#faq", badge: null },
   ];
 
   return (
@@ -32,17 +31,17 @@ export default component$(() => {
           </Modal.Trigger>
         </div>
         <Modal.Panel position={"left"} class="border-0">
-          <Card.Root>
+          
             {/* Header */}
             <div class="border-gray-200 dark:border-gray-700 p-1">
               <Modal.Title class="pt-1">
                 <Link class="flex items-center focus:outline-none focus:ring-0" href={"/"}>
-                  <h1 class="font-bold text-3xl">KasLords</h1>
+                  <h1 class="font-bold text-3xl">KasKritterz</h1>
                 </Link>
               </Modal.Title>
-              <Modal.Description class="text-lg font-medium px-0 py-1 text-gray-700 dark:text-gray-200">
+              {/* <Modal.Description class="text-lg font-medium px-0 py-1 text-gray-700 dark:text-gray-200">
                 KasLords Of The BlockDag
-              </Modal.Description>
+              </Modal.Description> */}
             </div>
 
             {/* Navigation Content */}
@@ -91,7 +90,7 @@ export default component$(() => {
                 <div class="flex w-full sm:w-auto">
                   <a
                     class="btn btn-primary sm:mb-0 w-full"
-                    href="https://www.kaspa.com/nft/collections/Kaslords"
+                    href="https://kaspa.com/nft/collections/KASKRITTER"
                   >
                     <LuSparkles class="w-5 h-5 mr-2" /> Mint KasLords
                   </a>
@@ -118,7 +117,7 @@ export default component$(() => {
             >
               <LuX class="h-6 w-6" />
             </Modal.Close>
-          </Card.Root>
+        
         </Modal.Panel>
       </Modal.Root>
     </>

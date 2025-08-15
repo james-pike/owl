@@ -125,7 +125,7 @@ export default component$(() => {
   });
 
   return (
-    <Card.Content>
+    
       <section class="p-2 max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Left Column (Image on md and up) */}
@@ -238,6 +238,6 @@ export default component$(() => {
           </div>
         </div>
       </section>
-    </Card.Content>
+  
   );
 });

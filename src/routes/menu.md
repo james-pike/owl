@@ -1,10 +1,9 @@
 # Menu
 
-## [Story](#story)
-## [Classes](#classes)
-## [Inventory](#inventory)
+## [About](#about)
+## [What We Do](#classes)
 ## [Roadmap](#roadmap)
-## [Rarity Guide](#rarity)
-## [Team](#team)
+## [Rarity](#rarity)
+## [FAQ](#faq)
 
   

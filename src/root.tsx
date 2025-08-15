@@ -28,7 +28,7 @@ export default component$(() => {
         <RouterHead />
         <DarkThemeLauncher />
         <ServiceWorkerRegister />
-        <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=MedievalSharp&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet"/>
       </head>
       <body class="text-gray-900 dark:text-slate-300 tracking-tight border-gray-300 mx-auto px-1.5  overflow-x-hidden dark:border-gray-800 bg-white max-w-7xl  dark:bg-gray-950 antialiased">
       <ObserverProvider>

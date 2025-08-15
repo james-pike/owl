@@ -27,14 +27,13 @@ export default component$((props: Props) => {
   return (
     <div class="max-w-7xl mx-auto">
       <div class="max-w-7xl mx-auto">
-        <Card.Root class="bg-gray-900">
           <section
-            id="story"
+            id="about"
             class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
           >
             <Headline
               title={title}
-              subtitle={"Chapter 1: Dawn Of The KasLords"}
+              // subtitle={"Chapter 1: Dawn Of The KasLords"}
               highlight={highlight}
               classes={classes?.headline}
             />
@@ -56,7 +55,6 @@ export default component$((props: Props) => {
               </div>
             </div>
           </section>
-        </Card.Root>
       </div>
     </div>
   );

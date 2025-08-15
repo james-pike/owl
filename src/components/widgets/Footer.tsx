@@ -9,22 +9,24 @@ export default component$(() => {
     {
       title: "About",
       items: [
-        { title: "Story", href: "#story" },
+        { title: "Story", href: "#about" },
+        { title: "What We Do", href: "#services" },
+
         { title: "Roadmap", href: "#roadmap" },
-        { title: "Team", href: "#team" },
+        { title: "FAQ", href: "#faq" },
     
       ],
     },
 
-    {
-      title: "Tools",
-      items: [
-        { title: "Rarity Guide", href: "#rarity" },
-        { title: "Inventory Items", href: "#inventory" },
+    // {
+    //   title: "Tools",
+    //   items: [
+    //     { title: "Rarity Guide", href: "#rarity" },
+    //     { title: "Inventory Items", href: "#inventory" },
        
    
-      ],
-    },
+    //   ],
+    // },
   
     {
       title: "Resources",
@@ -45,32 +47,32 @@ export default component$(() => {
   ];
 
   return (
-    <Card.Root>
     <footer class=" ">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
           <div class="col-span-12 lg:col-span-4 pr-4">
             <div class="mb-2">
               <Link class="inline-block font-bold text-xl" href={"/"}>
-                KasLords Of The BlockDag
+                KasKritterz
               </Link>
             </div>
             <div class="text-sm text-gray-600 mb-4 dark:text-gray-400">
-            Own a piece of this legendary saga, forged in the fires of creativity and secured on the BlockDag—join the KasLords and claim your dominion today!
-
+A fun and collectible NFT series built on the Kaspa blockchain. KasKritterz started with 250
+hand-crafted Mice, each one unique, full of character, and ready to explore a world where Kaspa
+has already won.
             </div>
             <div class="flex gap-2">
               <a
                   href="https://www.kaspa.com/nft/collections/Kaslords"
                 class=" px-2 py-2 btn-primary text-white font-semibold rounded-md transition-colors"
               >
-                Mint KasLords
+                Mint KasKritterz
               </a>
               <a
                    href="https://t.me/+pHZ9UA7XIDA2YmIx"
                 class=" btn-secondary px-2 py-2 dark:text-white font-semibold rounded-md transition-colors"
               >
-                Join The Clan
+                Join Telegram
               </a>
            </div>
            </div>
@@ -121,12 +123,11 @@ export default component$(() => {
               {" "}
               onWidget
             </a>{" "}· All rights reserved. */}
-               © {new Date().getFullYear()} KasLords Of The BlockDag · All rights reserved
+               © {new Date().getFullYear()} KasKritterz · All rights reserved
             
           </div>
         </div>
       </div>
     </footer>
-    </Card.Root>
   );
 });
