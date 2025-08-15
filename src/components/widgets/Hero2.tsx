@@ -1,6 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import Carousel from "../ui/Carousel";
-import { LuSparkles, LuUsers } from '@qwikest/icons/lucide';
+
 
 export default component$(() => {
   return (

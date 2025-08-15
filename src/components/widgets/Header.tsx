@@ -1,10 +1,7 @@
-import { $, component$, useSignal, useStore, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useSignal, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import { Link, useContent, useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
-import IconPause from "../icons/IconPause";
-import IconPlay from "../icons/IconPlay";
-import { Card } from "../ui/Card";
 import { LuSend, LuTwitter } from "@qwikest/icons/lucide";
 
 export default component$(() => {
@@ -55,30 +52,30 @@ export default component$(() => {
     return () => observer.disconnect();
   });
 
-  const toggleAudio = $(async () => {
-    const audio = audioRef.value;
-    if (audio) {
-      if (isPlaying.value) {
-        audio.pause();
-        isPlaying.value = false;
-        console.log("Audio paused");
-      } else {
-        try {
-          await audio.play();
-          isPlaying.value = true;
-          console.log("Audio playing");
-        } catch (error) {
-          console.error("Failed to play audio:", error);
-        }
-      }
-    } else {
-      console.error("Audio element not available");
-    }
-  });
+  // const toggleAudio = $(async () => {
+  //   const audio = audioRef.value;
+  //   if (audio) {
+  //     if (isPlaying.value) {
+  //       audio.pause();
+  //       isPlaying.value = false;
+  //       console.log("Audio paused");
+  //     } else {
+  //       try {
+  //         await audio.play();
+  //         isPlaying.value = true;
+  //         console.log("Audio playing");
+  //       } catch (error) {
+  //         console.error("Failed to play audio:", error);
+  //       }
+  //     }
+  //   } else {
+  //     console.error("Audio element not available");
+  //   }
+  // });
 
-  const handleAudioEnded = $(() => {
-    isPlaying.value = false;
-  });
+  // const handleAudioEnded = $(() => {
+  //   isPlaying.value = false;
+  // });
 
   const { menu } = useContent();
   const location = useLocation();

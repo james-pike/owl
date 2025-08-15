@@ -1,7 +1,6 @@
 import { component$, useSignal, $, useVisibleTask$ } from '@builder.io/qwik';
 import metadata from '~/data/metadata_stripped.json';
 import kaslords from '~/data/kaslords.json'; // Import kaslords.json
-import { Card } from '../ui/Card';
 
 const TOTAL_NFTS = 1500;
 

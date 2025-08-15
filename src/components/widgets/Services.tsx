@@ -3,7 +3,6 @@ import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
 
 import ServiceGrid from "./ServiceGrid";
-import { Card } from "../ui/Card";
 
 interface Item {
   title?: string;

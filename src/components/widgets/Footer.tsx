@@ -2,8 +2,6 @@ import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { LuTwitter, LuSend } from '@qwikest/icons/lucide';
 
-import { Card } from "../ui/Card";
-
 export default component$(() => {
   const links = [
     {

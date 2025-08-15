@@ -3,7 +3,6 @@ import { Image } from "@unpic/qwik";
 import { twMerge } from "tailwind-merge";
 import IconStar from "~/components/icons/IconStar";
 import { Headline } from "../ui/Headline";
-import { Card } from "../ui/Card";
 
 const sideImg = "/images/roadmap.jpg";
 
