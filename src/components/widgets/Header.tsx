@@ -1,4 +1,4 @@
-import { component$, useSignal, useStore, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import { Link, useContent, useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
@@ -8,22 +8,6 @@ export default component$(() => {
   const store = useStore({
     isScrolling: false,
     activeSection: "", // Store the currently visible section
-  });
-
-  const audioRef = useSignal<HTMLAudioElement>();
-  const isPlaying = useSignal(false);
-
-  useVisibleTask$(async () => {
-    const audio = audioRef.value;
-    if (audio && !isPlaying.value) {
-      try {
-        await audio.play();
-        isPlaying.value = true;
-        console.log("Audio auto-started on visibility");
-      } catch (error) {
-        console.error("Failed to auto-play audio:", error);
-      }
-    }
   });
 
   // Intersection Observer to track visible sections
@@ -52,40 +36,13 @@ export default component$(() => {
     return () => observer.disconnect();
   });
 
-  // const toggleAudio = $(async () => {
-  //   const audio = audioRef.value;
-  //   if (audio) {
-  //     if (isPlaying.value) {
-  //       audio.pause();
-  //       isPlaying.value = false;
-  //       console.log("Audio paused");
-  //     } else {
-  //       try {
-  //         await audio.play();
-  //         isPlaying.value = true;
-  //         console.log("Audio playing");
-  //       } catch (error) {
-  //         console.error("Failed to play audio:", error);
-  //       }
-  //     }
-  //   } else {
-  //     console.error("Audio element not available");
-  //   }
-  // });
-
-  // const handleAudioEnded = $(() => {
-  //   isPlaying.value = false;
-  // });
-
   const { menu } = useContent();
   const location = useLocation();
 
   return (
-
     <header
       id="header"
-      class={`sticky top-0 z-40 flex-none mx-auto bg-[url('/images/background.jpg')] bg-cover  dark:from-gray-950 dark:to-gray-900 w-full border-gray-300 dark:border-gray-800 transition-[opacity] ease-in-out ${store.isScrolling ? "" : ""
-        }`}
+      class={`sticky top-0 z-40 flex-none mx-auto bg-[url('/images/background.jpg')] bg-cover dark:from-gray-950 dark:to-gray-900 w-full border-gray-300 dark:border-gray-800 transition-[opacity] ease-in-out ${store.isScrolling ? "" : ""}`}
       window:onScroll$={() => {
         if (!store.isScrolling && window.scrollY >= 10) {
           store.isScrolling = true;
@@ -94,9 +51,9 @@ export default component$(() => {
         }
       }}
     >
-      <div class="relative text-default  md:px-2 mx-auto w-full md:flex md:justify-between max-w-7xl">
+      <div class="relative text-default md:px-2 mx-auto w-full md:flex md:justify-between max-w-7xl">
         <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
-          <Link class="flex items-center" href={"/"}>
+          <Link class="flex items-center" href="/">
             <img
               src="/images/frontface-logo.jpg"
               alt="KasKritterz Logo"
@@ -105,27 +62,12 @@ export default component$(() => {
             <h1 class="font-bold text-white text-2xl tracking-tighter">KasKritterz</h1>
           </Link>
           <div class="flex items-center md:hidden">
-            {/* <a
-
-              class="btn bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900 rounded-sm ml-2 mr-1 h-10 py-2 px-2 md:px-4 font-semibold shadow-none text-md w-auto"
-              aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
-              onClick$={toggleAudio}
-            >
-              {isPlaying.value ? <IconPause /> : <IconPlay />}
-            </a>
-            <audio
-              ref={audioRef}
-              src="/images/hero.mp3"
-              preload="auto"
-              onEnded$={handleAudioEnded}
-            /> */}
             <a
               href="https://www.kaspa.com/nft/collections/Kaslords"
               class="btn bg-gray-200 border-gray-300 dark:bg-secondary-800 dark:border-gray-900 rounded-sm mr-1 h-10 py-2 px-3 md:px-4 font-semibold shadow-none text-md w-auto"
             >
               Mint
             </a>
-
             <MenuModal />
           </div>
         </div>
@@ -156,12 +98,12 @@ export default component$(() => {
                             after:bottom-[6px] 
                             after:left-1/2 
                             after:h-[2px] 
-                            after:bg-secondary-800 
+                            after:bg-teal-300 
                             after:transition-all 
                             after:duration-200 
                             ${isActive
-                              ? "text-secondary-500 after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2 md:group-hover:[&:not(:hover)]:text-gray-800 dark:md:group-hover:[&:not(:hover)]:text-white"
-                              : "hover:text-secondary-800 dark:hover:text-secondary-800 after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
+                              ? "text-teal-300 after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2 md:group-hover:[&:not(:hover)]:text-white"
+                              : "text-white hover:text-teal-300 after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
                             }
                           `}
                           onClick$={() => {
@@ -213,12 +155,12 @@ export default component$(() => {
                                     after:bottom-[4px] 
                                     after:left-1/2 
                                     after:h-[2px] 
-                                    after:bg-secondary-800 
+                                    after:bg-teal-300 
                                     after:transition-all 
                                     after:duration-200 
                                     ${isDropdownActive
-                                      ? "text-secondary-500 after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2 md:group-hover:[&:not(:hover)]:text-gray-800 dark:md:group-hover:[&:not(:hover)]:text-white"
-                                      : "hover:text-secondary-800 dark:hover:text-secondary-800 after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
+                                      ? "text-teal-300 after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2 md:group-hover:[&:not(:hover)]:text-white"
+                                      : "text-white hover:text-teal-300 after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
                                     }
                                   `}
                                   href={href2 ?? "#"}
@@ -243,12 +185,12 @@ export default component$(() => {
                           after:bottom-[6px] 
                           after:left-1/2 
                           after:h-[2px] 
-                          after:bg-secondary-800 
+                          after:bg-teal-300 
                           after:transition-all 
                           after:duration-200 
                           ${isActive
-                            ? "text-secondary-500 after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2 md:group-hover:[&:not(:hover)]:text-gray-800 dark:md:group-hover:[&:not(:hover)]:text-white"
-                            : "hover:text-secondary-800 dark:hover:text-secondary-800 after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
+                            ? "text-teal-300 after:w-1/2 after:left-1/4 md:group-hover:[&:not(:hover)]:after:w-0 md:group-hover:[&:not(:hover)]:after:left-1/2 md:group-hover:[&:not(:hover)]:text-white"
+                            : "text-white hover:text-teal-300 after:w-0 md:hover:after:w-1/2 md:hover:after:left-1/4"
                           }
                         `}
                         href={href ?? "#"}
@@ -267,34 +209,18 @@ export default component$(() => {
             <div class="flex"></div>
             <Link
               class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-              aria-label={"label"}
-
-              href={"https://t.me/+pHZ9UA7XIDA2YmIx"}
+              aria-label="Telegram"
+              href="https://t.me/+pHZ9UA7XIDA2YmIx"
             >
               <LuSend class="w-5 h-5" />
             </Link>
             <Link
               class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-              aria-label={"label"}
-
-              href={"https://x.com/kaslords"}
+              aria-label="Twitter"
+              href="https://x.com/kaslords"
             >
               <LuTwitter class="w-5 h-5" />
             </Link>
-            {/* <a
-
-              class="btn  border-gray-300 dark:bg-secondary-800 rounded-sm bg-secondary-800 dark:border-gray-900 ml-2 h-10 py-2 px-3 md:px-3 font-semibold shadow-none text-md w-auto"
-              aria-label={isPlaying.value ? "Pause audio" : "Play audio"}
-              onClick$={toggleAudio}
-            >
-              {isPlaying.value ? <IconPause /> : <IconPlay />}
-            </a>
-            <audio
-              ref={audioRef}
-              src="/images/hero.mp3"
-              preload="auto"
-              onEnded$={handleAudioEnded}
-            /> */}
             <a
               href="https://t.me/+pHZ9UA7XIDA2YmIx"
               class="btn btn-secondary ml-1.5 py-2 px-4 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"
@@ -311,6 +237,5 @@ export default component$(() => {
         </div>
       </div>
     </header>
-
   );
 });
