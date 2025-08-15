@@ -1,6 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 import { Headline } from "../ui/Headline";
-import { Card } from "../ui/Card";
 
 const sideImg = "/images/story.png";
 
