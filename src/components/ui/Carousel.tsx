@@ -1,104 +1,228 @@
-import { component$, useSignal, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
-import { Carousel } from '@qwik-ui/headless';
+import {
+  useContext,
+  component$,
+  createContextId,
+  PropsOf,
+  Slot,
+  useContextProvider,
+  Signal,
+} from '@builder.io/qwik';
 
-const slides = [
+import { Carousel as HCarousel } from '@qwik-ui/headless';
+import { cn } from '@qwik-ui/utils';
+import { VariantProps } from 'class-variance-authority';
+import {
+  LuChevronDown,
+  LuChevronLeft,
+  LuChevronRight,
+  LuChevronUp,
+} from '@qwikest/icons/lucide';
+import { buttonVariants } from './Button';
 
-  { src: '/images/wizard1.png', alt: 'Wizard', type: 'image' },
-  { src: '/images/elf1.jpg', alt: 'Elf', type: 'image' },
-  { src: '/images/warrior1.png', alt: 'Warrior', type: 'image' },
-  { src: '/images/darklord1.png', alt: 'Dark Lord', type: 'image' },
-  { src: '/images/orc1.png', alt: 'Orc', type: 'image' },
-  { src: '/images/dragon.mp4', alt: 'Dragon', type: 'video' },
+const styledCarouselContextId = createContextId<{
+  orientation: 'horizontal' | 'vertical';
+  progress?: Signal<number>;
+}>('styled-carousel-context');
 
-];
+const Provider = component$<{
+  orientation?: 'horizontal' | 'vertical';
+}>(({ orientation = 'horizontal' }) => {
+  const context = {
+    orientation,
+  };
 
-export default component$(() => {
-  useStyles$(`
-    .carousel-root {
-      height: 100%;
-      width: 100%;
-      position: relative;
-    }
-    .carousel-slide {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .carousel-slide img,
-    .carousel-slide video {
-      height: 100%;
-      width: 100%;
-      object-fit: contain; /* or use object-fit: contain if distortion occurs */
-    }
-    .carousel-buttons {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      transform: translateY(-50%);
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      pointer-events: none;
-    }
-    .carousel-button {
-      pointer-events: auto;
-      width: 50px;
-      height: 50px;
-      background: rgba(128, 128, 128, 0.7);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      transition: background 0.3s ease;
-    }
-    .carousel-button:hover {
-      background: rgba(128, 128, 128, 1);
-    }
-    .carousel-button i {
-      font-size: 24px;
-    }
-    .carousel-prev {
-      margin-left: 10px;
-    }
-    .carousel-next {
-      margin-right: 10px;
-    }
-    .carousel-conditional {
-      height: 100%;
-      width: 100%;
-    }
-  `);
+  useContextProvider(styledCarouselContextId, context);
+  return <Slot />;
+});
 
-  const isPlaying = useSignal<boolean>(false);
+const Root = ({
+  orientation = 'horizontal',
+  ...props
+}: PropsOf<typeof HCarousel.Root> & {
+  orientation?: 'horizontal' | 'vertical';
+  progress?: Signal<number>;
+}) => {
+  return (
+    <Provider orientation={orientation}>
+      <HCarousel.Root
+        {...props}
+        orientation={orientation}
+        slideComponent={Slide}
+        bulletComponent={Bullet}
+        titleComponent={Title}
+        stepComponent={Step}
+        class={cn('relative', props.class)}
+      >
+        {props.children}
+      </HCarousel.Root>
+    </Provider>
+  );
+};
 
-  useVisibleTask$(() => {
-    isPlaying.value = true;
-  });
+const Scroller = component$<PropsOf<typeof HCarousel.Scroller>>(({ ...props }) => {
+  const context = useContext(styledCarouselContextId);
 
   return (
-    <Carousel.Root class="carousel-root" gap={30} autoPlayIntervalMs={3500} bind:autoplay={isPlaying}>
-  
-      <div class="carousel-conditional">
-        {slides.map((slide, index) => (
-          <Carousel.Slide key={index} class="carousel-slide">
-            {slide.type === 'video' ? (
-              <video
-                src={slide.src}
-                autoplay
-                loop
-                muted
-                playsInline
-              />
-            ) : (
-              <img src={slide.src} alt={slide.alt} loading="eager" />
-            )}
-          </Carousel.Slide>
-        ))}
-      </div>
-    </Carousel.Root>
+    <HCarousel.Scroller
+      {...props}
+      class={cn('flex', context.orientation === 'horizontal' ? '-ml-4' : '-mt-4')}
+    >
+      <Slot />
+    </HCarousel.Scroller>
   );
 });
+
+const Slide = component$<PropsOf<typeof HCarousel.Slide>>(({ ...props }) => {
+  const context = useContext(styledCarouselContextId);
+  return (
+    <HCarousel.Slide
+      {...props}
+      class={cn(context.orientation === 'horizontal' ? 'pl-4' : 'pt-4')}
+    >
+      <Slot />
+    </HCarousel.Slide>
+  );
+});
+
+const Previous = component$<
+  PropsOf<typeof HCarousel.Previous> & VariantProps<typeof buttonVariants>
+>(({ look = 'ghost', size = 'icon', ...props }) => {
+  const context = useContext(styledCarouselContextId);
+  return (
+    <div
+      class={cn(
+        'absolute',
+        context.orientation === 'horizontal'
+          ? '-left-16 top-1/2 -translate-y-1/2'
+          : '-top-16 right-1/2 translate-x-1/2',
+      )}
+    >
+      <HCarousel.Previous
+        {...props}
+        class={cn(buttonVariants({ look, size }), 'group rounded-full', props.class)}
+      >
+        <div
+          class={cn(
+            context.orientation === 'horizontal'
+              ? 'group-hover:-translate-x-px'
+              : 'group-hover:-translate-y-px',
+            'group-hover:transition-all group-hover:duration-300',
+          )}
+        >
+          {context.orientation === 'horizontal' ? (
+            <LuChevronLeft class="size-10" />
+          ) : (
+            <LuChevronUp class="size-10" />
+          )}
+        </div>
+      </HCarousel.Previous>
+    </div>
+  );
+});
+
+const Next = component$<
+  PropsOf<typeof HCarousel.Next> & VariantProps<typeof buttonVariants>
+>(({ look = 'ghost', size = 'icon', ...props }) => {
+  const context = useContext(styledCarouselContextId);
+  return (
+    <div
+      class={cn(
+        'absolute',
+        context.orientation === 'horizontal'
+          ? '-right-16 top-1/2 -translate-y-1/2'
+          : '-bottom-16 right-1/2 translate-x-1/2',
+      )}
+    >
+      {/* moves content to the right on hover */}
+      <HCarousel.Next
+        {...props}
+        class={cn(buttonVariants({ look, size }), 'group rounded-full', props.class)}
+      >
+        <div
+          class={cn(
+            context.orientation === 'horizontal'
+              ? 'group-hover:translate-x-px'
+              : 'group-hover:translate-y-px',
+            'group-hover:transition-all group-hover:duration-300',
+          )}
+        >
+          {context.orientation === 'horizontal' ? (
+            <LuChevronRight class="size-10" />
+          ) : (
+            <LuChevronDown class="size-10" />
+          )}
+        </div>
+      </HCarousel.Next>
+    </div>
+  );
+});
+
+const Pagination = component$(({ ...props }: PropsOf<typeof HCarousel.Pagination>) => {
+  return (
+    <HCarousel.Pagination
+      {...props}
+      class={cn('absolute -bottom-10 flex w-full justify-center gap-4', props.class)}
+    >
+      <Slot />
+    </HCarousel.Pagination>
+  );
+});
+
+const Bullet = component$((props: PropsOf<typeof HCarousel.Bullet>) => {
+  return (
+    <HCarousel.Bullet
+      {...props}
+      class={cn(
+        'size-5 rounded-full border border-gray-300 bg-white outline-0 transition-all duration-300 ease-in-out hover:border-gray-400',
+        'data-[active]:border-teal-300 data-[active]:bg-teal-300 data-[active]:text-white',
+        props.class,
+      )}
+    />
+  );
+});
+
+const Title = component$((props: PropsOf<typeof HCarousel.Title>) => {
+  return (
+    <HCarousel.Title {...props}>
+      <Slot />
+    </HCarousel.Title>
+  );
+});
+
+const Stepper = (props: PropsOf<typeof HCarousel.Stepper>) => {
+  return (
+    <HCarousel.Stepper
+      {...props}
+      class={cn('flex w-full items-center justify-between', props.class)}
+    >
+      {props.children}
+    </HCarousel.Stepper>
+  );
+};
+
+const Step = component$((props: PropsOf<typeof HCarousel.Step>) => {
+  return (
+    <HCarousel.Step
+      {...props}
+      class={cn(
+        'flex items-center gap-1 [&[data-current]_span:first-child]:outline-2 [&[data-current]_span:first-child]:outline-offset-[-2px] [&[data-current]_span:first-child]:outline-primary',
+        props.class,
+      )}
+    >
+      <Slot />
+    </HCarousel.Step>
+  );
+});
+
+export const Carousel = {
+  Root,
+  Scroller,
+  Slide,
+  Previous,
+  Next,
+  Pagination,
+  Bullet,
+  Title,
+  Stepper,
+  Step,
+};

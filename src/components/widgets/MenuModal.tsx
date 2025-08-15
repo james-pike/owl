@@ -15,7 +15,8 @@ export default component$(() => {
   const menuItems = [
     { title: "Home", href: "/", badge: null },
     { title: "About", href: "#about", badge: null },
-    { title: "What We Do", href: "#services", badge: null },
+    { title: "What We Do", href: "#what-we-do", badge: null },
+    { title: "Collections", href: "#collections", badge: null },
     { title: "Roadmap", href: "#roadmap", badge: null },
     { title: "Rarity", href: "#rarity", badge: null },
     { title: "FAQ", href: "#faq", badge: null },

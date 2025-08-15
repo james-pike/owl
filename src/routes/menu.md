@@ -1,7 +1,7 @@
 # Menu
 
 ## [About](#about)
-## [What We Do](#classes)
+## [Collections](#collections)
 ## [Roadmap](#roadmap)
 ## [Rarity](#rarity)
 ## [FAQ](#faq)

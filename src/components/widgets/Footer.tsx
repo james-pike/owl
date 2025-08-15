@@ -31,10 +31,10 @@ export default component$(() => {
     <footer class="bg-[url('/images/background.jpg')] bg-cover bg-center">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
-          <div class="col-span-12 lg:col-span-4 pr-4">
+          <div class="col-span-12 lg:col-span-5 pr-4">
             <div class="flex flex-col">
               <div class="flex items-center justify-between mb-2 md:mb-2">
-                <Link class="inline-block font-bold text-xl text-white" href={"/"}>
+                <Link class="inline-block font-bold text-xl text-white" href="/">
                   KasKritterz
                 </Link>
                 <ul class="flex gap-2 md:hidden">
@@ -94,8 +94,8 @@ export default component$(() => {
             </div>
           ))}
         </div>
-        <div class="md:flex md:items-center dark:border-gray-700 md:justify-between pb-6 pt-0 md:py-8">
-          <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0">
+        <div class="md:flex md:items-center dark:border-gray-700 md:justify-between pb-6 pt-0 md:pb-8">
+          <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 hidden md:flex"> {/* Changed to hidden md:flex */}
             {social.map(({ label, href, icon: Icon }, index) => (
               <li key={index}>
                 <Link
@@ -104,7 +104,7 @@ export default component$(() => {
                   title={label}
                   href={href}
                 >
-                  {typeof Icon !== "undefined" && <Icon class="w-5 h-5" />}
+                  {typeof Icon !== "undefined" && <Icon class="w-6 h-6" />}
                 </Link>
               </li>
             ))}

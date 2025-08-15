@@ -25,7 +25,7 @@ export default component$((props: Props) => {
   const { title = "", subtitle = "", highlight = "", classes = {} } = props;
 
   return (
-    <div class="max-w-7xl mx-auto bg-teal-200">
+    <div class="max-w-7xl mx-auto">
       <div class="max-w-7xl mx-auto">
         <section
           id="faq"
