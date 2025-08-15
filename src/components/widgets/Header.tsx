@@ -208,25 +208,20 @@ export default component$(() => {
           <div class="items-center flex justify-between w-full md:w-auto">
             <div class="flex"></div>
             <Link
-              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+              class="text-white dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
               aria-label="Telegram"
               href="https://t.me/+pHZ9UA7XIDA2YmIx"
             >
-              <LuSend class="w-5 h-5" />
+              <LuSend class="w-6 h-6" />
             </Link>
             <Link
-              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+              class="text-white dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
               aria-label="Twitter"
               href="https://x.com/kaslords"
             >
-              <LuTwitter class="w-5 h-5" />
+              <LuTwitter class="w-6 h-6" />
             </Link>
-            <a
-              href="https://t.me/+pHZ9UA7XIDA2YmIx"
-              class="btn btn-secondary ml-1.5 py-2 px-4 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"
-            >
-              Join Clan
-            </a>
+          
             <a
               href="https://www.kaspa.com/nft/collections/Kaslords"
               class="btn btn-primary ml-1.5 py-2 px-4 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"

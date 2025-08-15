@@ -1,5 +1,6 @@
 # Menu
 
+## [Story](#story)
 ## [About](#about)
 ## [Collections](#collections)
 ## [Roadmap](#roadmap)

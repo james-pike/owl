@@ -1,8 +1,7 @@
 import { component$ } from "@builder.io/qwik";
-import { twMerge } from "tailwind-merge";
-import { Headline } from "~/components/ui/Headline";
+import { Headline } from "../ui/Headline";
 
-import ServiceGrid from "./ServiceGrid";
+const sideImg = "/images/story.png";
 
 interface Item {
   title?: string;
@@ -22,25 +21,44 @@ interface Props {
 }
 
 export default component$((props: Props) => {
-  const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;
+  const { title = "", subtitle = "Chapter 1: Dawn Of The KasLords", highlight = "", classes = {} } = props;
 
   return (
-    <section class="relative scroll-mt-12" {...(id ? { id } : {})}>
-      <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
-        <slot name="bg">
-          <div class={twMerge("absolute inset-0 ", isDark ? "bg-dark dark:bg-transparent" : "")}></div>
-        </slot>
-      </div>
-      <div
-        class={twMerge(
-          "relative mx-auto max-w-5xl px-2 md:px-6 pb-4 pt-10 md:py-12 lg:py-12 text-default",
-          classes?.container,
-          isDark ? "dark" : ""
-        )}
+    <div class="max-w-7xl mx-auto">
+      <section
+        id="about"
+        class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
       >
-        <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
-     <ServiceGrid/>
-      </div>
-    </section>
+        <Headline
+          title={title}
+          subtitle={subtitle}
+          highlight={highlight}
+          classes={classes?.headline}
+        />
+        <div class="row-gap-0 grid md:gap-8 md:grid-cols-2">
+          <div class="mb-4 md:mb-0 md:py-4 md:pr-0 md:order-1"> {/* Changed to md:order-1 */}
+            {title && (
+              <h2 class="font-heading mb-8 text-xl lg:text-xl">{subtitle}</h2>
+            )}
+            <ul class="list-disc pl-5  dark:text-gray-400 text-sm md:text-base space-y-2">
+              <li>Create playful, story-rich NFT characters living in a Kaspa-powered world</li>
+              <li>Build a strong, inclusive community of Kaspa lovers and collectors</li>
+              <li>Drop surprise Kas rewards to some minters</li>
+              <li>Send airdrop cartoon strips to NFT holders, minted right on the Kaspa blockchain</li>
+              <li>Collaborate with creators and projects inside the Kaspa ecosystem</li>
+              <li>Celebrate fun, freedom, and decentralization!</li>
+            </ul>
+          </div>
+          <div class="relative md:order-2"> {/* Changed to md:order-2 */}
+            <img
+              src={sideImg}
+              width={532} // Square base width
+              height={532} // Square base height (equal to width)
+              class="inset-0 w-full rounded-md bg-gray-500 object-cover shadow-lg dark:bg-slate-700 aspect-square md:aspect-[532/704] md:absolute md:h-full"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
   );
 });

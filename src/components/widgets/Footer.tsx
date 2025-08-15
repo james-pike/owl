@@ -37,20 +37,7 @@ export default component$(() => {
                 <Link class="inline-block font-bold text-xl text-white" href="/">
                   KasKritterz
                 </Link>
-                <ul class="flex gap-2 md:hidden">
-                  {social.map(({ label, href, icon: Icon }, index) => (
-                    <li key={index}>
-                      <Link
-                        class="text-gray-300 dark:text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                        aria-label={label}
-                        title={label}
-                        href={href}
-                      >
-                        {typeof Icon !== "undefined" && <Icon class="w-5 h-5" />}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+            
               </div>
               <div class="text-sm text-gray-200 mb-4 dark:text-gray-400">
                 A fun and collectible NFT series built on the Kaspa blockchain. KasKritterz started with 250
@@ -95,7 +82,7 @@ export default component$(() => {
           ))}
         </div>
         <div class="md:flex md:items-center dark:border-gray-700 md:justify-between pb-6 pt-0 md:pb-8">
-          <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 hidden md:flex"> {/* Changed to hidden md:flex */}
+          <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0"> {/* Removed hidden md:flex */}
             {social.map(({ label, href, icon: Icon }, index) => (
               <li key={index}>
                 <Link

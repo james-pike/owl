@@ -14,8 +14,8 @@ export default component$(() => {
   // Menu items array structure
   const menuItems = [
     { title: "Home", href: "/", badge: null },
-    { title: "About", href: "#about", badge: null },
-    { title: "What We Do", href: "#what-we-do", badge: null },
+    { title: "Story", href: "#story", badge: null },
+    { title: "About Us", href: "#about", badge: null },
     { title: "Collections", href: "#collections", badge: null },
     { title: "Roadmap", href: "#roadmap", badge: null },
     { title: "Rarity", href: "#rarity", badge: null },

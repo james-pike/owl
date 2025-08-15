@@ -7,6 +7,7 @@ import Rarity from "~/components/widgets/Rarity";
 import Hero2 from "~/components/widgets/Hero2";
 import FAQ from "~/components/widgets/FAQ";
 import Collections from "~/components/widgets/Collections";
+import Services from "~/components/widgets/Services";
 
 
 export default component$(() => {
@@ -16,17 +17,17 @@ export default component$(() => {
     
   
     <About
-  highlight="About"
+  highlight="Story"
   title="WHAT IS KASKRITTERZ?"
   subtitle="KasKritterz is a fun and collectible NFT series built on the Kaspa blockchain. It started with 250 hand-crafted Mice, each one unique, full of character, and ready to explore a world where Kaspa has already won. But this is just the beginning…"
   items={[]}
 />
-      {/* <Services
-      id="what-we-do"
-  highlight="classes"
-  title="Character Classes"
+      <Services
+      id="about"
+  highlight="About Us"
+  title="What We Do"
   subtitle="Mint one of six legendary KasLord character types."
-  items={[]}/> */}
+  items={[]}/>
 
   <Collections
   id="collections"
