@@ -27,7 +27,7 @@ export default component$((props: Props) => {
     <div class="max-w-7xl mx-auto bg-teal-100">
       <section
         id="about"
-        class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
+        class="mx-auto scroll-mt-16 max-w-6xl px-4 py-10 md:py-14 lg:py-16 sm:px-6 lg:px-8"
       >
         <div class="bg-white/50 p-6 rounded-lg shadow-lg">
           <Headline

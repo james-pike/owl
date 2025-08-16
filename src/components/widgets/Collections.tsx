@@ -26,9 +26,9 @@ export default component$((props: Props) => {
   const collections = [
     { id: 1, title: "KasKritterz", description: "Playful creatures with unique traits", image: "/images/77.jpeg" },
     { id: 2, title: "KasDinoz", description: "Fierce prehistoric beasts", image: "/images/77.jpeg" },
-    { id: 3, title: "KasKats", description: "Sly and cunning felines", image: "/images/77.jpeg" },
-    { id: 4, title: "KasBears", description: "Mighty and loyal guardians", image: "/images/77.jpeg" },
-    { id: 5, title: "KasDogs", description: "Loyal and adventurous companions", image: "/images/77.jpeg" },
+    { id: 3, title: "KasKatz", description: "Sly and cunning felines", image: "/images/77.jpeg" },
+    { id: 4, title: "KasBearz", description: "Mighty and loyal guardians", image: "/images/77.jpeg" },
+    { id: 5, title: "KasDogz", description: "Loyal and adventurous companions", image: "/images/77.jpeg" },
     { id: 6, title: "KasBullz", description: "Bold and powerful warriors", image: "/images/77.jpeg" },
   ];
 
@@ -41,7 +41,7 @@ export default component$((props: Props) => {
       </div>
       <div
         class={twMerge(
-          "relative mx-auto max-w-7xl px-3 md:px-6 pb-6 pt-14 md:py-12 lg:py-12 text-default overflow-hidden",
+          "relative mx-auto max-w-7xl px-3 md:px-6 pb-6 pt-14 md:py-14 lg:py-16 text-default overflow-hidden",
           classes?.container,
           isDark ? "dark" : ""
         )}

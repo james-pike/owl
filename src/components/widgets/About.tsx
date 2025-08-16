@@ -27,7 +27,7 @@ export default component$((props: Props) => {
     <div class="max-w-7xl mx-auto bg-blue-100">
       <section
         id="story"
-        class="mx-auto scroll-mt-16 max-w-5xl px-4 pb-10 pt-10 md:py-16 sm:px-6 lg:px-8"
+        class="mx-auto scroll-mt-16 max-w-5xl px-4 pb-10 pt-10 md:py-14 lg:py-16 sm:px-6 lg:px-8"
       >
         <div class="bg-white/50 p-6 rounded-lg shadow-lg">
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
@@ -35,7 +35,7 @@ export default component$((props: Props) => {
             <div class="md:order-2 md:py-4 text-xl text-center -mt-4 md:text-left">
               We're crafting a fresh NFT experience that rewards holders, unites the Kaspa community, and weaves storytelling with humor and distinctive digital art. Far from chasing hype, KasKritterz is driven by heart and the joy of collaborative creation, making it a perfect fit for Kaspa enthusiasts, meme lovers, and art collectors alike.
             </div>
-            <div class="relative md:order-1 pt-4">
+            <div class="relative md:order-1 pt-4 md:pt-0">
               <img
                 src={sideImg}
                 width={532}
