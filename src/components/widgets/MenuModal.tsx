@@ -12,7 +12,7 @@ export default component$(() => {
 
   // Menu items array structure
   const menuItems = [
-    { title: "Home", href: "/", badge: null },
+    { title: "Home", href: "#", badge: null },
     { title: "Story", href: "#story", badge: null },
     { title: "About Us", href: "#about", badge: null },
     { title: "Collections", href: "#collections", badge: null },
@@ -35,7 +35,7 @@ export default component$(() => {
             <Modal.Title class="pt-1">
               <Link
                 class="flex items-center focus:outline-none focus:ring-0"
-                href={"/"}
+                href={"#"}
                 onClick$={() => (show.value = false)}
               >
                 <h1 class="font-bold text-white text-3xl">KasKritterz</h1>
