@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 import { LuCheck, LuExpand, LuBook, LuInfinity } from "@qwikest/icons/lucide";
 import { Headline } from "../ui/Headline";
 
-const sideImg = "/images/roadmap.jpg";
+const sideImg = "/images/68.jpeg";
 
 interface Item {
   title?: string;

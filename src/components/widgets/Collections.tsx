@@ -28,7 +28,7 @@ export default component$((props: Props) => {
     { id: 2, title: "KasDinoz", description: "Fierce prehistoric beasts", image: "/images/77.jpeg" },
     { id: 3, title: "KasKatz", description: "Sly and cunning felines", image: "/images/77.jpeg" },
     { id: 4, title: "KasBearz", description: "Mighty and loyal guardians", image: "/images/77.jpeg" },
-    { id: 5, title: "KasDogz", description: "Loyal and adventurous companions", image: "/images/77.jpeg" },
+    { id: 5, title: "KasDogz", description: "Loyal adventurous companions", image: "/images/77.jpeg" },
     { id: 6, title: "KasBullz", description: "Bold and powerful warriors", image: "/images/77.jpeg" },
   ];
 
@@ -50,36 +50,33 @@ export default component$((props: Props) => {
         <div class="w-full">
           {/* Carousel for mobile */}
           <div class="md:hidden">
-            <Carousel.Root slidesPerView={1.2}    sensitivity={{
-        mouse: 2.5,
-        touch: 2.8,
-      }} class="max-w-full mx-auto overflow-hidden pb-12">
+            <Carousel.Root slidesPerView={1.2} sensitivity={{ mouse: 2.5, touch: 2.8 }} class="max-w-full mx-auto overflow-hidden pb-12">
               <Carousel.Scroller class="flex overflow-x-auto snap-x snap-mandatory">
                 {collections.map((collection) => (
                   <Carousel.Slide key={collection.id} class="snap-center shrink-0">
                     <div class="p-2">
                       <Card.Root class="overflow-hidden rounded-lg shadow-lg">
-                        <Card.Content class="flex flex-col items-center justify-center p-2 bg-gray-800 text-center">
+                        <Card.Content class="flex flex-col items-center justify-center p-2 bg-gray-100 text-center">
                           <img
                             src={collection.image}
                             alt={`${collection.title} Collection`}
                             class="w-full object-cover rounded-lg"
                           />
-                          <h3 class="text-xl font-semibold text-white mt-2 w-full">{collection.title}</h3>
-                          <p class="text-sm text-white mt-1 w-full">{collection.description}</p>
+                          <h3 class="text-xl font-semibold text-black mt-2 w-full">{collection.title}</h3>
+                          <p class="text-sm text-black mt-1 w-full">{collection.description}</p>
                         </Card.Content>
                       </Card.Root>
                     </div>
                   </Carousel.Slide>
                 ))}
               </Carousel.Scroller>
-              <Carousel.Previous class="text-white bg-gray-800 p-2 rounded-full" />
-              <Carousel.Next class="text-white bg-gray-800 p-2 rounded-full" />
+              <Carousel.Previous class="text-black bg-gray-200 p-2 rounded-full" />
+              <Carousel.Next class="text-black bg-gray-200 p-2 rounded-full" />
               <Carousel.Pagination class="absolute bottom-2 left-0 right-0 flex justify-center items-center gap-2 z-10">
                 {collections.map((_, index) => (
                   <Carousel.Bullet
                     key={index}
-                    class="w-3 h-3 rounded-full bg-gray-400 data-[active]:bg-white transition-colors cursor-pointer"
+                    class="w-3 h-3 rounded-full bg-gray-400 data-[active]:bg-black transition-colors cursor-pointer"
                     onClick$={() => console.log(`Bullet ${index} clicked`)}
                   />
                 ))}
@@ -92,14 +89,14 @@ export default component$((props: Props) => {
               {collections.map((collection) => (
                 <div key={collection.id} class="p-2">
                   <Card.Root class="overflow-hidden rounded-lg shadow-lg">
-                    <Card.Content class="flex flex-col items-center justify-center bg-gray-800">
+                    <Card.Content class="flex flex-col items-center justify-center p-1 bg-gray-200">
                       <img
                         src={collection.image}
                         alt={`${collection.title} Collection`}
-                        class="w-full object-cover rounded-t-lg"
+                        class="w-full object-cover rounded-t-lg p-1" // Added p-1 for 4px padding
                       />
-                      <h3 class="text-xl font-semibold text-white mt-2">{collection.title}</h3>
-                      <p class="text-sm text-white mt-1">{collection.description}</p>
+                      <h3 class="text-xl font-semibold text-black mt-2">{collection.title}</h3>
+                      <p class="text-sm px-2 text-center text-black mt-1">{collection.description}</p>
                     </Card.Content>
                   </Card.Root>
                 </div>
