@@ -7,8 +7,8 @@ export default component$(() => {
     {
       title: "About",
       items: [
-        { title: "Story", href: "#about" },
-        { title: "What We Do", href: "#services" },
+        { title: "Story", href: "#story" },
+        { title: "What We Do", href: "#about" },
         { title: "Roadmap", href: "#roadmap" },
         { title: "FAQ", href: "#faq" },
       ],
