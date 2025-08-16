@@ -28,7 +28,7 @@ export const Headline = (props: Props) => {
       <div class={twMerge("mb-8 md:mx-auto md:mb-12 text-center", containerClass,  alignmentClass)}>
         {highlight && (
           <p
-            class="text-base text-secondary-800 font-bold tracking-wide uppercase"
+            class="text-base text-teal-500 font-bold tracking-wide uppercase"
             dangerouslySetInnerHTML={highlight}
           />
         )}

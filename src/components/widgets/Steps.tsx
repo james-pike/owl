@@ -62,7 +62,7 @@ export default component$((props: Props) => {
   const { items, image } = stepsData;
 
   return (
-    <div class="max-w-7xl">
+    <div class="max-w-7xl bg-blue-100">
         <section
           id="roadmap"
           class="mx-auto max-w-6xl scroll-mt-16 px-4 pb-6 pt-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"

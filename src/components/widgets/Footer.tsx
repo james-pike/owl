@@ -47,13 +47,13 @@ export default component$(() => {
               <div class="flex gap-2">
                 <a
                   href="https://www.kaspa.com/nft/collections/Kaslords"
-                  class="px-2 py-2 btn-primary text-white font-semibold rounded-md transition-colors"
+                  class="px-4 py-2 btn-primary text-white font-semibold rounded-md transition-colors"
                 >
                   Mint Now
                 </a>
                 <a
                   href="https://t.me/+pHZ9UA7XIDA2YmIx"
-                  class="btn-secondary px-2 py-2 text-white font-semibold rounded-md transition-colors"
+                  class="btn-secondary px-4 py-2 text-white font-semibold rounded-md transition-colors"
                 >
                   Join Telegram
                 </a>

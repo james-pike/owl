@@ -3,9 +3,9 @@ import { component$ } from "@builder.io/qwik";
 export default component$(() => {
   return (
     <section
-      class="md:min-h-[90vh] flex items-center bg-[url('/images/mobile2.png')] bg-cover bg-no-repeat md:bg-[url('/images/banner2.png')] bg-[center_30%]"
+      class="md:min-h-[90vh] flex items-center bg-[url('/images/mobile2.png')] bg-cover bg-no-repeat md:bg-[url('/images/banner2.png')]  bg-[center_30%]"
     >
-      <div class="text-center w-full px-4 md:pt-96 pt-64">
+      <div class="text-center w-full px-4 md:pt-96 pt-52">
         <h2 class="text-2xl md:text-3xl text-white font-medium mb-4">KasKritterz is a fun and collectible NFT series built on the Kaspa blockchain. 250
 hand-crafted Mice, each one unique, full of character, and ready to explore a world where Kaspa
 has already won.

@@ -146,11 +146,11 @@ html, body, [class] {
   }
 
   .btn-primary {
-    @apply font-semibold px-6 bg-teal-500 !text-white border-secondary-600 hover:bg-secondary-700 hover:border-secondary-800 hover:text-white dark:text-white dark:bg-secondary-800 dark:border-secondary-700 dark:hover:border-secondary-900 dark:hover:bg-secondary-700;
+    @apply font-semibold px-6 bg-teal-400 !text-white border-secondary-600 hover:bg-secondary-700 hover:border-secondary-800 hover:text-white dark:text-white dark:bg-secondary-800 dark:border-secondary-700 dark:hover:border-secondary-900 dark:hover:bg-secondary-700;
   }
 
   .btn-secondary {
-    @apply font-semibold   px-6 bg-white text-gray-900 border-gray-300 hover:bg-gray-100 hover:border-gray-400  dark:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-700 dark:hover:bg-gray-600;
+    @apply font-semibold bg-blue-300   px-6  text-gray-900 border-gray-300 hover:bg-gray-100 hover:border-gray-400  dark:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-700 dark:hover:bg-gray-600;
   }
 
   [data-aw-toggle-menu] path {
