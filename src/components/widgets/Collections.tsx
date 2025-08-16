@@ -52,7 +52,7 @@ export default component$((props: Props) => {
           <div class="md:hidden">
             <Carousel.Root slidesPerView={1.2}    sensitivity={{
         mouse: 2.5,
-        touch: 2.25,
+        touch: 2.8,
       }} class="max-w-full mx-auto overflow-hidden pb-12">
               <Carousel.Scroller class="flex overflow-x-auto snap-x snap-mandatory">
                 {collections.map((collection) => (
