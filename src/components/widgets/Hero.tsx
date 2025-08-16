@@ -1,42 +1,25 @@
 import { component$ } from "@builder.io/qwik";
 
-import { Card } from "../ui/Card";
-import HeroCarousel2 from "./HeroCarousel2";
-import { LuSparkles, LuUsers } from '@qwikest/icons/lucide';
-
-
 export default component$(() => {
   return (
-    <Card.Root class="">
-    
-    <section class="px-2 pt-8 pb-4 text-center">
-      
-            <div class="mb-7 px-2">
-                       <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 animate-hero-text">
-                         <span class="text-secondary-800">KasLords</span> <br class="hidden lg:block" />Of The <span class="text-secondary-800">BlockDag</span> <br class="hidden lg:block" />{" "}
-                       </h1>
-                       <div class="max-w-4xl mx-auto lg:max-w-none">
-                         <p class="text-xl text-muted mb-5 dark:text-slate-300 animate-hero-subtitle">
-                         Own a piece of this legendary saga, forged in the fires of creativity and secured on the BlockDag—join the KasLords and claim your dominion today!
-                         </p>
-                         <div class="max-w-xs sm:max-w-md animate-hero-buttons m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-3 lg:justify-start lg:m-0 lg:max-w-7xl">
-                           <div class="flex w-full sm:w-auto">
-                             <a class="btn btn-primary sm:mb-0 w-full" href="https://www.kaspa.com/nft/collections/Kaslords">
-                                 <LuSparkles class="w-5 h-5 mr-2" />
-                             Mint KasLords
-                             </a>
-                           </div>
-                           <div class="flex w-full sm:w-auto">
-                             <a class="btn btn-secondary sm:mb-0 w-full" href="https://t.me/+pHZ9UA7XIDA2YmIx">
-                             <LuUsers class="w-5 h-5 mr-2" />
-                               Join The Clan
-                             </a>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                     <HeroCarousel2/>
+    <section
+      class="md:min-h-[90vh] flex items-center bg-[url('/images/mobile2.png')] bg-cover bg-no-repeat md:bg-[url('/images/banner2.png')] bg-[center_30%]"
+    >
+      <div class="text-center w-full px-4 md:pt-96 pt-64">
+        <h2 class="text-2xl md:text-3xl text-white font-medium mb-4">KasKritterz is a fun and collectible NFT series built on the Kaspa blockchain. 250
+hand-crafted Mice, each one unique, full of character, and ready to explore a world where Kaspa
+has already won.
+
+</h2>
+        <div class="flex justify-center gap-4 pt-4 pb-10">
+          <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+            Mint Now
+          </button>
+          <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            Join Community
+          </button>
+        </div>
+      </div>
     </section>
-    </Card.Root>
   );
 });

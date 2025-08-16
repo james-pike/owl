@@ -51,7 +51,7 @@ export default component$(() => {
         }
       }}
     >
-      <div class="relative text-default md:px-2 mx-auto w-full md:flex md:justify-between max-w-7xl">
+      <div class="relative text-default md:px-2 p-2 mx-auto w-full md:flex md:justify-between max-w-7xl">
         <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
           <Link class="flex items-center" href="/">
             <img
