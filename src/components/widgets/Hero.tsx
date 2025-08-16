@@ -12,10 +12,10 @@ has already won.
 
 </h2>
         <div class="flex justify-center gap-4 pt-4 pb-10">
-          <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+          <button class="bg-teal-400 text-white px-6 py-2 rounded-lg hover:bg-teal-300 transition-colors">
             Mint Now
           </button>
-          <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+          <button class="bg-blue-300 text-white px-6 py-2 rounded-lg hover:bg-blue-200 transition-colors">
             Join Community
           </button>
         </div>
