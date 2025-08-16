@@ -1,18 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 
-
 export default component$(() => {
   return (
     <section
-      class="min-h-[80vh] flex items-center"
-      style={{
-        backgroundImage: 'url(/images/logoforbanner.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      class="min-h-[80vh] flex items-center bg-[url('/images/mobile2.png')] bg-cover bg-center bg-no-repeat md:bg-[url('/images/logoforbanner.png')]"
     >
-    
     </section>
   );
 });

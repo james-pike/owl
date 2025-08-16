@@ -21,38 +21,49 @@ interface Props {
 }
 
 export default component$((props: Props) => {
-  const { title = "", subtitle = "", highlight = "", classes = {} } = props;
+  const { title = "About KasKritterz", subtitle = "Discover the World", highlight = "", classes = {} } = props;
 
   return (
-      <div class="max-w-7xl mx-auto">
-          <section
-            id="story"
-            class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
-          >
-            <Headline
-              title={title}
-              // subtitle={"Chapter 1: Dawn Of The KasLords"}
-              highlight={highlight}
-              classes={classes?.headline}
+    <div class="max-w-7xl mx-auto">
+      <section
+        id="story"
+        class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 sm:px-6 lg:px-8"
+      >
+        <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="md:order-2 md:py-4">
+            <h3 class="font-heading mb-2 text-lg text-gray-900 dark:text-slate-300">What is KasKritterz?</h3>
+            <ul class="mb-4 space-y-1 text-gray-600 dark:text-slate-400">
+              <li>Fun NFT series on Kaspa blockchain</li>
+              <li>Started with 250 unique Mice</li>
+              <li>Upcoming: Dinoz, Katz, Dogz, Bearz, Bullz</li>
+              <li>Each with unique style and surprises</li>
+            </ul>
+
+            <h3 class="font-heading mt-4 mb-2 text-lg text-gray-900 dark:text-slate-300">Why KasKritterz?</h3>
+            <ul class="mb-4 space-y-1 text-gray-600 dark:text-slate-400">
+              <li>Rewards holders, connects Kaspa community</li>
+              <li>Focuses on heart, humor, and storytelling</li>
+              <li>Perfect for Kaspa, meme, and art lovers</li>
+            </ul>
+
+            <h3 class="font-heading mt-4 mb-2 text-lg text-gray-900 dark:text-slate-300">Who is it for?</h3>
+            <ul class="mb-4 space-y-1 text-gray-600 dark:text-slate-400">
+              <li>Kaspa supporters and NFT collectors</li>
+              <li>Story/meme fans and new NFT explorers</li>
+              <li>OGs and builders growing the movement</li>
+            </ul>
+          </div>
+          <div class="relative md:order-1">
+            <img
+              src={sideImg}
+              width={532}
+              height={532}
+              class="w-full rounded-md bg-gray-500 object-cover shadow-lg dark:bg-slate-700 aspect-square md:aspect-[532/704] md:absolute md:h-full"
             />
-            <div class="row-gap-0 grid md:gap-8 md:grid-cols-2">
-              <div class="mb-4 md:mb-0 md:py-4 md:pr-0 md:order-2">
-                {title && (
-                  <h2 class="font-heading mb-8 text-xl lg:text-xl">{subtitle}</h2>
-                )}
-              </div>
-              <div class="relative md:order-1">
-                <img
-                  
-                  src={sideImg}
-                  width={532} // Square base width
-                  height={532} // Square base height (equal to width)
-                  class="inset-0 w-full rounded-md bg-gray-500 object-cover shadow-lg dark:bg-slate-700 aspect-square md:aspect-[532/704] md:absolute md:h-full"
-                 
-                />
-              </div>
-            </div>
-          </section>
-      </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 });
