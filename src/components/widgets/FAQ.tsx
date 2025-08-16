@@ -29,7 +29,7 @@ export default component$((props: Props) => {
             <div class="max-w-7xl mx-auto">
                 <section
                     id="faq"
-                    class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
+                    class="mx-auto scroll-mt-16 max-w-5xl px-5 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
                 >
                     {/* Semi-transparent container for FAQs */}
                     <div class="bg-white/50 dark:bg-slate-800/80 rounded-lg shadow-lg p-6 md:p-8">
