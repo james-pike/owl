@@ -63,7 +63,7 @@ export default component$(() => {
           </Link>
           <div class="flex items-center md:hidden">
             <a
-              href="https://www.kaspa.com/nft/collections/Kaslords"
+              href="https://www.kaspa.com/nft/collections/KasKritter"
               class="btn bg-gray-200 border-gray-300 dark:bg-secondary-800 dark:border-gray-900 rounded-sm mr-1 h-10 py-2 px-3 md:px-4 font-semibold shadow-none text-md w-auto"
             >
               Mint
@@ -210,20 +210,20 @@ export default component$(() => {
             <Link
               class="text-white dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
               aria-label="Telegram"
-              href="https://t.me/+pHZ9UA7XIDA2YmIx"
+              href="https://t.me/KasKritterzOfficial"
             >
               <LuSend class="w-6 h-6" />
             </Link>
             <Link
               class="text-white dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
               aria-label="Twitter"
-              href="https://x.com/kaslords"
+              href="https://x.com/KasKritterz"
             >
               <LuTwitter class="w-6 h-6" />
             </Link>
           
             <a
-              href="https://www.kaspa.com/nft/collections/Kaslords"
+              href="https://www.kaspa.com/nft/collections/KasKritter"
               class="btn btn-primary ml-1.5 py-2 px-4 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"
             >
               Mint

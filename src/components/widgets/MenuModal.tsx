@@ -36,12 +36,12 @@ export default component$(() => {
             <div class="border-gray-200 dark:border-gray-700 p-1">
               <Modal.Title class="pt-1">
                 <Link class="flex items-center focus:outline-none focus:ring-0" href={"/"}>
-                  <h1 class="font-bold text-3xl">KasKritterz</h1>
+                  <h1 class="font-bold text-white text-3xl">KasKritterz</h1>
                 </Link>
               </Modal.Title>
-              {/* <Modal.Description class="text-lg font-medium px-0 py-1 text-gray-700 dark:text-gray-200">
-                KasLords Of The BlockDag
-              </Modal.Description> */}
+              <Modal.Description class="text-lg font-medium px-0 py-1 text-gray-700 dark:text-gray-200">
+                Single line description/slogan
+              </Modal.Description>
             </div>
 
             {/* Navigation Content */}
@@ -92,16 +92,16 @@ export default component$(() => {
                     class="btn btn-primary sm:mb-0 w-full"
                     href="https://kaspa.com/nft/collections/KASKRITTER"
                   >
-                    <LuSparkles class="w-5 h-5 mr-2" /> Mint KasLords
+                    <LuSparkles class="w-5 h-5 mr-2" /> Mint KasKritterz
                   </a>
                 </div>
                 <div class="flex w-full sm:w-auto">
                   <a
                     class="btn btn-primary btn-secondary sm:mb-0 w-full"
-                    href="https://t.me/+pHZ9UA7XIDA2YmIx"
+                    href="https://t.me/KasKritterzOfficial"
                   >
                     <LuUsers class="w-5 h-5 mr-2" />
-                   Join The Clan
+                   Join Community
                   </a>
                 </div>
               </div>

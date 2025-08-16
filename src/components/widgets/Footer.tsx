@@ -16,15 +16,15 @@ export default component$(() => {
     {
       title: "Resources",
       items: [
-        { title: "KaspaCom", href: "https://www.kaspa.com/nft/collections/Kaslords" },
-        { title: "KRCscan", href: "https://krcscan.io/nft/kaslords" },
+        { title: "KaspaCom", href: "https://www.kaspa.com/nft/collections/KasKritter" },
+        { title: "KRCscan", href: "https://krcscan.io/nft/kaskritter" },
       ],
     },
   ];
 
   const social = [
-    { label: "Twitter", icon: LuTwitter, href: "https://x.com/kaslords" },
-    { label: "Telegram", icon: LuSend, href: "https://t.me/+pHZ9UA7XIDA2YmIx" },
+    { label: "Twitter", icon: LuTwitter, href: "https://x.com/KasKritter" },
+    { label: "Telegram", icon: LuSend, href: "https://t.me/KasKritterzOfficial" },
   ];
 
   return (
@@ -46,13 +46,13 @@ export default component$(() => {
               </div>
               <div class="flex gap-2">
                 <a
-                  href="https://www.kaspa.com/nft/collections/Kaslords"
+                  href="https://www.kaspa.com/nft/collections/KasKritter"
                   class="px-4 py-2 btn-primary text-white font-semibold rounded-md transition-colors"
                 >
                   Mint Now
                 </a>
                 <a
-                  href="https://t.me/+pHZ9UA7XIDA2YmIx"
+                  href="https://t.me/KasKritterzOfficial"
                   class="btn-secondary px-4 py-2 text-white font-semibold rounded-md transition-colors"
                 >
                   Join Telegram
