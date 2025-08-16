@@ -64,7 +64,7 @@ export default component$((props: Props) => {
     <div class="max-w-7xl bg-[url('/images/Kaspa-camisa.png')] bg-cover bg-no-repeat">
       <section
         id="roadmap"
-        class="mx-auto max-w-6xl scroll-mt-16 px-5 pb-10 pt-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
+        class="mx-auto max-w-6xl scroll-mt-16 px-4 pb-10 pt-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
       >
         <div class="bg-white/90 p-6 rounded-lg shadow-lg">
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
