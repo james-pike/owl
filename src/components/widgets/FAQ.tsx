@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { Headline } from "../ui/Headline";
 import { Accordion } from "../ui/Accordion";
 
-const sideImg = "/images/faq.png"; // Adjust the image path as needed for FAQs
+const sideImg = "/images/77.jpeg"; // Adjust the image path as needed for FAQs
 
 interface Item {
   title?: string;
@@ -32,19 +32,22 @@ export default component$((props: Props) => {
           class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
         >
           {/* Semi-transparent container for FAQs */}
-          <div class="bg-white/80 dark:bg-slate-800/80 rounded-lg shadow-lg p-6 md:p-8">
+          <div class="bg-white/90 dark:bg-slate-800/80 rounded-lg shadow-lg p-6 md:p-8">
             <Headline
               title={title || "Frequently Asked Questions"}
               subtitle={subtitle}
               highlight={highlight}
               classes={classes?.headline}
             />
-            <div class="row-gap-0 grid md:gap-8 md:grid-cols-2">
-              <div class="mb-4 md:mb-0 md:py-4 md:pr-0 md:order-2">
+           
+
+ <div class="row-gap-0 grid md:gap-8 md:grid-cols-2">
+              <div class="mb-4 md:mb-0 md:py-2 md:pr-0 md:order-2">
                 <Accordion.Root
                   collapsible
-                  class="w-full"
-                  style={{ touchAction: "manipulation" }} // Prevent zoom on touch
+                  class="w-full " // Stabilize accordion height
+                  style={{ touchAction: "manipulation", overscrollBehavior: "contain" }} // Prevent zoom
+                  
                 >
                   <Accordion.Item id="item-1">
                     <Accordion.Trigger class="text-left">
@@ -52,7 +55,7 @@ export default component$((props: Props) => {
                     </Accordion.Trigger>
                     <Accordion.Content>
                       Some NFTs in each KasKritterz collection come with KAS rewards! These special Kritterz are randomly minted and revealed to the lucky holders. All rewards and announcements are shared with our community on Telegram and X.
-                    </ Accordion.Content>
+                    </Accordion.Content>
                   </Accordion.Item>
                   <Accordion.Item id="item-2">
                     <Accordion.Trigger class="text-left">
@@ -85,12 +88,15 @@ export default component$((props: Props) => {
                 </Accordion.Root>
               </div>
               <div class="relative md:order-1">
-                <img
-                  src={sideImg}
-                  width={532} // Square base width
-                  height={532} // Square base height (equal to width)
-                  class="inset-0 w-full rounded-md bg-gray-500 object-cover shadow-lg dark:bg-slate-700 aspect-square md:aspect-[532/704] md:absolute md:h-full"
-                />
+                <div class="w-full h-[600px] md:h-[600px] hidden md:block overflow-hidden rounded-md">
+                  <img
+                    src={sideImg}
+                    width={532} // Base width
+                    height={500} // Taller base height
+                    class="w-full h-full object-cover bg-gray-500 shadow-lg dark:bg-slate-700"
+                    style={{ transform: "scale(1)" }} // Prevent scaling
+                  />
+                </div>
               </div>
             </div>
           </div>
