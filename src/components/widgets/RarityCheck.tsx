@@ -124,119 +124,105 @@ export default component$(() => {
   });
 
   return (
-    
-      <section class="p-2 max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Left Column (Image on md and up) */}
-          <div class="md:order-1 order-2 hidden md:flex justify-center">
-            {nftData.value ? (
-              <img
-                src={nftData.value.metadata.image}
-                alt={nftData.value.metadata.name}
-                class="w-full max-w-[400px] md:max-w-[500px] max-h-[400px] md:max-h-[500px] rounded-md object-contain shadow-lg"
-                onError$={() => {
-                  console.log(`Failed to load image: ${nftData.value.metadata.image}`);
-                }}
-              />
-            ) : (
-              <div class="w-full max-w-[400px] md:max-w-[500px] max-h-[400px] md:max-h-[500px] rounded-md bg-gray-200 flex items-center justify-center text-gray-500">
-                Loading...
-              </div>
-            )}
-          </div>
 
-          {/* Right Column (Search + Stats + Image on mobile) */}
-          <div class="md:order-2 order-1 flex flex-col gap-4">
-            <div class="flex gap-2">
-              <input
-                type="number"
-                value={nftSearchId.value}
-                onInput$={(e) => (nftSearchId.value = (e.target as HTMLInputElement).value)}
-                onKeyDown$={(e) => {
-                  if (e.key === 'Enter') {
-                    handleNFTSearch();
-                  }
-                }}
-                onWheel$={(e) => e.preventDefault()}
-                placeholder="Enter NFT ID"
-                class="border p-2 rounded focus:ring-secondary-700 bg-gray-900 border-gray-700 w-full max-w-xs"
-              />
-              <button
-                onClick$={handleNFTSearch}
-                class="bg-secondary-800 text-white p-2 rounded hover:bg-secondary-700"
-              >
-                Search
-              </button>
+    <section class="p-2 max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Left Column (Image on md and up) */}
+        <div class="md:order-1 order-2 hidden md:flex justify-center">
+          {nftData.value ? (
+            <img
+              src={nftData.value.metadata.image}
+              alt={nftData.value.metadata.name}
+              class="w-full max-w-[400px] md:max-w-[500px] max-h-[400px] md:max-h-[500px] rounded-md object-contain shadow-lg"
+              onError$={() => {
+                console.log(`Failed to load image: ${nftData.value.metadata.image}`);
+              }}
+            />
+          ) : (
+            <div class="w-full max-w-[400px] md:max-w-[500px] max-h-[400px] md:max-h-[500px] rounded-md bg-gray-200 flex items-center justify-center text-gray-500">
+              Loading...
             </div>
-
-            {error.value && <p class="text-red-500">{error.value}</p>}
-
-            {nftData.value && (
-              <div class="bg-gray-900 p-4 rounded-xl shadow-md">
-                {/* Image on mobile only */}
-                <div class="md:hidden flex justify-center mb-4">
-                  <img
-                    width={300}
-                    height={300}
-                    src={nftData.value.metadata.image}
-                    alt={nftData.value.metadata.name}
-                    class="w-full max-w-[300px] max-h-[300px] rounded-md object-contain"
-                    onError$={() => {
-                      console.log(`Failed to load image: ${nftData.value.metadata.image}`);
-                    }}
-                  />
-                </div>
-
-                <h2 class="text-xl font-semibold mb-2">#{nftData.value.metadata.name}</h2>
-                <p class="text-md font-semibold mb-2">Rank: {nftData.value.metadata.rank} / {TOTAL_NFTS}</p>
-
-                {nftData.value.metadata.attributes && (
-                  <ul class="text-sm space-y-1">
-                    {nftData.value.metadata.attributes.slice(0, 5).map((attr: any, i: number) => {
-                      const type = attr.trait_type.toLowerCase();
-                      let value = attr.value ? attr.value : 'none';
-                      value = value === '' || value === 'blank' ? 'none' : value;
-                      const rarity = traitRarity[type]?.[value.toLowerCase()] || null;
-
-                      const displayTraitType = getDisplayTraitType(attr.trait_type);
-
-                      return (
-                        <li key={i}>
-                          <span class="font-medium capitalize">{`${displayTraitType}: `}</span>
-                          <span class="text-slate-400">{value}</span>
-                          {rarity !== null && rarity !== undefined && (
-                            <span class={getRarityColorClass(rarity)}>{` (${rarity.toFixed(2)}%)`}</span>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
-              </div>
-            )}
-
-            {/* Rarity Legend - Desktop Only */}
-            <div class="hidden md:block mt-2 text-center">
-              <div class="flex text-sm flex-wrap justify-start gap-4 px-2">
-              <span class="text-green-400 font-medium">Common (≥5%)</span>
-  <span class="text-blue-400 font-medium">Uncommon (&lt;5%)</span>
-  <span class="text-yellow-400 font-medium">Rare (&lt;2%)</span>
-  <span class="text-orange-400 font-medium">Legendary (&lt;1%)</span>
-              </div>
-            </div>
-          </div>
+          )}
         </div>
 
-        {/* Rarity Legend - Mobile Only */}
-        <div class="md:hidden mt-6 text-center">
-          <div class="flex text-xs flex-wrap justify-center gap-2">
-          <span class="text-green-400 font-medium">Common (≥5%)</span>
-  <span class="text-blue-400 font-medium">Uncommon (&lt;5%)</span>
-  <span class="text-yellow-400 font-medium">Rare (&lt;2%)</span>
-  <span class="text-orange-400 font-medium">Legendary (&lt;1%)</span>
+        {/* Right Column (Search + Stats + Image on mobile) */}
+        <div class="md:order-2 order-1 flex flex-col gap-4">
+          <div class="flex gap-2">
+            <input
+              type="number"
+              value={nftSearchId.value}
+              onInput$={(e) => (nftSearchId.value = (e.target as HTMLInputElement).value)}
+              onKeyDown$={(e) => {
+                if (e.key === 'Enter') {
+                  handleNFTSearch();
+                }
+              }}
+              onWheel$={(e) => e.preventDefault()}
+              placeholder="Enter NFT ID"
+              class="border p-2 rounded focus:ring-secondary-700 bg-gray-100 border-gray-700 w-full max-w-xs"
+            />
+            <button
+              onClick$={handleNFTSearch}
+              class="bg-secondary-800 text-white p-2 rounded hover:bg-secondary-700"
+            >
+              Search
+            </button>
           </div>
+
+          {error.value && <p class="text-red-500">{error.value}</p>}
+
+          {nftData.value && (
+            <div class="bg-gray-100 p-4 rounded-xl shadow-md">
+              {/* Image on mobile only */}
+              <div class="md:hidden flex justify-center mb-4">
+                <img
+                  width={300}
+                  height={300}
+                  src={nftData.value.metadata.image}
+                  alt={nftData.value.metadata.name}
+                  class="w-full max-w-[300px] max-h-[300px] rounded-md object-contain"
+                  onError$={() => {
+                    console.log(`Failed to load image: ${nftData.value.metadata.image}`);
+                  }}
+                />
+              </div>
+
+              <h2 class="text-xl font-semibold mb-2">#{nftData.value.metadata.name}</h2>
+              <p class="text-md font-semibold mb-2">Rank: {nftData.value.metadata.rank} / {TOTAL_NFTS}</p>
+
+              {nftData.value.metadata.attributes && (
+                <ul class="text-sm space-y-1">
+                  {nftData.value.metadata.attributes.slice(0, 5).map((attr: any, i: number) => {
+                    const type = attr.trait_type.toLowerCase();
+                    let value = attr.value ? attr.value : 'none';
+                    value = value === '' || value === 'blank' ? 'none' : value;
+                    const rarity = traitRarity[type]?.[value.toLowerCase()] || null;
+
+                    const displayTraitType = getDisplayTraitType(attr.trait_type);
+
+                    return (
+                      <li key={i}>
+                        <span class="font-medium capitalize">{`${displayTraitType}: `}</span>
+                        <span class="text-slate-400">{value}</span>
+                        {rarity !== null && rarity !== undefined && (
+                          <span class={getRarityColorClass(rarity)}>{` (${rarity.toFixed(2)}%)`}</span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </div>
+          )}
+
+          {/* Rarity Legend - Desktop Only */}
+       
         </div>
-      </section>
-  
+      </div>
+
+      {/* Rarity Legend - Mobile Only */}
+   
+    </section>
+
   );
 });

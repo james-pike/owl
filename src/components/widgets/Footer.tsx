@@ -17,6 +17,7 @@ export default component$(() => {
       title: "Resources",
       items: [
         { title: "Rarity Guide", href: "#rarity" },
+        { title: "Collections", href: "#collections" },
 
         { title: "KaspaCom", href: "https://www.kaspa.com/nft/collections/KasKritter" },
         { title: "KRCscan", href: "https://krcscan.io/nft/kaskritter" },
@@ -25,7 +26,7 @@ export default component$(() => {
   ];
 
   const social = [
-    { label: "Twitter", icon: LuTwitter, href: "https://x.com/KasKritter" },
+    { label: "Twitter", icon: LuTwitter, href: "https://x.com/KasKritterz" },
     { label: "Telegram", icon: LuSend, href: "https://t.me/KasKritterzOfficial" },
   ];
 
@@ -65,7 +66,7 @@ export default component$(() => {
 
           {links.map(({ title, items }, index) => (
             <div key={index} class="col-span-6 md:col-span-3 lg:col-span-2">
-              <div class="text-gray-200 dark:text-gray-300 font-medium mb-2">{title}</div>
+              <div class="text-white dark:text-gray-300 font-bold mb-2">{title}</div>
               {Array.isArray(items) && items.length > 0 && (
                 <ul class="text-sm">
                   {items.map(({ title, href }, index2) => (
@@ -88,7 +89,7 @@ export default component$(() => {
             {social.map(({ label, href, icon: Icon }, index) => (
               <li key={index}>
                 <Link
-                  class="text-gray-300 dark:text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                  class="text-white dark:text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
                   aria-label={label}
                   title={label}
                   href={href}

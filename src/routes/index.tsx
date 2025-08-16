@@ -47,8 +47,7 @@ export default component$(() => {
 
       <Steps id="roadmap"  
        highlight="Roadmap"
-      title="Journey Of The KasLords"
-      subtitle="In the realm of Kasparion, where the blockchain skies shimmer with infinite possibility." 
+      title="KasKritterz Roadmap"
       items={[]}/>
     
        <Rarity
