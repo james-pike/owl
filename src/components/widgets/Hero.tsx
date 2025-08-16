@@ -7,7 +7,7 @@ export default component$(() => {
       class="md:min-h-[90vh] flex items-center bg-[url('/images/mobile2.png')] bg-cover bg-no-repeat md:bg-[url('/images/banner2.png')] bg-[center_30%]"
     >
       <div class="text-center w-full px-4 md:pt-96 pt-52">
-              <div class="pt-6" />
+              <div class="pt-4" />
 
         <h2 class="text-2xl md:text-3xl text-white font-medium mb-4">
           KasKritterz is a fun and collectible NFT series built on the Kaspa blockdag. 250 unique hand-crafted Mice, full of character, and ready to explore a world where Kaspa has already won.
