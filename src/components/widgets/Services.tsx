@@ -37,11 +37,11 @@ export default component$((props: Props) => {
         <div class="row-gap-0 grid md:gap-8 md:grid-cols-2">
           <div class="mb-4 md:mb-0 md:py-4 md:pr-0 md:order-1"> {/* Changed to md:order-1 */}
           
-            <ul class="list-disc pl-5  dark:text-gray-400 text-lg md:text-xl space-y-2">
+            <ul class="list-disc pl-8  dark:text-gray-400 text-lg md:text-xl space-y-2">
               <li>Create playful, story-rich NFT characters living in a Kaspa-powered world</li>
               <li>Build a strong, inclusive community of Kaspa lovers and collectors</li>
               <li>Drop surprise Kas rewards to some minters</li>
-              <li>Send airdrop cartoon strips to NFT holders, minted right on the Kaspa blockchain</li>
+              <li>Send airdrop cartoon strips to NFT holders, minted right on the Kaspa blockdag</li>
               <li>Collaborate with creators and projects inside the Kaspa ecosystem</li>
               <li>Celebrate fun, freedom, and decentralization!</li>
             </ul>

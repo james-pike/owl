@@ -389,7 +389,7 @@ export default component$(() => {
             />
             <button
               onClick$={handleNFTSearch}
-              class="bg-teal-400 text-white p-2 rounded hover:bg-teal-300 transition-colors duration-200"
+              class="bg-teal-500 text-white p-2 rounded hover:bg-teal-400 transition-colors duration-200"
             >
               Search
             </button>
