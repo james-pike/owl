@@ -24,7 +24,7 @@ export default component$((props: Props) => {
   const { title = "About KasKritterz", subtitle = "Discover the World", highlight = "", classes = {} } = props;
 
   return (
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto bg-gradient-to-br from-teal-200 via-gray-100 to-teal-200">
       <section
         id="story"
         class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 sm:px-6 lg:px-8"
