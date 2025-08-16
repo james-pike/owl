@@ -77,7 +77,7 @@ const Slide = component$<PropsOf<typeof HCarousel.Slide>>(({ ...props }) => {
   return (
     <HCarousel.Slide
       {...props}
-      class={cn(context.orientation === 'horizontal' ? 'pl-4' : 'pt-4')}
+      class={cn(context.orientation === 'horizontal' ? 'pl-2' : 'pt-4')}
     >
       <Slot />
     </HCarousel.Slide>

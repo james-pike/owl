@@ -31,7 +31,7 @@ export default component$(() => {
         </div>
         <Modal.Panel position={"left"} class="border-0 bg-gray-900/50 dark:bg-gray-900/50 backdrop-blur-sm">
           {/* Header */}
-          <div class="border-gray-200 dark:border-gray-700 p-1">
+          <div class="border-gray-200 bg-gray-900/50 dark:border-gray-700 p-1">
             <Modal.Title class="pt-1">
               <Link
                 class="flex items-center focus:outline-none focus:ring-0"

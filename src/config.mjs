@@ -1,10 +1,11 @@
 export const SITE = {
-  name: "KasLords",
+  name: "KasKritterz",
 
   title:
-    "KasLords Of The BlockDag ",
+    "KasKritterz - A Kaspa NFT Collection",
   description:
-"KasLords Of The BlockDag ",
+    "KasKritterz - A Kaspa NFT Collection",
+
   origin: "https://kaslords.com",
   basePathname: "/",
   trailingSlash: true,

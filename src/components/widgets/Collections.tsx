@@ -24,12 +24,12 @@ interface Props {
 export default component$((props: Props) => {
   const { id, title = "Collections", subtitle = "", highlight = "", classes = {}, isDark = true } = props;
   const collections = [
-    { id: 1, title: "KasKritterz", image: "/images/77.jpeg" },
-    { id: 2, title: "KasDinoz", image: "/images/dinoz.jpg" },
-    { id: 3, title: "KasKats", image: "/images/katz.jpg" },
-    { id: 4, title: "KasBears", image: "/images/dogz.jpg" },
-    { id: 5, title: "KasDogs", image: "/images/birdz.jpg" },
-    { id: 6, title: "KasBullz", image: "/images/frogz.jpg" },
+    { id: 1, title: "KasKritterz", description: "Playful creatures with unique traits", image: "/images/77.jpeg" },
+    { id: 2, title: "KasDinoz", description: "Fierce prehistoric beasts", image: "/images/77.jpeg" },
+    { id: 3, title: "KasKats", description: "Sly and cunning felines", image: "/images/77.jpeg" },
+    { id: 4, title: "KasBears", description: "Mighty and loyal guardians", image: "/images/77.jpeg" },
+    { id: 5, title: "KasDogs", description: "Loyal and adventurous companions", image: "/images/77.jpeg" },
+    { id: 6, title: "KasBullz", description: "Bold and powerful warriors", image: "/images/77.jpeg" },
   ];
 
   return (
@@ -63,6 +63,7 @@ export default component$((props: Props) => {
                             class="w-full object-cover rounded-lg"
                           />
                           <h3 class="text-xl font-semibold text-white mt-2 w-full">{collection.title}</h3>
+                          <p class="text-sm text-white mt-1 w-full">{collection.description}</p>
                         </Card.Content>
                       </Card.Root>
                     </div>
@@ -86,7 +87,7 @@ export default component$((props: Props) => {
           <div class="hidden md:block">
             <div class="grid grid-cols-6 gap-0">
               {collections.map((collection) => (
-                <div key={collection.id} class="p-4">
+                <div key={collection.id} class="p-2">
                   <Card.Root class="overflow-hidden rounded-lg shadow-lg">
                     <Card.Content class="flex flex-col items-center justify-center bg-gray-800">
                       <img
@@ -95,6 +96,7 @@ export default component$((props: Props) => {
                         class="w-full object-cover rounded-t-lg"
                       />
                       <h3 class="text-xl font-semibold text-white mt-2">{collection.title}</h3>
+                      <p class="text-sm text-white mt-1">{collection.description}</p>
                     </Card.Content>
                   </Card.Root>
                 </div>

@@ -33,7 +33,7 @@ export default component$(() => {
   return (
     <footer class="bg-[url('/images/background.jpg')] bg-cover bg-center">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
+        <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 pt-8 pb-6 md:pt-12 md:py-12">
           <div class="col-span-12 lg:col-span-5 pr-4">
             <div class="flex flex-col">
               <div class="flex items-center justify-between mb-2 md:mb-2">

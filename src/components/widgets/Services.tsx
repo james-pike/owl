@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { Headline } from "../ui/Headline";
 
-const sideImg = "/images/story.png";
+const sideImg = "/images/k-d.jpg";
 
 interface Item {
   title?: string;
@@ -24,7 +24,7 @@ export default component$((props: Props) => {
   const { title = "", highlight = "", classes = {} } = props;
 
   return (
-    <div class="max-w-7xl mx-auto bg-yellow-50">
+    <div class="max-w-7xl mx-auto bg-teal-100">
       <section
         id="about"
         class="mx-auto scroll-mt-16 max-w-5xl px-4 py-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
