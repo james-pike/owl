@@ -4,7 +4,7 @@ import Steps from "~/components/widgets/Steps";
 import { SITE } from "~/config.mjs";
 import About from "~/components/widgets/About";
 import Rarity from "~/components/widgets/Rarity";
-import Hero2 from "~/components/widgets/Hero2";
+import Hero from "~/components/widgets/Hero";
 import FAQ from "~/components/widgets/FAQ";
 import Collections from "~/components/widgets/Collections";
 import Services from "~/components/widgets/Services";
@@ -13,7 +13,7 @@ import Services from "~/components/widgets/Services";
 export default component$(() => {
   return (
     <>
-      <Hero2/>
+      <Hero/>
     
   
     <About
