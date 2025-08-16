@@ -50,7 +50,10 @@ export default component$((props: Props) => {
         <div class="w-full">
           {/* Carousel for mobile */}
           <div class="md:hidden">
-            <Carousel.Root slidesPerView={1.2} class="max-w-full mx-auto overflow-hidden pb-12">
+            <Carousel.Root slidesPerView={1.2}    sensitivity={{
+        mouse: 2.5,
+        touch: 2.25,
+      }} class="max-w-full mx-auto overflow-hidden pb-12">
               <Carousel.Scroller class="flex overflow-x-auto snap-x snap-mandatory">
                 {collections.map((collection) => (
                   <Carousel.Slide key={collection.id} class="snap-center shrink-0">
