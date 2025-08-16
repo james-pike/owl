@@ -12,7 +12,7 @@ export default component$(() => {
         <h2 class="text-2xl md:text-3xl text-white font-medium mb-4">
           KasKritterz is a fun and collectible NFT series built on the Kaspa blockdag. 250 unique hand-crafted Mice, full of character, and ready to explore a world where Kaspa has already won.
         </h2>
-        <div class="flex justify-center gap-4 md:gap-6 pt-4 pb-10">
+        <div class="flex justify-center gap-4 md:gap-6 pt-4 pb-14">
           <a 
           href="https://www.kaspa.com/nft/collections/KasKritter"
  class="bg-teal-400 text-white text-xl px-5 py-3 rounded-lg hover:bg-teal-300 transition-colors flex items-center gap-2">
