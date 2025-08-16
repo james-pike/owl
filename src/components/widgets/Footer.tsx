@@ -18,7 +18,6 @@ export default component$(() => {
       items: [
         { title: "Rarity Guide", href: "#rarity" },
         { title: "Collections", href: "#collections" },
-
         { title: "KaspaCom", href: "https://www.kaspa.com/nft/collections/KasKritter" },
         { title: "KRCscan", href: "https://krcscan.io/nft/kaskritter" },
       ],

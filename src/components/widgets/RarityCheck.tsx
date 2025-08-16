@@ -385,7 +385,7 @@ export default component$(() => {
               }}
               onWheel$={(e) => e.preventDefault()}
               placeholder="Enter NFT ID"
-              class="border p-2 rounded focus:ring-secondary-700 bg-gray-100 border-gray-700 w-full max-w-xs"
+              class="border p-2 rounded focus:ring-secondary-700 bg-gray-100 border-gray-200 w-full max-w-xs"
             />
             <button
               onClick$={handleNFTSearch}
