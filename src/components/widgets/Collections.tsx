@@ -76,7 +76,7 @@ export default component$((props: Props) => {
                 {collections.map((_, index) => (
                   <Carousel.Bullet
                     key={index}
-                    class="w-3 h-3 rounded-full bg-gray-400 data-[active]:bg-black transition-colors cursor-pointer"
+                    class="w-3 h-3 rounded-full bg-gray-400 data-[active]:bg-teal-500 transition-colors cursor-pointer"
                     onClick$={() => console.log(`Bullet ${index} clicked`)}
                   />
                 ))}
