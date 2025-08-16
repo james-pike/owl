@@ -21,7 +21,7 @@ interface Props {
 }
 
 export default component$((props: Props) => {
-  const { title = "", subtitle = "Chapter 1: Dawn Of The KasLords", highlight = "", classes = {} } = props;
+  const { title = "", highlight = "", classes = {} } = props;
 
   return (
     <div class="max-w-7xl mx-auto">
