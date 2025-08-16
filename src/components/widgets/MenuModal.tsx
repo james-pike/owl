@@ -33,13 +33,13 @@ export default component$(() => {
           {/* Header */}
           <div class="border-gray-200 bg-gray-900/50 dark:border-gray-700 p-1">
             <Modal.Title class="pt-1">
-              <Link
+              <a
                 class="flex items-center focus:outline-none focus:ring-0"
                 href={"#"}
                 onClick$={() => (show.value = false)}
               >
                 <h1 class="font-bold text-white text-3xl">KasKritterz</h1>
-              </Link>
+              </a>
             </Modal.Title>
             <Modal.Description class="text-lg text-white font-medium px-0 py-1 dark:text-white">
               Single line description/slogan
