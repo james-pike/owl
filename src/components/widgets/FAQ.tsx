@@ -34,6 +34,7 @@ export default component$((props: Props) => {
           {/* Semi-transparent container for FAQs */}
           <div class="bg-white/90 dark:bg-slate-800/80 rounded-lg shadow-lg p-6 md:p-8">
             <Headline
+            
               title={title || "Frequently Asked Questions"}
               subtitle={subtitle}
               highlight={highlight}
