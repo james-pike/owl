@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { Image } from "@unpic/qwik";
 import { twMerge } from "tailwind-merge";
-import { LuCheck, LuExpand, LuBook, LuInfinity } from "@qwikest/icons/lucide"; // Import Lucide icons
+import { LuCheck, LuExpand, LuBook, LuInfinity } from "@qwikest/icons/lucide";
 import { Headline } from "../ui/Headline";
 
 const sideImg = "/images/roadmap.jpg";
@@ -32,25 +32,25 @@ export default component$((props: Props) => {
         title: "Phase 1 - Genesis Drop",
         description:
           "• Launch of 250 unique Kaspa-powered NFTs\n• Built 100% by us (artist/dev duo)\n• Kaspa rewards, rare traits, community-first",
-        icon: LuCheck, // Checkmark for completed phase
+        icon: LuCheck,
       },
       {
         title: "Phase 2 - Expansion & Utility",
         description:
           "• Release remaining collections: Katz, Dogz, Bearz\n• Holder-only perks & airdrops\n• Integrate community suggestions on comics",
-        icon: LuExpand, // Expansion icon
+        icon: LuExpand,
       },
       {
         title: "Phase 3 - Kaspa Comics",
         description:
           "• Launch comic strips featuring Kritterz\n• Explore themes: Kaspa vs other chains, crypto culture, adoption dreams\n• Share weekly episodes on X\n• Collabs with other Kaspa projects\n• Fun merch, lore expansion, events",
-        icon: LuBook, // Book icon for comics
+        icon: LuBook,
       },
       {
         title: "Ongoing",
         description:
           "• More art, more fun, more Kaspa\n• Always building. Always rewarding.",
-        icon: LuInfinity, // Infinity icon for ongoing
+        icon: LuInfinity,
       },
     ],
     image: {
@@ -64,9 +64,9 @@ export default component$((props: Props) => {
     <div class="max-w-7xl bg-[url('/images/Kaspa-camisa.png')] bg-cover bg-no-repeat">
       <section
         id="roadmap"
-        class="mx-auto max-w-6xl scroll-mt-16 px-4 pb-6 pt-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
+        class="mx-auto max-w-6xl scroll-mt-16 px-5 pb-10 pt-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
       >
-        <div class="bg-white/90 p-6 rounded-lg shadow-lg"> {/* Semi-transparent container */}
+        <div class="bg-white/90 p-6 rounded-lg shadow-lg">
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
 
           <div class="row-gap-10 grid gap-6 md:grid-cols-2">
@@ -112,16 +112,6 @@ export default component$((props: Props) => {
                   width={532}
                   height={704}
                   class="inset-0 w-full rounded-md bg-gray-500 hidden sm:block object-cover object-top shadow-lg dark:bg-slate-700 md:absolute md:h-full"
-                  breakpoints={[320, 480, 640, 1024]}
-                />
-              )}
-              {typeof image !== "undefined" && (
-                <Image
-                  layout="constrained"
-                  src={image.src}
-                  width={400}
-                  height={400}
-                  class="inset-0 w-full rounded-md bg-gray-500 block sm:hidden mx-auto object-cover object-top shadow-lg dark:bg-slate-700 md:absolute md:h-full"
                   breakpoints={[320, 480, 640, 1024]}
                 />
               )}
