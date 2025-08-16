@@ -41,7 +41,7 @@ export default component$((props: Props) => {
       </div>
       <div
         class={twMerge(
-          "relative mx-auto max-w-7xl px-3 md:px-6 pb-4 pt-16 md:py-12 lg:py-12 text-default overflow-hidden",
+          "relative mx-auto max-w-7xl px-3 md:px-6 pb-4 pt-14 md:py-12 lg:py-12 text-default overflow-hidden",
           classes?.container,
           isDark ? "dark" : ""
         )}
