@@ -64,7 +64,7 @@ export default component$(() => {
           <div class="flex items-center md:hidden">
             <a
               href="https://www.kaspa.com/nft/collections/KasKritter"
-              class="btn bg-gray-200 border-gray-300 dark:bg-secondary-800 dark:border-gray-900 rounded-sm mr-1 h-10 py-2 px-3 md:px-4 font-semibold shadow-none text-md w-auto"
+              class="btn btn-primary dark:bg-secondary-800 dark:border-gray-900 rounded-sm mr-1 h-10 py-2 px-3 md:px-4 font-semibold shadow-none text-md w-auto"
             >
               Mint
             </a>
@@ -177,7 +177,6 @@ export default component$(() => {
                         class={`
                           px-4 py-3 
                           flex items-center 
-                          hover:bg-gray-100 dark:hover:bg-gray-800
                           relative 
                           transition-all duration-200 
                           after:content-[''] 
@@ -208,20 +207,73 @@ export default component$(() => {
           <div class="items-center flex justify-between w-full md:w-auto">
             <div class="flex"></div>
             <Link
-              class="text-white dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+              class={`
+                text-white 
+                dark:text-gray-400 
+                hover:text-teal-300 
+                focus:outline-none 
+                focus:ring-4 
+                focus:ring-gray-200 
+                dark:focus:ring-gray-700 
+                rounded-lg 
+                text-sm 
+                p-2.5 
+                inline-flex 
+                items-center 
+                relative 
+                transition-all 
+                duration-200 
+                after:content-[''] 
+                after:absolute 
+                after:bottom-[6px] 
+                after:left-1/2 
+                after:h-[2px] 
+                after:bg-teal-300 
+                after:transition-all 
+                after:duration-200 
+                after:w-0 
+                hover:after:w-1/2 
+                hover:after:left-1/4
+              `}
               aria-label="Telegram"
               href="https://t.me/KasKritterzOfficial"
             >
               <LuSend class="w-6 h-6" />
             </Link>
             <Link
-              class="text-white dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+              class={`
+                text-white 
+                dark:text-gray-400 
+                hover:text-teal-300 
+                focus:outline-none 
+                focus:ring-4 
+                focus:ring-gray-200 
+                dark:focus:ring-gray-700 
+                rounded-lg 
+                text-sm 
+                p-2.5 
+                inline-flex 
+                items-center 
+                relative 
+                transition-all 
+                duration-200 
+                after:content-[''] 
+                after:absolute 
+                after:bottom-[6px] 
+                after:left-1/2 
+                after:h-[2px] 
+                after:bg-teal-300 
+                after:transition-all 
+                after:duration-200 
+                after:w-0 
+                hover:after:w-1/2 
+                hover:after:left-1/4
+              `}
               aria-label="Twitter"
               href="https://x.com/KasKritterz"
             >
               <LuTwitter class="w-6 h-6" />
             </Link>
-          
             <a
               href="https://www.kaspa.com/nft/collections/KasKritter"
               class="btn btn-primary ml-1.5 py-2 px-4 md:px-4 font-semibold rounded-sm shadow-none text-sm w-auto"

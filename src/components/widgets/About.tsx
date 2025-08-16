@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { Headline } from "../ui/Headline";
 
-const sideImg = "/images/story.png";
+const sideImg = "/images/77.jpeg";
 
 interface Item {
   title?: string;
@@ -31,28 +31,10 @@ export default component$((props: Props) => {
       >
         <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
         <div class="grid md:grid-cols-2 md:gap-6">
-          <div class="md:order-2 md:py-4">
-            <h3 class="font-heading mb-2 text-lg text-gray-900 dark:text-slate-300">What is KasKritterz?</h3>
-            <ul class="mb-4 space-y-1 text-gray-600 dark:text-slate-400">
-              <li>Fun NFT series on Kaspa blockchain</li>
-              <li>Started with 250 unique Mice</li>
-              <li>Upcoming: Dinoz, Katz, Dogz, Bearz, Bullz</li>
-              <li>Each with unique style and surprises</li>
-            </ul>
+          <div class="md:order-2 md:py-4 text-xl">
+         We're crafting a fresh NFT experience that rewards holders, unites the Kaspa community, and weaves storytelling with humor and distinctive digital art. Far from chasing hype, KasKritterz is driven by heart and the joy of collaborative creation, making it a perfect fit for Kaspa enthusiasts, meme lovers, and art collectors alike. Whether you’re a Kaspa believer eager to dive into its creative ecosystem, an NFT collector seeking original designs, a fan of funny and lovable characters, a newcomer curious about digital collectibles, or an OG and builder looking to connect and grow with the movement, there’s a Kritter waiting for you.
 
-            <h3 class="font-heading mt-4 mb-2 text-lg text-gray-900 dark:text-slate-300">Why KasKritterz?</h3>
-            <ul class="mb-4 space-y-1 text-gray-600 dark:text-slate-400">
-              <li>Rewards holders, connects Kaspa community</li>
-              <li>Focuses on heart, humor, and storytelling</li>
-              <li>Perfect for Kaspa, meme, and art lovers</li>
-            </ul>
 
-            <h3 class="font-heading mt-4 mb-2 text-lg text-gray-900 dark:text-slate-300">Who is it for?</h3>
-            <ul class="mb-4 space-y-1 text-gray-600 dark:text-slate-400">
-              <li>Kaspa supporters and NFT collectors</li>
-              <li>Story/meme fans and new NFT explorers</li>
-              <li>OGs and builders growing the movement</li>
-            </ul>
           </div>
           <div class="relative md:order-1">
             <img

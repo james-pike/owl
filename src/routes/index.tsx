@@ -18,7 +18,7 @@ export default component$(() => {
   
     <About
   highlight="Story"
-  title="WHAT IS KASKRITTERZ?"
+  title="What is KasKritterz?"
   subtitle="KasKritterz is a fun and collectible NFT series built on the Kaspa blockchain. It started with 250 hand-crafted Mice, each one unique, full of character, and ready to explore a world where Kaspa has already won. But this is just the beginning…"
   items={[]}
 />

@@ -66,7 +66,7 @@ export default component$((props: Props) => {
         id="roadmap"
         class="mx-auto max-w-6xl scroll-mt-16 px-4 pb-6 pt-10 md:py-12 lg:py-12 sm:px-6 lg:px-8"
       >
-        <div class="bg-white/80 p-6 rounded-lg shadow-lg"> {/* Semi-transparent container */}
+        <div class="bg-white/90 p-6 rounded-lg shadow-lg"> {/* Semi-transparent container */}
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
 
           <div class="row-gap-10 grid gap-6 md:grid-cols-2">
