@@ -24,12 +24,12 @@ interface Props {
 export default component$((props: Props) => {
   const { id, title = "Collections", subtitle = "", highlight = "", classes = {}, isDark = true } = props;
   const collections = [
-    { id: 1, title: "Mice Collection", image: "/images/77.jpeg" },
-    { id: 2, title: "Dinoz Collection", image: "/images/dinoz.jpg" },
-    { id: 3, title: "Katz Collection", image: "/images/katz.jpg" },
-    { id: 4, title: "Dogz Collection", image: "/images/dogz.jpg" },
-    { id: 5, title: "Birdz Collection", image: "/images/birdz.jpg" },
-    { id: 6, title: "Frogz Collection", image: "/images/frogz.jpg" },
+    { id: 1, title: "KasKritterz", image: "/images/77.jpeg" },
+    { id: 2, title: "KasDinoz", image: "/images/dinoz.jpg" },
+    { id: 3, title: "KasKats", image: "/images/katz.jpg" },
+    { id: 4, title: "KasBears", image: "/images/dogz.jpg" },
+    { id: 5, title: "KasDogs", image: "/images/birdz.jpg" },
+    { id: 6, title: "KasBullz", image: "/images/frogz.jpg" },
   ];
 
   return (
@@ -50,17 +50,17 @@ export default component$((props: Props) => {
         <div class="w-full">
           {/* Carousel for mobile */}
           <div class="md:hidden">
-            <Carousel.Root slidesPerView={1.2} class="max-w-full mx-auto">
+            <Carousel.Root slidesPerView={1} class="max-w-full mx-auto overflow-hidden pb-12">
               <Carousel.Scroller class="flex overflow-x-auto snap-x snap-mandatory">
                 {collections.map((collection) => (
                   <Carousel.Slide key={collection.id} class="snap-center shrink-0">
                     <div class="p-2">
                       <Card.Root class="overflow-hidden rounded-lg shadow-lg">
-                        <Card.Content class="flex flex-col items-center justify-center bg-gray-800 text-center">
+                        <Card.Content class="flex flex-col items-center justify-center p-2 bg-gray-800 text-center">
                           <img
                             src={collection.image}
                             alt={`${collection.title} Collection`}
-                            class="w-full object-cover rounded-t-lg"
+                            class="w-full object-cover rounded-lg"
                           />
                           <h3 class="text-xl font-semibold text-white mt-2 w-full">{collection.title}</h3>
                         </Card.Content>
@@ -69,11 +69,15 @@ export default component$((props: Props) => {
                   </Carousel.Slide>
                 ))}
               </Carousel.Scroller>
-              <Carousel.Previous />
-              <Carousel.Next />
-              <Carousel.Pagination class="mt-6">
+              <Carousel.Previous class="text-white bg-gray-800 p-2 rounded-full" />
+              <Carousel.Next class="text-white bg-gray-800 p-2 rounded-full" />
+              <Carousel.Pagination class="absolute bottom-2 left-0 right-0 flex justify-center items-center gap-2 z-10">
                 {collections.map((_, index) => (
-                  <Carousel.Bullet key={index} />
+                  <Carousel.Bullet
+                    key={index}
+                    class="w-3 h-3 rounded-full bg-gray-400 data-[active]:bg-white transition-colors cursor-pointer"
+                    onClick$={() => console.log(`Bullet ${index} clicked`)}
+                  />
                 ))}
               </Carousel.Pagination>
             </Carousel.Root>
