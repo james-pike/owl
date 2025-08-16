@@ -31,12 +31,12 @@ export default component$((props: Props) => {
       >
         <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
         <div class="grid md:grid-cols-2 md:gap-6">
-          <div class="md:order-2 md:py-4 text-xl">
-         We're crafting a fresh NFT experience that rewards holders, unites the Kaspa community, and weaves storytelling with humor and distinctive digital art. Far from chasing hype, KasKritterz is driven by heart and the joy of collaborative creation, making it a perfect fit for Kaspa enthusiasts, meme lovers, and art collectors alike. Whether you’re a Kaspa believer eager to dive into its creative ecosystem, an NFT collector seeking original designs, a fan of funny and lovable characters, a newcomer curious about digital collectibles, or an OG and builder looking to connect and grow with the movement, there’s a Kritter waiting for you.
+          <div class="md:order-2 md:py-4 text-xl text-center">
+         We're crafting a fresh NFT experience that rewards holders, unites the Kaspa community, and weaves storytelling with humor and distinctive digital art. Far from chasing hype, KasKritterz is driven by heart and the joy of collaborative creation, making it a perfect fit for Kaspa enthusiasts, meme lovers, and art collectors alike. 
 
 
           </div>
-          <div class="relative md:order-1">
+          <div class="relative md:order-1 pt-4">
             <img
               src={sideImg}
               width={532}
