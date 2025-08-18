@@ -22,7 +22,7 @@ interface Props {
 }
 
 export default component$((props: Props) => {
-  const { id, title = "Collections", subtitle = "", highlight = "", classes = {}, isDark = true } = props;
+  const { id, title = "Collections", subtitle = "",  classes = {}, isDark = true } = props;
   const collections = [
     { id: 1, title: "KasKritterz", description: "Hoarders? Sure. Paper hands? Never. KAS is their forever stash.", image: "/images/101.jpeg" },
        { id: 4, title: "KasBearz", description: "Even bearish, they know KAS is the endgame.", image: "/images/KasBEARZCS.png" },
@@ -48,7 +48,7 @@ export default component$((props: Props) => {
           isDark ? "dark" : ""
         )}
       >
-        <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
+        <Headline title={title} subtitle={subtitle} classes={classes?.headline} />
         <div class="w-full">
           {/* Carousel for mobile */}
           <div class="md:hidden">

@@ -30,7 +30,7 @@ export default component$(() => {
   ];
 
   return (
-    <footer class="bg-[url('/images/background.jpg')] bg-cover bg-center border-t border-gray-300 dark:border-slate-700">
+    <footer class="bg-[url('/images/background.jpg')] bg-cover bg-center border-gray-300 dark:border-slate-700">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 pt-8 pb-6 md:pt-12 md:py-12">
           <div class="col-span-12 lg:col-span-5 pr-4">
@@ -47,13 +47,13 @@ export default component$(() => {
               <div class="flex gap-2">
                 <a
                   href="https://www.kaspa.com/nft/collections/KasKritter"
-                  class="px-4 py-2 btn-primary text-white font-semibold rounded-md transition-colors"
+                  class="px-4 !text-sm py-2 btn-primary text-white font-semibold rounded-md transition-colors"
                 >
-                  Mint Now
+                  Mint KasKritterz
                 </a>
                 <a
                   href="https://t.me/KasKritterzOfficial"
-                  class="btn-secondary px-4 py-2 text-white font-semibold rounded-md transition-colors"
+                  class="btn-secondary !text-sm px-4 py-2 text-white font-semibold rounded-md transition-colors"
                 >
                   Join Telegram
                 </a>
@@ -97,7 +97,7 @@ export default component$(() => {
             ))}
           </ul>
 
-          <div class="text-sm text-gray-200 mr-4 dark:text-slate-400">
+          <div class="!text-sm text-gray-200 mr-4 dark:text-slate-400">
             © {new Date().getFullYear()} KasKritterz · All rights reserved
           </div>
         </div>

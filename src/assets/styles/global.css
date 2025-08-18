@@ -32,6 +32,18 @@ html, body, [class] {
   font-style: normal;
 }
 
+.flipped-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: rotate(180deg); /* Rotates the background 180 degrees vertically (upside down) */
+  z-index: -1; /* Ensures content sits above the background */
+  pointer-events: none; /* Prevents interference with interactions */
+}
+
 @layer components {
 
 
