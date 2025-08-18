@@ -24,12 +24,12 @@ export default component$((props: Props) => {
   const { title = "About KasKritterz", subtitle = "Discover the World", highlight = "", classes = {} } = props;
 
   return (
-    <div class="max-w-7xl mx-auto bg-blue-100">
+    <div class="max-w-7xl mx-auto bg-[url('/images/collage.jpg')] bg-cover border-b border-gray-300">
       <section
         id="story"
-        class="mx-auto scroll-mt-16 max-w-5xl px-4 pb-10 pt-10 md:py-14 lg:py-16 sm:px-6 lg:px-8"
+        class="mx-auto scroll-mt-16 max-w-4xl px-4 pb-10 pt-10 md:py-14 lg:py-16 sm:px-6 lg:px-8"
       >
-        <div class="bg-white/50 p-6 rounded-lg shadow-lg">
+        <div class="bg-white/95 p-6 rounded-lg shadow-lg">
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
           <div class="grid md:grid-cols-2 md:gap-6">
             <div class="md:order-2 md:py-4 text-xl text-center -mt-4 md:text-left">
@@ -41,7 +41,7 @@ export default component$((props: Props) => {
                 width={532}
                 height={532}
                 alt="KasKritterz Story Image"
-                class="w-full rounded-md bg-gray-500 object-cover shadow-lg dark:bg-slate-700 aspect-square md:aspect-[532/704] md:absolute md:h-full"
+                class=" rounded-md bg-gray-500 object-cover shadow-lg dark:bg-slate-700 aspect-square md:aspect-[532/704] md:absolute md:h-full"
               />
             </div>
           </div>

@@ -57,9 +57,13 @@ export default component$(() => {
             <img
               src="/images/frontface-logo.jpg"
               alt="KasKritterz Logo"
-              class="w-8 h-8 rounded-full mr-2"
+              class="w-8 h-8 rounded-full mr-1"
             />
-            <h1 class="font-bold text-white text-2xl tracking-tighter">KasKritterz</h1>
+             <img
+              src="/images/logo2.png"
+              alt="KasKritterz Logo"
+              class="h-8 rounded-full mr-2"
+            />
           </Link>
           <div class="flex items-center md:hidden">
             <a

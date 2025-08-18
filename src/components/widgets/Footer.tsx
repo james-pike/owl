@@ -30,7 +30,7 @@ export default component$(() => {
   ];
 
   return (
-    <footer class="bg-[url('/images/background.jpg')] bg-cover bg-center">
+    <footer class="bg-[url('/images/background.jpg')] bg-cover bg-center border-t border-gray-300 dark:border-slate-700">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 pt-8 pb-6 md:pt-12 md:py-12">
           <div class="col-span-12 lg:col-span-5 pr-4">
@@ -41,10 +41,8 @@ export default component$(() => {
                 </Link>
             
               </div>
-              <div class="text-sm text-gray-200 mb-4 dark:text-gray-400">
-                A fun and collectible NFT series built on the Kaspa blockchain. KasKritterz started with 250
-                hand-crafted Mice, each one unique, full of character, and ready to explore a world where Kaspa
-                has already won.
+              <div class="!text-sm text-gray-200 mb-4 dark:text-gray-400">
+                KasKritterz is a community-powered NFT universe, built in a world where Kaspa leads the future. The OG Mice are live: 250 hand-crafted originals. Mint yours today before they’re gone!
               </div>
               <div class="flex gap-2">
                 <a
@@ -71,7 +69,7 @@ export default component$(() => {
                   {items.map(({ title, href }, index2) => (
                     <li key={index2} class="mb-2">
                       <Link
-                        class="text-gray-300 hover:text-white hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+                        class="!text-sm text-gray-300 hover:text-white hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
                         href={href}
                       >
                         {title}

@@ -45,7 +45,7 @@ const Content = component$<PropsOf<typeof HeadlessAccordion.Content>>((props) =>
     <HeadlessAccordion.Content
       {...props}
       class={cn(
-        'overflow-hidden text-teal-500 text-sm data-[closed]:animate-accordion-up data-[open]:animate-accordion-down',
+        'overflow-hidden text-teal-500 !text-sm data-[closed]:animate-accordion-up data-[open]:animate-accordion-down',
         props.class,
       )}
     >

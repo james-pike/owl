@@ -34,7 +34,7 @@ export const Headline = (props: Props) => {
         )}
         {title && (
           <h2
-            class={twMerge("font-bold leading-tighter tracking-tighter font-heading text-heading", titleClass)}
+            class={twMerge("font-bold leading-tighter syne-bold tracking-tighter font-heading text-heading", titleClass)}
             dangerouslySetInnerHTML={title}
           />
         )}

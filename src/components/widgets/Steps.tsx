@@ -61,7 +61,7 @@ export default component$((props: Props) => {
   const { items, image } = stepsData;
 
   return (
-    <div class="max-w-7xl bg-[url('/images/Kaspa-camisa.png')] bg-cover bg-no-repeat">
+    <div class="max-w-7xl bg-[url('/images/steps.jpg')]  bg-no-repeat border-b border-gray-300 dark:border-slate-700">
       <section
         id="roadmap"
         class="mx-auto max-w-6xl scroll-mt-16 px-4 pb-10 pt-10 md:py-12 lg:py-16 sm:px-6 lg:px-8"
@@ -99,7 +99,7 @@ export default component$((props: Props) => {
                       {title && (
                         <p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">{title}</p>
                       )}
-                      {description && <p class="text-gray-600 dark:text-slate-400">{description}</p>}
+                      {description && <p class="!text-sm text-gray-600 dark:text-slate-400">{description}</p>}
                     </div>
                   </div>
                 ))}

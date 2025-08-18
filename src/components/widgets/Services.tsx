@@ -24,7 +24,7 @@ export default component$((props: Props) => {
   const { title = "", highlight = "", classes = {} } = props;
 
   return (
-    <div class="max-w-7xl mx-auto bg-teal-100">
+    <div class="max-w-7xl mx-auto bg-teal-100 border-b border-gray-300">
       <section
         id="about"
         class="mx-auto scroll-mt-16 max-w-6xl px-4 py-10 md:py-14 lg:py-16 sm:px-6 lg:px-8"
