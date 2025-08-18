@@ -7,9 +7,8 @@ export default component$(() => {
       class="md:min-h-[90vh] border-b-2 border-gray-300 flex items-center bg-[url('/images/mobile2.webp')] bg-cover bg-no-repeat md:bg-[url('/images/banner2.webp')] bg-[center_30%]"
     >
       <div class="text-center w-full px-4 md:pt-96 pt-52">
-              <div class="pt-4" />
 
-        <h2 class="text-2xl md:text-3xl text-white font-medium mb-4">
+        <h2 class="text-xl md:text-3xl text-white font-medium mb-4">
 KasKritterz is a community-powered NFT universe, built in a world where Kaspa leads the future. The OG Mice are live:  250 hand-crafted originals. Mint yours today before they’re gone!        </h2>
         <div class="flex justify-center gap-4 md:gap-6 pt-4 pb-14">
           <a 
