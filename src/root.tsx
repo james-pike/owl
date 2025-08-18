@@ -28,7 +28,7 @@ export default component$(() => {
         <ServiceWorkerRegister />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
       </head>
-      <body class="text-gray-900 dark:text-slate-300 tracking-tight border-gray-300 mx-auto border-x  overflow-x-hidden dark:border-gray-800 bg-white max-w-7xl  dark:bg-gray-950 antialiased">
+      <body class="text-gray-900 dark:text-slate-300 tracking-tight border-gray-300 mx-auto md:border-x  overflow-x-hidden dark:border-gray-800 bg-white max-w-7xl  dark:bg-gray-950 antialiased">
       <ObserverProvider>
         <RouterOutlet />
         </ObserverProvider>

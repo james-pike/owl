@@ -15,7 +15,7 @@ KasKritterz is a community-powered NFT universe, built in a world where Kaspa le
           <a 
           href="https://www.kaspa.com/nft/collections/KasKritter"
  class="bg-teal-400 text-white text-xl px-5 py-3 rounded-lg hover:bg-teal-300 transition-colors flex items-center gap-2">
-            <LuStar class="w-6 h-6" /> Mint <span class="hidden md:block">Now</span>
+            <LuStar class="w-6 h-6" /> Mint <span class="hidden md:block">KasKritterz</span>
           </a>
           <button class="bg-blue-300 text-white px-5 text-xl py-3 rounded-lg hover:bg-blue-200 transition-colors flex items-center gap-2">
             <LuUsers class="w-6 h-6" /> Join <span class="hidden md:block">Community</span> <span class="block md:hidden">Us!</span>
