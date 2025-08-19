@@ -38,9 +38,6 @@ export default component$(() => {
               class="h-8 rounded-full mr-2 -mt-1"
             />
             </Modal.Title>
-            <Modal.Description class="text-lg text-white font-medium px-0 py-1 dark:text-white">
-              Single line description/slogan
-            </Modal.Description>
           </div>
 
           {/* Navigation Content */}
@@ -68,7 +65,8 @@ export default component$(() => {
                       <a
                         href={item.href}
                         class={cn(
-                          "block text-white dark:text-white p-2 px-3 hover:text-teal-300 hover:bg-teal-900/50 font-medium transition-all duration-200 relative bg-gray-900/50 dark:bg-gray-900/50"
+                          "block text-white dark:text-white p-2 px-3 hover:text-teal-300 hover:bg-teal-900/50 font-medium transition-all duration-200 relative bg-gray-900/50 dark:bg-gray-900/50",
+                          "focus:outline-none" // Added to remove blue outline on focus
                         )}
                         onClick$={() => (show.value = false)}
                       >
