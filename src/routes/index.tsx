@@ -8,6 +8,7 @@ import Hero from "~/components/widgets/Hero";
 import FAQ from "~/components/widgets/FAQ";
 import Collections from "~/components/widgets/Collections";
 import Services from "~/components/widgets/Services";
+import Items from "~/components/widgets/Items";
 
 
 export default component$(() => {
@@ -37,13 +38,14 @@ export default component$(() => {
   items={[]}
   />
  
-      {/* <Inventory
-      id="inventory"
-        highlight="inventory"
-        title="Item Inventory"
-        // subtitle="Browse inventory items and rarities."
-        items={[]}
-      /> */}
+      <Items id="rarity"
+      highlight="Items"
+      title="KasKritterz Traits"
+     
+     
+      items={[]}/>
+   
+      
 
       <Steps id="roadmap"  
        highlight="Roadmap"

@@ -18,7 +18,7 @@ const List = component$<PropsOf<typeof HeadlessTabs.List>>((props) => {
       <HeadlessTabs.List
         {...props}
         class={cn(
-          'flex flex-nowrap overflow-x-auto sm:grid sm:overflow-visible scrollbar-hide border-base bg-muted p-0 text-muted-foreground shadow-sm',
+          'flex flex-nowrap overflow-x-auto sm:grid sm:grid-cols-7 sm:overflow-visible scrollbar-hide border-base bg-muted p-0 text-muted-foreground shadow-sm',
           props.class,
         )}
       >
@@ -33,7 +33,7 @@ const Tab = component$<PropsOf<typeof HeadlessTabs.Tab>>((props) => {
     <HeadlessTabs.Tab
       {...props}
       class={cn(
-        'inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-2 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=selected]:border-base data-[state=selected]:bg-gray-700 data-[state=selected]:text-foreground data-[state=selected]:shadow-inner flex-shrink-0',
+        'inline-flex items-center justify-center !text-sm whitespace-nowrap rounded-md px-3 py-2 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=selected]:border-base data-[state=selected]:bg-teal-200 data-[state=selected]:text-foreground data-[state=selected]:shadow-inner flex-shrink-0',
         props.class,
       )}
     >
