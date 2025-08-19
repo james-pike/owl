@@ -43,7 +43,7 @@ export const ItemTabs = component$(() => {
   };
 
   return (
-    <div class="flex w-full max-w-4xl mx-auto bg-white/50 space-x-0 sm:space-x-2">
+    <div class="flex w-full max-w-4xl mx-auto bg-white/20 space-x-0 sm:space-x-2">
       {/* Right 3/4: Tabs and content */}
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
@@ -59,7 +59,7 @@ export const ItemTabs = component$(() => {
           {/* Dynamically generate panels */}
           {wizardCategories.map((wizard, index) => (
             <Tabs.Panel key={index}>
-              <Card.Content class="p-0">
+              <Card.Content class="p-0 !text-sm">
                 {/* Mobile: Stack showcase above grid; Desktop: Side-by-side */}
                 <div class="flex flex-col sm:flex-row  w-full m-0">
                   {/* Showcase: Selected image preview with metadata */}
@@ -70,11 +70,13 @@ export const ItemTabs = component$(() => {
                       {selectedImage.value ? (
                         <div class="text-center flex flex-col items-center w-full h-full">
                           <div class="flex-1 flex items-center justify-center w-full">
-                            <img
-                              src={selectedImage.value.src}
-                              alt={selectedImage.value.alt}
-                              class="max-w-full max-h-32 sm:max-h-48 object-contain mx-auto"
-                            />
+                          <img
+  src={selectedImage.value.src}
+  alt={selectedImage.value.alt}
+  class={`max-w-full max-h-32 sm:max-h-48 object-contain mx-auto  ease-in-out
+    ${wizardCategories[activeTab.value].category === 'Clothing' ? 'transform  -translate-y-10 sm:-translate-y-16 scale-125' : ''}
+  `}
+/>
                           </div>
                           <div class="text-sm mt-2">
                             <div class="font-semibold">{selectedImage.value.title}</div>
@@ -102,16 +104,18 @@ export const ItemTabs = component$(() => {
                             key={imgIndex}
                             class={`p-1 border-2 rounded flex items-center justify-center w-full ${
                               selectedImage.value?.src === img.src
-                                ? 'border-teal-200 border-4'
+                                ? 'border-teal-200 border-2'
                                 : 'border-gray-200'
                             }`}
                           >
-                            <img
-                              src={img.src}
-                              alt={img.alt}
-                              class="md:max-w-[5rem] md:max-h-[5rem] object-contain mx-auto"
-                              onClick$={() => (selectedImage.value = img)}
-                            />
+                           <img
+  src={img.src}
+  alt={img.alt}
+  class={`md:max-w-[5rem] md:max-h-[5rem] object-contain mx-auto
+  ${wizardCategories[activeTab.value].category === 'Clothing' ? 'transform -translate-y-6 scale-110' : ''}
+`}
+  onClick$={() => (selectedImage.value = img)}
+/>
                           </button>
                         ))}
                       </div>
@@ -225,21 +229,175 @@ const wizardCategories = [
         icon: LuShirt, // Icon for Clothing
 
     images: [
-      {
-        src: '/images/arcanerobe.png',
-        alt: 'Arcane Robe',
-        title: 'Arcane Robe',
-        description: 'Robe amplifying potent spell potency.',
-        rarity: 25,
-      },
-      {
-        src: '/images/shadowmantle.png',
-        alt: 'Shadow Mantle',
-        title: 'Shadow Mantle',
-        description: 'Mantle enhancing dark stealth abilities.',
-        rarity: 20,
-      },
-    ],
+     {
+      src: '/images/clothing/blacksuit5.png',
+      alt: 'Black Suit',
+      title: 'Black Suit',
+      description: 'A formal black suit.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/blacksweater5.png',
+      alt: 'Black Sweater',
+      title: 'Black Sweater',
+      description: 'A cozy black sweater.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/blacktshirt5.png',
+      alt: 'Black Shirt',
+      title: 'Black Shirt',
+      description: 'A simple black shirt.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/blueoverallgreyshirt5.png',
+      alt: 'Blue Overall Grey Shirt',
+      title: 'Blue Overall with Grey Shirt',
+      description: 'Workwear with a blue overall and grey shirt.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/blueoverallwhiteshirt5.png',
+      alt: 'Blue Overall White Shirt',
+      title: 'Blue Overall with White Shirt',
+      description: 'Workwear with a blue overall and white shirt.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/blueshirt1yellowtie.png',
+      alt: 'Blue Shirt Yellow Tie',
+      title: 'Blue Shirt with Yellow Tie',
+      description: 'Smart outfit with a blue shirt and yellow tie.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/blueshirt2redtie5.png',
+      alt: 'Blue Shirt Red Tie',
+      title: 'Blue Shirt with Red Tie',
+      description: 'Smart outfit with a blue shirt and red tie.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/blueshirt2yellowtie.png',
+      alt: 'Blue Shirt Yellow Tie 2',
+      title: 'Alternate Blue Shirt with Yellow Tie',
+      description: 'A different variation of the blue shirt and yellow tie.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/bluesweater2.png',
+      alt: 'Blue Sweater',
+      title: 'Blue Sweater',
+      description: 'A warm blue sweater.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/brownsuit.png',
+      alt: 'Brown Suit',
+      title: 'Brown Suit',
+      description: 'A classic brown suit.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/burgundysweater.png',
+      alt: 'Burgundy Sweater',
+      title: 'Burgundy Sweater',
+      description: 'A stylish burgundy sweater.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/darkblueoverallwhiteshirt5.png',
+      alt: 'Dark Blue Overall White Shirt',
+      title: 'Dark Blue Overall with White Shirt',
+      description: 'Dark blue overall paired with a white shirt.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/greenshirt2greentie.png',
+      alt: 'Green Shirt Green Tie',
+      title: 'Green Shirt with Green Tie',
+      description: 'A matching green outfit.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/greenshirtredtie5.png',
+      alt: 'Green Shirt Red Tie',
+      title: 'Green Shirt with Red Tie',
+      description: 'A festive green and red combo.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/greensquarestanktop.png',
+      alt: 'Green Squares Tank Top',
+      title: 'Green Squares Tank Top',
+      description: 'Tank top with green square pattern.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/greyoverallwhiteshirt5.png',
+      alt: 'Grey Overall White Shirt',
+      title: 'Grey Overall with White Shirt',
+      description: 'Grey overall combined with a white shirt.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/lightbrownsuit5.png',
+      alt: 'Light Brown Suit',
+      title: 'Light Brown Suit',
+      description: 'A refined light brown suit.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/pinkflowertanktop.png',
+      alt: 'Pink Flower Tank Top',
+      title: 'Pink Flower Tank Top',
+      description: 'Floral-patterned pink tank top.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/redsquarestanktop.png',
+      alt: 'Red Squares Tank Top',
+      title: 'Red Squares Tank Top',
+      description: 'Tank top with red square pattern.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/redtanktop5.png',
+      alt: 'Red Tank Top',
+      title: 'Red Tank Top',
+      description: 'A bold red tank top.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/redtiedietanktop.png',
+      alt: 'Red Tie Dye Tank Top',
+      title: 'Red Tie-Dye Tank Top',
+      description: 'Red tie-dye tank for a unique style.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/whitetanktop5.png',
+      alt: 'White Tank Top',
+      title: 'White Tank Top',
+      description: 'Classic white tank top.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/yellowshirtpinktie5.png',
+      alt: 'Yellow Shirt Pink Tie',
+      title: 'Yellow Shirt with Pink Tie',
+      description: 'Bright yellow shirt with a pink tie.',
+      rarity: 20,
+    },
+    {
+      src: '/images/clothing/yellowsweater5.png',
+      alt: 'Yellow Sweater',
+      title: 'Yellow Sweater',
+      description: 'A cheerful yellow sweater.',
+      rarity: 20,
+    },
+  ],
   },
   {
     category: 'Head',

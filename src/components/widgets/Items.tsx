@@ -32,12 +32,12 @@ export default component$((props: Props) => {
       </div>
       <div
         class={twMerge(
-          "relative mx-auto max-w-5xl px-4 py-10 md:py-14 lg:py-16 text-default",
+          "relative mx-auto max-w-4xl px-2 py-10 md:py-14 lg:py-16 text-default",
           classes?.container,
           isDark ? "dark" : ""
         )}
       >
-        <div class="bg-white/50 p-1 pt-6 md:pt-8 md:p-3 rounded-lg shadow-lg">
+        <div class="bg-white/50 p-1 pt-6 md:pt-8 md:p-2 rounded-lg shadow-lg">
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
           <div class="-mt-6">
 <ItemTabs/>         

@@ -44,6 +44,23 @@ html, body, [class] {
   pointer-events: none; /* Prevents interference with interactions */
 }
 
+.clothing-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* Adjust container height as needed */
+  overflow: hidden; /* Hides anything outside the box */
+  background-color: #dfffff; /* Optional background to match */
+  border: 2px solid #aef3f2; /* Optional styling */
+  border-radius: 8px;
+}
+
+.clothing-image {
+  transform: translateY(-30px); /* Slide the image up */
+  transition: transform 0.3s ease; /* Optional animation */
+  max-height: none; /* Ensure image is not limited by max-height */
+}
+
 @layer components {
 
 
