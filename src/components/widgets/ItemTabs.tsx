@@ -74,8 +74,9 @@ export const ItemTabs = component$(() => {
   src={selectedImage.value.src}
   alt={selectedImage.value.alt}
   class={`max-w-full max-h-32 sm:max-h-48 object-contain mx-auto  ease-in-out
-    ${wizardCategories[activeTab.value].category === 'Clothing' ? 'transform  -translate-y-10 sm:-translate-y-16 scale-125' : ''}
-  `}
+${wizardCategories[activeTab.value].category === 'Clothing' ? 'transform -translate-y-10 sm:-translate-y-16 scale-125'
+: wizardCategories[activeTab.value].category === 'Head' ? 'transform translate-y-10 sm:translate-y-16 scale-125'
+: ''}  `}
 />
                           </div>
                           <div class="text-sm mt-2">
@@ -112,8 +113,9 @@ export const ItemTabs = component$(() => {
   src={img.src}
   alt={img.alt}
   class={`md:max-w-[5rem] md:max-h-[5rem] object-contain mx-auto
-  ${wizardCategories[activeTab.value].category === 'Clothing' ? 'transform -translate-y-6 scale-110' : ''}
-`}
+${wizardCategories[activeTab.value].category === 'Clothing' ? 'transform -translate-y-6 scale-110'
+: wizardCategories[activeTab.value].category === 'Head' ? 'transform translate-y-8 scale-150'
+: ''}`}
   onClick$={() => (selectedImage.value = img)}
 />
                           </button>
@@ -403,78 +405,162 @@ const wizardCategories = [
     category: 'Head',
             icon: LuUser, // Icon for Body
 
-    images: [
-      {
-        src: '/images/_chefhat.png',
-        alt: 'Chef Hat',
-        title: 'Chef Hat',
-        description: 'A culinary-inspired wizard hat.',
-        rarity: 20,
-      },
-      {
-        src: '/images/_constructionhelmet.png',
-        alt: 'Construction Helmet',
-        title: 'Construction Helmet',
-        description: 'A sturdy construction helmet.',
-        rarity: 20,
-      },
-      {
-        src: '/images/_hat.png',
-        alt: 'Hat',
-        title: 'Hat',
-        description: 'A classic wizard hat.',
-        rarity: 20,
-      },
-      {
-        src: '/images/_none.png',
-        alt: 'No Headwear',
-        title: 'No Headwear',
-        description: 'Bare head with no hat.',
-        rarity: 20,
-      },
-      {
-        src: '/images/_showercap.png',
-        alt: 'Shower Cap',
-        title: 'Shower Cap',
-        description: 'A quirky shower cap.',
-        rarity: 20,
-      },
-      {
-        src: '/images/chefhat.png',
-        alt: 'Chef Hat',
-        title: 'Chef Hat',
-        description: 'Another culinary hat variant.',
-        rarity: 25,
-      },
-      {
-        src: '/images/constructionhelmet.png',
-        alt: 'Construction Helmet',
-        title: 'Construction Helmet',
-        description: 'Another sturdy helmet variant.',
-        rarity: 25,
-      },
-      {
-        src: '/images/hat.png',
-        alt: 'Hat',
-        title: 'Hat',
-        description: 'Another classic hat variant.',
-        rarity: 25,
-      },
-      {
-        src: '/images/none.png',
-        alt: 'No Headwear',
-        title: 'No Headwear',
-        description: 'Another bare head option.',
-        rarity: 25,
-      },
-      {
-        src: '/images/showercap.png',
-        alt: 'Shower Cap',
-        title: 'Shower Cap',
-        description: 'Another quirky cap variant.',
-        rarity: 25,
-      },
-    ],
+      images: [
+    {
+      src: '/images/hat/baseballcap5.png',
+      alt: 'Baseball Cap',
+      title: 'Baseball Cap',
+      description: 'A sporty baseball cap.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/beaniebrown5.png',
+      alt: 'Brown Beanie',
+      title: 'Brown Beanie',
+      description: 'A warm brown beanie.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/beaniegreen5.png',
+      alt: 'Green Beanie',
+      title: 'Green Beanie',
+      description: 'A cozy green beanie.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/blackhair5.png',
+      alt: 'Black Hair',
+      title: 'Black Hair',
+      description: 'Flowing black hair.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/blackhat5.png',
+      alt: 'Black Hat',
+      title: 'Black Hat',
+      description: 'A classic black hat.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/brownhair5.png',
+      alt: 'Brown Hair',
+      title: 'Brown Hair',
+      description: 'Natural brown hair.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/capblue5.png',
+      alt: 'Blue Cap',
+      title: 'Blue Cap',
+      description: 'A casual blue cap.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/capgreen5.png',
+      alt: 'Green Cap',
+      title: 'Green Cap',
+      description: 'A casual green cap.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/capred5.png',
+      alt: 'Red Cap',
+      title: 'Red Cap',
+      description: 'A casual red cap.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/chefhat.png',
+      alt: 'Chef Hat',
+      title: 'Chef Hat',
+      description: 'A culinary-inspired wizard hat.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/constructionhelmet.png',
+      alt: 'Construction Helmet',
+      title: 'Construction Helmet',
+      description: 'A sturdy helmet for safety.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/hat.png',
+      alt: 'Hat',
+      title: 'Classic Hat',
+      description: 'A wizard\'s classic pointed hat.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/manhat5.png',
+      alt: 'Man Hat',
+      title: 'Man Hat',
+      description: 'A stylish hat for men.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/navyhat.png',
+      alt: 'Navy Hat',
+      title: 'Navy Hat',
+      description: 'A deep blue navy cap.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/none.png',
+      alt: 'No Hat',
+      title: 'No Hat',
+      description: 'No headwear at all.',
+      rarity: 25,
+    },
+    {
+      src: '/images/hat/partyhatblue5.png',
+      alt: 'Party Hat Blue',
+      title: 'Blue Party Hat',
+      description: 'A festive blue party hat.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/partyhatpink5.png',
+      alt: 'Party Hat Pink',
+      title: 'Pink Party Hat',
+      description: 'A festive pink party hat.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/showercap.png',
+      alt: 'Shower Cap',
+      title: 'Shower Cap',
+      description: 'A quirky shower cap.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/strawhat5.png',
+      alt: 'Straw Hat',
+      title: 'Straw Hat',
+      description: 'A breezy straw hat for sunny days.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/sunvisorblue5.png',
+      alt: 'Blue Sunvisor',
+      title: 'Blue Sunvisor',
+      description: 'A blue sunvisor for shade.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/sunvisorred5.png',
+      alt: 'Red Sunvisor',
+      title: 'Red Sunvisor',
+      description: 'A red sunvisor for sunny days.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hat/tinfoilhat.png',
+      alt: 'Tinfoil Hat',
+      title: 'Tinfoil Hat',
+      description: 'Protect your thoughts with this shiny headwear.',
+      rarity: 10,
+    },
+  ],
   },
 {
   category: 'Eyes',
