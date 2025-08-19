@@ -8,7 +8,7 @@ export default component$(() => {
     >
       <div class="text-center w-full px-4 md:pt-96 pt-52">
 
-        <h2 class="text-xl md:text-3xl text-white font-medium mb-4">
+        <h2 class="text-xl md:text-3xl text-white font-medium mb-4 -mt-4 md:-mt-0">
 KasKritterz is a community-powered NFT universe, built in a world where Kaspa leads the future. The OG Mice are live:  250 hand-crafted originals. Mint yours today before they’re gone!        </h2>
         <div class="flex justify-center gap-4 md:gap-6 pt-4 pb-14">
           <a 
