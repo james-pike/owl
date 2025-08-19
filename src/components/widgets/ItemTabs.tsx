@@ -1,4 +1,4 @@
-import { $, component$, useSignal, useTask$ } from '@builder.io/qwik';
+import { $, component$, useSignal, useTask$, useVisibleTask$ } from '@builder.io/qwik';
 import { Tabs } from '../ui/Tabs';
 import { Card } from '../ui/Card';
 
@@ -8,46 +8,63 @@ const LuEye = $(() => import('@qwikest/icons/lucide').then((m) => m.LuEye));
 const LuHand = $(() => import('@qwikest/icons/lucide').then((m) => m.LuHand));
 const LuSparkles = $(() => import('@qwikest/icons/lucide').then((m) => m.LuSparkles));
 
-// Define the single wizard image for the entire set
-
-// Define the wizard objects with new categories, images, and metadata
-// (Assuming wizardCategories is defined elsewhere)
-
+// Assume wizardCategories is defined elsewhere
 export const ItemTabs = component$(() => {
-  // Signal to track the active tab index
   const activeTab = useSignal(0);
-  // Signal to track the selected image object (to access metadata)
-  const selectedImage = useSignal<{ src: string; alt: string; title: string; description: string; rarity: number } | null>(
-    wizardCategories[0]?.images[0] || null
-  );
+  const itemsPerPage = useSignal(16); // default to desktop
 
-  // Update selectedImage when activeTab changes
+  const selectedImage = useSignal<{
+    src: string;
+    alt: string;
+    title: string;
+    description: string;
+    rarity: number;
+  } | null>(wizardCategories[0]?.images[0] || null);
+
+  const currentPages = useSignal<number[]>(wizardCategories.map(() => 0));
+
+  // Update selected image on tab change
   useTask$(({ track }) => {
     track(() => activeTab.value);
-    if (wizardCategories[activeTab.value]?.images[0]) {
-      selectedImage.value = wizardCategories[activeTab.value].images[0];
-    }
+    const firstImg = wizardCategories[activeTab.value]?.images[0];
+    if (firstImg) selectedImage.value = firstImg;
   });
 
-  // Function to determine rarity class and color
+  // Dynamically adjust itemsPerPage based on screen size
+  useVisibleTask$(() => {
+    const updateItemsPerPage = () => {
+      if (window.matchMedia('(max-width: 640px)').matches) {
+        itemsPerPage.value = 12; // 3 cols * 5 rows (mobile)
+      } else {
+        itemsPerPage.value = 16; // 4 cols * 4 rows (desktop)
+      }
+    };
+
+    updateItemsPerPage();
+    window.addEventListener('resize', updateItemsPerPage);
+
+    return () => {
+      window.removeEventListener('resize', updateItemsPerPage);
+    };
+  });
+
   const getRarityClass = (rarity: number) => {
-    if (rarity <= 1) {
-      return { text: 'legendary', color: 'text-orange-400' };
-    } else if (rarity <= 5.1) {
-      return { text: 'rare', color: 'text-yellow-400' };
-    } else if (rarity <= 15.1) {
-      return { text: 'uncommon', color: 'text-blue-400' };
-    } else {
-      return { text: 'common', color: 'text-green-400' };
-    }
+    if (rarity <= 1) return { text: 'legendary', color: 'text-orange-400' };
+    if (rarity <= 5.1) return { text: 'rare', color: 'text-yellow-400' };
+    if (rarity <= 15.1) return { text: 'uncommon', color: 'text-blue-400' };
+    return { text: 'common', color: 'text-green-400' };
+  };
+
+  const getPaginatedImages = (images: any[], tabIndex: number) => {
+    const page = currentPages.value[tabIndex];
+    const start = page * itemsPerPage.value;
+    return images.slice(start, start + itemsPerPage.value);
   };
 
   return (
     <div class="flex w-full max-w-4xl mx-auto bg-white/20 space-x-0 sm:space-x-2">
-      {/* Right 3/4: Tabs and content */}
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
-          {/* Dynamically generate tabs */}
           <Tabs.List class="grid w-full grid-cols-4 p-0 border rounded-md border-gray-300">
             {wizardCategories.map((wizard, index) => (
               <Tabs.Tab class="py-1" key={index} onClick$={() => (activeTab.value = index)}>
@@ -56,38 +73,36 @@ export const ItemTabs = component$(() => {
             ))}
           </Tabs.List>
 
-          {/* Dynamically generate panels */}
           {wizardCategories.map((wizard, index) => (
             <Tabs.Panel key={index}>
               <Card.Content class="p-0 !text-sm">
-                {/* Mobile: Stack showcase above grid; Desktop: Side-by-side */}
-                <div class="flex flex-col sm:flex-row  w-full m-0">
-                  {/* Showcase: Selected image preview with metadata */}
+                <div class="flex flex-col sm:flex-row w-full m-0">
+                  {/* Image Preview */}
                   <div class="w-full mx-auto space-y-1 sm:space-y-2 sm:order-1 px-2 pt-0 -mt-2">
-                    <div
-                      class={`p-2 border rounded flex flex-col items-center justify-between w-full border-gray-300`}
-                    >
+                    <div class="p-2 border rounded flex flex-col items-center justify-between w-full border-gray-300">
                       {selectedImage.value ? (
                         <div class="text-center flex flex-col items-center w-full h-full">
                           <div class="flex-1 flex items-center justify-center w-full">
-                          <img
-  src={selectedImage.value.src}
-  alt={selectedImage.value.alt}
-  class={`max-w-full max-h-32 sm:max-h-48 object-contain mx-auto  ease-in-out
-${wizardCategories[activeTab.value].category === 'Clothing' ? 'transform -translate-y-10 sm:-translate-y-16 scale-125'
-: wizardCategories[activeTab.value].category === 'Head' ? 'transform translate-y-10 sm:translate-y-16 scale-125'
-: ''}  `}
-/>
+                            <img
+                              src={selectedImage.value.src}
+                              alt={selectedImage.value.alt}
+                              class={`max-w-full max-h-32 sm:max-h-48 object-contain mx-auto ease-in-out
+                                ${
+                                  wizardCategories[activeTab.value].category === 'Clothing'
+                                    ? 'transform -translate-y-10 sm:-translate-y-16 scale-125'
+                                    : wizardCategories[activeTab.value].category === 'Head'
+                                    ? 'transform translate-y-10 sm:translate-y-16 scale-125'
+                                    : ''
+                                }`}
+                            />
                           </div>
                           <div class="text-sm mt-2">
                             <div class="font-semibold">{selectedImage.value.title}</div>
                             <div class="text-gray-400 pt-1">
-                              Rarity: {selectedImage.value.rarity}% -{' '}
-                              {selectedImage.value.rarity != null && (
-                                <span class={getRarityClass(selectedImage.value.rarity).color}>
-                                  {getRarityClass(selectedImage.value.rarity).text}
-                                </span>
-                              )}
+                              Rarity: {selectedImage.value.rarity}% –{' '}
+                              <span class={getRarityClass(selectedImage.value.rarity).color}>
+                                {getRarityClass(selectedImage.value.rarity).text}
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -96,11 +111,12 @@ ${wizardCategories[activeTab.value].category === 'Clothing' ? 'transform -transl
                       )}
                     </div>
                   </div>
-                  {/* Grid: Image thumbnails */}
+
+                  {/* Image Grid */}
                   <div class="w-full mx-auto space-y-1 sm:space-y-2 md:pr-2 md:pb-2 mt-2 sm:-mt-2 sm:order-2 pb-1.5 py-3 px-1.5 pt-0 md:p-0 md:px-0">
                     <div class="flex items-center w-full">
-                      <div class="grid  grid-cols-3 sm:grid-cols-4 gap-1.5 w-full">
-                        {wizard.images.map((img, imgIndex) => (
+                      <div class="grid grid-cols-3 sm:grid-cols-4 gap-1.5 w-full">
+                        {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
                           <button
                             key={imgIndex}
                             class={`p-1 border-2 rounded flex items-center justify-center w-full ${
@@ -109,19 +125,50 @@ ${wizardCategories[activeTab.value].category === 'Clothing' ? 'transform -transl
                                 : 'border-gray-200'
                             }`}
                           >
-                           <img
-  src={img.src}
-  alt={img.alt}
-  class={`md:max-w-[5rem] md:max-h-[5rem] object-contain mx-auto
-${wizardCategories[activeTab.value].category === 'Clothing' ? 'transform -translate-y-6 scale-110'
-: wizardCategories[activeTab.value].category === 'Head' ? 'transform translate-y-8 scale-150'
-: ''}`}
-  onClick$={() => (selectedImage.value = img)}
-/>
+                            <img
+                              src={img.src}
+                              alt={img.alt}
+                              class={`md:max-w-[5rem] md:max-h-[5rem] object-contain mx-auto
+                                ${
+                                  wizardCategories[activeTab.value].category === 'Clothing'
+                                    ? 'transform -translate-y-6 scale-110'
+                                    : wizardCategories[activeTab.value].category === 'Head'
+                                    ? 'transform translate-y-8 scale-110'
+                                    : ''
+                                }`}
+                              onClick$={() => (selectedImage.value = img)}
+                            />
                           </button>
                         ))}
                       </div>
                     </div>
+
+                    {/* Pagination */}
+                    {wizard.images.length > itemsPerPage.value && (
+                      <div class="flex justify-center mt-2 space-x-2">
+                        <button
+                          class="px-2 py-1 text-sm border rounded disabled:opacity-50"
+                          onClick$={() => {
+                            currentPages.value[index] = Math.max(0, currentPages.value[index] - 1);
+                            currentPages.value = [...currentPages.value];
+                          }}
+                          disabled={currentPages.value[index] === 0}
+                        >
+                          Prev
+                        </button>
+                        <button
+                          class="px-2 py-1 text-sm border rounded disabled:opacity-50"
+                          onClick$={() => {
+                            const maxPage = Math.floor(wizard.images.length / itemsPerPage.value);
+                            currentPages.value[index] = Math.min(maxPage, currentPages.value[index] + 1);
+                            currentPages.value = [...currentPages.value];
+                          }}
+                          disabled={(currentPages.value[index] + 1) * itemsPerPage.value >= wizard.images.length}
+                        >
+                          Next
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Card.Content>

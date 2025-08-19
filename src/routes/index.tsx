@@ -41,7 +41,8 @@ export default component$(() => {
       <Items id="rarity"
       highlight="Items"
       title="KasKritterz Traits"
-     
+            subtitle={"***Under Construction, ignore font size, spacing, and colors***"}
+
      
       items={[]}/>
    
