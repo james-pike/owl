@@ -36,7 +36,7 @@ export const ItemTabs = component$(() => {
       if (window.matchMedia('(max-width: 640px)').matches) {
         itemsPerPage.value = 12; // 3 cols * 5 rows (mobile)
       } else {
-        itemsPerPage.value = 16; // 4 cols * 4 rows (desktop)
+        itemsPerPage.value = 20; // 4 cols * 4 rows (desktop)
       }
     };
 
@@ -62,10 +62,10 @@ export const ItemTabs = component$(() => {
   };
 
   return (
-    <div class="flex w-full max-w-4xl mx-auto bg-white/20 space-x-0 sm:space-x-2">
+    <div class="flex w-full max-w-4xl mx-auto bg-white/50 shadow-xl space-x-0 sm:space-x-2">
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
-          <Tabs.List class="grid w-full grid-cols-4 p-0 border rounded-md border-gray-300">
+          <Tabs.List class="grid w-full grid-cols-4 p-0 border bg-white/70 rounded-md border-gray-300">
             {wizardCategories.map((wizard, index) => (
               <Tabs.Tab class="py-1" key={index} onClick$={() => (activeTab.value = index)}>
                 {wizard.category}
@@ -78,8 +78,8 @@ export const ItemTabs = component$(() => {
               <Card.Content class="p-0 !text-sm">
                 <div class="flex flex-col sm:flex-row w-full m-0">
                   {/* Image Preview */}
-                  <div class="w-full mx-auto space-y-1 sm:space-y-2 sm:order-1 px-2 pt-0 -mt-2">
-                    <div class="p-2 border rounded flex flex-col items-center justify-between w-full border-gray-300">
+                  <div class=" mx-auto space-y-1 sm:w-1/2 sm:space-y-2 sm:order-1 px-2 pt-0 -mt-2">
+                    <div class="p-2 border rounded flex flex-col bg-white/70 items-center justify-between w-full border-gray-300">
                       {selectedImage.value ? (
                         <div class="text-center flex flex-col items-center w-full h-full">
                           <div class="flex-1 flex items-center justify-center w-full">
@@ -115,11 +115,11 @@ export const ItemTabs = component$(() => {
                   {/* Image Grid */}
                   <div class="w-full mx-auto space-y-1 sm:space-y-2 md:pr-2 md:pb-2 mt-2 sm:-mt-2 sm:order-2 pb-1.5 py-3 px-1.5 pt-0 md:p-0 md:px-0">
                     <div class="flex items-center w-full">
-                      <div class="grid grid-cols-3 sm:grid-cols-4 gap-1.5 w-full">
+                      <div class="grid grid-cols-3 sm:grid-cols-5 gap-1.5 w-full">
                         {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
                           <button
                             key={imgIndex}
-                            class={`p-1 border-2 rounded flex items-center justify-center w-full ${
+                            class={`p-1 border-2 rounded flex items-center bg-white/70 shadow-xl justify-center w-full ${
                               selectedImage.value?.src === img.src
                                 ? 'border-teal-200 border-2'
                                 : 'border-gray-200'
@@ -782,22 +782,351 @@ const wizardCategories = [
     category: 'Hand',
         icon: LuHand, // Icon for Hand
 
-    images: [
-      {
-        src: '/images/openhand.png',
-        alt: 'Open Hand',
-        title: 'Open Hand',
-        description: 'An open hand gesture.',
-        rarity: 25,
-      },
-      {
-        src: '/images/clenchedfist.png',
-        alt: 'Clenched Fist',
-        title: 'Clenched Fist',
-        description: 'A clenched fist pose.',
-        rarity: 20,
-      },
-    ],
+   images: [
+    {
+      src: '/images/hand/ax.png',
+      alt: 'Ax',
+      title: 'Ax Hand',
+      description: 'A hand holding an ax.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/balloonblue.png',
+      alt: 'Blue Balloon',
+      title: 'Blue Balloon Hand',
+      description: 'A hand holding a blue balloon.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/balloongold.png',
+      alt: 'Gold Balloon',
+      title: 'Gold Balloon Hand',
+      description: 'A hand holding a gold balloon.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/balloonpink.png',
+      alt: 'Pink Balloon',
+      title: 'Pink Balloon Hand',
+      description: 'A hand holding a pink balloon.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/bindlestick.png',
+      alt: 'Bindlestick',
+      title: 'Bindlestick Hand',
+      description: 'A hand holding a bindlestick.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/book.png',
+      alt: 'Book',
+      title: 'Book Hand',
+      description: 'A hand holding a book.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/brushblue.png',
+      alt: 'Blue Brush',
+      title: 'Blue Brush Hand',
+      description: 'A hand holding a blue brush.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/brushred.png',
+      alt: 'Red Brush',
+      title: 'Red Brush Hand',
+      description: 'A hand holding a red brush.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/brushyellow.png',
+      alt: 'Yellow Brush',
+      title: 'Yellow Brush Hand',
+      description: 'A hand holding a yellow brush.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/chocolate.png',
+      alt: 'Chocolate',
+      title: 'Chocolate Hand',
+      description: 'A hand holding chocolate.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/cocktailblue.png',
+      alt: 'Blue Cocktail',
+      title: 'Blue Cocktail Hand',
+      description: 'A hand holding a blue cocktail.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/cocktailgreen.png',
+      alt: 'Green Cocktail',
+      title: 'Green Cocktail Hand',
+      description: 'A hand holding a green cocktail.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/cocktailred.png',
+      alt: 'Red Cocktail',
+      title: 'Red Cocktail Hand',
+      description: 'A hand holding a red cocktail.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/cookie.png',
+      alt: 'Cookie',
+      title: 'Cookie Hand',
+      description: 'A hand holding a cookie.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/donut_2.png',
+      alt: 'Donut 2',
+      title: 'Donut 2 Hand',
+      description: 'A hand holding a second donut variant.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/donut_3.png',
+      alt: 'Donut 3',
+      title: 'Donut 3 Hand',
+      description: 'A hand holding a third donut variant.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/donut_4.png',
+      alt: 'Donut 4',
+      title: 'Donut 4 Hand',
+      description: 'A hand holding a fourth donut variant.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/donut_5.png',
+      alt: 'Donut 5',
+      title: 'Donut 5 Hand',
+      description: 'A hand holding a fifth donut variant.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/drumstick.png',
+      alt: 'Drumstick',
+      title: 'Drumstick Hand',
+      description: 'A hand holding a drumstick.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/fork.png',
+      alt: 'Fork',
+      title: 'Fork Hand',
+      description: 'A hand holding a fork.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/hammer.png',
+      alt: 'Hammer',
+      title: 'Hammer Hand',
+      description: 'A hand holding a hammer.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/icecreamchoco.png',
+      alt: 'Chocolate Ice Cream',
+      title: 'Chocolate Ice Cream Hand',
+      description: 'A hand holding chocolate ice cream.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/icecreamlemon.png',
+      alt: 'Lemon Ice Cream',
+      title: 'Lemon Ice Cream Hand',
+      description: 'A hand holding lemon ice cream.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/icecreammint.png',
+      alt: 'Mint Ice Cream',
+      title: 'Mint Ice Cream Hand',
+      description: 'A hand holding mint ice cream.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/icecreamvanilla.png',
+      alt: 'Vanilla Ice Cream',
+      title: 'Vanilla Ice Cream Hand',
+      description: 'A hand holding vanilla ice cream.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/kaspa.png',
+      alt: 'Kaspa',
+      title: 'Kaspa Hand',
+      description: 'A hand holding a Kaspa item.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/ketchup.png',
+      alt: 'Ketchup',
+      title: 'Ketchup Hand',
+      description: 'A hand holding a ketchup bottle.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/knife.png',
+      alt: 'Knife',
+      title: 'Knife Hand',
+      description: 'A hand holding a knife.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/lolipopblue.png',
+      alt: 'Blue Lollipop',
+      title: 'Blue Lollipop Hand',
+      description: 'A hand holding a blue lollipop.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/lolipopgreen.png',
+      alt: 'Green Lollipop',
+      title: 'Green Lollipop Hand',
+      description: 'A hand holding a green lollipop.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/lolipoporange.png',
+      alt: 'Orange Lollipop',
+      title: 'Orange Lollipop Hand',
+      description: 'A hand holding an orange lollipop.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/lolipoppurple.png',
+      alt: 'Purple Lollipop',
+      title: 'Purple Lollipop Hand',
+      description: 'A hand holding a purple lollipop.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/maracas.png',
+      alt: 'Maracas',
+      title: 'Maracas Hand',
+      description: 'A hand holding maracas.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/markerblue.png',
+      alt: 'Blue Marker',
+      title: 'Blue Marker Hand',
+      description: 'A hand holding a blue marker.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/markergreen.png',
+      alt: 'Green Marker',
+      title: 'Green Marker Hand',
+      description: 'A hand holding a green marker.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/markerred.png',
+      alt: 'Red Marker',
+      title: 'Red Marker Hand',
+      description: 'A hand holding a red marker.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/microphone.png',
+      alt: 'Microphone',
+      title: 'Microphone Hand',
+      description: 'A hand holding a microphone.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/mustard.png',
+      alt: 'Mustard',
+      title: 'Mustard Hand',
+      description: 'A hand holding a mustard bottle.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/paintbrush.png',
+      alt: 'Paintbrush',
+      title: 'Paintbrush Hand',
+      description: 'A hand holding a paintbrush.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/pizza.png',
+      alt: 'Pizza',
+      title: 'Pizza Hand',
+      description: 'A hand holding a pizza slice.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/powerplug.png',
+      alt: 'Power Plug',
+      title: 'Power Plug Hand',
+      description: 'A hand holding a power plug.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/rosered.png',
+      alt: 'Red Rose',
+      title: 'Red Rose Hand',
+      description: 'A hand holding a red rose.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/rosewhite.png',
+      alt: 'White Rose',
+      title: 'White Rose Hand',
+      description: 'A hand holding a white rose.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/sodacanblue.png',
+      alt: 'Blue Soda Can',
+      title: 'Blue Soda Can Hand',
+      description: 'A hand holding a blue soda can.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/sodacanred.png',
+      alt: 'Red Soda Can',
+      title: 'Red Soda Can Hand',
+      description: 'A hand holding a red soda can.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/spoon.png',
+      alt: 'Spoon',
+      title: 'Spoon Hand',
+      description: 'A hand holding a spoon.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/teddybear.png',
+      alt: 'Teddy Bear',
+      title: 'Teddy Bear Hand',
+      description: 'A hand holding a teddy bear.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/toothbrush.png',
+      alt: 'Toothbrush',
+      title: 'Toothbrush Hand',
+      description: 'A hand holding a toothbrush.',
+      rarity: 20,
+    },
+    {
+      src: '/images/hand/wine.png',
+      alt: 'Wine',
+      title: 'Wine Hand',
+      description: 'A hand holding a wine glass.',
+      rarity: 20,
+    },
+  ],
   },
 
 
