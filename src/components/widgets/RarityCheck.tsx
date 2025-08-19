@@ -122,9 +122,9 @@ export default component$(() => {
     <section class="p-2 max-w-5xl mx-auto">
       <div class="flex flex-col gap-4">
         {nftData.value && (
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 items-start">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 items-start">
             {/* Image on the left */}
-            <div class="bg-transparent border border-gray-200/50 p-1 rounded-lg">
+            <div class=" border border-gray-200/50 p-1 bg-white/70 rounded-lg">
               <img
                 src={nftData.value.metadata.image}
                 alt={nftData.value.metadata.name}
@@ -136,7 +136,7 @@ export default component$(() => {
             </div>
 
             {/* Stats on the right with search bar */}
-            <div class="bg-white/70 p-2 rounded-xl shadow-md">
+            <div class="bg-white/70 p-3 rounded-xl shadow-md">
               <div class="flex gap-2 mb-2 w-full max-w-xs">
                 <input
                   type="number"
