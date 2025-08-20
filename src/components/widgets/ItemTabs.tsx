@@ -78,7 +78,7 @@ export const ItemTabs = component$(() => {
               <Card.Content class="p-0 !text-sm">
                 <div class="flex flex-col sm:flex-row w-full m-0 gap-2">
   {/* Image Preview */}
-  <div class="mx-auto sm:w-1/2 relative z-0">
+  <div class="mx-auto sm:w-1/3 relative z-0">
     <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/20 items-center justify-between w-full border-gray-300">
       {selectedImage.value ? (
         <div class="text-center flex flex-col items-center">
