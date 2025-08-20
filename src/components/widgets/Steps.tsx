@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { twMerge } from "tailwind-merge";
-import { LuCheck, LuExpand, LuBook, LuInfinity, LuUser, LuShirt, LuEye, LuHand } from "@qwikest/icons/lucide";
+import { LuCheck, LuExpand, LuBook, LuInfinity } from "@qwikest/icons/lucide";
 import { Headline } from "../ui/Headline";
 
 interface Item {
