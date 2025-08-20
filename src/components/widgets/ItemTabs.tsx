@@ -86,7 +86,7 @@ export const ItemTabs = component$(() => {
                             <img
                               src={selectedImage.value.src}
                               alt={selectedImage.value.alt}
-                              class={`max-w-full max-h-32 sm:max-h-48 object-contain mx-auto ease-in-out
+                              class={` sm:max-h-48 object-contain mx-auto ease-in-out
                                 ${
                                   wizardCategories[activeTab.value].category === 'Clothing'
                                     ? 'transform -translate-y-10 sm:-translate-y-10 scale-125'
