@@ -60,7 +60,7 @@ export default component$((props: Props) => {
         id="roadmap"
         class="mx-auto max-w-5xl scroll-mt-16 px-3 py-10 md:py-12 lg:py-16 sm:px-6 lg:px-8"
       >
-        <div class="bg-white/85 px-3 py-6 md:p-6 rounded-lg shadow-lg">
+        <div class="md:bg-white/85 bg-white/90 px-3 py-6 md:p-6 rounded-lg shadow-lg">
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
           <div class="container text-sm">
             <div class="flex">
