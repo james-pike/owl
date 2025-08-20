@@ -149,7 +149,7 @@ export default component$((props: Props) => {
     <div class="point-content flex-1">
       <div class="point-label text-teal-400 !text-xl !font-bold">Phase 2 - Expansion & Utility</div>
       <div class="point-text text-gray-700 !text-lg">
-        • Release remaining collections: Katz, Dogz, Bearz<br />• Holder-only perks & airdrops<br />• Integrate community suggestions on comics
+        • Release remaining collections: Bearz, Bullz, Katz, Dogz, Dinoz<br />• Holder-only perks & airdrops<br />• Integrate community suggestions on comics
       </div>
     </div>
   </div>
