@@ -10,11 +10,11 @@ const getRarityClass = (rarity: string) => {
     case 'epic':
       return 'text-yellow-500';
     case 'rare':
-      return 'text-green-500';
-    case 'uncommon':
       return 'text-blue-500';
+    case 'uncommon':
+      return 'text-green-500';
     case 'common':
-      return 'text-amber-900'; // amber-900 or brown substitute
+      return 'text-amber-700'; // amber-900 or brown substitute
     default:
       return 'text-gray-700';
   }
