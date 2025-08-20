@@ -26,24 +26,26 @@ export default component$(() => {
   const error = useSignal<string | null>(null);
 
   // Set default NFT (id 1) on component mount
-  useVisibleTask$(() => {
-    const defaultNft = metadata.find((nft: { id: number }) => nft.id === 1);
-    if (defaultNft) {
-      nftData.value = {
-        metadata: {
-          id: defaultNft.id,
-          name: defaultNft.name,
-          image: '/images/1.png', // Use goldie.jpg as default image
-          rank: defaultNft.rank,
-          rarity: defaultNft.rarity,
-        },
-        tokenURI: 'ipfs://placeholder_ipfs_hash/goldie.jpg', // Placeholder tokenURI
-      };
-      nftSearchId.value = '1';
-    } else {
-      error.value = 'Default NFT (ID 1) not found in metadata.';
-    }
-  });
+useVisibleTask$(() => {
+  const randomId = Math.floor(Math.random() * TOTAL_NFTS) + 1; // Random number between 1 and 250
+  const randomNft = metadata.find((nft: { id: number }) => nft.id === randomId);
+  
+  if (randomNft) {
+    nftData.value = {
+      metadata: {
+        id: randomNft.id,
+        name: randomNft.name,
+        image: '/images/1.png', // Still using the placeholder image
+        rank: randomNft.rank,
+        rarity: randomNft.rarity,
+      },
+      tokenURI: 'ipfs://placeholder_ipfs_hash/1.png', // Still using placeholder token URI
+    };
+    nftSearchId.value = String(randomId);
+  } else {
+    error.value = `Random NFT (ID ${randomId}) not found in metadata.`;
+  }
+});
 
   const handleNFTSearch = $(() => {
     error.value = null;
