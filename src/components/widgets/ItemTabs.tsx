@@ -65,7 +65,7 @@ export const ItemTabs = component$(() => {
     <div class="flex w-full max-w-4xl mx-auto  shadow-xl space-x-0 sm:space-x-2">
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
-          <Tabs.List class="grid w-full grid-cols-4 p-0 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
+          <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
             {wizardCategories.map((wizard, index) => (
               <Tabs.Tab class="py-1" key={index} onClick$={() => (activeTab.value = index)}>
                 {wizard.category}
@@ -78,7 +78,7 @@ export const ItemTabs = component$(() => {
               <Card.Content class="p-0 !text-sm">
                 <div class="flex flex-col sm:flex-row w-full m-0">
                   {/* Image Preview */}
-                  <div class="mx-auto space-y-1 sm:w-1/2 sm:space-y-2 sm:order-1 px-2 pt-0 -mt-2 relative z-0" style={{ height: '358px', minHeight: '358px', maxHeight: '358px' }}>
+                  <div class="mx-auto space-y-1 sm:w-1/2 sm:space-y-2 sm:order-1 pr-1 pt-0 -mt-2 relative z-0" style={{ height: '350px', minHeight: '350px', maxHeight: '350px' }}>
                     <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/20 items-center justify-between w-full border-gray-300 h-full">
                       {selectedImage.value ? (
                         <div class="text-center flex flex-col items-center w-full h-full">
@@ -115,7 +115,7 @@ export const ItemTabs = component$(() => {
                   {/* Image Grid */}
                   <div class="w-full mx-auto space-y-1 sm:space-y-2 md:pr-2 md:pb-2 mt-2 sm:-mt-2 sm:order-2 pb-1.5 py-3 px-1.5 pt-0 md:p-0 md:px-0" style={{ height: '358px', minHeight: '358px', maxHeight: '358px' }}>
                     <div class="flex items-center w-full h-full">
-                      <div class="grid grid-cols-3 sm:grid-cols-5 gap-1.5 w-full h-full">
+                      <div class="grid grid-cols-3 sm:grid-cols-5 gap-1 w-full h-full">
                         {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
                           <button
                             key={imgIndex}
@@ -129,7 +129,7 @@ export const ItemTabs = component$(() => {
                             <img
                               src={img.src}
                               alt={img.alt}
-                              class={`max-w-[4.5rem] max-h-[4.5rem] object-contain mx-auto
+                              class={`max-w-[5rem] max-h-[5rem] object-contain mx-auto
                                 ${
                                   wizardCategories[activeTab.value].category === 'Clothing'
                                     ? 'transform -translate-y-6 scale-110'

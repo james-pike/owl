@@ -41,7 +41,7 @@ const Description = component$<PropsOf<'p'>>((props) => {
 
 const Content = component$<PropsOf<'div'>>((props) => {
   return (
-    <div {...props} class={cn('p-2', props.class)}>
+    <div {...props} class={cn('p-1', props.class)}>
       <Slot />
     </div>
   );

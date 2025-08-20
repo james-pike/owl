@@ -29,7 +29,7 @@ export default component$((props: Props) => {
         id="about"
         class="mx-auto scroll-mt-16 max-w-6xl px-4 py-10 md:py-14 lg:py-16 sm:px-6 lg:px-8"
       >
-        <div class="bg-white/85 p-6 rounded-lg shadow-lg">
+        <div class="bg-white/90 p-6 rounded-lg shadow-lg">
           <Headline
             title={title}
             highlight={highlight}
