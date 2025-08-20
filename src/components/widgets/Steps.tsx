@@ -133,7 +133,7 @@ export default component$((props: Props) => {
                <div class="roadmap !px-4 !py-0 lg:hidden block !text-lg">
   <div class="point !pr-0 !pl-10 flex items-start mb-0">
     <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
-      <LuUser class="w-16 h-16" />
+      <LuCheck class="w-16 h-16" />
     </div>
     <div class="point-content flex-1">
       <div class="point-label text-teal-400 !text-xl !font-bold">Phase 1 - Genesis Drop</div>
@@ -144,7 +144,7 @@ export default component$((props: Props) => {
   </div>
   <div class="point !pl-2 flex items-start mb-6">
     <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
-      <LuShirt class="w-16 h-16" />
+      <LuExpand class="w-16 h-16" />
     </div>
     <div class="point-content flex-1">
       <div class="point-label text-teal-400 !text-xl !font-bold">Phase 2 - Expansion & Utility</div>
@@ -155,7 +155,7 @@ export default component$((props: Props) => {
   </div>
   <div class="point !pr-2 !pl-8 flex items-start mb-6">
     <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
-      <LuEye class="w-16 h-16" />
+      <LuBook class="w-16 h-16" />
     </div>
     <div class="point-content flex-1">
       <div class="point-label text-teal-400 !text-xl !font-bold">Phase 3 - Kaspa Comics</div>
@@ -166,7 +166,7 @@ export default component$((props: Props) => {
   </div>
   <div class="point flex !pl-2 items-start mb-6">
     <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
-      <LuHand class="w-16 h-16" />
+      <LuInfinity class="w-16 h-16" />
     </div>
     <div class="point-content flex-1">
       <div class="point-label text-teal-400 !text-xl !font-bold">Ongoing</div>
