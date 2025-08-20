@@ -35,7 +35,7 @@ export default component$(() => {
              <img
               src="/images/logo2.png"
               alt="KasKritterz Logo"
-              class="h-8 rounded-full mr-2 -mt-1"
+              class="h-8 rounded-full mr-2 mt-1 mb-2"
             />
             </Modal.Title>
           </div>

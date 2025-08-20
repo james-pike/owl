@@ -25,7 +25,7 @@ export default component$((props: Props) => {
     const { title = "", subtitle = "", highlight = "", classes = {} } = props;
 
     return (
-        <div class="max-w-7xl mx-auto bg-[url('/images/steps.jpg')]  bg-cover bg-center relative flipped-bg">
+        <div class="max-w-7xl mx-auto bg-[url('/images/44.jpg')]  bg-cover bg-center relative flipped-bg">
             <div class="max-w-7xl mx-auto">
                 <section
                     id="faq"

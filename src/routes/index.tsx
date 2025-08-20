@@ -30,6 +30,11 @@ export default component$(() => {
   subtitle="Mint one of six legendary KasLord character types."
   items={[]}/>
 
+   <Steps id="roadmap"  
+       highlight="Roadmap"
+      title="KasKritterz Roadmap"
+      items={[]}/>
+
   <Collections
   id="collections"
   highlight="Collections"
@@ -38,19 +43,17 @@ export default component$(() => {
   items={[]}
   />
  
-      <Items id="rarity"
+    
+      
+
+     
+
+        <Items id="rarity"
       highlight="Items"
       title="KasKritterz Traits"
             subtitle={"***Under Construction, ignore font size, spacing, and colors***"}
 
      
-      items={[]}/>
-   
-      
-
-      <Steps id="roadmap"  
-       highlight="Roadmap"
-      title="KasKritterz Roadmap"
       items={[]}/>
     
        <Rarity
@@ -60,6 +63,8 @@ export default component$(() => {
      
      
       items={[]}/>
+      
+   
 
         <FAQ
        id="faq"

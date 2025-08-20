@@ -36,7 +36,7 @@ export const ItemTabs = component$(() => {
       if (window.matchMedia('(max-width: 640px)').matches) {
         itemsPerPage.value = 12; // 3 cols * 5 rows (mobile)
       } else {
-        itemsPerPage.value = 20; // 4 cols * 4 rows (desktop)
+        itemsPerPage.value = 15; // 4 cols * 4 rows (desktop)
       }
     };
 
@@ -62,10 +62,10 @@ export const ItemTabs = component$(() => {
   };
 
   return (
-    <div class="flex w-full max-w-4xl mx-auto bg-white/50 shadow-xl space-x-0 sm:space-x-2">
+    <div class="flex w-full max-w-4xl mx-auto bg-white/70 shadow-xl space-x-0 sm:space-x-2">
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
-          <Tabs.List class="grid w-full grid-cols-4 p-0 border bg-white/70 rounded-md border-gray-300">
+          <Tabs.List class="grid w-full grid-cols-4 p-0 border bg-white/70 rounded-md border-gray-300 z-20">
             {wizardCategories.map((wizard, index) => (
               <Tabs.Tab class="py-1" key={index} onClick$={() => (activeTab.value = index)}>
                 {wizard.category}
@@ -78,8 +78,8 @@ export const ItemTabs = component$(() => {
               <Card.Content class="p-0 !text-sm">
                 <div class="flex flex-col sm:flex-row w-full m-0">
                   {/* Image Preview */}
-                  <div class=" mx-auto space-y-1 sm:w-1/2 sm:space-y-2 sm:order-1 px-2 pt-0 -mt-2">
-                    <div class="p-2 border rounded flex flex-col bg-white/70 items-center justify-between w-full border-gray-300">
+                  <div class="mx-auto space-y-1 sm:w-1/2 sm:space-y-2 sm:order-1 px-2 pt-0 -mt-2 relative z-0" style={{ height: '358px', minHeight: '358px', maxHeight: '358px' }}>
+                    <div class="p-2 border rounded flex flex-col bg-white/80 items-center justify-between w-full border-gray-300 h-full">
                       {selectedImage.value ? (
                         <div class="text-center flex flex-col items-center w-full h-full">
                           <div class="flex-1 flex items-center justify-center w-full">
@@ -89,7 +89,7 @@ export const ItemTabs = component$(() => {
                               class={`max-w-full max-h-32 sm:max-h-48 object-contain mx-auto ease-in-out
                                 ${
                                   wizardCategories[activeTab.value].category === 'Clothing'
-                                    ? 'transform -translate-y-10 sm:-translate-y-16 scale-125'
+                                    ? 'transform -translate-y-10 sm:-translate-y-10 scale-125'
                                     : wizardCategories[activeTab.value].category === 'Head'
                                     ? 'transform translate-y-10 sm:translate-y-16 scale-125'
                                     : ''
@@ -113,13 +113,13 @@ export const ItemTabs = component$(() => {
                   </div>
 
                   {/* Image Grid */}
-                  <div class="w-full mx-auto space-y-1 sm:space-y-2 md:pr-2 md:pb-2 mt-2 sm:-mt-2 sm:order-2 pb-1.5 py-3 px-1.5 pt-0 md:p-0 md:px-0">
-                    <div class="flex items-center w-full">
-                      <div class="grid grid-cols-3 sm:grid-cols-5 gap-1.5 w-full">
+                  <div class="w-full mx-auto space-y-1 sm:space-y-2 md:pr-2 md:pb-2 mt-2 sm:-mt-2 sm:order-2 pb-1.5 py-3 px-1.5 pt-0 md:p-0 md:px-0" style={{ height: '358px', minHeight: '358px', maxHeight: '358px' }}>
+                    <div class="flex items-center w-full h-full">
+                      <div class="grid grid-cols-3 sm:grid-cols-5 gap-1.5 w-full h-full">
                         {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
                           <button
                             key={imgIndex}
-                            class={`p-1 border-2 rounded flex items-center bg-white/70 shadow-xl justify-center w-full ${
+                            class={`p-1 border-2 rounded flex items-center bg-white/80 shadow-xl justify-center w-full ${
                               selectedImage.value?.src === img.src
                                 ? 'border-teal-200 border-2'
                                 : 'border-gray-200'
@@ -133,7 +133,7 @@ export const ItemTabs = component$(() => {
                                   wizardCategories[activeTab.value].category === 'Clothing'
                                     ? 'transform -translate-y-6 scale-110'
                                     : wizardCategories[activeTab.value].category === 'Head'
-                                    ? 'transform translate-y-8 scale-110'
+                                    ? 'transform translate-y-6 scale-110'
                                     : ''
                                 }`}
                               onClick$={() => (selectedImage.value = img)}
@@ -179,10 +179,6 @@ export const ItemTabs = component$(() => {
     </div>
   );
 });
-
-
-
-
 
 
 
@@ -826,21 +822,21 @@ const wizardCategories = [
       rarity: 20,
     },
     {
-      src: '/images/hand/brushblue.png',
+      src: '/images/hand/Brushblue.png',
       alt: 'Blue Brush',
       title: 'Blue Brush Hand',
       description: 'A hand holding a blue brush.',
       rarity: 20,
     },
     {
-      src: '/images/hand/brushred.png',
+      src: '/images/hand/Brushred.png',
       alt: 'Red Brush',
       title: 'Red Brush Hand',
       description: 'A hand holding a red brush.',
       rarity: 20,
     },
     {
-      src: '/images/hand/brushyellow.png',
+      src: '/images/hand/Brushyellow.png',
       alt: 'Yellow Brush',
       title: 'Yellow Brush Hand',
       description: 'A hand holding a yellow brush.',
@@ -875,35 +871,35 @@ const wizardCategories = [
       rarity: 20,
     },
     {
-      src: '/images/hand/cookie.png',
+      src: '/images/hand/Cookie.png',
       alt: 'Cookie',
       title: 'Cookie Hand',
       description: 'A hand holding a cookie.',
       rarity: 20,
     },
     {
-      src: '/images/hand/donut_2.png',
+      src: '/images/hand/donut2.png',
       alt: 'Donut 2',
       title: 'Donut 2 Hand',
       description: 'A hand holding a second donut variant.',
       rarity: 20,
     },
     {
-      src: '/images/hand/donut_3.png',
+      src: '/images/hand/donut3.png',
       alt: 'Donut 3',
       title: 'Donut 3 Hand',
       description: 'A hand holding a third donut variant.',
       rarity: 20,
     },
     {
-      src: '/images/hand/donut_4.png',
+      src: '/images/hand/donut4.png',
       alt: 'Donut 4',
       title: 'Donut 4 Hand',
       description: 'A hand holding a fourth donut variant.',
       rarity: 20,
     },
     {
-      src: '/images/hand/donut_5.png',
+      src: '/images/hand/donut5.png',
       alt: 'Donut 5',
       title: 'Donut 5 Hand',
       description: 'A hand holding a fifth donut variant.',
@@ -924,7 +920,7 @@ const wizardCategories = [
       rarity: 20,
     },
     {
-      src: '/images/hand/hammer.png',
+      src: '/images/hand/Hammer.png',
       alt: 'Hammer',
       title: 'Hammer Hand',
       description: 'A hand holding a hammer.',

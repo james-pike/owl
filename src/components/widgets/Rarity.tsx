@@ -24,7 +24,7 @@ export default component$((props: Props) => {
   const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;
 
   return (
-    <section class="relative scroll-mt-12 bg-[url('/images/44.jpg')] bg-cover bg-cover border-b border-gray-300" {...(id ? { id } : {})}>
+    <section class="relative scroll-mt-12 bg-[url('/images/steps.jpg')] bg-cover border-b border-gray-300" {...(id ? { id } : {})}>
       <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
         <slot name="bg">
           <div class={twMerge("absolute inset-0", isDark ? "bg-dark dark:bg-transparent" : "")}></div>
@@ -37,7 +37,7 @@ export default component$((props: Props) => {
           isDark ? "dark" : ""
         )}
       >
-        <div class="bg-white/80 p-1 pt-6 md:pt-8 md:p-3 rounded-lg shadow-lg">
+        <div class="bg-white/90 p-1 pt-6 md:pt-8 md:p-3 rounded-lg shadow-lg">
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
           <div class="-mt-6">
           <RarityCheck />
