@@ -40,7 +40,7 @@ export default component$((props: Props) => {
       {
         title: "Phase 3 - Kaspa Comics",
         description:
-          "• Launch comic strips featuring Kritterz\n• Explore themes: Kaspa vs other chains, crypto culture, adoption dreams\n• Share weekly episodes on X\n• Collabs with other Kaspa projects\n• Fun merch, lore expansion, events",
+          "• Launch comic strips featuring Kritterz\n• Kaspa vs other chains, crypto culture, adoption \n• Share weekly episodes on X\n• Collabs with other Kaspa projects\n• Merch, lore expansion, events",
         icon: LuBook,
       },
       {
@@ -55,10 +55,10 @@ export default component$((props: Props) => {
   const { items } = stepsData;
 
   return (
-    <div class="max-w-7xl bg-[url('/images/steps.jpg')] border-b border-gray-300 dark:border-slate-700 overflow-x-hidden">
+    <div class="max-w-6xl bg-[url('/images/steps.jpg')] border-b border-gray-300 dark:border-slate-700 overflow-x-hidden">
       <section
         id="roadmap"
-        class="mx-auto max-w-5xl scroll-mt-16 px-3 py-10 md:py-12 lg:py-16 sm:px-6 lg:px-8"
+        class="mx-auto max-w-7xl scroll-mt-16 px-3 py-10 md:py-12 lg:py-16 sm:px-6 lg:px-8"
       >
         <div class="md:bg-white/85 bg-white/95 px-3 py-6 md:p-6 rounded-lg shadow-lg">
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
@@ -118,7 +118,7 @@ export default component$((props: Props) => {
                           "md:pt-[20px] md:pb-[20px]"
                         )}
                       >
-                        <h4 class="card-head font-semibold capitalize mb-3.5 text-white">
+                        <h4 class="card-head !font-bold !text-xl capitalize mb-3.5 text-white">
                           {title}
                         </h4>
                         <p class="card-text !text-md text-white">
@@ -130,7 +130,7 @@ export default component$((props: Props) => {
                 </div>
 
                 {/* Second Roadmap (6 Lorem Ipsums) - Mobile Only */}
-                <div class="roadmap !px-4 lg:hidden block !text-lg">
+                <div class="roadmap !px-4 !py-0 lg:hidden block !text-lg">
                   <div class="point !pr-0 !pl-10 flex items-start mb-6">
                     <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">1</div>
                     <div class="point-content flex-1">
