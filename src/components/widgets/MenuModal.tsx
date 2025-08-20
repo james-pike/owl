@@ -18,7 +18,7 @@ export default component$(() => {
     { title: "Collections", href: "#collections", badge: null },
        { title: "Traits & Accessories", href: "#items", badge: null },
 
-    { title: "Rarity", href: "#rarity", badge: null },
+    { title: "Rarity Checker", href: "#rarity", badge: null },
     { title: "FAQ", href: "#faq", badge: null },
   ];
 
