@@ -2,8 +2,9 @@
 
 ## [Story](#story)
 ## [About](#about)
-## [Collections](#collections)
 ## [Roadmap](#roadmap)
+## [Collections](#collections)
+## [Traits](#items)
 ## [Rarity](#rarity)
 ## [FAQ](#faq)
 

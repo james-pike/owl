@@ -48,9 +48,9 @@ export default component$(() => {
 
      
 
-        <Items id="rarity"
+        <Items id="items"
       highlight="Items"
-      title="KasKritterz Traits"
+      title="Traits & Accessories"
      
       items={[]}/>
     

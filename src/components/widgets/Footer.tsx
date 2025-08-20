@@ -69,7 +69,7 @@ export default component$(() => {
                   {items.map(({ title, href }, index2) => (
                     <li key={index2} class="mb-2">
                       <Link
-                        class="!text-sm text-gray-300 hover:text-teal-400  hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+                        class="!text-sm  text-gray-300 hover:text-teal-400  hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
                         href={href}
                       >
                         {title}
