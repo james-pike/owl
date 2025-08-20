@@ -371,13 +371,7 @@ const wizardCategories = [
       description: 'A deep blue navy cap.',
       rarity: 20,
     },
-    {
-      src: '/images/hat/none.png',
-      alt: 'No Hat',
-      title: 'No Hat',
-      description: 'No headwear at all.',
-      rarity: 25,
-    },
+ 
     {
       src: '/images/hat/partyhatblue5.png',
       alt: 'Party Hat Blue',
