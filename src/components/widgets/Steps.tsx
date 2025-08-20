@@ -103,7 +103,7 @@ export default component$((props: Props) => {
                       </div>
                       <div
                         class={twMerge(
-                          "road-map-card w-full max-w-[35%] md:max-w-[35%] !bg-teal-400/90 p-5 z-10 rounded-md",
+                          "road-map-card w-full max-w-[35%] md:max-w-[35%] !bg-teal-400/70 p-5 z-10 rounded-md",
                           index % 2 === 0 ? "md:float-right md:right-0" : "md:float-left md:left-0",
                           "md:absolute",
                           "md:pr-5 md:pl-5",
@@ -118,10 +118,10 @@ export default component$((props: Props) => {
                           "md:pt-[20px] md:pb-[20px]"
                         )}
                       >
-                        <h4 class="card-head !font-bold !text-xl capitalize mb-3.5 text-white">
+                        <h4 class="card-head !font-bold !text-xl capitalize mb-3.5 ">
                           {title}
                         </h4>
-                        <p class="card-text !text-md text-white">
+                        <p class="card-text !text-md !text-gray-700 ">
                           {description}
                         </p>
                       </div>
