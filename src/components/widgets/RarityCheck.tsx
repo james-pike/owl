@@ -3,6 +3,23 @@ import metadata from './metadata.json'; // Import metadata.json from the same di
 
 const TOTAL_NFTS = 250; // Total number of NFTs in the collection
 
+const getRarityClass = (rarity: string) => {
+  switch (rarity.toLowerCase()) {
+    case 'legendary':
+      return 'text-orange-500';
+    case 'epic':
+      return 'text-yellow-500';
+    case 'rare':
+      return 'text-green-500';
+    case 'uncommon':
+      return 'text-blue-500';
+    case 'common':
+      return 'text-amber-900'; // amber-900 or brown substitute
+    default:
+      return 'text-gray-700';
+  }
+};
+
 export default component$(() => {
   const nftSearchId = useSignal('');
   const nftData = useSignal<any>(null);
@@ -105,8 +122,11 @@ export default component$(() => {
               {error.value && <p class="text-red-500">{error.value}</p>}
               <h2 class="text-xl font-semibold mb-1">{nftData.value.metadata.name}</h2>
               <p class="text-md font-semibold mb-1">Rank: {nftData.value.metadata.rank} / {TOTAL_NFTS}</p>
-              <p class="text-md font-semibold mb-1">Rarity: {nftData.value.metadata.rarity}</p>
-            </div>
+<p class="text-md font-semibold mb-1">
+  Rarity: <span class={getRarityClass(nftData.value.metadata.rarity)}>
+    {nftData.value.metadata.rarity}
+  </span>
+</p>          </div>
           </div>
         )}
       </div>
