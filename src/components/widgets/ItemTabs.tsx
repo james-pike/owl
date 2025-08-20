@@ -113,8 +113,8 @@ export const ItemTabs = component$(() => {
                   </div>
 
                   {/* Image Grid */}
-                  <div class="w-full flex-1 px-1.5 sm:px-0">
-                    <div class="grid grid-cols-4 sm:grid-cols-7 gap-1">
+                  <div class="w-full flex-1 px-1.5 sm:px-0 mx-auto">
+                    <div class="grid grid-cols-4 sm:grid-cols-7 gap-1 mx-auto">
                       {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
                         <button
                           key={imgIndex}
