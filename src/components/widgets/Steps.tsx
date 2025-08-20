@@ -34,7 +34,7 @@ export default component$((props: Props) => {
       {
         title: "Phase 2 - Expansion & Utility",
         description:
-          "• Release remaining collections: Katz, Dogz, Bearz\n• Holder-only perks & airdrops\n• Integrate community suggestions on comics",
+          "• Release remaining collections: Bearz, Bullz, Katz, Dogz, Dinos\n• Holder-only perks & airdrops\n• Integrate community suggestions on comics",
         icon: LuExpand,
       },
       {
