@@ -1,0 +1,80 @@
+{
+  "BACKGROUNDS": {
+    "yellow2": 1.6,
+    "circus": 0.4,
+    "gold": 0.4,
+    "black": 0.4,
+    "white": 0.4,
+    "hell": 0.4,
+    "grey": 4.4,
+    "purple": 1.6,
+    "yellow": 3.2,
+    "kaspa1": 60.0
+  },
+  "BODY": {
+    "plain2": 11.6,
+    "mint": 8.4,
+    "gold": 0.4,
+    "negative": 0.4,
+    "plain": 0.4,
+    "blue": 11.2,
+    "pink": 14.0,
+    "caramel": 13.6,
+    "red": 6.0,
+    "yellow": 10.8
+  },
+  "CLOTHING": {
+    "brownsuit": 2.0,
+    "clown": 0.4,
+    "none": 3.2,
+    "flowertanktop2": 0.4,
+    "blueoverallwhiteshirt5": 2.8,
+    "darkblueoverallwhiteshirt5": 4.0,
+    "blueshirt2yellowtie": 3.6,
+    "pinkflowertanktop": 6.4,
+    "redshirtredtie": 5.6,
+    "redtiedietanktop": 2.4,
+    "blacksuit5": 4.0
+  },
+  "HEAD": {
+    "chefhat": 1.6,
+    "clownnose-partyhatpurple": 0.4,
+    "none": 12.8,
+    "showercap": 2.0,
+    "sunvisorred5": 2.4,
+    "partyhatpink5": 5.2,
+    "sunvisorblue5": 5.6,
+    "partyhatblue5": 6.8,
+    "tinfoilhat": 6.0
+  },
+  "EYES": {
+    "goldaviator5": 1.6,
+    "none": 12.4,
+    "sad-goldpinkstarglasses": 0.4,
+    "eyebags": 2.8,
+    "monocle": 4.4,
+    "blacksunglasses": 2.8,
+    "clearaviator5": 8.4,
+    "blueaviator5": 6.8,
+    "rectangles5": 7.6
+  },
+  "MOUTH": {
+    "none": 91.6,
+    "bubblegum": 4.0,
+    "zipper": 1.6,
+    "censured": 2.8
+  },
+  "HAND": {
+    "balloongold": 0.8,
+    "none": 3.2,
+    "icecreamtrawberry": 0.4,
+    "Hammer": 0.8,
+    "powerplug": 0.8,
+    "markerblue": 1.6,
+    "cocktailblue": 3.6,
+    "fork": 2.0,
+    "teddybear": 2.0,
+    "icecreamchoco": 3.2,
+    "markerred": 3.6
+  }
+}

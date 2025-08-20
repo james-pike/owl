@@ -55,10 +55,10 @@ export default component$((props: Props) => {
   const { items } = stepsData;
 
   return (
-    <div class="max-w-6xl bg-[url('/images/steps.jpg')] border-b border-gray-300 dark:border-slate-700 overflow-x-hidden">
+    <div class="w-full bg-[url('/images/steps.jpg')] border-b border-gray-300 dark:border-slate-700 overflow-x-hidden">
       <section
         id="roadmap"
-        class="mx-auto max-w-7xl scroll-mt-16 px-3 py-10 md:py-12 lg:py-16 sm:px-6 lg:px-8"
+        class="mx-auto max-w-6xl scroll-mt-16 px-3 py-10 md:py-12 lg:py-16 sm:px-6 lg:px-8"
       >
         <div class="md:bg-white/85 bg-white/95 px-3 py-6 md:p-6 rounded-lg shadow-lg">
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
