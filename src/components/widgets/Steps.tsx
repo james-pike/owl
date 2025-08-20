@@ -66,7 +66,7 @@ export default component$((props: Props) => {
             <div class="flex">
               <div class="w-full">
                 {/* First Roadmap (Curling Circle) - Desktop Only */}
-                <div class="road-map-main md:block hidden">
+                <div class="road-map-main lg:block hidden">
                   {items.map(({ title, description, icon: Icon }, index) => (
                     <div
                       key={`roadmap-item-${index}`}
@@ -103,7 +103,7 @@ export default component$((props: Props) => {
                       </div>
                       <div
                         class={twMerge(
-                          "road-map-card w-full max-w-[35%] md:max-w-[35%] !bg-teal-400 p-5 z-10 rounded-md",
+                          "road-map-card w-full max-w-[35%] md:max-w-[35%] !bg-teal-400/90 p-5 z-10 rounded-md",
                           index % 2 === 0 ? "md:float-right md:right-0" : "md:float-left md:left-0",
                           "md:absolute",
                           "md:pr-5 md:pl-5",
@@ -130,7 +130,7 @@ export default component$((props: Props) => {
                 </div>
 
                 {/* Second Roadmap (6 Lorem Ipsums) - Mobile Only */}
-                <div class="roadmap md:hidden block">
+                <div class="roadmap lg:hidden block">
                   <div class="point flex items-start mb-6">
                     <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">1</div>
                     <div class="point-content flex-1">

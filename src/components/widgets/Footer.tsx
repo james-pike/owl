@@ -17,9 +17,9 @@ export default component$(() => {
       title: "Resources",
       items: [
         { title: "Rarity Guide", href: "#rarity" },
+        { title: "Item Traits", href: "https://krcscan.io/nft/kaskritter" },
         { title: "Collections", href: "#collections" },
         { title: "KaspaCom", href: "https://www.kaspa.com/nft/collections/KasKritter" },
-        { title: "KRCscan", href: "https://krcscan.io/nft/kaskritter" },
       ],
     },
   ];
@@ -47,13 +47,13 @@ export default component$(() => {
               <div class="flex gap-2">
                 <a
                   href="https://www.kaspa.com/nft/collections/KasKritter"
-                  class="px-4 !text-sm py-2 btn-primary text-white font-semibold rounded-md transition-colors"
+                  class="px-4 !text-sm py-2 btn-primary text-white hover:bg-teal-300 font-semibold rounded-md transition-colors"
                 >
                   Mint KasKritterz
                 </a>
                 <a
                   href="https://t.me/KasKritterzOfficial"
-                  class="btn-secondary !text-sm px-4 py-2 text-white font-semibold rounded-md transition-colors"
+                  class="btn-secondary hover:bg-blue-200 !text-sm px-4 py-2 text-white font-semibold rounded-md transition-colors"
                 >
                   Join Telegram
                 </a>
@@ -69,7 +69,7 @@ export default component$(() => {
                   {items.map(({ title, href }, index2) => (
                     <li key={index2} class="mb-2">
                       <Link
-                        class="!text-sm text-gray-300 hover:text-white hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+                        class="!text-sm text-gray-300 hover:text-teal-400  hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
                         href={href}
                       >
                         {title}
@@ -86,7 +86,7 @@ export default component$(() => {
             {social.map(({ label, href, icon: Icon }, index) => (
               <li key={index}>
                 <Link
-                  class="text-white dark:text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                  class="text-white dark:text-gray-400 hover:bg-teal-400 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
                   aria-label={label}
                   title={label}
                   href={href}

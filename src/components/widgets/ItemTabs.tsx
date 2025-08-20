@@ -36,7 +36,7 @@ export const ItemTabs = component$(() => {
       if (window.matchMedia('(max-width: 640px)').matches) {
         itemsPerPage.value = 12; // 3 cols * 5 rows (mobile)
       } else {
-        itemsPerPage.value = 15; // 4 cols * 4 rows (desktop)
+        itemsPerPage.value = 20; // 4 cols * 4 rows (desktop)
       }
     };
 
@@ -62,7 +62,7 @@ export const ItemTabs = component$(() => {
   };
 
   return (
-    <div class="flex w-full max-w-4xl mx-auto  shadow-xl space-x-0 sm:space-x-2">
+    <div class="flex w-full max-w-4xl mx-auto shadow-xl space-x-0 sm:space-x-2">
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
           <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
@@ -91,7 +91,7 @@ export const ItemTabs = component$(() => {
                                   wizardCategories[activeTab.value].category === 'Clothing'
                                     ? 'transform -translate-y-10 sm:-translate-y-10 scale-125'
                                     : wizardCategories[activeTab.value].category === 'Head'
-                                    ? 'transform translate-y-10 sm:translate-y-16 motion-scale-loop-105'
+                                    ? 'transform translate-y-10 sm:translate-y-16 motion-scale-loop-105 '
                                     : ''
                                 }`}
                             />
@@ -114,12 +114,12 @@ export const ItemTabs = component$(() => {
 
                   {/* Image Grid */}
                   <div class="w-full mx-auto space-y-1 sm:space-y-2 md:pr-2 md:pb-2 mt-2 sm:-mt-2 sm:order-2 pb-1.5 py-3 px-1.5 pt-0 md:p-0 md:px-0" style={{ height: '358px', minHeight: '358px', maxHeight: '358px' }}>
-                    <div class="flex items-center w-full h-full">
-                      <div class="grid grid-cols-3 sm:grid-cols-5 gap-1 w-full h-full">
+                    <div class="flex items-center">
+                      <div class="grid grid-cols-4 sm:grid-cols-7 gap-1 ">
                         {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
                           <button
                             key={imgIndex}
-                            class={`p-1  rounded flex items-center bg-white/20 shadow-xl justify-center w-full h-full min-w-[5rem] min-h-[5rem] ${
+class={`p-0 flex items-center bg-white/20 shadow-md rounded-lg justify-center aspect-square max-w-[5rem] sm:max-w-[5rem] ${
                               selectedImage.value?.src === img.src
                                 ? 'shadow-[0_0_0_4px_rgba(20,184,166,0.5)]'
                                 : ''
@@ -129,12 +129,12 @@ export const ItemTabs = component$(() => {
                             <img
                               src={img.src}
                               alt={img.alt}
-                              class={`max-w-[5rem] max-h-[5rem] object-contain mx-auto
+                              class={`w-full h-full object-contain
                                 ${
                                   wizardCategories[activeTab.value].category === 'Clothing'
-                                    ? 'transform -translate-y-6 scale-110'
+                                    ? 'transform -translate-y-4 scale-110'
                                     : wizardCategories[activeTab.value].category === 'Head'
-                                    ? 'transform translate-y-6 scale-110'
+                                    ? 'transform translate-y-4 scale-110'
                                     : ''
                                 }`}
                               onClick$={() => (selectedImage.value = img)}
