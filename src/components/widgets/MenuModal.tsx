@@ -14,8 +14,10 @@ export default component$(() => {
     { title: "Home", href: "#", badge: null },
     { title: "Story", href: "#story", badge: null },
     { title: "About Us", href: "#about", badge: null },
+     { title: "Roadmap", href: "#roadmap", badge: null },
     { title: "Collections", href: "#collections", badge: null },
-    { title: "Roadmap", href: "#roadmap", badge: null },
+       { title: "Traits & Accessories", href: "#items", badge: null },
+
     { title: "Rarity", href: "#rarity", badge: null },
     { title: "FAQ", href: "#faq", badge: null },
   ];
