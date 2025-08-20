@@ -86,14 +86,14 @@ html, body, [class] {
     }   
     
     &:not(:last-child) {
-      border-bottom: 2px solid gold;
+      border-bottom: 4px solid #14B8A6;
     }
 
     &:nth-child(odd) {
       align-items: flex-start;
       
       &:not(:first-child) {
-        border-left: 2px solid gold;
+        border-left: 4px solid #14B8A6;
       }
       
       .point-index {
@@ -106,7 +106,7 @@ html, body, [class] {
       align-items: flex-end;
       
       &:not(:last-child) {
-        border-right: 2px solid gold;
+        border-right: 4px solid #14B8A6;
       }
       
       .point-index {
@@ -121,7 +121,7 @@ html, body, [class] {
       width: 40px;
       height: 40px;
       background: #151317;
-      border: 2px solid gold;
+      border: 2px solid #14B8A6;
       border-radius: 50%;
       display: flex;
       align-items: center;

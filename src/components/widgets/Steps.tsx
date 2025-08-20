@@ -66,19 +66,19 @@ export default component$((props: Props) => {
             <div class="flex">
               <div class="w-full">
                 {/* First Roadmap (Curling Circle) - Desktop Only */}
-                <div class="road-map-main lg:block hidden">
+                <div class="road-map-main lg:block hidden !text-lg">
                   {items.map(({ title, description, icon: Icon }, index) => (
                     <div
                       key={`roadmap-item-${index}`}
                       class={twMerge(
-                        "road-map-wrapper relative flex flex-col h-[175px]",
+                        "road-map-wrapper relative flex !text-lg flex-col h-[175px]",
                         "md:mb-0 mb-6",
                         index % 2 === 0 ? "md:pr-0 md:pl-auto" : "md:pl-0 md:pr-auto"
                       )}
                     >
                       <div
                         class={twMerge(
-                          "road-map-circle w-[200px] h-[200px] rounded-full border-4 border-transparent max-w-full mx-auto",
+                          "road-map-circle w-[200px] h-[200px]  rounded-full border-4 border-transparent max-w-full mx-auto",
                           index % 2 === 0
                             ? "border-t-teal-400 border-r-teal-400 rotate-45"
                             : "border-b-teal-400 border-l-teal-400 -rotate-45",
@@ -121,7 +121,7 @@ export default component$((props: Props) => {
                         <h4 class="card-head font-semibold capitalize mb-3.5 text-white">
                           {title}
                         </h4>
-                        <p class="card-text !text-sm text-white">
+                        <p class="card-text !text-md text-white">
                           {description}
                         </p>
                       </div>
@@ -134,7 +134,7 @@ export default component$((props: Props) => {
                   <div class="point !pr-0 !pl-10 flex items-start mb-6">
                     <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">1</div>
                     <div class="point-content flex-1">
-                      <div class="point-label text-teal-400 font-semibold !text-lg">Phase 1 - Genesis Drop</div>
+                      <div class="point-label text-teal-400  !text-xl !font-bold">Phase 1 - Genesis Drop</div>
                       <div class="point-text text-gray-700 !text-lg">
                         • Launch of 250 unique Kaspa-powered NFTs<br />• Built 100% by us (artist/dev duo)<br />• Kaspa rewards, rare traits, community-first
                       </div>
@@ -143,7 +143,7 @@ export default component$((props: Props) => {
                   <div class="point !pl-2 flex items-start mb-6">
                     <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">2</div>
                     <div class="point-content flex-1">
-                      <div class="point-label text-teal-400 font-semibold !text-lg">Phase 2 - Expansion & Utility</div>
+                      <div class="point-label text-teal-400 !text-xl !font-bold">Phase 2 - Expansion & Utility</div>
                       <div class="point-text text-gray-700 !text-lg">
                         • Release remaining collections: Katz, Dogz, Bearz<br />• Holder-only perks & airdrops<br />• Integrate community suggestions on comics
                       </div>
@@ -152,7 +152,7 @@ export default component$((props: Props) => {
                   <div class="point !pr-2 !pl-8 flex items-start mb-6">
                     <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">3</div>
                     <div class="point-content flex-1">
-                      <div class="point-label text-teal-400 font-semibold !text-lg">Phase 3 - Kaspa Comics</div>
+                      <div class="point-label text-teal-400  !text-xl !font-bold">Phase 3 - Kaspa Comics</div>
                       <div class="point-text text-gray-700 !text-lg">
                         • Launch comic strips featuring Kritterz<br />• Explore themes: Kaspa vs other chains, crypto culture, adoption dreams<br />• Share weekly episodes on X<br />• Collabs with other Kaspa projects<br />• Fun merch, lore expansion, events
                       </div>
@@ -161,7 +161,7 @@ export default component$((props: Props) => {
                   <div class="point flex !pl-2 items-start mb-6">
                     <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">4</div>
                     <div class="point-content flex-1">
-                      <div class="point-label text-teal-400 font-semibold !text-lg">Ongoing</div>
+                      <div class="point-label text-teal-400 !text-xl !font-bold">Ongoing</div>
                       <div class="point-text text-gray-700 !text-lg">
                         • More art, more fun, more Kaspa<br />• Always building. Always rewarding.
                       </div>
