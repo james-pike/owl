@@ -62,10 +62,10 @@ export const ItemTabs = component$(() => {
   };
 
   return (
-    <div class="flex w-full max-w-4xl mx-auto bg-white/70 shadow-xl space-x-0 sm:space-x-2">
+    <div class="flex w-full max-w-4xl mx-auto  shadow-xl space-x-0 sm:space-x-2">
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
-          <Tabs.List class="grid w-full grid-cols-4 p-0 border bg-white/70 rounded-md border-gray-300 z-20">
+          <Tabs.List class="grid w-full grid-cols-4 p-0 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
             {wizardCategories.map((wizard, index) => (
               <Tabs.Tab class="py-1" key={index} onClick$={() => (activeTab.value = index)}>
                 {wizard.category}
@@ -79,7 +79,7 @@ export const ItemTabs = component$(() => {
                 <div class="flex flex-col sm:flex-row w-full m-0">
                   {/* Image Preview */}
                   <div class="mx-auto space-y-1 sm:w-1/2 sm:space-y-2 sm:order-1 px-2 pt-0 -mt-2 relative z-0" style={{ height: '358px', minHeight: '358px', maxHeight: '358px' }}>
-                    <div class="p-2 border rounded flex flex-col bg-white/80 items-center justify-between w-full border-gray-300 h-full">
+                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/20 items-center justify-between w-full border-gray-300 h-full">
                       {selectedImage.value ? (
                         <div class="text-center flex flex-col items-center w-full h-full">
                           <div class="flex-1 flex items-center justify-center w-full">
@@ -91,7 +91,7 @@ export const ItemTabs = component$(() => {
                                   wizardCategories[activeTab.value].category === 'Clothing'
                                     ? 'transform -translate-y-10 sm:-translate-y-10 scale-125'
                                     : wizardCategories[activeTab.value].category === 'Head'
-                                    ? 'transform translate-y-10 sm:translate-y-16 scale-125'
+                                    ? 'transform translate-y-10 sm:translate-y-16 motion-scale-loop-105'
                                     : ''
                                 }`}
                             />
@@ -119,16 +119,17 @@ export const ItemTabs = component$(() => {
                         {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
                           <button
                             key={imgIndex}
-                            class={`p-1 border-2 rounded flex items-center bg-white/80 shadow-xl justify-center w-full ${
+                            class={`p-1  rounded flex items-center bg-white/20 shadow-xl justify-center w-full h-full min-w-[5rem] min-h-[5rem] ${
                               selectedImage.value?.src === img.src
-                                ? 'border-teal-200 border-2'
-                                : 'border-gray-200'
+                                ? 'shadow-[0_0_0_4px_rgba(20,184,166,0.5)]'
+                                : ''
                             }`}
+                            style={{ boxSizing: 'border-box' }}
                           >
                             <img
                               src={img.src}
                               alt={img.alt}
-                              class={`md:max-w-[5rem] md:max-h-[5rem] object-contain mx-auto
+                              class={`max-w-[4.5rem] max-h-[4.5rem] object-contain mx-auto
                                 ${
                                   wizardCategories[activeTab.value].category === 'Clothing'
                                     ? 'transform -translate-y-6 scale-110'
@@ -179,8 +180,6 @@ export const ItemTabs = component$(() => {
     </div>
   );
 });
-
-
 
 const wizardCategories = [
  

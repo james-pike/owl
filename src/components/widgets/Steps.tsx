@@ -65,7 +65,8 @@ export default component$((props: Props) => {
           <div class="container text-sm">
             <div class="flex">
               <div class="w-full">
-                <div class="road-map-main">
+                {/* First Roadmap (Curling Circle) - Desktop Only */}
+                <div class="road-map-main md:block hidden">
                   {items.map(({ title, description, icon: Icon }, index) => (
                     <div
                       key={`roadmap-item-${index}`}
@@ -126,6 +127,64 @@ export default component$((props: Props) => {
                       </div>
                     </div>
                   ))}
+                </div>
+
+                {/* Second Roadmap (6 Lorem Ipsums) - Mobile Only */}
+                <div class="roadmap md:hidden block">
+                  <div class="point flex items-start mb-6">
+                    <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">1</div>
+                    <div class="point-content flex-1">
+                      <div class="point-label text-teal-400 font-semibold text-lg">Phase 1 - Genesis Drop</div>
+                      <div class="point-text text-gray-700">
+                        • Launch of 250 unique Kaspa-powered NFTs<br />• Built 100% by us (artist/dev duo)<br />• Kaspa rewards, rare traits, community-first
+                      </div>
+                    </div>
+                  </div>
+                  <div class="point flex items-start mb-6">
+                    <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">2</div>
+                    <div class="point-content flex-1">
+                      <div class="point-label text-teal-400 font-semibold text-lg">Phase 2 - Expansion & Utility</div>
+                      <div class="point-text text-gray-700">
+                        • Release remaining collections: Katz, Dogz, Bearz<br />• Holder-only perks & airdrops<br />• Integrate community suggestions on comics
+                      </div>
+                    </div>
+                  </div>
+                  <div class="point flex items-start mb-6">
+                    <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">3</div>
+                    <div class="point-content flex-1">
+                      <div class="point-label text-teal-400 font-semibold text-lg">Phase 3 - Kaspa Comics</div>
+                      <div class="point-text text-gray-700">
+                        • Launch comic strips featuring Kritterz<br />• Explore themes: Kaspa vs other chains, crypto culture, adoption dreams<br />• Share weekly episodes on X<br />• Collabs with other Kaspa projects<br />• Fun merch, lore expansion, events
+                      </div>
+                    </div>
+                  </div>
+                  <div class="point flex items-start mb-6">
+                    <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">4</div>
+                    <div class="point-content flex-1">
+                      <div class="point-label text-teal-400 font-semibold text-lg">Ongoing</div>
+                      <div class="point-text text-gray-700">
+                        • More art, more fun, more Kaspa<br />• Always building. Always rewarding.
+                      </div>
+                    </div>
+                  </div>
+                  {/* <div class="point flex items-start mb-6">
+                    <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">5</div>
+                    <div class="point-content flex-1">
+                      <div class="point-label text-teal-400 font-semibold text-lg">Phase 5 - Future Vision</div>
+                      <div class="point-text text-gray-700">
+                        • Expansion into new blockchain ecosystems<br />• Enhanced community governance<br />• Innovative NFT utilities
+                      </div>
+                    </div>
+                  </div>
+                  <div class="point flex items-start mb-6">
+                    <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">6</div>
+                    <div class="point-content flex-1">
+                      <div class="point-label text-teal-400 font-semibold text-lg">Phase 6 - Global Reach</div>
+                      <div class="point-text text-gray-700">
+                        • International collaborations<br />• Localized content creation<br />• Global adoption initiatives
+                      </div>
+                    </div>
+                  </div> */}
                 </div>
               </div>
             </div>
