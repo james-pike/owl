@@ -35,11 +35,11 @@ export default component$(() => {
         metadata: {
           id: randomNft.id,
           name: randomNft.name,
-          image: `https://bafybeibkhqxpl7xdfo7ccaxyculajq3mdw726u4ztw5lme6ntn7223dzg4.ipfs.w3s.link/${randomId}.png`, // Updated to w3s.link
+          image: `https://gateway.pinata.cloud/ipfs/bafybeidqapglcihowufq4g2ro7pnaxyz2ekfcyvam33wmtt6vfvcxhnbdu/${randomId}.jpeg`,
           rank: randomNft.rank,
           rarity: randomNft.rarity,
         },
-        tokenURI: `ipfs://bafybeibkhqxpl7xdfo7ccaxyculajq3mdw726u4ztw5lme6ntn7223dzg4/${randomId}.png`, // IPFS tokenURI
+        tokenURI: `ipfs://bafybeidqapglcihowufq4g2ro7pnaxyz2ekfcyvam33wmtt6vfvcxhnbdu/${randomId}.jpeg`,
       };
       nftSearchId.value = String(randomId);
     } else {
@@ -62,9 +62,9 @@ export default component$(() => {
         throw new Error(`KasKritter ID ${nftSearchId.value} not found`);
       }
 
-      // Use w3s.link for image, keep ipfs:// for tokenURI
-      const imageUrl = `https://bafybeibkhqxpl7xdfo7ccaxyculajq3mdw726u4ztw5lme6ntn7223dzg4.ipfs.w3s.link/${searchId}.png`;
-      const tokenURI = `ipfs://bafybeibkhqxpl7xdfo7ccaxyculajq3mdw726u4ztw5lme6ntn7223dzg4/${searchId}.png`;
+      // Use Pinata gateway for image, keep ipfs:// for tokenURI
+      const imageUrl = `https://gateway.pinata.cloud/ipfs/bafybeidqapglcihowufq4g2ro7pnaxyz2ekfcyvam33wmtt6vfvcxhnbdu/${searchId}.jpeg`;
+      const tokenURI = `ipfs://bafybeidqapglcihowufq4g2ro7pnaxyz2ekfcyvam33wmtt6vfvcxhnbdu/${searchId}.jpeg`;
 
       nftData.value = {
         metadata: {
