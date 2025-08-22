@@ -57,7 +57,7 @@ export default component$((props: Props) => {
   return (
     <div class="w-full relative bg-[url('/images/steps.jpg')] bg-cover border-b border-gray-300 dark:border-slate-700 overflow-x-hidden">
       {/* White overlay for dimming */}
-      <div class="absolute inset-0 bg-white opacity-25 z-0"></div>
+      <div class="absolute inset-0 bg-white opacity-15 z-0"></div>
       
       <section
         id="roadmap"
