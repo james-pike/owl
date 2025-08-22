@@ -64,7 +64,7 @@ export default component$((props: Props) => {
                             alt={`${collection.title} Collection`}
                             class="w-full object-cover rounded-lg"
                           />
-                          <h3 class="text-xl font-semibold text-black mt-2 w-full">{collection.title}</h3>
+                          <h3 class="!text-xl font-semibold text-black mt-2 w-full">{collection.title}</h3>
                           <p class="!text-sm text-black mt-1 w-full">{collection.description}</p>
                         </Card.Content>
                       </Card.Root>
