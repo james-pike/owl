@@ -12,12 +12,12 @@ export default component$(() => {
   // Menu items array structure
   const menuItems = [
     { title: "Story", href: "#story", badge: null },
-    { title: "About Us", href: "#about", badge: null },
+    { title: "About", href: "#about", badge: null },
      { title: "Roadmap", href: "#roadmap", badge: null },
     { title: "Collections", href: "#collections", badge: null },
        { title: "Traits", href: "#items", badge: null },
 
-    { title: "Rarity Checker", href: "#rarity", badge: null },
+    { title: "Rarity ", href: "#rarity", badge: null },
     { title: "FAQ", href: "#faq", badge: null },
   ];
 
