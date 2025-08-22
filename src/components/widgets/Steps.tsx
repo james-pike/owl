@@ -60,12 +60,17 @@ export default component$((props: Props) => {
         id="roadmap"
         class="mx-auto max-w-6xl scroll-mt-16 px-3 py-10 md:py-12 lg:py-16 sm:px-6 lg:px-8"
       >
-        <div class="md:bg-white/85 bg-white/95 px-3 py-6 md:p-6 rounded-lg shadow-lg">
-          <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
+        <div class="md:bg-white/95 bg-white/95 px-3 py-6 md:p-6 rounded-lg shadow-lg">
+          <Headline
+            title={title}
+            subtitle={subtitle}
+            highlight={highlight}
+            classes={classes?.headline}
+          />
           <div class="container text-sm">
             <div class="flex">
               <div class="w-full">
-                {/* First Roadmap (Curling Circle) - Desktop Only */}
+                {/* Desktop Roadmap */}
                 <div class="road-map-main lg:block hidden !text-lg">
                   {items.map(({ title, description, icon: Icon }, index) => (
                     <div
@@ -78,7 +83,7 @@ export default component$((props: Props) => {
                     >
                       <div
                         class={twMerge(
-                          "road-map-circle w-[200px] h-[200px]  rounded-full border-4 border-transparent max-w-full mx-auto",
+                          "road-map-circle w-[200px] h-[200px] rounded-full border-4 border-transparent max-w-full mx-auto",
                           index % 2 === 0
                             ? "border-t-teal-400 border-r-teal-400 rotate-45"
                             : "border-b-teal-400 border-l-teal-400 -rotate-45",
@@ -109,7 +114,6 @@ export default component$((props: Props) => {
                           "md:pr-5 md:pl-5",
                           "md:before:content-[''] md:before:w-1/4 md:before:h-5 md:before:bg-teal-700 md:before:absolute md:before:top-1/2 md:before:-translate-y-1/2 md:before:left-[-23%] md:before:z-[-1]",
                           "sm:pr-5 sm:pl-5",
-                          "md:before:pr-0 md:before:pl-0",
                           "md:w-1/3",
                           "md:mt-0 mt-12",
                           "md:static",
@@ -129,53 +133,67 @@ export default component$((props: Props) => {
                   ))}
                 </div>
 
-                {/* Second Roadmap (6 Lorem Ipsums) - Mobile Only */}
-               <div class="roadmap !px-4 !py-0 lg:hidden block !text-lg">
-  <div class="point !pr-0 !pl-10 flex items-start mb-0">
-    <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
-      <LuCheck class="w-16 h-16" />
-    </div>
-    <div class="point-content flex-1">
-      <div class="point-label text-teal-400 !text-xl !font-bold">Phase 1 - Genesis Drop</div>
-      <div class="point-text text-gray-700 !text-lg">
-        • Launch of 250 unique Kaspa-powered NFTs<br />• Built 100% by us (artist/dev duo)<br />• Kaspa rewards, rare traits, community-first
-      </div>
-    </div>
-  </div>
-  <div class="point !pl-2 flex items-start mb-6">
-    <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
-      <LuExpand class="w-16 h-16" />
-    </div>
-    <div class="point-content flex-1">
-      <div class="point-label text-teal-400 !text-xl !font-bold">Phase 2 - Expansion & Utility</div>
-      <div class="point-text text-gray-700 !text-lg">
-        • Release remaining collections: Bearz, Bullz, Katz, Dogz, Dinoz<br />• Holder-only perks & airdrops<br />• Integrate community suggestions on comics
-      </div>
-    </div>
-  </div>
-  <div class="point !pr-2 !pl-8 flex items-start mb-6">
-    <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
-      <LuBook class="w-16 h-16" />
-    </div>
-    <div class="point-content flex-1">
-      <div class="point-label text-teal-400 !text-xl !font-bold">Phase 3 - Kaspa Comics</div>
-      <div class="point-text text-gray-700 !text-lg">
-        • Launch comic strips featuring Kritterz<br />• Explore themes: Kaspa vs other chains, crypto culture, adoption dreams<br />• Share weekly episodes on X<br />• Collabs with other Kaspa projects<br />• Fun merch, lore expansion, events
-      </div>
-    </div>
-  </div>
-  <div class="point flex !pl-2 items-start mb-6">
-    <div class="point-index w-[110px] h-[110px] rounded-full bg-blue-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
-      <LuInfinity class="w-16 h-16" />
-    </div>
-    <div class="point-content flex-1">
-      <div class="point-label text-teal-400 !text-xl !font-bold">Ongoing</div>
-      <div class="point-text text-gray-700 !text-lg">
-        • More art, more fun, more Kaspa<br />• Always building. Always rewarding.
-      </div>
-    </div>
-  </div>
-</div>
+                {/* Mobile Roadmap */}
+                <div class="roadmap !px-4 !py-0 lg:hidden block !text-lg">
+                  <div class="point !pr-0 !pl-10 flex items-start mb-0">
+                    <div class="point-index w-[110px] h-[110px] rounded-full !bg-teal-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
+                      <LuCheck class="w-16 h-16" />
+                    </div>
+                    <div class="point-content flex-1">
+                      <div class="point-label text-teal-400 !text-xl !font-bold">Phase 1 - Genesis Drop</div>
+                      <div class="point-text text-gray-700 !text-lg">
+                        • Launch of 250 unique Kaspa-powered NFTs<br />
+                        • Built 100% by us (artist/dev duo)<br />
+                        • Kaspa rewards, rare traits, community-first
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="point !pl-2 flex items-start mb-6">
+                    <div class="point-index w-[110px] h-[110px] rounded-full !bg-teal-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
+                      <LuExpand class="w-16 h-16" />
+                    </div>
+                    <div class="point-content flex-1">
+                      <div class="point-label text-teal-400 !text-xl !font-bold">Phase 2 - Expansion & Utility</div>
+                      <div class="point-text text-gray-700 !text-lg">
+                        • Release remaining collections: Bearz, Bullz, Katz, Dogz, Dinoz<br />
+                        • Holder-only perks & airdrops<br />
+                        • Integrate community suggestions on comics
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="point !pr-2 !pl-8 flex items-start mb-6">
+                    <div class="point-index w-[110px] h-[110px] rounded-full !bg-teal-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
+                      <LuBook class="w-16 h-16" />
+                    </div>
+                    <div class="point-content flex-1">
+                      <div class="point-label text-teal-400 !text-xl !font-bold">Phase 3 - Kaspa Comics</div>
+                      <div class="point-text text-gray-700 !text-lg">
+                        • Launch comic strips featuring Kritterz<br />
+                        • Explore themes: Kaspa vs other chains, crypto culture, adoption dreams<br />
+                        • Share weekly episodes on X<br />
+                        • Collabs with other Kaspa projects<br />
+                        • Fun merch, lore expansion, events
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="point flex !pl-2 items-start mb-6">
+                    <div class="point-index w-[110px] h-[110px] rounded-full !bg-teal-400 flex items-center justify-center text-white shadow-[0_0_10px_5px_rgba(0,0,0,0.129)] mr-6">
+                      <LuInfinity class="w-16 h-16" />
+                    </div>
+                    <div class="point-content flex-1">
+                      <div class="point-label text-teal-400 !text-xl !font-bold">Ongoing</div>
+                      <div class="point-text text-gray-700 !text-lg">
+                        • More art, more fun, more Kaspa<br />
+                        • Always building. Always rewarding.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* End of container */}
               </div>
             </div>
           </div>

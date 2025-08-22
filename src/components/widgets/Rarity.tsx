@@ -37,7 +37,7 @@ export default component$((props: Props) => {
           isDark ? "dark" : ""
         )}
       >
-        <div class="bg-white/90 p-1 pt-6 md:pt-8 md:p-3 rounded-lg shadow-lg">
+        <div class="bg-white/95 p-1 pt-6 md:pt-8 md:p-3 rounded-lg shadow-lg">
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
           <div class="-mt-6">
           <RarityCheck />

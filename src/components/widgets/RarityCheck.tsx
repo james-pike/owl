@@ -25,27 +25,27 @@ export default component$(() => {
   const nftData = useSignal<any>(null);
   const error = useSignal<string | null>(null);
 
-  // Set default NFT (id 1) on component mount
-useVisibleTask$(() => {
-  const randomId = Math.floor(Math.random() * TOTAL_NFTS) + 1; // Random number between 1 and 250
-  const randomNft = metadata.find((nft: { id: number }) => nft.id === randomId);
-  
-  if (randomNft) {
-    nftData.value = {
-      metadata: {
-        id: randomNft.id,
-        name: randomNft.name,
-        image: '/images/1.png', // Still using the placeholder image
-        rank: randomNft.rank,
-        rarity: randomNft.rarity,
-      },
-      tokenURI: 'ipfs://placeholder_ipfs_hash/1.png', // Still using placeholder token URI
-    };
-    nftSearchId.value = String(randomId);
-  } else {
-    error.value = `Random NFT (ID ${randomId}) not found in metadata.`;
-  }
-});
+  // Set default NFT (random ID) on component mount
+  useVisibleTask$(() => {
+    const randomId = Math.floor(Math.random() * TOTAL_NFTS) + 1; // Random number between 1 and 250
+    const randomNft = metadata.find((nft: { id: number }) => nft.id === randomId);
+
+    if (randomNft) {
+      nftData.value = {
+        metadata: {
+          id: randomNft.id,
+          name: randomNft.name,
+          image: `https://bafybeibkhqxpl7xdfo7ccaxyculajq3mdw726u4ztw5lme6ntn7223dzg4.ipfs.w3s.link/${randomId}.png`, // Updated to w3s.link
+          rank: randomNft.rank,
+          rarity: randomNft.rarity,
+        },
+        tokenURI: `ipfs://bafybeibkhqxpl7xdfo7ccaxyculajq3mdw726u4ztw5lme6ntn7223dzg4/${randomId}.png`, // IPFS tokenURI
+      };
+      nftSearchId.value = String(randomId);
+    } else {
+      error.value = `Random NFT (ID ${randomId}) not found in metadata.`;
+    }
+  });
 
   const handleNFTSearch = $(() => {
     error.value = null;
@@ -62,9 +62,9 @@ useVisibleTask$(() => {
         throw new Error(`KasKritter ID ${nftSearchId.value} not found`);
       }
 
-      // Use goldie.jpg as the image for all NFTs
-      const imageUrl = '/images/1.png';
-      const tokenURI = 'ipfs://placeholder_ipfs_hash/1.png'; // Placeholder tokenURI
+      // Use w3s.link for image, keep ipfs:// for tokenURI
+      const imageUrl = `https://bafybeibkhqxpl7xdfo7ccaxyculajq3mdw726u4ztw5lme6ntn7223dzg4.ipfs.w3s.link/${searchId}.png`;
+      const tokenURI = `ipfs://bafybeibkhqxpl7xdfo7ccaxyculajq3mdw726u4ztw5lme6ntn7223dzg4/${searchId}.png`;
 
       nftData.value = {
         metadata: {
@@ -91,7 +91,7 @@ useVisibleTask$(() => {
               <img
                 src={nftData.value.metadata.image}
                 alt={nftData.value.metadata.name}
-                class="w-full rounded-lg object-contain "
+                class="w-full rounded-lg object-contain"
                 onError$={() => {
                   console.log(`Failed to load image: ${nftData.value.metadata.image}`);
                 }}
@@ -124,11 +124,10 @@ useVisibleTask$(() => {
               {error.value && <p class="text-red-500">{error.value}</p>}
               <h2 class="text-xl font-semibold mb-1">{nftData.value.metadata.name}</h2>
               <p class="text-md font-semibold mb-1">Rank: {nftData.value.metadata.rank} / {TOTAL_NFTS}</p>
-<p class="text-md font-semibold mb-1">
-  Rarity: <span class={getRarityClass(nftData.value.metadata.rarity)}>
-    {nftData.value.metadata.rarity}
-  </span>
-</p>          </div>
+              <p class="text-md font-semibold mb-1">
+                Rarity: <span class={getRarityClass(nftData.value.metadata.rarity)}>{nftData.value.metadata.rarity}</span>
+              </p>
+            </div>
           </div>
         )}
       </div>

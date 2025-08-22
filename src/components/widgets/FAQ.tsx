@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { Headline } from "../ui/Headline";
 import { Accordion } from "../ui/Accordion";
 
-const sideImg = "/images/faq.jpeg"; // Adjust the image path as needed for FAQs
+const sideImg = "/images/krit2.jpg"; // Adjust the image path as needed for FAQs
 
 interface Item {
     title?: string;
@@ -25,7 +25,7 @@ export default component$((props: Props) => {
     const { title = "", subtitle = "", highlight = "", classes = {} } = props;
 
     return (
-        <div class="max-w-7xl mx-auto bg-[url('/images/44.jpg')]  bg-cover bg-center relative flipped-bg">
+        <div class="max-w-7xl mx-auto bg-[url('/images/blockdag.jpg')]  bg-cover bg-center relative flipped-bg">
             <div class="max-w-7xl mx-auto">
                 <section
                     id="faq"

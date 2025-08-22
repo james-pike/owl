@@ -24,13 +24,13 @@ interface Props {
 export default component$((props: Props) => {
   const { id, title = "Collections", subtitle = "",  classes = {}, isDark = true } = props;
   const collections = [
-    { id: 1, title: "KasKritterz", description: "Hoarders? Sure. Paper hands? Never. KAS is their forever stash.", image: "/images/101.jpeg" },
+    { id: 1, title: "KasKritterz", description: "Hoarders? Sure. Paper hands? Never.", image: "/images/101.jpeg" },
        { id: 4, title: "KasBearz", description: "Even bearish, they know KAS is the endgame.", image: "/images/KasBEARZCS.png" },
     { id: 6, title: "KasBullz", description: "Horns up, charts up, bullish on KAS 24/7.", image: "/images/KasBULLZCS.png" },
+        { id: 2, title: "KasDinoz", description: "Extinct? Nah. They evolved with KAS to lead the future.", image: "/images/KasDINOZCS.png" },
 
     { id: 3, title: "KasKatz", description: "Nine lives, one blockadag. Cats always land on KAS.", image: "/images/KasDOGZCS.png" },
     { id: 5, title: "KasDogz", description: "Always barking for KAS moonshots.", image: "/images/KasDOGZCS.png" },
-        { id: 2, title: "KasDinoz", description: "Extinct? Nah. They evolved with KAS to lead the future.", image: "/images/KasDINOZCS.png" },
 
   ];
 
