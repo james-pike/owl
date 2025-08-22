@@ -148,10 +148,13 @@ export default component$(() => {
               </div>
               {error.value && <p class="text-red-500">{error.value}</p>}
               <h2 class="text-xl font-semibold mb-1">{nftData.value.metadata.name}</h2>
-              <p class="text-md font-semibold mb-1">Rank: {nftData.value.metadata.rank} / {TOTAL_NFTS}</p>
+              <p class="text-md font-semibold mb-1">
+                Rank: <span class={getRarityClass(nftData.value.metadata.rarity)}>{nftData.value.metadata.rank}</span> / {TOTAL_NFTS}
+              </p>
               <p class="text-md font-semibold mb-1">
                 Rarity: <span class={getRarityClass(nftData.value.metadata.rarity)}>{nftData.value.metadata.rarity}</span>
               </p>
+              <p class="text-md font-semibold mb-1">Minted: {nftData.value.metadata.minted ? 'Yes' : 'No'}</p>
             </div>
           </div>
         )}
