@@ -1,7 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { Headline } from "../ui/Headline";
 
-const sideImg = "/images/77.jpeg";
 
 interface Item {
   title?: string;
