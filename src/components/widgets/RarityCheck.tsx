@@ -154,7 +154,7 @@ export default component$(() => {
               <p class="text-md font-semibold mb-1">
                 Rarity: <span class={getRarityClass(nftData.value.metadata.rarity)}>{nftData.value.metadata.rarity}</span>
               </p>
-              <p class="text-md font-semibold mb-1">Minted: {nftData.value.metadata.minted ? 'Yes' : 'No'}</p>
+              {/* <p class="text-md font-semibold mb-1">Minted: {nftData.value.metadata.minted ? 'Yes' : 'No'}</p> */}
             </div>
           </div>
         )}
