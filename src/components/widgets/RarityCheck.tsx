@@ -29,28 +29,28 @@ export default component$(() => {
   const error = useSignal<string | null>(null);
   const isLoading = useSignal(true);
 
-  // Set default NFT (random ID) on component mount
+  // Set default NFT to ID #1 on component mount
   useVisibleTask$(() => {
     isLoading.value = true;
-    const randomId = Math.floor(Math.random() * TOTAL_NFTS) + 1;
-    const randomNft = metadata.find((nft: { id: number }) => nft.id === randomId);
+    const defaultId = 1; // Set default to ID #1
+    const defaultNft = metadata.find((nft: { id: number }) => nft.id === defaultId);
 
-    if (randomNft) {
+    if (defaultNft) {
       nftData.value = {
         metadata: {
-          id: randomNft.id,
-          name: randomNft.name,
-          image: `${IPFS_BASE_URL}/${randomId}.${FILE_EXTENSION}`,
-          rank: randomNft.rank,
-          rarity: randomNft.rarity,
-          minted: randomNft.minted,
+          id: defaultNft.id,
+          name: defaultNft.name,
+          image: `${IPFS_BASE_URL}/${defaultId}.${FILE_EXTENSION}`,
+          rank: defaultNft.rank,
+          rarity: defaultNft.rarity,
+          minted: defaultNft.minted,
         },
-        tokenURI: `ipfs://${IPFS_CID}/${randomId}.${FILE_EXTENSION}`,
+        tokenURI: `ipfs://${IPFS_CID}/${defaultId}.${FILE_EXTENSION}`,
       };
-      nftSearchId.value = String(randomId);
-      console.log('Initial NFT loaded:', nftData.value);
+      nftSearchId.value = String(defaultId);
+      console.log('Initial NFT loaded (ID #1):', nftData.value);
     } else {
-      error.value = `Random NFT (ID ${randomId}) not found in metadata.`;
+      error.value = `NFT (ID ${defaultId}) not found in metadata.`;
       console.error('Metadata error:', error.value);
     }
     isLoading.value = false;
@@ -152,7 +152,6 @@ export default component$(() => {
               <p class="text-md font-semibold mb-1">
                 Rarity: <span class={getRarityClass(nftData.value.metadata.rarity)}>{nftData.value.metadata.rarity}</span>
               </p>
-              <p class="text-md font-semibold mb-1">Minted: {nftData.value.metadata.minted ? 'Yes' : 'No'}</p>
             </div>
           </div>
         )}

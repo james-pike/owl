@@ -22,6 +22,11 @@ export default component$(() => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <link rel="manifest" href="/manifest.json" />
+        <link
+  rel="preload"
+  as="image"
+  href="https://gateway.pinata.cloud/ipfs/bafybeidqapglcihowufq4g2ro7pnaxyz2ekfcyvam33wmtt6vfvcxhnbdu/1.jpeg"
+/>
         <link rel="preload" href="/images/banner2.webp" as="image" media="(min-width: 768px)" />
                 <link rel="preload" href="/images/background.webp" as="image" media="(min-width: 768px)" />
 
