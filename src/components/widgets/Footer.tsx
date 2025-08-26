@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-import { LuTwitter, LuSend, LuX } from '@qwikest/icons/lucide';
+import { LuSend, LuX } from '@qwikest/icons/lucide';
 
 export default component$(() => {
   const links = [
