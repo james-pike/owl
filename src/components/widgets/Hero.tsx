@@ -8,17 +8,19 @@ export default component$(() => {
     >
       <div class="text-center w-full px-4 md:pt-96 pt-52">
 
-        <h2 class="text-xl md:text-3xl text-white font-medium mb-4 -mt-4 md:-mt-0">
-          KasKritterz is a community-powered NFT universe, built in a world where Kaspa leads the future. The OG Mice are live:  250 hand-crafted originals. Mint yours today before they’re gone!        </h2>
+        <h2 class="text-2xl md:text-4xl text-white font-medium mb-4 -mt-4 md:-mt-0">
+           KasKritterz is a community-powered NFT universe, built in a world where Kaspa leads the future.        </h2>
        <div class="flex flex-col md:flex-row justify-center px-6 gap-4 md:gap-6 pt-4 pb-14">
   <a
     href="https://www.kaspa.com/nft/collections/KasKritter"
     class="bg-teal-400 text-white text-xl px-5 py-3 rounded-lg hover:bg-teal-300 transition-colors flex items-center justify-center gap-2">
     <LuStar class="w-6 h-6" /> Mint KasKritterz
   </a>
-  <button class="bg-blue-300 text-white px-5 text-xl py-3 rounded-lg hover:bg-blue-200 transition-colors flex items-center justify-center gap-2">
+  <a
+                  href="https://t.me/KasKritterzOfficial"
+     class="bg-blue-300 text-white px-5 text-xl py-3 rounded-lg hover:bg-blue-200 transition-colors flex items-center justify-center gap-2">
     <LuUsers class="w-6 h-6" /> Join Community
-  </button>
+  </a>
 </div>
       </div>
     </section>

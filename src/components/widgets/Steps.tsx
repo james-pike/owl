@@ -6,6 +6,7 @@ import { Headline } from "../ui/Headline";
 interface Item {
   title?: string;
   description?: string;
+  status?: string; // Added status field
   icon?: any;
   classes?: Record<string, string>;
 }
@@ -29,6 +30,7 @@ export default component$((props: Props) => {
         title: "Phase 1 - Genesis Drop",
         description:
           "• Launch of 250 unique Kaspa-powered NFTs\n• Built 100% by us (artist/dev duo)\n• Kaspa rewards, rare traits, community-first",
+        status: "<span class='text-green-500 font-bold'>(Completed)</span>",
         icon: LuCheck,
       },
       {
@@ -44,9 +46,9 @@ export default component$((props: Props) => {
         icon: LuBook,
       },
       {
-        title: "Ongoing",
-        description:
-          "• More art, more fun, more Kaspa\n• Always building. Always rewarding.",
+        title: "Phase 4 - Mobile Game",
+        description: "• To Be Announced",
+        status: "<span class='text-orange-500 font-bold'>(Ongoing)</span>",
         icon: LuInfinity,
       },
     ],
@@ -61,7 +63,7 @@ export default component$((props: Props) => {
       
       <section
         id="roadmap"
-        class="mx-auto max-w-6xl scroll-mt-16 px-3 py-10 md:py-12 lg:py-16 sm:px-6 lg:px-8 relative z-10"
+        class="mx-auto max-w-7xl scroll-mt-16 px-3 py-10 md:py-12 lg:py-16 sm:px-6 lg:px-8 relative z-10"
       >
         <div class="md:bg-white/95 bg-white/95 px-3 py-6 md:p-6 rounded-lg shadow-lg">
           <Headline
@@ -75,7 +77,7 @@ export default component$((props: Props) => {
               <div class="w-full">
                 {/* Desktop Roadmap */}
                 <div class="road-map-main lg:block hidden !text-lg">
-                  {items.map(({ title, description, icon: Icon }, index) => (
+                  {items.map(({ title, description, status, icon: Icon }, index) => (
                     <div
                       key={`roadmap-item-${index}`}
                       class={twMerge(
@@ -125,12 +127,19 @@ export default component$((props: Props) => {
                           "md:pt-[20px] md:pb-[20px]"
                         )}
                       >
-                        <h4 class="card-head !font-bold !text-xl capitalize mb-3.5 ">
+                        <h4 class="card-head !font-bold !text-xl capitalize mb-1">
                           {title}
                         </h4>
-                        <p class="card-text !text-md !text-gray-700 ">
-                          {description}
-                        </p>
+                        {status && (
+                          <div
+                            class="card-status !text-md !text-gray-700 mb-2.5"
+                            dangerouslySetInnerHTML={status}
+                          />
+                        )}
+                        <p
+                          class="card-text !text-md !text-gray-700"
+                          dangerouslySetInnerHTML={description}
+                        />
                       </div>
                     </div>
                   ))}
@@ -144,11 +153,16 @@ export default component$((props: Props) => {
                     </div>
                     <div class="point-content flex-1">
                       <div class="point-label text-teal-400 !text-xl !font-bold">Phase 1 - Genesis Drop</div>
-                      <div class="point-text text-gray-700 !text-lg">
-                        • Launch of 250 unique Kaspa-powered NFTs<br />
-                        • Built 100% by us (artist/dev duo)<br />
-                        • Kaspa rewards, rare traits, community-first
-                      </div>
+                      <div
+                        class="point-status text-gray-700 !text-lg mb-2"
+                        dangerouslySetInnerHTML="<span class='text-green-500 font-bold'>(Completed)</span>"
+                      />
+                      <div
+                        class="point-text text-gray-700 !text-lg"
+                        dangerouslySetInnerHTML={
+                          "• Launch of 250 unique Kaspa-powered NFTs<br />• Built 100% by us (artist/dev duo)<br />• Kaspa rewards, rare traits, community-first"
+                        }
+                      />
                     </div>
                   </div>
 
@@ -187,11 +201,15 @@ export default component$((props: Props) => {
                       <LuInfinity class="w-16 h-16" />
                     </div>
                     <div class="point-content flex-1">
-                      <div class="point-label text-teal-400 !text-xl !font-bold">Ongoing</div>
-                      <div class="point-text text-gray-700 !text-lg">
-                        • More art, more fun, more Kaspa<br />
-                        • Always building. Always rewarding.
-                      </div>
+                      <div class="point-label text-teal-400 !text-xl !font-bold">Phase 4 - Mobile Game</div>
+                      <div
+                        class="point-status text-gray-700 !text-lg mb-2"
+                        dangerouslySetInnerHTML="<span class='text-orange-500 font-bold'>(Ongoing)</span>"
+                      />
+                      <div
+                        class="point-text text-gray-700 !text-lg"
+                        dangerouslySetInnerHTML="• To Be Announced"
+                      />
                     </div>
                   </div>
                 </div>

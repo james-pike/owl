@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-import { LuTwitter, LuSend } from '@qwikest/icons/lucide';
+import { LuTwitter, LuSend, LuX } from '@qwikest/icons/lucide';
 
 export default component$(() => {
   const links = [
@@ -25,7 +25,7 @@ export default component$(() => {
   ];
 
   const social = [
-    { label: "Twitter", icon: LuTwitter, href: "https://x.com/KasKritterz" },
+    { label: "Twitter", icon: LuX, href: "https://x.com/KasKritterz" },
     { label: "Telegram", icon: LuSend, href: "https://t.me/KasKritterzOfficial" },
   ];
 

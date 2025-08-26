@@ -2,7 +2,43 @@ import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import { Link, useContent, useLocation } from "@builder.io/qwik-city";
 import IconChevronDown from "../icons/IconChevronDown";
 import MenuModal from "./MenuModal";
-import { LuSend, LuTwitter } from "@qwikest/icons/lucide";
+import { LuSend } from "@qwikest/icons/lucide";
+
+// Custom SVG component for the Twitter icon
+export const CustomTwitterIcon = component$(() => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1024 1024"
+      class="w-6 h-6"
+      fill="none"
+      stroke="none"
+      stroke-width="1"
+    >
+      <g transform="translate(112 112)">
+        <path
+          fill="currentColor"
+          d="M711.111 800H88.89C39.8 800 0 760.2 0 711.111V88.89C0 39.8 39.8 0 88.889 0H711.11C760.2 0 800 39.8 800 88.889V711.11C800 760.2 760.2 800 711.111 800"
+        />
+        <path
+          fill="#FFF"
+          fill-rule="nonzero"
+          d="M628 623H484.942L174 179h143.058zm-126.012-37.651h56.96L300.013 216.65h-56.96z"
+        />
+        <path
+          fill="#FFF"
+          fill-rule="nonzero"
+          d="M219.296885 623 379 437.732409 358.114212 410 174 623z"
+        />
+        <path
+          fill="#FFF"
+          fill-rule="nonzero"
+          d="M409 348.387347 429.212986 377 603 177 558.330417 177z"
+        />
+      </g>
+    </svg>
+  );
+});
 
 export default component$(() => {
   const store = useStore({
@@ -59,7 +95,7 @@ export default component$(() => {
               alt="KasKritterz Logo"
               class="w-8 h-8 rounded-full md:mr-1"
             />
-             <img
+            <img
               src="/images/logo2.png"
               alt="KasKritterz Logo"
               class="h-8 rounded-full mr-2 -mt-1"
@@ -276,7 +312,7 @@ export default component$(() => {
               aria-label="Twitter"
               href="https://x.com/KasKritterz"
             >
-              <LuTwitter class="w-6 h-6" />
+              <CustomTwitterIcon />
             </Link>
             <a
               href="https://www.kaspa.com/nft/collections/KasKritter"

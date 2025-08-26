@@ -18,17 +18,12 @@ export default component$(() => {
     
   
     <About
-  highlight="Story"
+  highlight="About"
   title="What is KasKritterz?"
-  subtitle="KasKritterz is a fun and collectible NFT series built on the Kaspa blockchain. It started with 250 hand-crafted Mice, each one unique, full of character, and ready to explore a world where Kaspa has already won. But this is just the beginning…"
+  subtitle="KasKritterz blends cuteness, storytelling, and hand-crafted digital art to create a fresh NFT experience that rewards holders and connects the Kaspa community."
   items={[]}
 />
-      <Services
-      id="about"
-  highlight="About Us"
-  title="What We Do"
-  subtitle="Mint one of six legendary KasLord character types."
-  items={[]}/>
+      
 
    <Steps id="roadmap"  
        highlight="Roadmap"
@@ -39,7 +34,6 @@ export default component$(() => {
   id="collections"
   highlight="Collections"
   title="Explore Our Collections"
-  subtitle="Discover the unique collections of KasKritterz, each with its own story and charm."
   items={[]}
   />
  
