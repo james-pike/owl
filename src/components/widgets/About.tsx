@@ -25,7 +25,7 @@ export default component$((props: Props) => {
   return (
     <div class="max-w-7xl mx-auto bg-[url('/images/collage.jpg')] bg-cover border-b border-gray-300">
       <section
-        id="story"
+        id="about"
         class="mx-auto scroll-mt-16 max-w-4xl px-4 pb-10 pt-10 md:py-14 lg:py-16 sm:px-6 lg:px-8"
       >
         <div class="bg-white/95 py-6 pb-1 md:pb-2 px-3 md:p-6 rounded-lg shadow-lg">

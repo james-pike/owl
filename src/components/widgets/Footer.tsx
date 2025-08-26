@@ -1,16 +1,18 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-import { LuSend, LuX } from '@qwikest/icons/lucide';
+import { LuSend} from '@qwikest/icons/lucide';
 
 export default component$(() => {
   const links = [
     {
       title: "About",
       items: [
-        { title: "Story", href: "#story" },
-        { title: "What We Do", href: "#about" },
+        { title: "About", href: "#story" },
         { title: "Roadmap", href: "#roadmap" },
+                { title: "Collections", href: "#collections" },
+
         { title: "FAQ", href: "#faq" },
+        
       ],
     },
     {
@@ -18,14 +20,13 @@ export default component$(() => {
       items: [
         { title: "Rarity Guide", href: "#rarity" },
         { title: "Item Traits", href: "#items" },
-        { title: "Collections", href: "#collections" },
         { title: "KaspaCom", href: "https://www.kaspa.com/nft/collections/KasKritter" },
       ],
     },
   ];
 
   const social = [
-    { label: "Twitter", icon: LuX, href: "https://x.com/KasKritterz" },
+    // { label: "Twitter", icon: LuX, href: "https://x.com/KasKritterz" },
     { label: "Telegram", icon: LuSend, href: "https://t.me/KasKritterzOfficial" },
   ];
 
@@ -36,24 +37,25 @@ export default component$(() => {
           <div class="col-span-12 lg:col-span-5 pr-4">
             <div class="flex flex-col">
               <div class="flex items-center justify-between mb-2 md:mb-2">
-                <Link class="inline-block font-bold text-xl text-white" href="/">
-                  KasKritterz
-                </Link>
+                   <img
+              src="/images/logo2.png"
+              alt="KasKritterz Logo"
+              class="h-8 rounded-full mr-2 -mt-1"
+            />
             
               </div>
-              <div class="!text-sm text-gray-200 mb-4 dark:text-gray-400">
-                KasKritterz is a community-powered NFT universe, built in a world where Kaspa leads the future. The OG Mice are live: 250 hand-crafted originals. Mint yours today before they’re gone!
-              </div>
-              <div class="flex gap-2">
+              <div class="text-md text-gray-200 mb-4 dark:text-gray-400">
+KasKritterz is a community-powered NFT universe, built in a world where Kaspa leads the future.              </div>
+              <div class="flex flex-col gap-2">
                 <a
                   href="https://www.kaspa.com/nft/collections/KasKritter"
-                  class="px-4 !text-sm py-2 btn-primary text-white hover:bg-teal-300 font-semibold rounded-md transition-colors"
+                  class="px-4 md:!text-md py-2 w-2/3 btn-primary text-white hover:bg-teal-300 font-semibold rounded-md transition-colors"
                 >
                   Mint KasKritterz
                 </a>
                 <a
                   href="https://t.me/KasKritterzOfficial"
-                  class="btn-secondary hover:bg-blue-200 !text-sm px-4 py-2 text-white font-semibold rounded-md transition-colors"
+                  class="btn-secondary  hover:bg-blue-200 w-2/3 md:!text-md px-4 py-2 text-white font-semibold rounded-md transition-colors"
                 >
                   Join Telegram
                 </a>
