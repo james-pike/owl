@@ -46,7 +46,7 @@ export default component$(() => {
               </div>
               <div class="text-md text-gray-200 mb-4 dark:text-gray-400">
 KasKritterz is a community-powered NFT universe, built in a world where Kaspa leads the future.              </div>
-              <div class="flex flex-col gap-2">
+              <div class="flex flex-col md:flex-row gap-2">
                 <a
                   href="https://www.kaspa.com/nft/collections/KasKritter"
                   class="px-4 md:!text-md py-2 w-2/3 btn-primary text-white hover:bg-teal-300 font-semibold rounded-md transition-colors"
