@@ -7,7 +7,6 @@ import Rarity from "~/components/widgets/Rarity";
 import Hero from "~/components/widgets/Hero";
 import FAQ from "~/components/widgets/FAQ";
 import Collections from "~/components/widgets/Collections";
-import Services from "~/components/widgets/Services";
 import Items from "~/components/widgets/Items";
 
 
