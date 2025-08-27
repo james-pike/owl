@@ -70,7 +70,7 @@ export default component$(() => {
 
           {/* Buttons */}
           <div class="pb-3 bg-gray-900/50">
-            <div class="mx-2 pt-3 flex flex-col sm:flex-row gap-3">
+            <div class="mx-2 pt-3 flex flex-col w-4/5 sm:flex-row gap-3">
               <a
                 href="https://www.kaspa.com/nft/collections/OGMice"
                 class="border-2 border-black text-black text-xl px-5 py-3 rounded-lg bg-white/90 hover:bg-gray-100 flex items-center justify-center gap-2"
