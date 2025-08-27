@@ -60,7 +60,34 @@ export default component$(() => {
                   {social.map(({ label, href, icon: Icon }, index) => (
                     <li key={index}>
                       <Link
-                        class="text-white dark:text-gray-400 hover:bg-teal-400 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                        class={`
+                          text-white 
+                          dark:text-gray-400 
+                          hover:text-teal-300 
+                          focus:outline-none 
+                          focus:ring-4 
+                          focus:ring-gray-200 
+                          dark:focus:ring-gray-700 
+                          rounded-lg 
+                          text-sm 
+                          p-2.5 
+                          inline-flex 
+                          items-center 
+                          relative 
+                          transition-all 
+                          duration-200 
+                          after:content-[''] 
+                          after:absolute 
+                          after:bottom-[6px] 
+                          after:left-1/2 
+                          after:h-[2px] 
+                          after:bg-teal-300 
+                          after:transition-all 
+                          after:duration-200 
+                          after:w-0 
+                          hover:after:w-1/2 
+                          hover:after:left-1/4
+                        `}
                         aria-label={label}
                         title={label}
                         href={href}
@@ -100,13 +127,14 @@ export default component$(() => {
           ))}
 
           {/* Buttons with order-first on mobile */}
-          <div class="col-span-12 flex flex-col w-full md:w-3/5 md:pl-0 px-5 sm:flex-row gap-3 pb-8 order-first sm:order-none">
-              <a
-  href="https://www.kaspa.com/nft/collections/OGMice"
-  class="border-2 hover:filter hover:invert border-black text-black text-xl px-5 py-3 rounded-lg bg-white/90 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
- <LuStar class="w-6 h-6 group-hover:text-teal-400" /> 
-Mint OG Mice
-</a>
+          <div class="col-span-12 flex flex-col w-full md:w-3/5 md:pl-0 px-4 sm:flex-row gap-3 pb-8 order-first sm:order-none">
+            <a
+              href="https://www.kaspa.com/nft/collections/OGMice"
+              class="border-2 hover:filter hover:invert border-black text-black text-xl px-5 py-3 rounded-lg bg-white/90 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+            >
+              <LuStar class="w-6 h-6 group-hover:text-teal-400" />
+              Mint OG Mice
+            </a>
             <a
               href="https://www.kaspa.com/nft/collections/KasKritter"
               class="bg-teal-400 text-white text-xl px-3 py-3 rounded-lg hover:bg-white hover:text-teal-400 transition-colors flex items-center justify-center gap-2 flex-1"
