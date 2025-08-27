@@ -11,12 +11,10 @@ export default component$(() => {
 
   // Menu items array structure
   const menuItems = [
-    { title: "Story", href: "#story", badge: null },
     { title: "About", href: "#about", badge: null },
-     { title: "Roadmap", href: "#roadmap", badge: null },
+    { title: "Roadmap", href: "#roadmap", badge: null },
     { title: "Collections", href: "#collections", badge: null },
-       { title: "Traits", href: "#items", badge: null },
-
+    { title: "Traits", href: "#items", badge: null },
     { title: "Rarity ", href: "#rarity", badge: null },
     { title: "FAQ", href: "#faq", badge: null },
   ];
@@ -33,11 +31,11 @@ export default component$(() => {
           {/* Header */}
           <div class="border-gray-200 bg-gray-900/50 dark:border-gray-700 p-1">
             <Modal.Title class="pt-1">
-             <img
-              src="/images/logo2.png"
-              alt="KasKritterz Logo"
-              class="h-8 rounded-full mr-2 mt-1 mb-2"
-            />
+              <img
+                src="/images/logo2.png"
+                alt="KasKritterz Logo"
+                class="h-8 rounded-full mr-2 mt-1 mb-2"
+              />
             </Modal.Title>
           </div>
 
@@ -67,7 +65,7 @@ export default component$(() => {
                         href={item.href}
                         class={cn(
                           "block text-white dark:text-white p-2 px-3 hover:text-teal-300 hover:bg-teal-900/50 font-medium transition-all duration-200 relative bg-gray-900/50 dark:bg-gray-900/50",
-                          "focus:outline-none" // Added to remove blue outline on focus
+                          "focus:outline-none"
                         )}
                         onClick$={() => (show.value = false)}
                       >
@@ -84,19 +82,26 @@ export default component$(() => {
             <div class="sm:max-w-md mx-2 pt-3 flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-3 lg:justify-start lg:m-0 lg:max-w-7xl">
               <div class="flex w-full sm:w-auto">
                 <a
-                  class="btn btn-primary sm:mb-0 w-full"
-                  href="https://kaspa.com/nft/collections/KASKRITTER"
+                  href="https://www.kaspa.com/nft/collections/OGMice"
+                  class="border-2 border-black text-black text-xl px-5 py-3 rounded-lg bg-white/80 transition-colors flex items-center justify-center gap-2"
                 >
-                  <LuStar class="w-5 h-5 mr-2" /> Mint KasKritterz
+                  <LuStar class="w-6 h-6" /> Mint OG Mice
                 </a>
               </div>
               <div class="flex w-full sm:w-auto">
                 <a
-                  class="btn btn-primary btn-secondary sm:mb-0 w-full"
-                  href="https://t.me/KasKritterzOfficial"
+                  href="https://kaspa.com/nft/collections/KASKRITTER"
+                  class="bg-teal-400 text-white text-xl px-5 py-3 rounded-lg hover:bg-teal-300 transition-colors flex items-center justify-center gap-2"
                 >
-                  <LuUsers class="w-5 h-5 mr-2" />
-                  Join Community
+                  <LuStar class="w-6 h-6" /> Mint KasKritterz
+                </a>
+              </div>
+              <div class="flex w-full sm:w-auto">
+                <a
+                  href="https://t.me/KasKritterzOfficial"
+                  class="bg-blue-300 text-white text-xl px-5 py-3 rounded-lg hover:bg-blue-200 transition-colors flex items-center justify-center gap-2"
+                >
+                  <LuUsers class="w-6 h-6" /> Join Community
                 </a>
               </div>
             </div>
