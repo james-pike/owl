@@ -99,7 +99,7 @@ export default component$(() => {
                 </ul>
               </div>
 
-              <div class="text-md text-gray-200 mb-4 dark:text-gray-400">
+              <div class="text-md text-gray-200 mb-4 mt-2 dark:text-gray-400">
                 KasKritterz is a community-powered NFT universe, built in a world where Kaspa leads the future.
               </div>
             </div>
