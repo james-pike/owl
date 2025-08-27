@@ -11,10 +11,10 @@ export default component$(() => {
         <h2 class="!text-3xl md:!text-3xl text-white font-medium mb-4 mt-8 md:-mt-0">
            KasKritterz is a community-powered NFT universe, built in a world where Kaspa leads the future.        </h2>
        <div class="flex flex-col md:flex-row justify-center px-6 gap-4 md:gap-6 pt-4 pb-14">
-    <a
+              <a
   href="https://www.kaspa.com/nft/collections/OGMice"
-  class="border-2 hover:filter hover:invert border-black text-black text-xl px-5 py-3 rounded-lg bg-white/95 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
-
+  class="border-2 hover:filter hover:invert border-black text-black text-xl px-5 py-3 rounded-lg bg-white/90 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+ <LuStar class="w-6 h-6 group-hover:text-teal-400" /> 
 Mint OG Mice
 </a>
 <a
