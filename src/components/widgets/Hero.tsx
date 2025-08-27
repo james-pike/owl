@@ -15,7 +15,7 @@ export default component$(() => {
   href="https://www.kaspa.com/nft/collections/OGMice"
   class="border-2 hover:filter hover:invert
 
- border-black text-black text-xl px-5 py-3 rounded-lg bg-white hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+ border-black text-black text-xl px-5 py-3 rounded-lg bg-white/95 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
 >
   <LuStar class="w-6 h-6" /> Mint OG Mice
 </a>
