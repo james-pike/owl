@@ -18,186 +18,182 @@ interface ImageItem {
 
 
 interface WizardCategory {
- category: 'Body' | 'Head' | 'Hand' | 'Clothing' | 'Eyes' | 'Mouth' | 'Backgrounds';
- icon: any; // Temporary type, adjust based on actual icon type
- images: ImageItem[];
+  category: 'Body' | 'Head' | 'Hand' | 'Clothing' | 'Eyes' | 'Mouth' | 'Backgrounds';
+  icon: any; // Temporary type, adjust based on actual icon type
+  images: ImageItem[];
 }
 
 
 export const ItemTabs = component$(() => {
- const activeTab = useSignal(0);
- const itemsPerPage = useSignal(16); // default to desktop
- const selectedImage = useSignal<ImageItem | null>(wizardCategories[0]?.images[0] || null);
- const currentPages = useSignal<number[]>(wizardCategories.map(() => 0));
+  const activeTab = useSignal(0);
+  const itemsPerPage = useSignal(16); // default to desktop
+  const selectedImage = useSignal<ImageItem | null>(wizardCategories[0]?.images[0] || null);
+  const currentPages = useSignal<number[]>(wizardCategories.map(() => 0));
 
- useTask$(({ track }) => {
- track(() => activeTab.value);
- const firstImg = wizardCategories[activeTab.value]?.images[0];
- if (firstImg) selectedImage.value = firstImg;
- });
+  useTask$(({ track }) => {
+    track(() => activeTab.value);
+    const firstImg = wizardCategories[activeTab.value]?.images[0];
+    if (firstImg) selectedImage.value = firstImg;
+  });
 
- useVisibleTask$(() => {
- const updateItemsPerPage = () => {
- itemsPerPage.value = window.matchMedia('(max-width: 640px)').matches ? 12 : 20;
- };
- updateItemsPerPage();
- window.addEventListener('resize', updateItemsPerPage);
- return () => window.removeEventListener('resize', updateItemsPerPage);
- });
+  useVisibleTask$(() => {
+    const updateItemsPerPage = () => {
+      itemsPerPage.value = window.matchMedia('(max-width: 640px)').matches ? 12 : 20;
+    };
+    updateItemsPerPage();
+    window.addEventListener('resize', updateItemsPerPage);
+    return () => window.removeEventListener('resize', updateItemsPerPage);
+  });
 
- const getRarityClass = (rarity: number) => {
- if (rarity <= 1) return { text: 'legendary', color: 'text-orange-400' };
- if (rarity <= 5.1) return { text: 'rare', color: 'text-yellow-400' };
- if (rarity <= 15.1) return { text: 'uncommon', color: 'text-blue-400' };
- return { text: 'common', color: 'text-green-400' };
- };
+  const getRarityClass = (rarity: number) => {
+    if (rarity <= 1) return { text: 'legendary', color: 'text-orange-400' };
+    if (rarity <= 5.1) return { text: 'rare', color: 'text-yellow-400' };
+    if (rarity <= 15.1) return { text: 'uncommon', color: 'text-blue-400' };
+    return { text: 'common', color: 'text-green-400' };
+  };
 
- const getPaginatedImages = (images: ImageItem[], tabIndex: number) => {
- const page = currentPages.value[tabIndex];
- return images.slice(page * itemsPerPage.value, (page + 1) * itemsPerPage.value);
- };
+  const getPaginatedImages = (images: ImageItem[], tabIndex: number) => {
+    const page = currentPages.value[tabIndex];
+    return images.slice(page * itemsPerPage.value, (page + 1) * itemsPerPage.value);
+  };
 
- // Type-safe category mapping
- const categoryToPath: Record<WizardCategory['category'], string> = {
- Body: '/images/body/',
- Head: '/images/hat/',
- Hand: '/images/items/hand/',
- Clothing: '/images/clothing/',
- Eyes: '/images/eyes/',
- Mouth: '/images/',
- Backgrounds: '/images/background/',
- };
+  // Type-safe category mapping
+  const categoryToPath: Record<WizardCategory['category'], string> = {
+    Body: '/images/body/',
+    Head: '/images/hat/',
+    Hand: '/images/items/hand/',
+    Clothing: '/images/clothing/',
+    Eyes: '/images/eyes/',
+    Mouth: '/images/',
+    Backgrounds: '/images/background/',
+  };
 
- const getImagePath = (src: string, category: WizardCategory['category']) => {
- const basePath = categoryToPath[category];
- const fileName = src.split('/').pop() || '';
- if (!fileName) {
- console.error('Invalid src path:', src);
- return '';
- }
- return `${basePath}${fileName}`; // Fixed the template literal syntax
- };
+  const getImagePath = (src: string, category: WizardCategory['category']) => {
+    const basePath = categoryToPath[category];
+    const fileName = src.split('/').pop() || '';
+    if (!fileName) {
+      console.error('Invalid src path:', src);
+      return '';
+    }
+    return `${basePath}${fileName}`; // Fixed the template literal syntax
+  };
 
- return (
- <div class="flex w-full max-w-4xl mx-auto shadow-xl space-x-0 sm:space-x-2">
- <div class="w-full m-0">
- <Tabs.Root class="w-full">
- <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
- {wizardCategories.map((wizard, index) => (
- <Tabs.Tab key={index} class="py-1" onClick$={() => (activeTab.value = index)}>
- {wizard.category}
- </Tabs.Tab>
- ))}
- </Tabs.List>
+  return (
+    <div class="flex w-full max-w-4xl mx-auto shadow-xl space-x-0 sm:space-x-2">
+      <div class="w-full m-0">
+        <Tabs.Root class="w-full">
+          <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
+            {wizardCategories.map((wizard, index) => (
+              <Tabs.Tab key={index} class="py-1" onClick$={() => (activeTab.value = index)}>
+                {wizard.category}
+              </Tabs.Tab>
+            ))}
+          </Tabs.List>
 
- {wizardCategories.map((wizard, index) => (
- <Tabs.Panel key={index}>
- <Card.Content class="p-0 !text-sm">
- <div class="flex flex-col sm:flex-row w-full m-0 gap-2 min-h-[28rem] md:min-h-[17rem]">
- <div class="mx-auto sm:w-1/3 relative z-0">
- <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/20 items-center justify-between w-full border-gray-300">
- {selectedImage.value ? (
- <div class="text-center flex flex-col items-center">
- <div class="flex-1 flex items-center justify-center w-full">
- <img
- src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
- alt={selectedImage.value.alt}
- class={`max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out ${
- wizardCategories[activeTab.value].category === 'Clothing'
- ? 'transform -translate-y -10 sm:-translate-y-10 scale-125'
- : wizardCategories[activeTab.value].category === 'Head'
- ? 'transform translate-y-10 sm:translate-y-16 motion-scale-loop-105'
- : ''
- }`}
- onError$={(e) => console.error('Image load error:', e, selectedImage.value?.src)}
- />
- </div>
- <div class="text-sm mt-2">
- <div class="font-semibold">{selectedImage.value.title}</div>
- <div class="text-gray-400 pt-1">
- Rarity: {selectedImage.value.rarity}% –{' '}
- <span class={getRarityClass(selectedImage.value.rarity).color}>
- {getRarityClass(selectedImage.value.rarity).text}
- </span>
- </div>
- </div>
- </div>
- ) : (
- <span class="text-gray-500">Select an image to preview</span>
- )}
- </div>
- </div>
+          {wizardCategories.map((wizard, index) => (
+            <Tabs.Panel key={index}>
+              <Card.Content class="p-0 !text-sm">
+                <div class="flex flex-col sm:flex-row w-full m-0 gap-2 min-h-[28rem] md:min-h-[17rem]">
+                  <div class="mx-auto sm:w-1/3 relative z-0">
+                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/20 items-center justify-between w-full border-gray-300">
+                      {selectedImage.value ? (
+                        <div class="text-center flex flex-col items-center">
+                          <div class="flex-1 flex items-center justify-center w-full">
+                            <img
+                              src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
+                              alt={selectedImage.value.alt}
+                              class={`max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out ${wizardCategories[activeTab.value].category === 'Clothing'
+                                  ? 'transform -translate-y -10 sm:-translate-y-10 scale-125'
+                                  : wizardCategories[activeTab.value].category === 'Head'
+                                    ? 'transform translate-y-10 sm:translate-y-16 motion-scale-loop-105'
+                                    : ''
+                                }`}
+                              onError$={(e) => console.error('Image load error:', e, selectedImage.value?.src)}
+                            />
+                          </div>
+                          <div class="text-sm mt-2">
+                            <div class="font-semibold">{selectedImage.value.title}</div>
+                            <div class="text-gray-400 pt-1">
+                              Rarity: {selectedImage.value.rarity}% –{' '}
+                              <span class={getRarityClass(selectedImage.value.rarity).color}>
+                                {getRarityClass(selectedImage.value.rarity).text}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <span class="text-gray-500">Select an image to preview</span>
+                      )}
+                    </div>
+                  </div>
 
- <div class="w-full flex-1 px-1.5 sm:px-0 mx-auto">
- <div class="grid grid-cols-4 sm:grid-cols-7 gap-1 mx-auto">
- {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
- <button
- key={imgIndex}
- class={`p-1 flex items-center bg-white/20 shadow-md rounded-lg justify-center aspect-square max-w-[5rem] sm:max-w-[5rem] ${
- selectedImage.value?.src === img.src
- ? 'shadow-[0_0_0_4px_rgba(20,184,166,0.5)]'
- : ''
- }`}
- style={{ boxSizing: 'border-box' }}
- onClick$={() => (selectedImage.value = img)}
- >
- <img
- src={getImagePath(img.src, wizard.category)}
- alt={img.alt}
- class={`w-full h-full object-contain ${
- wizard.category === 'Clothing'
- ? 'transform -translate-y-4 scale-110'
- : wizard.category === 'Head'
- ? 'transform translate-y-4 scale-110'
- : wizard.category === 'Hand'
- ? 'scale-90' // Scales the image down to fit within the new padding
- : ''
- }`}
- onError$={(e) => console.error('Image load error:', e, img.src)}
- />
- </button>
- ))}
- </div>
+                  <div class="w-full flex-1 px-1.5 sm:px-0 mx-auto">
+                    <div class="grid grid-cols-4 sm:grid-cols-7 gap-1 mx-auto">
+                      {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
+                        <button
+                          key={imgIndex}
+                          class={`p-1 flex items-center bg-white/20 shadow-md rounded-lg justify-center aspect-square max-w-[5rem] sm:max-w-[5rem] ${selectedImage.value?.src === img.src
+                              ? 'shadow-[0_0_0_4px_rgba(20,184,166,0.5)]'
+                              : ''
+                            }`}
+                          style={{ boxSizing: 'border-box' }}
+                          onClick$={() => (selectedImage.value = img)}
+                        >
+                          <img
+                            src={getImagePath(img.src, wizard.category)}
+                            alt={img.alt}
+                            class={`w-full h-full object-contain ${wizard.category === 'Clothing'
+                                ? 'transform -translate-y-4 scale-110'
+                                : wizard.category === 'Head'
+                                  ? 'transform translate-y-6 scale-150'
+                                  : wizard.category === 'Hand'
+                                    ? 'scale-90' // Scales the image down to fit within the new padding
+                                    : ''
+                              }`}
+                            onError$={(e) => console.error('Image load error:', e, img.src)}
+                          />
+                        </button>
+                      ))}
+                    </div>
 
- <div
- class={`flex justify-end space-x-2 mt-2 ${
- wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''
- }`}
- >
- <button
- class="px-2 py-1 text-sm border rounded disabled:opacity-50"
- onClick$={() => {
- currentPages.value[index] = Math.max(0 , currentPages.value[index] - 1);
- currentPages.value = [...currentPages.value];
- }}
- disabled={currentPages.value[index] === 0 || wizard.images.length <= itemsPerPage.value}
- >
- ←
- </button>
- <button
- class="px-2 py-1 text-sm border rounded disabled:opacity-50"
- onClick$={() => {
- const maxPage = Math.floor(wizard.images.length / itemsPerPage.value);
- currentPages.value[index] = Math.min(maxPage, currentPages.value[index] + 1);
- currentPages.value = [...currentPages.value];
- }}
- disabled={
- (currentPages.value[index] + 1) * itemsPerPage.value >= wizard.images.length ||
- wizard.images.length <= itemsPerPage.value
- }
- >
- →
- </button>
- </div>
- </div>
- </div>
- </Card.Content>
- </Tabs.Panel>
- ))}
- </Tabs.Root>
- </div>
- </div>
- );
+                    <div
+                      class={`flex justify-end space-x-2 mt-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''
+                        }`}
+                    >
+                      <button
+                        class="px-2 py-1 text-sm border rounded disabled:opacity-50"
+                        onClick$={() => {
+                          currentPages.value[index] = Math.max(0, currentPages.value[index] - 1);
+                          currentPages.value = [...currentPages.value];
+                        }}
+                        disabled={currentPages.value[index] === 0 || wizard.images.length <= itemsPerPage.value}
+                      >
+                        ←
+                      </button>
+                      <button
+                        class="px-2 py-1 text-sm border rounded disabled:opacity-50"
+                        onClick$={() => {
+                          const maxPage = Math.floor(wizard.images.length / itemsPerPage.value);
+                          currentPages.value[index] = Math.min(maxPage, currentPages.value[index] + 1);
+                          currentPages.value = [...currentPages.value];
+                        }}
+                        disabled={
+                          (currentPages.value[index] + 1) * itemsPerPage.value >= wizard.images.length ||
+                          wizard.images.length <= itemsPerPage.value
+                        }
+                      >
+                        →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </Card.Content>
+            </Tabs.Panel>
+          ))}
+        </Tabs.Root>
+      </div>
+    </div>
+  );
 });
 
 export const wizardCategories: WizardCategory[] = [
