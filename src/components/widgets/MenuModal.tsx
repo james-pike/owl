@@ -80,30 +80,31 @@ export default component$(() => {
           </nav>
           <div class="border-t-0 pb-3 border-gray-200 dark:border-gray-700 bg-gray-900/50 dark:bg-gray-900/50">
             <div class="sm:max-w-md mx-2 pt-3 flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-3 lg:justify-start lg:m-0 lg:max-w-7xl">
-              <div class="flex w-full sm:w-auto">
-                <a
-                  href="https://www.kaspa.com/nft/collections/OGMice"
-                  class="border-2 border-black text-black text-xl px-5 py-3 rounded-lg bg-white/80 transition-colors flex items-center justify-center gap-2"
-                >
-                  <LuStar class="w-6 h-6" /> Mint OG Mice
-                </a>
-              </div>
-              <div class="flex w-full sm:w-auto">
-                <a
-                  href="https://kaspa.com/nft/collections/KASKRITTER"
-                  class="bg-teal-400 text-white text-xl px-5 py-3 rounded-lg hover:bg-teal-300 transition-colors flex items-center justify-center gap-2"
-                >
-                  <LuStar class="w-6 h-6" /> Mint KasKritterz
-                </a>
-              </div>
-              <div class="flex w-full sm:w-auto">
-                <a
-                  href="https://t.me/KasKritterzOfficial"
-                  class="bg-blue-300 text-white text-xl px-5 py-3 rounded-lg hover:bg-blue-200 transition-colors flex items-center justify-center gap-2"
-                >
-                  <LuUsers class="w-6 h-6" /> Join Community
-                </a>
-              </div>
+             <div class="flex w-full sm:w-auto">
+    <a
+      href="https://www.kaspa.com/nft/collections/OGMice"
+      class="border-2 border-black text-black text-xl px-5 py-3 rounded-lg bg-white/95 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+    >
+      <LuStar class="w-6 h-6" /> Mint OG Mice
+    </a>
+  </div>
+  <div class="flex w-full sm:w-auto">
+    <a
+      href="https://www.kaspa.com/nft/collections/KasKritter"
+      class="bg-teal-400 text-white text-xl px-5 py-3 rounded-lg hover:bg-white hover:text-teal-400 transition-colors flex items-center justify-center gap-2"
+    >
+      <LuStar class="w-6 h-6 group-hover:text-teal-400" /> Mint Bullz vs Bearz
+    </a>
+  </div>
+  <div class="flex w-full sm:w-auto">
+    <a
+      href="https://t.me/KasKritterzOfficial"
+      class="bg-blue-300 text-white text-xl px-5 py-3 rounded-lg hover:bg-white hover:text-blue-300 transition-colors flex items-center justify-center gap-2"
+    >
+      <LuUsers class="w-6 h-6 group-hover:text-blue-300" /> Join Community
+    </a>
+  </div>
+          
             </div>
           </div>
 
