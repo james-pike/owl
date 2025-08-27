@@ -100,7 +100,7 @@ export default component$(() => {
           ))}
 
           {/* Buttons with order-first on mobile */}
-          <div class="col-span-12 flex flex-col w-full md:w-3/5 pr-4 sm:flex-row gap-3 pb-8 order-first sm:order-none">
+          <div class="col-span-12 flex flex-col w-full md:w-3/5 md:pr-4 px-6 sm:flex-row gap-3 pb-8 order-first sm:order-none">
               <a
   href="https://www.kaspa.com/nft/collections/OGMice"
   class="border-2 hover:filter hover:invert border-black text-black text-xl px-5 py-3 rounded-lg bg-white/90 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
