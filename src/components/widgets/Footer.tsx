@@ -129,14 +129,14 @@ export default component$(() => {
           {/* Buttons with order-first on mobile */}
           <div class="col-span-12 flex flex-col w-full md:w-3/5 md:pl-0 px-4 sm:flex-row gap-3 pb-8 order-first sm:order-none">
             <a
-              href="https://www.kaspa.com/nft/collections/OGMice"
+              href="https://www.kaspa.com/nft/collections/KasKritter"
               class="border-2 hover:filter hover:invert border-black text-black text-xl px-5 py-3 rounded-lg bg-white/90 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
             >
               <LuStar class="w-6 h-6 group-hover:text-teal-400" />
               Mint OG Mice
             </a>
             <a
-              href="https://www.kaspa.com/nft/collections/KasKritter"
+              href="https://www.kaspa.com/nft/collections/BullzBearz"
               class="bg-teal-400 text-white text-xl px-3 py-3 rounded-lg hover:bg-white hover:text-teal-400 transition-colors flex items-center justify-center gap-2 flex-1"
             >
               <LuStar class="w-6 h-6 group-hover:text-teal-400" /> Mint Bullz vs Bearz

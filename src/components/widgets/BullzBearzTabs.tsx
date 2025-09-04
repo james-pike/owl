@@ -83,13 +83,13 @@ export const BullzBearzTabs = component$(() => {
     <div class="flex w-full max-w-4xl mx-auto shadow-md  md:-mt-0.5 space-x-0 sm:space-x-2">
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
-        <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
-  {wizardCategories.map((wizard, index) => (
-    <Tabs.Tab key={index} class="py-1" onClick$={() => (activeTab.value = index)}>
-      {wizard.category === 'Oneof1' ? '1/1' : wizard.category}
-    </Tabs.Tab>
-  ))}
-</Tabs.List>
+          <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
+            {wizardCategories.map((wizard, index) => (
+              <Tabs.Tab key={index} class="py-1" onClick$={() => (activeTab.value = index)}>
+                {wizard.category === 'Oneof1' ? '1/1' : wizard.category}
+              </Tabs.Tab>
+            ))}
+          </Tabs.List>
 
           {wizardCategories.map((wizard, index) => (
             <Tabs.Panel key={index}>
@@ -124,28 +124,30 @@ export const BullzBearzTabs = component$(() => {
                   </div>
 
                   <div class="w-full flex-1 px-1.5 sm:px-0 mx-auto">
-                    <div class="grid grid-cols-4 sm:grid-cols-7 gap-2 mx-auto">
-                      {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
-                      <button
-  key={imgIndex}
-  class={`p-1 flex items-center bg-white/70 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150
-    ${selectedImage.value?.src === img.src
-      ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
-      : 'border border-transparent'
-    }`}
-  style={{ boxSizing: 'border-box' }}
-  onClick$={() => (selectedImage.value = img)}
->
-  <img
-    src={getImagePath(img.src, wizard.category)}
-    alt={img.alt}
-    class="w-full h-full object-contain"
-    onError$={(e) => console.error('Image load error:', e, img.src)}
-  />
-</button>
+              <div class="grid grid-cols-4 sm:grid-cols-7 gap-2 mx-auto">
+  {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
+    <button
+      key={imgIndex}
+      class={`p-1 flex items-center bg-white/70 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150
+        ${selectedImage.value?.src === img.src
+          ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
+          : 'border border-transparent'
+        }
+        ${wizard.category === 'Body' || wizard.category === 'Oneof1' ? 'p-1' : 'p-1'}`}
+      style={{ boxSizing: 'border-box' }}
+      onClick$={() => (selectedImage.value = img)}
+    >
+      <img
+        src={getImagePath(img.src, wizard.category)}
+        alt={img.alt}
+        class="w-full h-full object-contain"
+        onError$={(e) => console.error('Image load error:', e, img.src)}
+      />
+    </button>
+  ))}
+</div>
 
-                      ))}
-                    </div>
+
 
                     <div
                       class={`flex justify-end space-x-2 mt-2 mb-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''
@@ -188,46 +190,46 @@ export const BullzBearzTabs = component$(() => {
 });
 
 export const wizardCategories: WizardCategory[] = [
-   {
-  category: 'Oneof1',
-  icon: LuUser, // Using LuUser as a placeholder since no specific icon provided
-  images: [
-    { src: '/images/2/1of1/1.png', alt: 'SompoBear', title: 'SompoBear', description: 'A unique SompoBear design.', rarity: 0.05 },
-    { src: '/images/2/1of1/2.jpeg', alt: 'SompoBull', title: 'SompoBull', description: 'A unique SompoBull design.', rarity: 0.05 },
-    { src: '/images/2/1of1/3.jpeg', alt: 'SuttonBear', title: 'SuttonBear', description: 'A unique SuttonBear design.', rarity: 0.05 },
-    { src: '/images/2/1of1/4.jpeg', alt: 'SuttonBull', title: 'SuttonBull', description: 'A unique SuttonBull design.', rarity: 0.05 },
-    { src: '/images/2/1of1/5.jpeg', alt: 'ShaiBear', title: 'ShaiBear', description: 'A unique ShaiBear design.', rarity: 0.05 },
-    { src: '/images/2/1of1/6.jpeg', alt: 'ShaiBull', title: 'ShaiBull', description: 'A unique ShaiBull design.', rarity: 0.05 },
-    { src: '/images/2/1of1/7.jpeg', alt: 'DiamondBear', title: 'DiamondBear', description: 'A unique DiamondBear design.', rarity: 0.05 },
-    { src: '/images/2/1of1/8.jpeg', alt: 'DiamondBull', title: 'DiamondBull', description: 'A unique DiamondBull design.', rarity: 0.05 },
-    { src: '/images/2/1of1/9.jpeg', alt: 'KritterKingBear', title: 'KritterKingBear', description: 'A unique KritterKingBear design.', rarity: 0.05 },
-    { src: '/images/2/1of1/10.jpeg', alt: 'KritterKingBull', title: 'KritterKingBull', description: 'A unique KritterKingBull design.', rarity: 0.05 },
-    { src: '/images/2/1of1/11.jpeg', alt: 'BearBot', title: 'BearBot', description: 'A unique BearBot design.', rarity: 0.05 },
-    { src: '/images/2/1of1/12.jpeg', alt: 'BullBot', title: 'BullBot', description: 'A unique BullBot design.', rarity: 0.05 },
-    { src: '/images/2/1of1/13.jpeg', alt: 'BearMonk', title: 'BearMonk', description: 'A unique BearMonk design.', rarity: 0.05 },
-    { src: '/images/2/1of1/14.jpeg', alt: 'BullMonk', title: 'BullMonk', description: 'A unique BullMonk design.', rarity: 0.05 },
-    { src: '/images/2/1of1/15.jpeg', alt: 'Panda', title: 'Panda', description: 'A unique Panda design.', rarity: 0.05 },
-    { src: '/images/2/1of1/16.jpeg', alt: 'Cow', title: 'Cow', description: 'A unique Cow design.', rarity: 0.05 },
-    { src: '/images/2/1of1/17.jpeg', alt: 'PixelBear', title: 'PixelBear', description: 'A unique PixelBear design.', rarity: 0.05 },
-    { src: '/images/2/1of1/18.jpeg', alt: 'PixelBull', title: 'PixelBull', description: 'A unique PixelBull design.', rarity: 0.05 },
-    { src: '/images/2/1of1/19.jpeg', alt: 'FlippedBear', title: 'FlippedBear', description: 'A unique FlippedBear design.', rarity: 0.05 },
-    { src: '/images/2/1of1/20.jpeg', alt: 'FlippedBull', title: 'FlippedBull', description: 'A unique FlippedBull design.', rarity: 0.05 },
-    { src: '/images/2/1of1/21.jpeg', alt: 'BearGhost', title: 'BearGhost', description: 'A unique BearGhost design.', rarity: 0.05 },
-    { src: '/images/2/1of1/22.jpeg', alt: 'BullGhost', title: 'BullGhost', description: 'A unique BullGhost design.', rarity: 0.05 },
-    { src: '/images/2/1of1/23.jpeg', alt: 'BitcoinBear', title: 'BitcoinBear', description: 'A unique BitcoinBear design.', rarity: 0.05 },
-    { src: '/images/2/1of1/24.jpeg', alt: 'BitcoinBull', title: 'BitcoinBull', description: 'A unique BitcoinBull design.', rarity: 0.05 },
-    { src: '/images/2/1of1/25.jpeg', alt: 'BearRug', title: 'BearRug', description: 'A unique BearRug design.', rarity: 0.05 },
-    { src: '/images/2/1of1/26.jpeg', alt: 'KaspaChargingBull', title: 'KaspaChargingBull', description: 'A unique KaspaChargingBull design.', rarity: 0.05 },
-    { src: '/images/2/1of1/27.jpeg', alt: 'KasPoohBear', title: 'KasPoohBear', description: 'A unique KasPoohBear design.', rarity: 0.05 },
-    { src: '/images/2/1of1/28.jpeg', alt: 'KasPoohBull', title: 'KasPoohBull', description: 'A unique KasPoohBull design.', rarity: 0.05 },
-    { src: '/images/2/1of1/29.jpeg', alt: 'MinerBear', title: 'MinerBear', description: 'A unique MinerBear design.', rarity: 0.05 },
-    { src: '/images/2/1of1/30.jpeg', alt: 'MinerBull', title: 'MinerBull', description: 'A unique MinerBull design.', rarity: 0.05 },
-    { src: '/images/2/1of1/31.jpeg', alt: 'PolarAmbassador', title: 'PolarAmbassador', description: 'A unique PolarAmbassador design.', rarity: 0.05 },
-    { src: '/images/2/1of1/32.jpeg', alt: 'RedBullAmbassador', title: 'RedBullAmbassador', description: 'A unique RedBullAmbassador design.', rarity: 0.05 },
-    { src: '/images/2/1of1/33.jpeg', alt: 'NotBear', title: 'NotBear', description: 'A unique NotBear design.', rarity: 0.05 },
-    { src: '/images/2/1of1/34.jpeg', alt: 'NotBull', title: 'NotBull', description: 'A unique NotBull design.', rarity: 0.05 },
-  ],
-},
+  {
+    category: 'Oneof1',
+    icon: LuUser, // Using LuUser as a placeholder since no specific icon provided
+    images: [
+      { src: '/images/2/1of1/1.png', alt: 'SompoBear', title: 'SompoBear', description: 'A unique SompoBear design.', rarity: 0.05 },
+      { src: '/images/2/1of1/2.jpeg', alt: 'SompoBull', title: 'SompoBull', description: 'A unique SompoBull design.', rarity: 0.05 },
+      { src: '/images/2/1of1/3.jpeg', alt: 'SuttonBear', title: 'SuttonBear', description: 'A unique SuttonBear design.', rarity: 0.05 },
+      { src: '/images/2/1of1/4.jpeg', alt: 'SuttonBull', title: 'SuttonBull', description: 'A unique SuttonBull design.', rarity: 0.05 },
+      { src: '/images/2/1of1/5.jpeg', alt: 'ShaiBear', title: 'ShaiBear', description: 'A unique ShaiBear design.', rarity: 0.05 },
+      { src: '/images/2/1of1/6.jpeg', alt: 'ShaiBull', title: 'ShaiBull', description: 'A unique ShaiBull design.', rarity: 0.05 },
+      { src: '/images/2/1of1/7.jpeg', alt: 'DiamondBear', title: 'DiamondBear', description: 'A unique DiamondBear design.', rarity: 0.05 },
+      { src: '/images/2/1of1/8.jpeg', alt: 'DiamondBull', title: 'DiamondBull', description: 'A unique DiamondBull design.', rarity: 0.05 },
+      { src: '/images/2/1of1/9.jpeg', alt: 'KritterKingBear', title: 'KritterKingBear', description: 'A unique KritterKingBear design.', rarity: 0.05 },
+      { src: '/images/2/1of1/10.jpeg', alt: 'KritterKingBull', title: 'KritterKingBull', description: 'A unique KritterKingBull design.', rarity: 0.05 },
+      { src: '/images/2/1of1/11.jpeg', alt: 'BearBot', title: 'BearBot', description: 'A unique BearBot design.', rarity: 0.05 },
+      { src: '/images/2/1of1/12.jpeg', alt: 'BullBot', title: 'BullBot', description: 'A unique BullBot design.', rarity: 0.05 },
+      { src: '/images/2/1of1/13.jpeg', alt: 'BearMonk', title: 'BearMonk', description: 'A unique BearMonk design.', rarity: 0.05 },
+      { src: '/images/2/1of1/14.jpeg', alt: 'BullMonk', title: 'BullMonk', description: 'A unique BullMonk design.', rarity: 0.05 },
+      { src: '/images/2/1of1/15.jpeg', alt: 'Panda', title: 'Panda', description: 'A unique Panda design.', rarity: 0.05 },
+      { src: '/images/2/1of1/16.jpeg', alt: 'Cow', title: 'Cow', description: 'A unique Cow design.', rarity: 0.05 },
+      { src: '/images/2/1of1/17.jpeg', alt: 'PixelBear', title: 'PixelBear', description: 'A unique PixelBear design.', rarity: 0.05 },
+      { src: '/images/2/1of1/18.jpeg', alt: 'PixelBull', title: 'PixelBull', description: 'A unique PixelBull design.', rarity: 0.05 },
+      { src: '/images/2/1of1/19.jpeg', alt: 'FlippedBear', title: 'FlippedBear', description: 'A unique FlippedBear design.', rarity: 0.05 },
+      { src: '/images/2/1of1/20.jpeg', alt: 'FlippedBull', title: 'FlippedBull', description: 'A unique FlippedBull design.', rarity: 0.05 },
+      { src: '/images/2/1of1/21.jpeg', alt: 'BearGhost', title: 'BearGhost', description: 'A unique BearGhost design.', rarity: 0.05 },
+      { src: '/images/2/1of1/22.jpeg', alt: 'BullGhost', title: 'BullGhost', description: 'A unique BullGhost design.', rarity: 0.05 },
+      { src: '/images/2/1of1/23.jpeg', alt: 'BitcoinBear', title: 'BitcoinBear', description: 'A unique BitcoinBear design.', rarity: 0.05 },
+      { src: '/images/2/1of1/24.jpeg', alt: 'BitcoinBull', title: 'BitcoinBull', description: 'A unique BitcoinBull design.', rarity: 0.05 },
+      { src: '/images/2/1of1/25.jpeg', alt: 'BearRug', title: 'BearRug', description: 'A unique BearRug design.', rarity: 0.05 },
+      { src: '/images/2/1of1/26.jpeg', alt: 'KaspaChargingBull', title: 'KaspaChargingBull', description: 'A unique KaspaChargingBull design.', rarity: 0.05 },
+      { src: '/images/2/1of1/27.jpeg', alt: 'KasPoohBear', title: 'KasPoohBear', description: 'A unique KasPoohBear design.', rarity: 0.05 },
+      { src: '/images/2/1of1/28.jpeg', alt: 'KasPoohBull', title: 'KasPoohBull', description: 'A unique KasPoohBull design.', rarity: 0.05 },
+      { src: '/images/2/1of1/29.jpeg', alt: 'MinerBear', title: 'MinerBear', description: 'A unique MinerBear design.', rarity: 0.05 },
+      { src: '/images/2/1of1/30.jpeg', alt: 'MinerBull', title: 'MinerBull', description: 'A unique MinerBull design.', rarity: 0.05 },
+      { src: '/images/2/1of1/31.jpeg', alt: 'PolarAmbassador', title: 'PolarAmbassador', description: 'A unique PolarAmbassador design.', rarity: 0.05 },
+      { src: '/images/2/1of1/32.jpeg', alt: 'RedBullAmbassador', title: 'RedBullAmbassador', description: 'A unique RedBullAmbassador design.', rarity: 0.05 },
+      { src: '/images/2/1of1/33.jpeg', alt: 'NotBear', title: 'NotBear', description: 'A unique NotBear design.', rarity: 0.05 },
+      { src: '/images/2/1of1/34.jpeg', alt: 'NotBull', title: 'NotBull', description: 'A unique NotBull design.', rarity: 0.05 },
+    ],
+  },
   {
     category: 'Body',
     icon: LuUser,
@@ -322,7 +324,7 @@ export const wizardCategories: WizardCategory[] = [
       { src: '/images/2/mouth/censored.png', alt: 'Censored Mouth', title: 'Censored Mouth', description: 'A censored mouth for mystery.', rarity: 3.5 },
     ],
   },
- 
+
   {
     category: 'Brows',
     icon: LuEye, // Using LuEye as a placeholder since no specific icon provided
@@ -334,7 +336,7 @@ export const wizardCategories: WizardCategory[] = [
       { src: '/images/2/brows/mad.png', alt: 'Mad Brows', title: 'Mad Brows', description: 'Eyebrows with an angry expression.', rarity: 17.65 },
     ],
   },
-   {
+  {
     category: 'Backgrounds',
     icon: LuSparkles,
     images: [
@@ -362,5 +364,5 @@ export const wizardCategories: WizardCategory[] = [
   //     { src: '/images/2/signature/yes.png', alt: 'Signature', title: 'Signature', description: 'A unique signature.', rarity: 0.25 },
   //   ],
   // },
- 
+
 ];
