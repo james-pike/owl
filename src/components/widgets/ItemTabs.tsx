@@ -79,7 +79,7 @@ export const ItemTabs = component$(() => {
   };
 
   return (
-    <div class="flex w-full max-w-4xl mx-auto shadow-xl space-x-0 sm:space-x-2">
+    <div class="flex w-full max-w-4xl mx-auto shadow-xl -mt-0.5 space-x-0 sm:space-x-2">
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
           <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
