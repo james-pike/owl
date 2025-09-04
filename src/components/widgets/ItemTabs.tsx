@@ -1,5 +1,5 @@
 import { $, component$, useSignal, useTask$, useVisibleTask$ } from '@builder.io/qwik';
-import { twMerge } from 'tailwind-merge'; // Ensure this is installed and imported
+import { twMerge } from 'tailwind-merge';
 import { Tabs } from '../ui/Tabs';
 import { Card } from '../ui/Card';
 
@@ -18,7 +18,7 @@ interface ImageItem {
 }
 
 interface WizardCategory {
-  category: 'Body' | 'Head' | 'Hand' | 'Clothing' | 'Eyes' | 'Mouth' | 'Backgrounds';
+  category: 'Body' | 'Head' | 'Hand' | 'Clothing' | 'Eyes' | 'Mouth' | 'Backgrounds' | 'Oneof1';
   icon: any;
   images: ImageItem[];
 }
@@ -64,11 +64,17 @@ export const ItemTabs = component$(() => {
     Eyes: '/images/eyes/',
     Mouth: '/images/mouth/',
     Backgrounds: '/images/background/',
+    Oneof1: '/images/Oneof1/',
   };
 
   const getImagePath = (src: string, category: WizardCategory['category']) => {
     const basePath = categoryToPath[category];
-    return basePath + (src.split('/').pop() || '');
+    const fileName = src.split('/').pop() || '';
+    if (!fileName) {
+      console.error('Invalid src path:', src);
+      return '';
+    }
+    return `${basePath}${fileName}`;
   };
 
   return (
@@ -78,7 +84,7 @@ export const ItemTabs = component$(() => {
           <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
             {wizardCategories.map((wizard, index) => (
               <Tabs.Tab key={index} class="py-1" onClick$={() => (activeTab.value = index)}>
-                {wizard.category}
+                {wizard.category === 'Oneof1' ? '1/1' : wizard.category}
               </Tabs.Tab>
             ))}
           </Tabs.List>
@@ -99,6 +105,7 @@ export const ItemTabs = component$(() => {
                               'max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out ',
                               wizardCategories[activeTab.value].category === 'Head' && 'scale-100 translate-y-8'
                             )}
+                            onError$={(e) => console.error('Image load error:', e, selectedImage.value?.src)}
                           />
                         </div>
                       ) : (
@@ -128,7 +135,8 @@ export const ItemTabs = component$(() => {
                             ${selectedImage.value?.src === img.src
                               ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
                               : 'border border-transparent'
-                            }`}
+                            }
+                            ${wizard.category === 'Body' || wizard.category === 'Oneof1' ? 'p-1.5' : 'p-1'}`}
                           onClick$={() => (selectedImage.value = img)}
                         >
                           <img
@@ -138,6 +146,7 @@ export const ItemTabs = component$(() => {
                               'w-full h-full object-contain ',
                               wizardCategories[activeTab.value].category === 'Head' && 'scale-150 translate-y-5'
                             )}
+                            onError$={(e) => console.error('Image load error:', e, img.src)}
                           />
                         </button>
                       ))}
@@ -182,7 +191,28 @@ export const ItemTabs = component$(() => {
 });
 
 
+
+
 export const wizardCategories: WizardCategory[] = [
+   {
+    category: 'Oneof1',
+    icon: LuUser, // Using LuUser as a placeholder since no specific icon provided
+    images: [
+      { src: '/images/Oneof1/1.png', alt: 'SompoBear', title: 'SompoBear', description: 'A unique SompoBear design.', rarity: 0.05 },
+      { src: '/images/Oneof1/2.jpeg', alt: 'SompoBull', title: 'SompoBull', description: 'A unique SompoBull design.', rarity: 0.05 },
+      { src: '/images/Oneof1/3.jpeg', alt: 'SuttonBear', title: 'SuttonBear', description: 'A unique SuttonBear design.', rarity: 0.05 },
+      { src: '/images/Oneof1/4.jpeg', alt: 'SuttonBull', title: 'SuttonBull', description: 'A unique SuttonBull design.', rarity: 0.05 },
+      { src: '/images/Oneof1/5.jpeg', alt: 'ShaiBear', title: 'ShaiBear', description: 'A unique ShaiBear design.', rarity: 0.05 },
+      { src: '/images/Oneof1/6.jpeg', alt: 'ShaiBull', title: 'ShaiBull', description: 'A unique ShaiBull design.', rarity: 0.05 },
+      { src: '/images/Oneof1/7.jpeg', alt: 'DiamondBear', title: 'DiamondBear', description: 'A unique DiamondBear design.', rarity: 0.05 },
+      { src: '/images/Oneof1/8.jpeg', alt: 'DiamondBull', title: 'DiamondBull', description: 'A unique DiamondBull design.', rarity: 0.05 },
+      { src: '/images/Oneof1/9.jpeg', alt: 'KritterKingBear', title: 'KritterKingBear', description: 'A unique KritterKingBear design.', rarity: 0.05 },
+      { src: '/images/Oneof1/10.jpeg', alt: 'KritterKingBull', title: 'KritterKingBull', description: 'A unique KritterKingBull design.', rarity: 0.05 },
+      { src: '/images/Oneof1/11.jpeg', alt: 'BearBot', title: 'BearBot', description: 'A unique BearBot design.', rarity: 0.05 },
+      { src: '/images/Oneof1/12.jpeg', alt: 'BullBot', title: 'BullBot', description: 'A unique BullBot design.', rarity: 0.05 },
+     
+    ],
+  },
   {
     category: 'Body',
     icon: LuUser,
