@@ -33,9 +33,7 @@ export const ItemTabs = component$(() => {
     const firstImg = wizardCategories[activeTab.value]?.images[0];
     if (firstImg) {
       selectedImage.value = firstImg;
-      console.log(`Active tab changed to: ${wizardCategories[activeTab.value]?.category} (index: ${activeTab.value})`, {
-        selectedImage: { title: firstImg.title, rarity: firstImg.rarity },
-      });
+     
     } else {
       selectedImage.value = null;
       console.warn(`No images found for category: ${wizardCategories[activeTab.value]?.category}`);

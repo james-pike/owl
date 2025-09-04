@@ -69,7 +69,7 @@ export default component$(() => {
     if (defaultNft) {
       const rankNumber = activeTab.value === 'bullzbearz' ? extractRankNumber(defaultNft.rarity) : defaultNft.rank || 0;
       const rarityLabel = activeTab.value === 'bullzbearz' ? getBullzBearzRarity(rankNumber, defaultId) : defaultNft.rarity || 'Unknown';
-      const validatedRank = defaultId >= 1 && defaultId <= 35 && activeTab.value === 'bullzbearz' ? '0' : (rankNumber > 0 ? rankNumber : 'Unknown');
+      const validatedRank = defaultId >= 1 && defaultId <= 35 && activeTab.value === 'bullzbearz' ? '1' : (rankNumber > 0 ? rankNumber : 'Unknown');
 
       nftData.value = {
         metadata: {
@@ -107,7 +107,7 @@ export default component$(() => {
     if (defaultNft) {
       const rankNumber = activeTab.value === 'bullzbearz' ? extractRankNumber(defaultNft.rarity) : defaultNft.rank || 0;
       const rarityLabel = activeTab.value === 'bullzbearz' ? getBullzBearzRarity(rankNumber, defaultId) : defaultNft.rarity || 'Unknown';
-      const validatedRank = defaultId >= 1 && defaultId <= 35 && activeTab.value === 'bullzbearz' ? '0' : (rankNumber > 0 ? rankNumber : 'Unknown');
+      const validatedRank = defaultId >= 1 && defaultId <= 35 && activeTab.value === 'bullzbearz' ? '1' : (rankNumber > 0 ? rankNumber : 'Unknown');
 
       nftData.value = {
         metadata: {
@@ -156,7 +156,7 @@ export default component$(() => {
       const tokenURI = `ipfs://${ipfsCid}/${searchId}.${fileExtension}`;
       const rankNumber = activeTab.value === 'bullzbearz' ? extractRankNumber(nft.rarity) : nft.rank || 0;
       const rarityLabel = activeTab.value === 'bullzbearz' ? getBullzBearzRarity(rankNumber, searchId) : nft.rarity || 'Unknown';
-      const validatedRank = searchId >= 1 && searchId <= 35 && activeTab.value === 'bullzbearz' ? '0' : (rankNumber > 0 ? rankNumber : 'Unknown');
+      const validatedRank = searchId >= 1 && searchId <= 35 && activeTab.value === 'bullzbearz' ? '1' : (rankNumber > 0 ? rankNumber : 'Unknown');
 
       nftData.value = {
         metadata: {
