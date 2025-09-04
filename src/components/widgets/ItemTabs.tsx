@@ -231,25 +231,6 @@ export const wizardCategories: WizardCategory[] = [
     ],
   },
     {
-    category: 'Backgrounds',
-    icon: LuSparkles,
-      images: [
-      { src: '/images/background/blue.png', alt: 'Blue Background', title: 'Blue Background', description: 'A serene blue backdrop.', rarity: 11.90 }, // Matches 'blue' (11.90%)
-      { src: '/images/background/green.png', alt: 'Green Background', title: 'Green Background', description: 'A vibrant green scene.', rarity: 12.05 }, // Matches 'green' (12.05%)
-      { src: '/images/background/green2.png', alt: 'Green 2 Background', title: 'Green 2 Background', description: 'Another green variant.', rarity: 12.05 }, // Matches 'green' (12.05%)
-      { src: '/images/background/grey.png', alt: 'Grey Background', title: 'Grey Background', description: 'A neutral grey backdrop.', rarity: 12.30 }, // Matches 'grey' (12.30%)
-      { src: '/images/background/kaspa1.png', alt: 'Kaspa 1 Background', title: 'Kaspa 1 Background', description: 'A Kaspa-themed background.', rarity: 2.20 }, // Matches 'kaspaone' (2.20%)
-      { src: '/images/background/kaspa2.png', alt: 'Kaspa 2 Background', title: 'Kaspa 2 Background', description: 'Another Kaspa-themed variant.', rarity: 0.95 }, // Matches 'kaspatwo' (0.95%)
-      { src: '/images/background/orange.png', alt: 'Orange Background', title: 'Orange Background', description: 'A warm orange scene.', rarity: 9.75 }, // Matches 'yellow' (9.75%)
-      { src: '/images/background/pink.png', alt: 'Pink Background', title: 'Pink Background', description: 'A soft pink backdrop.', rarity: 6.15 }, // Closest to 'beach' (6.15%)
-      { src: '/images/background/purple.png', alt: 'Purple Background', title: 'Purple Background', description: 'A mystical purple scene.', rarity: 5.60 }, // Closest to 'oasis' (5.60%)
-      { src: '/images/background/purple2.png', alt: 'Purple 2 Background', title: 'Purple 2 Background', description: 'Another purple variant.', rarity: 5.60 }, // Closest to 'oasis' (5.60%)
-      { src: '/images/background/red.png', alt: 'Red Background', title: 'Red Background', description: 'A bold red backdrop.', rarity: 10.65 }, // Matches 'red' (10.65%)
-      { src: '/images/background/yellow.png', alt: 'Yellow Background', title: 'Yellow Background', description: 'A bright yellow scene.', rarity: 9.75 }, // Matches 'yellow' (9.75%)
-      { src: '/images/background/yellow2.png', alt: 'Yellow 2 Background', title: 'Yellow 2 Background', description: 'Another yellow variant.', rarity: 9.75 }, // Matches 'yellow' (9.75%)
-    ],
-  },
-  {
     category: 'Head',
     icon: LuEye,
   images: [
@@ -274,6 +255,26 @@ export const wizardCategories: WizardCategory[] = [
       { src: '/images/hat/sunvisorblue5.png', alt: 'Blue Sunvisor', title: 'Blue Sunvisor', description: 'A blue sunvisor for shade.', rarity: 1.15 }, // Closest to 'headphones' (1.15%)
       { src: '/images/hat/sunvisorred5.png', alt: 'Red Sunvisor', title: 'Red Sunvisor', description: 'A red sunvisor for sunny days.', rarity: 1.15 }, // Closest to 'headphones' (1.15%)
       { src: '/images/hat/tinfoilhat.png', alt: 'Tinfoil Hat', title: 'Tinfoil Hat', description: 'Protect your thoughts with this shiny headwear.', rarity: 0.75 }, // Matches 'blackhat' (0.75%)
+    ],
+  },
+
+    {
+    category: 'Backgrounds',
+    icon: LuSparkles,
+      images: [
+      { src: '/images/background/blue.png', alt: 'Blue Background', title: 'Blue Background', description: 'A serene blue backdrop.', rarity: 11.90 }, // Matches 'blue' (11.90%)
+      { src: '/images/background/green.png', alt: 'Green Background', title: 'Green Background', description: 'A vibrant green scene.', rarity: 12.05 }, // Matches 'green' (12.05%)
+      { src: '/images/background/green2.png', alt: 'Green 2 Background', title: 'Green 2 Background', description: 'Another green variant.', rarity: 12.05 }, // Matches 'green' (12.05%)
+      { src: '/images/background/grey.png', alt: 'Grey Background', title: 'Grey Background', description: 'A neutral grey backdrop.', rarity: 12.30 }, // Matches 'grey' (12.30%)
+      { src: '/images/background/kaspa1.png', alt: 'Kaspa 1 Background', title: 'Kaspa 1 Background', description: 'A Kaspa-themed background.', rarity: 2.20 }, // Matches 'kaspaone' (2.20%)
+      { src: '/images/background/kaspa2.png', alt: 'Kaspa 2 Background', title: 'Kaspa 2 Background', description: 'Another Kaspa-themed variant.', rarity: 0.95 }, // Matches 'kaspatwo' (0.95%)
+      { src: '/images/background/orange.png', alt: 'Orange Background', title: 'Orange Background', description: 'A warm orange scene.', rarity: 9.75 }, // Matches 'yellow' (9.75%)
+      { src: '/images/background/pink.png', alt: 'Pink Background', title: 'Pink Background', description: 'A soft pink backdrop.', rarity: 6.15 }, // Closest to 'beach' (6.15%)
+      { src: '/images/background/purple.png', alt: 'Purple Background', title: 'Purple Background', description: 'A mystical purple scene.', rarity: 5.60 }, // Closest to 'oasis' (5.60%)
+      { src: '/images/background/purple2.png', alt: 'Purple 2 Background', title: 'Purple 2 Background', description: 'Another purple variant.', rarity: 5.60 }, // Closest to 'oasis' (5.60%)
+      { src: '/images/background/red.png', alt: 'Red Background', title: 'Red Background', description: 'A bold red backdrop.', rarity: 10.65 }, // Matches 'red' (10.65%)
+      { src: '/images/background/yellow.png', alt: 'Yellow Background', title: 'Yellow Background', description: 'A bright yellow scene.', rarity: 9.75 }, // Matches 'yellow' (9.75%)
+      { src: '/images/background/yellow2.png', alt: 'Yellow 2 Background', title: 'Yellow 2 Background', description: 'Another yellow variant.', rarity: 9.75 }, // Matches 'yellow' (9.75%)
     ],
   },
 
