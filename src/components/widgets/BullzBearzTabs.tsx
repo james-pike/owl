@@ -80,7 +80,7 @@ export const BullzBearzTabs = component$(() => {
   };
 
   return (
-    <div class="flex w-full max-w-4xl mx-auto shadow-md  md:-mt-0.5 space-x-0 sm:space-x-2">
+    <div class="flex w-full max-w-4xl mx-auto shadow-md  -mt-0.5 space-x-0 sm:space-x-2">
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
           <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
@@ -133,7 +133,7 @@ export const BullzBearzTabs = component$(() => {
           ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
           : 'border border-transparent'
         }
-        ${wizard.category === 'Body' || wizard.category === 'Oneof1' ? 'p-1' : 'p-1'}`}
+        ${wizard.category === 'Body' || wizard.category === 'Oneof1' ? 'p-1.5' : 'p-1'}`}
       style={{ boxSizing: 'border-box' }}
       onClick$={() => (selectedImage.value = img)}
     >
