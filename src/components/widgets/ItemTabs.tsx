@@ -1,5 +1,3 @@
-
-
 import { $, component$, useSignal, useTask$, useVisibleTask$ } from '@builder.io/qwik';
 import { twMerge } from 'tailwind-merge';
 import { Tabs } from '../ui/Tabs';
@@ -25,15 +23,18 @@ interface WizardCategory {
   images: ImageItem[];
 }
 
+// Pre-sort images in each category by rarity ascending
+
+
 export const ItemTabs = component$(() => {
   const activeTab = useSignal(0);
   const itemsPerPage = useSignal(16); // default to desktop
-  const selectedImage = useSignal<ImageItem | null>(wizardCategories[0]?.images[0] || null);
-  const currentPages = useSignal<number[]>(wizardCategories.map(() => 0));
+  const selectedImage = useSignal<ImageItem | null>(sortedWizardCategories[0]?.images[0] || null);
+  const currentPages = useSignal<number[]>(sortedWizardCategories.map(() => 0));
 
   useTask$(({ track }) => {
     track(() => activeTab.value);
-    const firstImg = wizardCategories[activeTab.value]?.images[0];
+    const firstImg = sortedWizardCategories[activeTab.value]?.images[0];
     selectedImage.value = firstImg || null;
   });
 
@@ -84,14 +85,14 @@ export const ItemTabs = component$(() => {
       <div class="w-full">
         <Tabs.Root class="w-full">
           <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
-            {wizardCategories.map((wizard, index) => (
+            {sortedWizardCategories.map((wizard, index) => (
               <Tabs.Tab key={index} class="py-1" onClick$={() => (activeTab.value = index)}>
                 {wizard.category === 'Oneof1' ? '1/1' : wizard.category}
               </Tabs.Tab>
             ))}
           </Tabs.List>
 
-          {wizardCategories.map((wizard, index) => (
+          {sortedWizardCategories.map((wizard, index) => (
             <Tabs.Panel key={index}>
               <Card.Content class="p-0 !text-sm">
                 <div class="flex flex-col sm:flex-row w-full gap-2 min-h-[28rem] md:min-h-[17rem]">
@@ -101,11 +102,11 @@ export const ItemTabs = component$(() => {
                       {selectedImage.value ? (
                         <div class="flex-1 flex items-center justify-center w-full">
                           <img
-                            src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
+                            src={getImagePath(selectedImage.value.src, sortedWizardCategories[activeTab.value].category)}
                             alt={selectedImage.value.alt}
                             class={twMerge(
                               'max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out ',
-                              wizardCategories[activeTab.value].category === 'Head' && 'scale-100 translate-y-8'
+                              sortedWizardCategories[activeTab.value].category === 'Head' && 'scale-100 translate-y-8'
                             )}
                             onError$={(e) => console.error('Image load error:', e, selectedImage.value?.src)}
                           />
@@ -150,7 +151,7 @@ export const ItemTabs = component$(() => {
                             alt={img.alt}
                             class={twMerge(
                               'w-full h-full object-contain ',
-                              wizardCategories[activeTab.value].category === 'Head' && 'scale-150 translate-y-5'
+                              sortedWizardCategories[activeTab.value].category === 'Head' && 'scale-150 translate-y-5'
                             )}
                             onError$={(e) => console.error('Image load error:', e, img.src)}
                           />
@@ -200,23 +201,24 @@ export const ItemTabs = component$(() => {
 
 
 
+
 export const wizardCategories: WizardCategory[] = [
    {
     category: 'Oneof1',
     icon: LuUser, // Using LuUser as a placeholder since no specific icon provided
     images: [
-      { src: '/images/Oneof1/1.png', alt: 'SompoBear', title: 'SompoBear', description: 'A unique SompoBear design.', rarity: 0.05 },
-      { src: '/images/Oneof1/2.jpeg', alt: 'SompoBull', title: 'SompoBull', description: 'A unique SompoBull design.', rarity: 0.05 },
-      { src: '/images/Oneof1/3.jpeg', alt: 'SuttonBear', title: 'SuttonBear', description: 'A unique SuttonBear design.', rarity: 0.05 },
-      { src: '/images/Oneof1/4.jpeg', alt: 'SuttonBull', title: 'SuttonBull', description: 'A unique SuttonBull design.', rarity: 0.05 },
-      { src: '/images/Oneof1/5.jpeg', alt: 'ShaiBear', title: 'ShaiBear', description: 'A unique ShaiBear design.', rarity: 0.05 },
-      { src: '/images/Oneof1/6.jpeg', alt: 'ShaiBull', title: 'ShaiBull', description: 'A unique ShaiBull design.', rarity: 0.05 },
-      { src: '/images/Oneof1/7.jpeg', alt: 'DiamondBear', title: 'DiamondBear', description: 'A unique DiamondBear design.', rarity: 0.05 },
-      { src: '/images/Oneof1/8.jpeg', alt: 'DiamondBull', title: 'DiamondBull', description: 'A unique DiamondBull design.', rarity: 0.05 },
-      { src: '/images/Oneof1/9.jpeg', alt: 'KritterKingBear', title: 'KritterKingBear', description: 'A unique KritterKingBear design.', rarity: 0.05 },
-      { src: '/images/Oneof1/10.jpeg', alt: 'KritterKingBull', title: 'KritterKingBull', description: 'A unique KritterKingBull design.', rarity: 0.05 },
-      { src: '/images/Oneof1/11.jpeg', alt: 'BearBot', title: 'BearBot', description: 'A unique BearBot design.', rarity: 0.05 },
-      { src: '/images/Oneof1/12.jpeg', alt: 'BullBot', title: 'BullBot', description: 'A unique BullBot design.', rarity: 0.05 },
+      { src: '/images/Oneof1/1.png', alt: 'SompoBear', title: 'SompoBear', description: 'A unique SompoBear design.', rarity: 0.5 },
+      { src: '/images/Oneof1/2.jpeg', alt: 'SompoBull', title: 'SompoBull', description: 'A unique SompoBull design.', rarity: 0.5 },
+      { src: '/images/Oneof1/3.jpeg', alt: 'SuttonBear', title: 'SuttonBear', description: 'A unique SuttonBear design.', rarity: 0.5 },
+      { src: '/images/Oneof1/4.jpeg', alt: 'SuttonBull', title: 'SuttonBull', description: 'A unique SuttonBull design.', rarity: 0.5 },
+      { src: '/images/Oneof1/5.jpeg', alt: 'ShaiBear', title: 'ShaiBear', description: 'A unique ShaiBear design.', rarity: 0.5 },
+      { src: '/images/Oneof1/6.jpeg', alt: 'ShaiBull', title: 'ShaiBull', description: 'A unique ShaiBull design.', rarity: 0.5 },
+      { src: '/images/Oneof1/7.jpeg', alt: 'DiamondBear', title: 'DiamondBear', description: 'A unique DiamondBear design.', rarity: 0.5 },
+      { src: '/images/Oneof1/8.jpeg', alt: 'DiamondBull', title: 'DiamondBull', description: 'A unique DiamondBull design.', rarity: 0.5 },
+      { src: '/images/Oneof1/9.jpeg', alt: 'KritterKingBear', title: 'KritterKingBear', description: 'A unique KritterKingBear design.', rarity: 0.5 },
+      { src: '/images/Oneof1/10.jpeg', alt: 'KritterKingBull', title: 'KritterKingBull', description: 'A unique KritterKingBull design.', rarity: 0.5 },
+      { src: '/images/Oneof1/11.jpeg', alt: 'BearBot', title: 'BearBot', description: 'A unique BearBot design.', rarity: 0.5 },
+      { src: '/images/Oneof1/12.jpeg', alt: 'BullBot', title: 'BullBot', description: 'A unique BullBot design.', rarity: 0.5 },
      
     ],
   },
@@ -400,3 +402,8 @@ export const wizardCategories: WizardCategory[] = [
   },
 
 ];
+
+const sortedWizardCategories: WizardCategory[] = wizardCategories.map((cat) => ({
+  ...cat,
+  images: [...cat.images].sort((a, b) => a.rarity - b.rarity),
+}));

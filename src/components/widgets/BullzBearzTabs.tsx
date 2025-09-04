@@ -22,15 +22,17 @@ interface WizardCategory {
   images: ImageItem[];
 }
 
+// Pre-sort images in each category by rarity ascending (rarest first)
+
 export const BullzBearzTabs = component$(() => {
   const activeTab = useSignal(0);
   const itemsPerPage = useSignal(16); // default to desktop
-  const selectedImage = useSignal<ImageItem | null>(wizardCategories[0]?.images[0] || null);
-  const currentPages = useSignal<number[]>(wizardCategories.map(() => 0));
+  const selectedImage = useSignal<ImageItem | null>(sortedWizardCategories[0]?.images[0] || null);
+  const currentPages = useSignal<number[]>(sortedWizardCategories.map(() => 0));
 
   useTask$(({ track }) => {
     track(() => activeTab.value);
-    const firstImg = wizardCategories[activeTab.value]?.images[0];
+    const firstImg = sortedWizardCategories[activeTab.value]?.images[0];
     if (firstImg) selectedImage.value = firstImg;
   });
 
@@ -82,14 +84,14 @@ export const BullzBearzTabs = component$(() => {
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
           <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
-            {wizardCategories.map((wizard, index) => (
+            {sortedWizardCategories.map((wizard, index) => (
               <Tabs.Tab key={index} class="py-1" onClick$={() => (activeTab.value = index)}>
                 {wizard.category === 'Oneof1' ? '1/1' : wizard.category}
               </Tabs.Tab>
             ))}
           </Tabs.List>
 
-          {wizardCategories.map((wizard, index) => (
+          {sortedWizardCategories.map((wizard, index) => (
             <Tabs.Panel key={index}>
               <Card.Content class="p-0 !text-sm">
                 <div class="flex flex-col sm:flex-row w-full m-0 gap-2 min-h-[28rem] md:min-h-[17rem]">
@@ -99,7 +101,7 @@ export const BullzBearzTabs = component$(() => {
                       {selectedImage.value ? (
                         <div class="flex-1 flex items-center justify-center w-full">
                           <img
-                            src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
+                            src={getImagePath(selectedImage.value.src, sortedWizardCategories[activeTab.value].category)}
                             alt={selectedImage.value.alt}
                             class="max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out"
                           />
@@ -187,6 +189,7 @@ export const BullzBearzTabs = component$(() => {
     </div>
   );
 });
+
 
 // Note: wizardCategories array is not provided in the code snippet. Ensure it is defined elsewhere or add it as needed.
 
@@ -367,3 +370,8 @@ export const wizardCategories: WizardCategory[] = [
   // },
 
 ];
+
+const sortedWizardCategories: WizardCategory[] = wizardCategories.map((cat) => ({
+  ...cat,
+  images: [...cat.images].sort((a, b) => a.rarity - b.rarity),
+}));
