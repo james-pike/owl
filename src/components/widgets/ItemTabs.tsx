@@ -131,12 +131,16 @@ export const ItemTabs = component$(() => {
                       {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
                         <button
                           key={imgIndex}
-                          class={`p-1 flex items-center bg-white/60 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150
-                            ${selectedImage.value?.src === img.src
+                          class={twMerge(
+                            `p-0.5 flex items-center bg-white/60 shadow-md rounded-lg justify-center aspect-[1/1] transition-transform duration-150`,
+                            selectedImage.value?.src === img.src
                               ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
-                              : 'border border-transparent'
-                            }
-                            ${wizard.category === 'Body' || wizard.category === 'Oneof1' ? 'p-1.5' : 'p-1'}`}
+                              : 'border border-transparent',
+                            (wizard.category === 'Body' || wizard.category === 'Oneof1') && selectedImage.value?.src === img.src
+                              ? 'p-0.75'
+                              : 'p-0.5'
+                          )}
+                          style={{ boxSizing: 'border-box' }}
                           onClick$={() => (selectedImage.value = img)}
                         >
                           <img
@@ -230,34 +234,7 @@ export const wizardCategories: WizardCategory[] = [
       { src: '/images/body/yellow.png', alt: 'Slim Body', title: 'Yellow Body', description: 'A slender wizard physique.', rarity: 2.85 }, // Closest to 'white' (2.85%)
     ],
   },
-    {
-    category: 'Head',
-    icon: LuEye,
-  images: [
-      { src: '/images/hat/baseballcap5.png', alt: 'Baseball Cap', title: 'Baseball Cap', description: 'A sporty baseball cap.', rarity: 0.85 }, // Closest to 'capblack' (0.85%)
-      { src: '/images/hat/beaniebrown5.png', alt: 'Brown Beanie', title: 'Brown Beanie', description: 'A warm brown beanie.', rarity: 4.75 }, // Matches 'kaspabeanie' (4.75%)
-      { src: '/images/hat/beaniegreen5.png', alt: 'Green Beanie', title: 'Green Beanie', description: 'A cozy green beanie.', rarity: 4.75 }, // Matches 'kaspabeanie' (4.75%)
-      { src: '/images/hat/blackhair5.png', alt: 'Black Hair', title: 'Black Hair', description: 'Flowing black hair.', rarity: 72.50 }, // Matches 'null' (72.50%)
-      { src: '/images/hat/blackhat5.png', alt: 'Black Hat', title: 'Black Hat', description: 'A classic black hat.', rarity: 0.75 }, // Matches 'blackhat' (0.75%)
-      { src: '/images/hat/brownhair5.png', alt: 'Brown Hair', title: 'Brown Hair', description: 'Natural brown hair.', rarity: 72.50 }, // Matches 'null' (72.50%)
-      { src: '/images/hat/capblue5.png', alt: 'Blue Cap', title: 'Blue Cap', description: 'A casual blue cap.', rarity: 4.80 }, // Matches 'kaspacap' (4.80%)
-      { src: '/images/hat/capgreen5.png', alt: 'Green Cap', title: 'Green Cap', description: 'A casual green cap.', rarity: 4.80 }, // Matches 'kaspacap' (4.80%)
-      { src: '/images/hat/capred5.png', alt: 'Red Cap', title: 'Red Cap', description: 'A casual red cap.', rarity: 4.80 }, // Matches 'kaspacap' (4.80%)
-      { src: '/images/hat/chefhat.png', alt: 'Chef Hat', title: 'Chef Hat', description: 'A culinary-inspired wizard hat.', rarity: 1.15 }, // Closest to 'headphones' (1.15%)
-      { src: '/images/hat/constructionhelmet.png', alt: 'Construction Helmet', title: 'Construction Helmet', description: 'A sturdy helmet for safety.', rarity: 1.00 }, // Matches 'strawhat' (1.00%)
-      { src: '/images/hat/hat.png', alt: 'Hat', title: 'Classic Hat', description: 'A wizard\'s classic pointed hat.', rarity: 5.40 }, // Matches 'bandanakaspa' (5.40%)
-      { src: '/images/hat/manhat5.png', alt: 'Man Hat', title: 'Man Hat', description: 'A stylish hat for men.', rarity: 5.75 }, // Matches 'bandanakaspaone' (5.75%)
-      { src: '/images/hat/navyhat.png', alt: 'Navy Hat', title: 'Navy Hat', description: 'A deep blue navy cap.', rarity: 4.80 }, // Matches 'kaspacap' (4.80%)
-      { src: '/images/hat/partyhatblue5.png', alt: 'Party Hat Blue', title: 'Blue Party Hat', description: 'A festive blue party hat.', rarity: 1.35 }, // Matches 'bandanablack' (1.35%)
-      { src: '/images/hat/partyhatpink5.png', alt: 'Party Hat Pink', title: 'Pink Party Hat', description: 'A festive pink party hat.', rarity: 1.35 }, // Matches 'bandanablack' (1.35%)
-      { src: '/images/hat/showercap.png', alt: 'Shower Cap', title: 'Shower Cap', description: 'A quirky shower cap.', rarity: 0.75 }, // Matches 'blackhat' (0.75%)
-      { src: '/images/hat/strawhat5.png', alt: 'Straw Hat', title: 'Straw Hat', description: 'A breezy straw hat for sunny days.', rarity: 1.00 }, // Matches 'strawhat' (1.00%)
-      { src: '/images/hat/sunvisorblue5.png', alt: 'Blue Sunvisor', title: 'Blue Sunvisor', description: 'A blue sunvisor for shade.', rarity: 1.15 }, // Closest to 'headphones' (1.15%)
-      { src: '/images/hat/sunvisorred5.png', alt: 'Red Sunvisor', title: 'Red Sunvisor', description: 'A red sunvisor for sunny days.', rarity: 1.15 }, // Closest to 'headphones' (1.15%)
-      { src: '/images/hat/tinfoilhat.png', alt: 'Tinfoil Hat', title: 'Tinfoil Hat', description: 'Protect your thoughts with this shiny headwear.', rarity: 0.75 }, // Matches 'blackhat' (0.75%)
-    ],
-  },
-
+  
     {
     category: 'Backgrounds',
     icon: LuSparkles,

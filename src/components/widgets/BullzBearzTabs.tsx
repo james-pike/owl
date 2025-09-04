@@ -1,6 +1,7 @@
 import { $, component$, useSignal, useTask$, useVisibleTask$ } from '@builder.io/qwik';
 import { Tabs } from '../ui/Tabs';
 import { Card } from '../ui/Card';
+import { twMerge } from 'tailwind-merge';
 
 const LuUser = $(() => import('@qwikest/icons/lucide').then((m) => m.LuUser));
 const LuShirt = $(() => import('@qwikest/icons/lucide').then((m) => m.LuShirt));
@@ -15,13 +16,11 @@ interface ImageItem {
   rarity: number;
 }
 
-
 interface WizardCategory {
   category: 'Body' | 'Head' | 'Clothing' | 'Eyes' | 'Mouth' | 'Brows' | 'Backgrounds' | 'Signature' | 'Oneof1';
-  icon: any; // Temporary type, adjust based on actual icon type
+  icon: any;
   images: ImageItem[];
 }
-
 
 export const BullzBearzTabs = component$(() => {
   const activeTab = useSignal(0);
@@ -56,7 +55,6 @@ export const BullzBearzTabs = component$(() => {
     return images.slice(page * itemsPerPage.value, (page + 1) * itemsPerPage.value);
   };
 
-  // Type-safe category mapping
   const categoryToPath: Record<WizardCategory['category'], string> = {
     Body: '/images/body2/',
     Head: '/images/2/hat/',
@@ -76,11 +74,11 @@ export const BullzBearzTabs = component$(() => {
       console.error('Invalid src path:', src);
       return '';
     }
-    return `${basePath}${fileName}`; // Fixed the template literal syntax
+    return `${basePath}${fileName}`;
   };
 
   return (
-    <div class="flex w-full max-w-4xl mx-auto shadow-md  -mt-0.5 space-x-0 sm:space-x-2">
+    <div class="flex w-full max-w-4xl mx-auto shadow-md -mt-0.5 space-x-0 sm:space-x-2">
       <div class="w-full m-0">
         <Tabs.Root class="w-full">
           <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
@@ -95,64 +93,64 @@ export const BullzBearzTabs = component$(() => {
             <Tabs.Panel key={index}>
               <Card.Content class="p-0 !text-sm">
                 <div class="flex flex-col sm:flex-row w-full m-0 gap-2 min-h-[28rem] md:min-h-[17rem]">
-                 {/* Selected Image Preview */}
-<div class="mx-auto sm:w-1/3 relative z-0">
-  <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/50 items-center justify-center w-full border-gray-300 min-w-[9rem]">
-    {selectedImage.value ? (
-      <div class="flex-1 flex items-center justify-center w-full">
-        <img
-          src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
-          alt={selectedImage.value.alt}
-          class="max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out"
-        />
-      </div>
-    ) : (
-      <span class="text-gray-500">Select an image to preview</span>
-    )}
-    {selectedImage.value && (
-      <div class="text-sm mt-2 text-center w-full">
-        <div class="font-semibold">{selectedImage.value.title}</div>
-        <div class="text-gray-400 pt-1 min-w-[9rem]">
-          Rarity: {selectedImage.value.rarity}% –{' '}
-          <span class={getRarityClass(selectedImage.value.rarity).color}>
-            {getRarityClass(selectedImage.value.rarity).text}
-          </span>
-        </div>
-      </div>
-    )}
-  </div>
-</div>
+                  {/* Selected Image Preview */}
+                  <div class="mx-auto sm:w-1/3 relative z-0">
+                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/50 items-center justify-center w-full border-gray-300 min-w-[9rem]">
+                      {selectedImage.value ? (
+                        <div class="flex-1 flex items-center justify-center w-full">
+                          <img
+                            src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
+                            alt={selectedImage.value.alt}
+                            class="max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out"
+                          />
+                        </div>
+                      ) : (
+                        <span class="text-gray-500">Select an image to preview</span>
+                      )}
+                      {selectedImage.value && (
+                        <div class="text-sm mt-2 text-center w-full">
+                          <div class="font-semibold">{selectedImage.value.title}</div>
+                          <div class="text-gray-400 pt-1 min-w-[9rem]">
+                            Rarity: {selectedImage.value.rarity}% –{' '}
+                            <span class={getRarityClass(selectedImage.value.rarity).color}>
+                              {getRarityClass(selectedImage.value.rarity).text}
+                            </span>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
 
-
+                  {/* Image Grid */}
                   <div class="w-full flex-1 px-1.5 sm:px-0 mx-auto">
-              <div class="grid grid-cols-4 sm:grid-cols-7 gap-2 mx-auto">
-  {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
-    <button
-      key={imgIndex}
-      class={`p-1 flex items-center bg-white/60 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150
-        ${selectedImage.value?.src === img.src
-          ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
-          : 'border border-transparent'
-        }
-        ${wizard.category === 'Body' || wizard.category === 'Oneof1' ? 'p-1.5' : 'p-1'}`}
-      style={{ boxSizing: 'border-box' }}
-      onClick$={() => (selectedImage.value = img)}
-    >
-      <img
-        src={getImagePath(img.src, wizard.category)}
-        alt={img.alt}
-        class="w-full h-full object-contain"
-        onError$={(e) => console.error('Image load error:', e, img.src)}
-      />
-    </button>
-  ))}
-</div>
-
-
+                    <div class="grid grid-cols-4 sm:grid-cols-7 gap-2 mx-auto">
+                      {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
+                        <button
+                          key={imgIndex}
+                          class={twMerge(
+                            `p-0.5 flex items-center bg-white/60 shadow-md rounded-lg justify-center aspect-[1/1] transition-transform duration-150`,
+                            selectedImage.value?.src === img.src
+                              ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
+                              : 'border border-transparent',
+                            (wizard.category === 'Body' || wizard.category === 'Oneof1') && selectedImage.value?.src === img.src
+                              ? 'p-0.75'
+                              : 'p-0.5'
+                          )}
+                          style={{ boxSizing: 'border-box' }}
+                          onClick$={() => (selectedImage.value = img)}
+                        >
+                          <img
+                            src={getImagePath(img.src, wizard.category)}
+                            alt={img.alt}
+                            class="w-full h-full object-contain"
+                            onError$={(e) => console.error('Image load error:', e, img.src)}
+                          />
+                        </button>
+                      ))}
+                    </div>
 
                     <div
-                      class={`flex justify-end space-x-2 mt-3 mb-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''
-                        }`}
+                      class={`flex justify-end space-x-2 mt-3 mb-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''}`}
                     >
                       <button
                         class="px-2 pb-0 text-sm bg-white/70 border rounded disabled:opacity-50"
@@ -189,6 +187,8 @@ export const BullzBearzTabs = component$(() => {
     </div>
   );
 });
+
+// Note: wizardCategories array is not provided in the code snippet. Ensure it is defined elsewhere or add it as needed.
 
 export const wizardCategories: WizardCategory[] = [
   {
