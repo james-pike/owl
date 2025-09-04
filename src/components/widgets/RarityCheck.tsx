@@ -156,13 +156,13 @@ export default component$(() => {
       {/* Tab Navigation */}
       <div class="flex border-b border-gray-200 mb-4">
         <button
-          class={`px-4 py-2 font-semibold ${activeTab.value === 'kaskritterz' ? 'border-b-2 border-teal-500 text-teal-500' : 'text-gray-500'}`}
+          class={`px-2 py-2 font-semibold ${activeTab.value === 'kaskritterz' ? 'border-b-2 border-teal-500 text-teal-500' : 'text-gray-500'}`}
           onClick$={() => (activeTab.value = 'kaskritterz')}
         >
           KasKritterz
         </button>
         <button
-          class={`px-4 py-2 font-semibold ${activeTab.value === 'bullzbearz' ? 'border-b-2 border-teal-500 text-teal-500' : 'text-gray-500'}`}
+          class={`px-2 py-2 font-semibold ${activeTab.value === 'bullzbearz' ? 'border-b-2 border-teal-500 text-teal-500' : 'text-gray-500'}`}
           onClick$={() => (activeTab.value = 'bullzbearz')}
         >
           Bullz vs Bearz
