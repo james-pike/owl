@@ -43,8 +43,8 @@ export default component$((props: Props) => {
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
           <div class="-mt-4">
             <Tabs.Root class="max-w-6xl">
-              <Tabs.List class="flex flex-row mb-2 shadow-sm mx-auto items-center justify-center gap-1 flex-nowrap overflow-x-auto md:grid md:grid-cols-5 w-full">
-                <Tabs.Tab class="!text-lg data-[state=selected]:bg-teal-200 flex items-center gap-1 md:flex-row h-16 md:h-auto md:w-auto">
+              <Tabs.List class="flex flex-row mb-2 shadow-sm items-center justify-center gap-0.5 flex-nowrap md:grid md:grid-cols-5 w-full md:mx-auto">
+                <Tabs.Tab class="!text-lg data-[state=selected]:bg-teal-200 flex items-center gap-0.5 md:gap-1 md:flex-row h-16 md:h-auto md:w-auto w-[49%] flex-shrink-0">
                   <svg width="48px" height="48px" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M292.774 89C215.844 106.143 285.026 197.233 343 112.679"
@@ -73,7 +73,7 @@ export default component$((props: Props) => {
                   </svg>
                   Bullz vs Bearz
                 </Tabs.Tab>
-                <Tabs.Tab class="!text-lg  data-[state=selected]:bg-teal-200 flex items-center gap-1 md:flex-row h-16 md:h-auto md:w-auto">
+                <Tabs.Tab class="!text-lg data-[state=selected]:bg-teal-200 flex items-center gap-0.5 md:gap-1 md:flex-row h-16 md:h-auto md:w-auto w-[49%] flex-shrink-0">
                   <svg version="1.1" id="_x32_" class="pr-1.5 my-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="36px" height="36px" fill="#000000">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
