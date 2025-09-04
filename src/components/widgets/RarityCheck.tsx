@@ -29,10 +29,7 @@ const getRarityClass = (rarity: string) => {
 };
 
 // Helper function to extract rarity number (e.g., "Rank: #987" -> "#987")
-const getRarityNumber = (rank: string | undefined) => {
-  if (typeof rank !== 'string' || !rank.includes('#')) return 'Unknown';
-  return rank.split('#')[1] ? `#${rank.split('#')[1]}` : 'Unknown';
-};
+
 
 export default component$(() => {
   const activeTab = useSignal<'kaskritterz' | 'bullzbearz'>('kaskritterz'); // Default to KasKritterz
