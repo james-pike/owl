@@ -50,23 +50,25 @@ export default component$(() => {
           </div>
 
           {/* Menu */}
-          <nav class="mt-0 space-y-4 bg-gray-900/50">
-            {!isServicesSection.value && (
-              <ul class="flex flex-col gap-0 text-xl">
-                {menuItems.map((item) => (
-                  <li key={item.title}>
-                    <a
-                      href={item.href}
-                      class="block text-white p-2 px-3 hover:text-teal-300 hover:bg-teal-900/50 font-medium transition-all duration-200"
-                      onClick$={() => (show.value = false)}
-                    >
-                      {item.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+        <nav class="mt-0 space-y-4 bg-gray-900/50">
+  {!isServicesSection.value && (
+    <ul class="flex flex-col gap-0 text-xl">
+      {menuItems.map((item) => (
+        <li key={item.title}>
+          <a
+            href={item.href}
+            class={cn(
+              "block text-white p-2 px-3 hover:text-teal-300 hover:bg-teal-900/50 font-medium transition-all duration-200 focus:outline-none"
             )}
-          </nav>
+            onClick$={() => (show.value = false)}
+          >
+            {item.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )}
+</nav>
 
           {/* Buttons */}
           <div class="pb-3 bg-gray-900/50">

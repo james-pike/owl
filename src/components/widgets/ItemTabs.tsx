@@ -64,7 +64,7 @@ export const ItemTabs = component$(() => {
     Hand: '/images/items/hand/',
     Clothing: '/images/clothing/',
     Eyes: '/images/eyes/',
-    Mouth: '/images/',
+    Mouth: '/images/mouth/',
     Backgrounds: '/images/background/',
   };
 
@@ -351,8 +351,10 @@ export const wizardCategories: WizardCategory[] = [
     category: 'Mouth',
     icon: LuUser,
     images: [
-      { src: '/images/smile.png', alt: 'Smile', title: 'Smile', description: 'A warm, friendly smile.', rarity: 25 },
-      { src: '/images/frown.png', alt: 'Frown', title: 'Frown', description: 'A serious frown expression.', rarity: 20 },
+      { src: '/images/mouth/bubblegum.png', alt: 'Bubblegum', title: 'Bubblegum', description: 'A warm, friendly smile.', rarity: 25 },
+      { src: '/images/mouth/censured.png', alt: 'Censored', title: 'Censored', description: 'A serious frown expression.', rarity: 20 },
+            { src: '/images/mouth/zipper.png', alt: 'Zipper', title: 'Zipper', description: 'A serious frown expression.', rarity: 20 },
+
     ],
   },
   {
