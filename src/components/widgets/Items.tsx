@@ -3,16 +3,12 @@ import { twMerge } from "tailwind-merge";
 import { Headline } from "~/components/ui/Headline";
 import { ItemTabs } from "./ItemTabs";
 import { Tabs } from "../ui/Tabs";
-import { BullzBearzTabs } from "./BullzBearzTabs";
-
-interface Item {
+import { BullzBearzTabs } from "./BullzBearzTabs";interface Item {
   title?: string;
   description?: string;
   icon?: any;
   classes?: Record<string, string>;
-}
-
-interface Props {
+}interface Props {
   id?: string;
   title?: any;
   subtitle?: any;
@@ -20,12 +16,8 @@ interface Props {
   items: Array<Item>;
   isDark?: boolean;
   classes?: any;
-}
-
-export default component$((props: Props) => {
-  const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;
-
-  return (
+}export default component$((props: Props) => {
+  const { id, title = "", subtitle = "", highlight = "", classes = {}, isDark = false } = props;  return (
     <section class="relative scroll-mt-12 bg-gradient-to-br from-teal-100 via-teal-200 to-teal-100 bg-cover border-b border-gray-300" {...(id ? { id } : {})}>
       <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
         <slot name="bg">
@@ -43,8 +35,8 @@ export default component$((props: Props) => {
           <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
           <div class="-mt-4">
             <Tabs.Root class="max-w-6xl">
-              <Tabs.List class="flex flex-row mb-4 items-center justify-center gap-1 flex-nowrap overflow-x-auto md:grid md:grid-cols-5 w-full">
-                <Tabs.Tab class="!text-lg data-[state=selected]:bg-teal-200 flex items-center gap-1 md:flex-row">
+<Tabs.List class="flex mb-2 w-full">
+  <Tabs.Tab class="!text-lg data-[state=selected]:bg-teal-200 flex-1 flex justify-center px-4 py-2">
                   <svg width="48px" height="48px" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M292.774 89C215.844 106.143 285.026 197.233 343 112.679"
@@ -73,8 +65,10 @@ export default component$((props: Props) => {
                   </svg>
                   Bullz vs Bearz
                 </Tabs.Tab>
-                <Tabs.Tab class="!text-lg data-[state=selected]:bg-teal-200 flex items-center gap-1 md:flex-row">
-                  <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="40px" height="40px" fill="#000000">
+     <Tabs.Tab class="!text-lg data-[state=selected]:bg-teal-200 flex-1 flex justify-center px-4 py-2">
+
+
+                  <svg version="1.1" id="_x32_" class="mr-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="40px" height="40px" fill="#000000">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
@@ -93,19 +87,17 @@ export default component$((props: Props) => {
                   </svg>
                   KasKritterz
                 </Tabs.Tab>
-              </Tabs.List>
+              </Tabs.List>          <Tabs.Panel>
+            <BullzBearzTabs />
+          </Tabs.Panel>
 
-              <Tabs.Panel>
-                <BullzBearzTabs />
-              </Tabs.Panel>
-
-              <Tabs.Panel>
-                <ItemTabs />
-              </Tabs.Panel>
-            </Tabs.Root>
-          </div>
-        </div>
+          <Tabs.Panel>
+            <ItemTabs />
+          </Tabs.Panel>
+        </Tabs.Root>
       </div>
-    </section>
-  );
+    </div>
+  </div>
+</section>  );
 });
+

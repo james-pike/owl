@@ -16,7 +16,7 @@ const List = component$<PropsOf<typeof HeadlessTabs.List>>((props) => {
       <HeadlessTabs.List
         {...props}
         class={cn(
-          'flex flex-nowrap bg-white/50 overflow-x-auto sm:grid md:grid-cols-8 sm:overflow-visible scrollbar-hide  bg-muted p-0 text-muted-foreground shadow-sm',
+          'flex flex-nowrap !bg-white/40 overflow-x-auto sm:grid md:grid-cols-8 sm:overflow-visible scrollbar-hide  bg-muted p-0 text-muted-foreground shadow-sm',
           props.class,
         )}
       >

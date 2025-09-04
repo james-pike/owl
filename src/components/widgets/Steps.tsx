@@ -176,6 +176,8 @@ export default component$((props: Props) => {
                         • Release remaining collections: Bearz, Bullz, Katz, Dogz, Dinoz<br />
                         • Holder-only perks & airdrops<br />
                         • Integrate community suggestions on comics
+                        • Holders of all collections for Kritter Pass perks & airdrops
+
                       </div>
                     </div>
                   </div>

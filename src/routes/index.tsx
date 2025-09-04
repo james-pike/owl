@@ -23,7 +23,8 @@ export default component$(() => {
   items={[]}
 />
       
-<div class="w-full md:h-80 h-28 bg-[url('/images/mintbullz.jpg')] bg-contain md:bg-[length:100%_100%] border-b border-gray-300"></div>
+<div class="w-full md:h-80 h-28 bg-[url('/images/mintbullz.jpg')] bg-no-repeat bg-cover md:bg-[length:100%_100%] border-b border-gray-300"></div>
+
    <Steps id="roadmap"  
        highlight="Roadmap"
       title="KasKritterz Roadmap"

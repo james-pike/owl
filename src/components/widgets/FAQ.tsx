@@ -89,7 +89,7 @@ export default component$((props: Props) => {
                                         <Accordion.Content>
                                             If you hold at least one Kritter from each collection and support the community, 
                                             you may receive a KritterPass. This gives you exclusive airdrops, Kaspa rewards, 
-                                            and a voice in Kritterz decisions—you become part of the team!
+                                            and a voice in Kritterz decisions. You become part of the team!
                                         </Accordion.Content>
                                     </Accordion.Item>
 
