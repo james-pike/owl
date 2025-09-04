@@ -11,6 +11,7 @@ const IPFS_CID_BULLZBEARZ = 'bafybeicjqpbhl3u5gnakwcmqymsd2gdkay4mni6iuo2l6pkjet
 const FILE_EXTENSION_KASKRITTERZ = 'jpeg'; // File extension for KasKritterz
 const FILE_EXTENSION_BULLZBEARZ = 'jpg'; // File extension for Bullz vs Bearz
 
+// Helper function to determine rarity class and label
 const getRarityClass = (rarity: string) => {
   switch (rarity?.toLowerCase()) {
     case 'legendary':
@@ -24,15 +25,30 @@ const getRarityClass = (rarity: string) => {
     case 'common':
       return 'text-amber-700';
     default:
-      return 'text-gray-700'; // Default for Bullz vs Bearz since rarity is "Rank: #<number>"
+      return 'text-gray-700';
   }
 };
 
-// Helper function to extract rarity number (e.g., "Rank: #987" -> "#987")
+// Helper function to extract rank number from "Rank: #<number>" for Bullz vs Bearz
+const extractRankNumber = (rarity: string | undefined): number => {
+  if (typeof rarity === 'string' && rarity.startsWith('Rank: #')) {
+    const rank = parseInt(rarity.replace('Rank: #', ''));
+    return isNaN(rank) ? 0 : rank;
+  }
+  return 0; // Fallback to 0 if rarity is undefined or malformed
+};
 
+// Helper function to map Bullz vs Bearz rank to standardized rarity tier
+const getBullzBearzRarity = (rank: number, id: number): string => {
+  if (id >= 1 && id <= 35) return 'Legendary'; // Hardcode first 35 as Legendary
+  if (rank <= 100) return 'Epic'; // Next 65 NFTs (3.25%)
+  if (rank <= 300) return 'Rare'; // Next 200 NFTs (10%)
+  if (rank <= 600) return 'Uncommon'; // Next 300 NFTs (15%)
+  return 'Common'; // Remaining 1400 NFTs (70%)
+};
 
 export default component$(() => {
-  const activeTab = useSignal<'kaskritterz' | 'bullzbearz'>('kaskritterz'); // Default to KasKritterz
+  const activeTab = useSignal<'kaskritterz' | 'bullzbearz'>('bullzbearz'); // Default to Bullz vs Bearz
   const nftSearchId = useSignal('');
   const nftData = useSignal<any>(null);
   const error = useSignal<string | null>(null);
@@ -51,13 +67,17 @@ export default component$(() => {
     const defaultNft = metadata.find((nft: { id: number }) => nft.id === defaultId);
 
     if (defaultNft) {
+      const rankNumber = activeTab.value === 'bullzbearz' ? extractRankNumber(defaultNft.rarity) : defaultNft.rank || 0;
+      const rarityLabel = activeTab.value === 'bullzbearz' ? getBullzBearzRarity(rankNumber, defaultId) : defaultNft.rarity || 'Unknown';
+      const validatedRank = defaultId >= 1 && defaultId <= 35 && activeTab.value === 'bullzbearz' ? '0' : (rankNumber > 0 ? rankNumber : 'Unknown');
+
       nftData.value = {
         metadata: {
           id: defaultNft.id,
           name: defaultNft.name || `${collectionName} #${defaultId}`,
           image: `${ipfsBaseUrl}/${defaultId}.${fileExtension}`,
-          rank: defaultNft.rank || defaultNft.rarity || 'Unknown', // Use rarity for Bullz vs Bearz
-          rarity: defaultNft.rarity || 'Unknown',
+          rank: validatedRank,
+          rarity: rarityLabel,
           minted: defaultNft.minted || false,
         },
         tokenURI: `ipfs://${ipfsCid}/${defaultId}.${fileExtension}`,
@@ -85,13 +105,17 @@ export default component$(() => {
     const defaultNft = metadata.find((nft: { id: number }) => nft.id === defaultId);
 
     if (defaultNft) {
+      const rankNumber = activeTab.value === 'bullzbearz' ? extractRankNumber(defaultNft.rarity) : defaultNft.rank || 0;
+      const rarityLabel = activeTab.value === 'bullzbearz' ? getBullzBearzRarity(rankNumber, defaultId) : defaultNft.rarity || 'Unknown';
+      const validatedRank = defaultId >= 1 && defaultId <= 35 && activeTab.value === 'bullzbearz' ? '0' : (rankNumber > 0 ? rankNumber : 'Unknown');
+
       nftData.value = {
         metadata: {
           id: defaultNft.id,
           name: defaultNft.name || `${collectionName} #${defaultId}`,
           image: `${ipfsBaseUrl}/${defaultId}.${fileExtension}`,
-          rank: defaultNft.rank || defaultNft.rarity || 'Unknown', // Use rarity for Bullz vs Bearz
-          rarity: defaultNft.rarity || 'Unknown',
+          rank: validatedRank,
+          rarity: rarityLabel,
           minted: defaultNft.minted || false,
         },
         tokenURI: `ipfs://${ipfsCid}/${defaultId}.${fileExtension}`,
@@ -130,14 +154,17 @@ export default component$(() => {
 
       const imageUrl = `${ipfsBaseUrl}/${searchId}.${fileExtension}`;
       const tokenURI = `ipfs://${ipfsCid}/${searchId}.${fileExtension}`;
+      const rankNumber = activeTab.value === 'bullzbearz' ? extractRankNumber(nft.rarity) : nft.rank || 0;
+      const rarityLabel = activeTab.value === 'bullzbearz' ? getBullzBearzRarity(rankNumber, searchId) : nft.rarity || 'Unknown';
+      const validatedRank = searchId >= 1 && searchId <= 35 && activeTab.value === 'bullzbearz' ? '0' : (rankNumber > 0 ? rankNumber : 'Unknown');
 
       nftData.value = {
         metadata: {
           id: nft.id,
           name: nft.name || `${collectionName} #${searchId}`,
           image: imageUrl,
-          rank: nft.rank || nft.rarity || 'Unknown', // Use rarity for Bullz vs Bearz
-          rarity: nft.rarity || 'Unknown',
+          rank: validatedRank,
+          rarity: rarityLabel,
           minted: nft.minted || false,
         },
         tokenURI: tokenURI,
@@ -156,16 +183,16 @@ export default component$(() => {
       {/* Tab Navigation */}
       <div class="flex border-b border-gray-200 mb-4">
         <button
-          class={`px-2 py-2 font-semibold ${activeTab.value === 'kaskritterz' ? 'border-b-2 border-teal-500 text-teal-500' : 'text-gray-500'}`}
-          onClick$={() => (activeTab.value = 'kaskritterz')}
-        >
-          KasKritterz
-        </button>
-        <button
           class={`px-2 py-2 font-semibold ${activeTab.value === 'bullzbearz' ? 'border-b-2 border-teal-500 text-teal-500' : 'text-gray-500'}`}
           onClick$={() => (activeTab.value = 'bullzbearz')}
         >
           Bullz vs Bearz
+        </button>
+        <button
+          class={`px-2 py-2 font-semibold ${activeTab.value === 'kaskritterz' ? 'border-b-2 border-teal-500 text-teal-500' : 'text-gray-500'}`}
+          onClick$={() => (activeTab.value = 'kaskritterz')}
+        >
+          KasKritterz
         </button>
       </div>
 

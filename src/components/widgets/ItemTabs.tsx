@@ -16,13 +16,11 @@ interface ImageItem {
   rarity: number;
 }
 
-
 interface WizardCategory {
   category: 'Body' | 'Head' | 'Hand' | 'Clothing' | 'Eyes' | 'Mouth' | 'Backgrounds';
-  icon: any; // Temporary type, adjust based on actual icon type
+  icon: any;
   images: ImageItem[];
 }
-
 
 export const ItemTabs = component$(() => {
   const activeTab = useSignal(0);
@@ -33,7 +31,15 @@ export const ItemTabs = component$(() => {
   useTask$(({ track }) => {
     track(() => activeTab.value);
     const firstImg = wizardCategories[activeTab.value]?.images[0];
-    if (firstImg) selectedImage.value = firstImg;
+    if (firstImg) {
+      selectedImage.value = firstImg;
+      console.log(`Active tab changed to: ${wizardCategories[activeTab.value]?.category} (index: ${activeTab.value})`, {
+        selectedImage: { title: firstImg.title, rarity: firstImg.rarity },
+      });
+    } else {
+      selectedImage.value = null;
+      console.warn(`No images found for category: ${wizardCategories[activeTab.value]?.category}`);
+    }
   });
 
   useVisibleTask$(() => {
@@ -57,7 +63,6 @@ export const ItemTabs = component$(() => {
     return images.slice(page * itemsPerPage.value, (page + 1) * itemsPerPage.value);
   };
 
-  // Type-safe category mapping
   const categoryToPath: Record<WizardCategory['category'], string> = {
     Body: '/images/body/',
     Head: '/images/hat/',
@@ -75,7 +80,7 @@ export const ItemTabs = component$(() => {
       console.error('Invalid src path:', src);
       return '';
     }
-    return `${basePath}${fileName}`; // Fixed the template literal syntax
+    return `${basePath}${fileName}`;
   };
 
   return (
@@ -95,26 +100,39 @@ export const ItemTabs = component$(() => {
               <Card.Content class="p-0 !text-sm">
                 <div class="flex flex-col sm:flex-row w-full m-0 gap-2 min-h-[28rem] md:min-h-[17rem]">
                   <div class="mx-auto sm:w-1/3 relative z-0">
-                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/70 items-center justify-between w-full border-gray-300">
+                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/70 items-center justify-between w-full border-gray-300 overflow-visible">
                       {selectedImage.value ? (
                         <div class="text-center flex flex-col items-center">
                           <div class="flex-1 flex items-center justify-center w-full">
                             <img
                               src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
                               alt={selectedImage.value.alt}
-                              class={`max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out ${wizardCategories[activeTab.value].category === 'Clothing'
-                                  ? 'transform -translate-y -10 sm:-translate-y-10 scale-125'
-                                  : wizardCategories[activeTab.value].category === 'Head'
-                                    ? 'transform translate-y-10 sm:translate-y-16'
-                                    : ''
-                                }`}
+                              class={`max-h-32 sm:max-h-64 object-contain mx-auto ease-in-out transform ${
+                                wizardCategories[activeTab.value].category.toLowerCase() === 'head'
+                                  ? 'scale-150'
+                                  : wizardCategories[activeTab.value].category.toLowerCase() === 'clothing'
+                                  ? '-translate-y-4 sm:-translate-y-6'
+                                  : ''
+                              }`}
+                              style={{
+                                transform:
+                                  wizardCategories[activeTab.value].category.toLowerCase() === 'head'
+                                    ? 'scale(1.5)' // Scale only, no translation
+                                    : wizardCategories[activeTab.value].category.toLowerCase() === 'clothing'
+                                    ? 'translateY(-1rem)'
+                                    : undefined,
+                              }}
                               onError$={(e) => console.error('Image load error:', e, selectedImage.value?.src)}
                             />
                           </div>
                           <div class="text-sm mt-2">
                             <div class="font-semibold">{selectedImage.value.title}</div>
                             <div class="text-gray-400 pt-1">
-                              Rarity: {selectedImage.value.rarity}% –{' '}
+                              Rarity:{' '}
+                              {selectedImage.value.rarity !== undefined && !isNaN(selectedImage.value.rarity)
+                                ? `${selectedImage.value.rarity}%`
+                                : 'Unknown'}{' '}
+                              –{' '}
                               <span class={getRarityClass(selectedImage.value.rarity).color}>
                                 {getRarityClass(selectedImage.value.rarity).text}
                               </span>
@@ -130,30 +148,54 @@ export const ItemTabs = component$(() => {
                   <div class="w-full flex-1 px-1.5 sm:px-0 mx-auto">
                     <div class="grid grid-cols-4 sm:grid-cols-7 gap-2 mx-auto">
                       {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
-                     <button
-  key={imgIndex}
-  class={`p-1 flex items-center bg-white/70 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150
-    ${selectedImage.value?.src === img.src
-      ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
-      : 'border border-transparent'
-    }`}
-  style={{ boxSizing: 'border-box' }}
-  onClick$={() => (selectedImage.value = img)}
->
-  <img
-    src={getImagePath(img.src, wizard.category)}
-    alt={img.alt}
-    class="w-full h-full object-contain"
-    onError$={(e) => console.error('Image load error:', e, img.src)}
-  />
-</button>
-
+                        <button
+                          key={imgIndex}
+                          class={`p-2 flex items-center bg-white/70 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150 overflow-visible
+                            ${selectedImage.value?.src === img.src
+                              ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
+                              : 'border border-transparent'
+                            }`}
+                          style={{ boxSizing: 'border-box' }}
+                          onClick$={() => {
+                            selectedImage.value = img;
+                            console.log(`Selected image in ${wizard.category}:`, {
+                              title: img.title,
+                              rarity: img.rarity,
+                              transform:
+                                wizard.category.toLowerCase() === 'head'
+                                  ? 'scale(1.5)'
+                                  : wizard.category.toLowerCase() === 'clothing'
+                                  ? 'translateY(-1rem)'
+                                  : 'none',
+                            });
+                          }}
+                        >
+                          <img
+                            src={getImagePath(img.src, wizard.category)}
+                            alt={img.alt}
+                            class={`w-full h-full object-contain transform ${
+                              wizard.category.toLowerCase() === 'head'
+                                ? 'scale-150' // Scale only, no translation
+                                : wizard.category.toLowerCase() === 'clothing'
+                                ? '-translate-y-4 sm:-translate-y-6'
+                                : ''
+                            }`}
+                            style={{
+                              transform:
+                                wizard.category.toLowerCase() === 'head'
+                                  ? 'scale(1.5)' // Scale only, no translation
+                                  : wizard.category.toLowerCase() === 'clothing'
+                                  ? 'translateY(-1rem)'
+                                  : undefined,
+                            }}
+                            onError$={(e) => console.error('Image load error:', e, img.src)}
+                          />
+                        </button>
                       ))}
                     </div>
 
                     <div
-                      class={`flex justify-end space-x-2 mt-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''
-                        }`}
+                      class={`flex justify-end space-x-2 mt-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''}`}
                     >
                       <button
                         class="px-2 py-1 text-sm border rounded disabled:opacity-50"
@@ -209,6 +251,25 @@ export const wizardCategories: WizardCategory[] = [
       { src: '/images/body/yellow.png', alt: 'Slim Body', title: 'Yellow Body', description: 'A slender wizard physique.', rarity: 25 },
     ],
   },
+    {
+    category: 'Backgrounds',
+    icon: LuSparkles,
+    images: [
+      { src: '/images/background/blue.png', alt: 'Blue Background', title: 'Blue Background', description: 'A serene blue backdrop.', rarity: 20 },
+      { src: '/images/background/green.png', alt: 'Green Background', title: 'Green Background', description: 'A vibrant green scene.', rarity: 25 },
+      { src: '/images/background/green2.png', alt: 'Green 2 Background', title: 'Green 2 Background', description: 'Another green variant.', rarity: 25 },
+      { src: '/images/background/grey.png', alt: 'Grey Background', title: 'Grey Background', description: 'A neutral grey backdrop.', rarity: 20 },
+      { src: '/images/background/kaspa1.png', alt: 'Kaspa 1 Background', title: 'Kaspa 1 Background', description: 'A Kaspa-themed background.', rarity: 20 },
+      { src: '/images/background/kaspa2.png', alt: 'Kaspa 2 Background', title: 'Kaspa 2 Background', description: 'Another Kaspa-themed variant.', rarity: 20 },
+      { src: '/images/background/orange.png', alt: 'Orange Background', title: 'Orange Background', description: 'A warm orange scene.', rarity: 25 },
+      { src: '/images/background/pink.png', alt: 'Pink Background', title: 'Pink Background', description: 'A soft pink backdrop.', rarity: 20 },
+      { src: '/images/background/purple.png', alt: 'Purple Background', title: 'Purple Background', description: 'A mystical purple scene.', rarity: 25 },
+      { src: '/images/background/purple2.png', alt: 'Purple 2 Background', title: 'Purple 2 Background', description: 'Another purple variant.', rarity: 25 },
+      { src: '/images/background/red.png', alt: 'Red Background', title: 'Red Background', description: 'A bold red backdrop.', rarity: 20 },
+      { src: '/images/background/yellow.png', alt: 'Yellow Background', title: 'Yellow Background', description: 'A bright yellow scene.', rarity: 25 },
+      { src: '/images/background/yellow2.png', alt: 'Yellow 2 Background', title: 'Yellow 2 Background', description: 'Another yellow variant.', rarity: 25 },
+    ],
+  },
   {
     category: 'Head',
     icon: LuEye,
@@ -234,6 +295,33 @@ export const wizardCategories: WizardCategory[] = [
       { src: '/images/hat/sunvisorblue5.png', alt: 'Blue Sunvisor', title: 'Blue Sunvisor', description: 'A blue sunvisor for shade.', rarity: 20 },
       { src: '/images/hat/sunvisorred5.png', alt: 'Red Sunvisor', title: 'Red Sunvisor', description: 'A red sunvisor for sunny days.', rarity: 20 },
       { src: '/images/hat/tinfoilhat.png', alt: 'Tinfoil Hat', title: 'Tinfoil Hat', description: 'Protect your thoughts with this shiny headwear.', rarity: 10 },
+    ],
+  },
+
+  {
+    category: 'Eyes',
+    icon: LuEye,
+    images: [
+      { src: '/images/eyes/aviatornoglass5.png', alt: 'Aviator No Glass', title: 'Aviator No Glass', description: 'Aviator-style eyes without glass.', rarity: 15 },
+      { src: '/images/eyes/blackaviator5.png', alt: 'Black Aviator', title: 'Black Aviator', description: 'Black aviator-style eyes.', rarity: 15 },
+      { src: '/images/eyes/blackbrownstarglasses.png', alt: 'Black Brown Star Glasses', title: 'Black Brown Star Glasses', description: 'Black glasses with brown star accents.', rarity: 10 },
+      { src: '/images/eyes/blacksunglasses.png', alt: 'Black Sunglasses', title: 'Black Sunglasses', description: 'Classic black sunglasses.', rarity: 20 },
+      { src: '/images/eyes/blueaviator5.png', alt: 'Blue Aviator', title: 'Blue Aviator', description: 'Blue-tinted aviator eyes.', rarity: 15 },
+      { src: '/images/eyes/clearaviator5.png', alt: 'Clear Aviator', title: 'Clear Aviator', description: 'Clear aviator-style eyes.', rarity: 15 },
+      { src: '/images/eyes/doubtbrows.png', alt: 'Doubt Brows', title: 'Doubt Brows', description: 'Eyes with skeptical brow expression.', rarity: 25 },
+      { src: '/images/eyes/eyebags.png', alt: 'Eyebags', title: 'Eyebags', description: 'Eyes with noticeable bags.', rarity: 30 },
+      { src: '/images/eyes/goldaviator5.png', alt: 'Gold Aviator', title: 'Gold Aviator', description: 'Gold-tinted aviator eyes.', rarity: 10 },
+      { src: '/images/eyes/goldpinkstarglasses.png', alt: 'Gold Pink Star Glasses', title: 'Gold Pink Star Glasses', description: 'Gold glasses with pink star accents.', rarity: 8 },
+      { src: '/images/eyes/lasereyes5.png', alt: 'Laser Eyes', title: 'Laser Eyes', description: 'Eyes emitting laser beams.', rarity: 5 },
+      { src: '/images/eyes/madbrows.png', alt: 'Mad Brows', title: 'Mad Brows', description: 'Eyes with angry brow expression.', rarity: 25 },
+      { src: '/images/eyes/monocle.png', alt: 'Monocle', title: 'Monocle', description: 'Eyes with a single monocle.', rarity: 12 },
+      { src: '/images/eyes/none.png', alt: 'No Eyes', title: 'No Eyes', description: 'No visible eyes.', rarity: 40 },
+      { src: '/images/eyes/pinkaviator5.png', alt: 'Pink Aviator', title: 'Pink Aviator', description: 'Pink-tinted aviator eyes.', rarity: 15 },
+      { src: '/images/eyes/pinkhearts.png', alt: 'Pink Hearts', title: 'Pink Hearts', description: 'Eyes with pink heart shapes.', rarity: 10 },
+      { src: '/images/eyes/reading5.png', alt: 'Reading Glasses', title: 'Reading Glasses', description: 'Eyes with reading glasses.', rarity: 20 },
+      { src: '/images/eyes/rectangles5.png', alt: 'Rectangles', title: 'Rectangles', description: 'Eyes with rectangular frames.', rarity: 15 },
+      { src: '/images/eyes/sadbrows.png', alt: 'Sad Brows', title: 'Sad Brows', description: 'Eyes with sad brow expression.', rarity: 25 },
+      { src: '/images/eyes/sunsetaviator5.png', alt: 'Sunset Aviator', title: 'Sunset Aviator', description: 'Aviator eyes with sunset hues.', rarity: 10 },
     ],
   },
   {
@@ -273,7 +361,6 @@ export const wizardCategories: WizardCategory[] = [
       { src: '/images/items/hand/lolipoporange.png', alt: 'Orange Lollipop', title: 'Orange Lollipop Hand', description: 'A hand holding an orange lollipop.', rarity: 20 },
       { src: '/images/items/hand/lolipoppurple.png', alt: 'Purple Lollipop', title: 'Purple Lollipop Hand', description: 'A hand holding a purple lollipop.', rarity: 20 },
       { src: '/images/items/hand/maracas.png', alt: 'Maracas', title: 'Maracas Hand', description: 'A hand holding maracas.', rarity: 20 },
-      { src: '/images/items/hand/markerblue.png', alt: 'Blue Marker', title: 'Blue Marker Hand', description: 'A hand holding a blue marker.', rarity: 20 },
       { src: '/images/items/hand/markergreen.png', alt: 'Green Marker', title: 'Green Marker Hand', description: 'A hand holding a green marker.', rarity: 20 },
       { src: '/images/items/hand/markerred.png', alt: 'Red Marker', title: 'Red Marker Hand', description: 'A hand holding a red marker.', rarity: 20 },
       { src: '/images/items/hand/microphone.png', alt: 'Microphone', title: 'Microphone Hand', description: 'A hand holding a microphone.', rarity: 20 },
@@ -291,7 +378,11 @@ export const wizardCategories: WizardCategory[] = [
       { src: '/images/items/hand/wine.png', alt: 'Wine', title: 'Wine Hand', description: 'A hand holding a wine glass.', rarity: 20 },
     ],
   },
-  {
+  
+ 
+  
+ 
+   {
     category: 'Clothing',
     icon: LuShirt,
     images: [
@@ -321,59 +412,5 @@ export const wizardCategories: WizardCategory[] = [
       { src: '/images/clothing/yellowsweater5.png', alt: 'Yellow Sweater', title: 'Yellow Sweater', description: 'A cheerful yellow sweater.', rarity: 20 },
     ],
   },
-  {
-    category: 'Eyes',
-    icon: LuEye,
-    images: [
-      { src: '/images/eyes/aviatornoglass5.png', alt: 'Aviator No Glass', title: 'Aviator No Glass', description: 'Aviator-style eyes without glass.', rarity: 15 },
-      { src: '/images/eyes/blackaviator5.png', alt: 'Black Aviator', title: 'Black Aviator', description: 'Black aviator-style eyes.', rarity: 15 },
-      { src: '/images/eyes/blackbrownstarglasses.png', alt: 'Black Brown Star Glasses', title: 'Black Brown Star Glasses', description: 'Black glasses with brown star accents.', rarity: 10 },
-      { src: '/images/eyes/blacksunglasses.png', alt: 'Black Sunglasses', title: 'Black Sunglasses', description: 'Classic black sunglasses.', rarity: 20 },
-      { src: '/images/eyes/blueaviator5.png', alt: 'Blue Aviator', title: 'Blue Aviator', description: 'Blue-tinted aviator eyes.', rarity: 15 },
-      { src: '/images/eyes/clearaviator5.png', alt: 'Clear Aviator', title: 'Clear Aviator', description: 'Clear aviator-style eyes.', rarity: 15 },
-      { src: '/images/eyes/doubtbrows.png', alt: 'Doubt Brows', title: 'Doubt Brows', description: 'Eyes with skeptical brow expression.', rarity: 25 },
-      { src: '/images/eyes/eyebags.png', alt: 'Eyebags', title: 'Eyebags', description: 'Eyes with noticeable bags.', rarity: 30 },
-      { src: '/images/eyes/goldaviator5.png', alt: 'Gold Aviator', title: 'Gold Aviator', description: 'Gold-tinted aviator eyes.', rarity: 10 },
-      { src: '/images/eyes/goldpinkstarglasses.png', alt: 'Gold Pink Star Glasses', title: 'Gold Pink Star Glasses', description: 'Gold glasses with pink star accents.', rarity: 8 },
-      { src: '/images/eyes/lasereyes5.png', alt: 'Laser Eyes', title: 'Laser Eyes', description: 'Eyes emitting laser beams.', rarity: 5 },
-      { src: '/images/eyes/madbrows.png', alt: 'Mad Brows', title: 'Mad Brows', description: 'Eyes with angry brow expression.', rarity: 25 },
-      { src: '/images/eyes/monocle.png', alt: 'Monocle', title: 'Monocle', description: 'Eyes with a single monocle.', rarity: 12 },
-      { src: '/images/eyes/none.png', alt: 'No Eyes', title: 'No Eyes', description: 'No visible eyes.', rarity: 40 },
-      { src: '/images/eyes/pinkaviator5.png', alt: 'Pink Aviator', title: 'Pink Aviator', description: 'Pink-tinted aviator eyes.', rarity: 15 },
-      { src: '/images/eyes/pinkhearts.png', alt: 'Pink Hearts', title: 'Pink Hearts', description: 'Eyes with pink heart shapes.', rarity: 10 },
-      { src: '/images/eyes/reading5.png', alt: 'Reading Glasses', title: 'Reading Glasses', description: 'Eyes with reading glasses.', rarity: 20 },
-      { src: '/images/eyes/rectangles5.png', alt: 'Rectangles', title: 'Rectangles', description: 'Eyes with rectangular frames.', rarity: 15 },
-      { src: '/images/eyes/sadbrows.png', alt: 'Sad Brows', title: 'Sad Brows', description: 'Eyes with sad brow expression.', rarity: 25 },
-      { src: '/images/eyes/sunsetaviator5.png', alt: 'Sunset Aviator', title: 'Sunset Aviator', description: 'Aviator eyes with sunset hues.', rarity: 10 },
-    ],
-  },
-  {
-    category: 'Mouth',
-    icon: LuUser,
-    images: [
-      { src: '/images/mouth/bubblegum.png', alt: 'Bubblegum', title: 'Bubblegum', description: 'A warm, friendly smile.', rarity: 25 },
-      { src: '/images/mouth/censured.png', alt: 'Censored', title: 'Censored', description: 'A serious frown expression.', rarity: 20 },
-            { src: '/images/mouth/zipper.png', alt: 'Zipper', title: 'Zipper', description: 'A serious frown expression.', rarity: 20 },
 
-    ],
-  },
-  {
-    category: 'Backgrounds',
-    icon: LuSparkles,
-    images: [
-      { src: '/images/background/blue.png', alt: 'Blue Background', title: 'Blue Background', description: 'A serene blue backdrop.', rarity: 20 },
-      { src: '/images/background/green.png', alt: 'Green Background', title: 'Green Background', description: 'A vibrant green scene.', rarity: 25 },
-      { src: '/images/background/green2.png', alt: 'Green 2 Background', title: 'Green 2 Background', description: 'Another green variant.', rarity: 25 },
-      { src: '/images/background/grey.png', alt: 'Grey Background', title: 'Grey Background', description: 'A neutral grey backdrop.', rarity: 20 },
-      { src: '/images/background/kaspa1.png', alt: 'Kaspa 1 Background', title: 'Kaspa 1 Background', description: 'A Kaspa-themed background.', rarity: 20 },
-      { src: '/images/background/kaspa2.png', alt: 'Kaspa 2 Background', title: 'Kaspa 2 Background', description: 'Another Kaspa-themed variant.', rarity: 20 },
-      { src: '/images/background/orange.png', alt: 'Orange Background', title: 'Orange Background', description: 'A warm orange scene.', rarity: 25 },
-      { src: '/images/background/pink.png', alt: 'Pink Background', title: 'Pink Background', description: 'A soft pink backdrop.', rarity: 20 },
-      { src: '/images/background/purple.png', alt: 'Purple Background', title: 'Purple Background', description: 'A mystical purple scene.', rarity: 25 },
-      { src: '/images/background/purple2.png', alt: 'Purple 2 Background', title: 'Purple 2 Background', description: 'Another purple variant.', rarity: 25 },
-      { src: '/images/background/red.png', alt: 'Red Background', title: 'Red Background', description: 'A bold red backdrop.', rarity: 20 },
-      { src: '/images/background/yellow.png', alt: 'Yellow Background', title: 'Yellow Background', description: 'A bright yellow scene.', rarity: 25 },
-      { src: '/images/background/yellow2.png', alt: 'Yellow 2 Background', title: 'Yellow 2 Background', description: 'Another yellow variant.', rarity: 25 },
-    ],
-  },
 ];
