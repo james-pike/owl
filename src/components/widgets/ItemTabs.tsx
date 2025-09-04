@@ -89,7 +89,7 @@ export const ItemTabs = component$(() => {
                 <div class="flex flex-col sm:flex-row w-full gap-2 min-h-[28rem] md:min-h-[17rem]">
                   {/* Selected Image Preview */}
                   <div class="mx-auto sm:w-1/3 relative z-0">
-                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/50 items-center justify-center w-full border-gray-300">
+                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/50 items-center justify-center w-full border-gray-300 min-w-[9rem]">
                       {selectedImage.value ? (
                         <div class="flex-1 flex items-center justify-center w-full">
                           <img
@@ -136,7 +136,7 @@ export const ItemTabs = component$(() => {
                             alt={img.alt}
                             class={twMerge(
                               'w-full h-full object-contain ',
-                              wizardCategories[activeTab.value].category === 'Head' && 'scale-100 translate-y-4'
+                              wizardCategories[activeTab.value].category === 'Head' && 'scale-150 translate-y-5'
                             )}
                           />
                         </button>
@@ -144,9 +144,9 @@ export const ItemTabs = component$(() => {
                     </div>
 
                     {/* Pagination */}
-                    <div class={`flex justify-end space-x-2 mt-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''}`}>
+                    <div class={`flex justify-end space-x-2 mt-3 mb-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''}`}>
                       <button
-                        class="px-2 py-1 text-sm border rounded disabled:opacity-50"
+                        class="px-2 pb-0 text-sm bg-white/70 border rounded disabled:opacity-50"
                         onClick$={() => {
                           currentPages.value[index] = Math.max(0, currentPages.value[index] - 1);
                           currentPages.value = [...currentPages.value];
@@ -156,7 +156,7 @@ export const ItemTabs = component$(() => {
                         ←
                       </button>
                       <button
-                        class="px-2 py-1 text-sm border rounded disabled:opacity-50"
+                        class="px-2 py-1 text-sm bg-white/70 border rounded disabled:opacity-50"
                         onClick$={() => {
                           const maxPage = Math.floor(wizard.images.length / itemsPerPage.value);
                           currentPages.value[index] = Math.min(maxPage, currentPages.value[index] + 1);
