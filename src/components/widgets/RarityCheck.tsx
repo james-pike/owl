@@ -40,7 +40,7 @@ const extractRankNumber = (rarity: string | undefined): number => {
 
 // Helper function to map Bullz vs Bearz rank to standardized rarity tier
 const getBullzBearzRarity = (rank: number, id: number): string => {
-  if (id >= 1 && id <= 35) return 'Legendary'; // Hardcode first 35 as Legendary
+  if (id >= 1 && id <= 34) return 'Legendary'; // Hardcode first 35 as Legendary
   if (rank <= 100) return 'Epic'; // Next 65 NFTs (3.25%)
   if (rank <= 300) return 'Rare'; // Next 200 NFTs (10%)
   if (rank <= 600) return 'Uncommon'; // Next 300 NFTs (15%)
