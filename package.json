@@ -40,7 +40,7 @@
     "gray-matter": "^4.0.3",
     "markdown-it": "^14.1.0",
     "node-fetch": "3.3.2",
-    "tailwind-merge": "^2.5.2",
+    "tailwind-merge": "^2.6.0",
     "tailwindcss-intersect": "^2.2.0"
   },
   "devDependencies": {

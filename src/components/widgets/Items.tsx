@@ -36,7 +36,11 @@ import { BullzBearzTabs } from "./BullzBearzTabs";interface Item {
           <div class="-mt-4">
             <Tabs.Root class="max-w-6xl">
 <Tabs.List class="flex mb-2 w-full">
-  <Tabs.Tab class="!text-lg data-[state=selected]:bg-teal-200 flex-1 flex justify-center px-4 py-2">
+  <Tabs.Tab
+    class="!text-lg data-[state=selected]:bg-teal-200 
+           flex-1 sm:flex-none md:flex-1 
+           flex justify-center px-4 py-2"
+  >
                   <svg width="48px" height="48px" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M292.774 89C215.844 106.143 285.026 197.233 343 112.679"
@@ -65,8 +69,11 @@ import { BullzBearzTabs } from "./BullzBearzTabs";interface Item {
                   </svg>
                   Bullz vs Bearz
                 </Tabs.Tab>
-     <Tabs.Tab class="!text-lg data-[state=selected]:bg-teal-200 flex-1 flex justify-center px-4 py-2">
-
+  <Tabs.Tab
+    class="!text-lg data-[state=selected]:bg-teal-200 
+           flex-1 sm:flex-none md:flex-1 
+           flex justify-center px-4 py-2"
+  >
 
                   <svg version="1.1" id="_x32_" class="mr-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="40px" height="40px" fill="#000000">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

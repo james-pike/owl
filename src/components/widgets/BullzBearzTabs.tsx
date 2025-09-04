@@ -95,40 +95,41 @@ export const BullzBearzTabs = component$(() => {
             <Tabs.Panel key={index}>
               <Card.Content class="p-0 !text-sm">
                 <div class="flex flex-col sm:flex-row w-full m-0 gap-2 min-h-[28rem] md:min-h-[17rem]">
-                  <div class="mx-auto sm:w-1/3 relative z-0">
-                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/70 items-center justify-between w-full border-gray-300">
-                      {selectedImage.value ? (
-                        <div class="text-center flex flex-col items-center">
-                          <div class="flex-1 flex items-center justify-center w-full">
-                            <img
-                              src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
-                              alt={selectedImage.value.alt}
-                              class={`max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out `}
-                              onError$={(e) => console.error('Image load error:', e, selectedImage.value?.src)}
-                            />
-                          </div>
-                          <div class="text-sm mt-2">
-                            <div class="font-semibold">{selectedImage.value.title}</div>
-                            <div class="text-gray-400 pt-1">
-                              Rarity: {selectedImage.value.rarity}% –{' '}
-                              <span class={getRarityClass(selectedImage.value.rarity).color}>
-                                {getRarityClass(selectedImage.value.rarity).text}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      ) : (
-                        <span class="text-gray-500">Select an image to preview</span>
-                      )}
-                    </div>
-                  </div>
+                 {/* Selected Image Preview */}
+<div class="mx-auto sm:w-1/3 relative z-0">
+  <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/70 items-center justify-center w-full border-gray-300 min-w-[9rem]">
+    {selectedImage.value ? (
+      <div class="flex-1 flex items-center justify-center w-full">
+        <img
+          src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
+          alt={selectedImage.value.alt}
+          class="max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out"
+        />
+      </div>
+    ) : (
+      <span class="text-gray-500">Select an image to preview</span>
+    )}
+    {selectedImage.value && (
+      <div class="text-sm mt-2 text-center w-full">
+        <div class="font-semibold">{selectedImage.value.title}</div>
+        <div class="text-gray-400 pt-1 min-w-[9rem]">
+          Rarity: {selectedImage.value.rarity}% –{' '}
+          <span class={getRarityClass(selectedImage.value.rarity).color}>
+            {getRarityClass(selectedImage.value.rarity).text}
+          </span>
+        </div>
+      </div>
+    )}
+  </div>
+</div>
+
 
                   <div class="w-full flex-1 px-1.5 sm:px-0 mx-auto">
               <div class="grid grid-cols-4 sm:grid-cols-7 gap-2 mx-auto">
   {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
     <button
       key={imgIndex}
-      class={`p-1 flex items-center bg-white/70 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150
+      class={`p-1 flex items-center bg-white/60 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150
         ${selectedImage.value?.src === img.src
           ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
           : 'border border-transparent'
@@ -150,11 +151,11 @@ export const BullzBearzTabs = component$(() => {
 
 
                     <div
-                      class={`flex justify-end space-x-2 mt-2 mb-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''
+                      class={`flex justify-end space-x-2 mt-3 mb-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''
                         }`}
                     >
                       <button
-                        class="px-2 py-1 text-sm bg-white/70 border rounded disabled:opacity-50"
+                        class="px-2 pb-0 text-sm bg-white/70 border rounded disabled:opacity-50"
                         onClick$={() => {
                           currentPages.value[index] = Math.max(0, currentPages.value[index] - 1);
                           currentPages.value = [...currentPages.value];

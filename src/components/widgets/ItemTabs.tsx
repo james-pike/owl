@@ -1,4 +1,5 @@
 import { $, component$, useSignal, useTask$, useVisibleTask$ } from '@builder.io/qwik';
+import { twMerge } from 'tailwind-merge'; // Ensure this is installed and imported
 import { Tabs } from '../ui/Tabs';
 import { Card } from '../ui/Card';
 
@@ -31,13 +32,7 @@ export const ItemTabs = component$(() => {
   useTask$(({ track }) => {
     track(() => activeTab.value);
     const firstImg = wizardCategories[activeTab.value]?.images[0];
-    if (firstImg) {
-      selectedImage.value = firstImg;
-     
-    } else {
-      selectedImage.value = null;
-      console.warn(`No images found for category: ${wizardCategories[activeTab.value]?.category}`);
-    }
+    selectedImage.value = firstImg || null;
   });
 
   useVisibleTask$(() => {
@@ -73,17 +68,12 @@ export const ItemTabs = component$(() => {
 
   const getImagePath = (src: string, category: WizardCategory['category']) => {
     const basePath = categoryToPath[category];
-    const fileName = src.split('/').pop() || '';
-    if (!fileName) {
-      console.error('Invalid src path:', src);
-      return '';
-    }
-    return `${basePath}${fileName}`;
+    return basePath + (src.split('/').pop() || '');
   };
 
   return (
-    <div class="flex w-full max-w-4xl mx-auto shadow-xl -mt-0.5 space-x-0 sm:space-x-2">
-      <div class="w-full m-0">
+    <div class="flex w-full max-w-4xl mx-auto -mt-0.5 space-x-0 sm:space-x-2">
+      <div class="w-full">
         <Tabs.Root class="w-full">
           <Tabs.List class="grid w-full grid-cols-4 shadow-md bg-white/70 rounded-md border-gray-300 z-20">
             {wizardCategories.map((wizard, index) => (
@@ -96,105 +86,62 @@ export const ItemTabs = component$(() => {
           {wizardCategories.map((wizard, index) => (
             <Tabs.Panel key={index}>
               <Card.Content class="p-0 !text-sm">
-                <div class="flex flex-col sm:flex-row w-full m-0 gap-2 min-h-[28rem] md:min-h-[17rem]">
+                <div class="flex flex-col sm:flex-row w-full gap-2 min-h-[28rem] md:min-h-[17rem]">
+                  {/* Selected Image Preview */}
                   <div class="mx-auto sm:w-1/3 relative z-0">
-                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/70 items-center justify-between w-full border-gray-300 overflow-visible">
+                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/70 items-center justify-center w-full border-gray-300">
                       {selectedImage.value ? (
-                        <div class="text-center flex flex-col items-center">
-                          <div class="flex-1 flex items-center justify-center w-full">
-                            <img
-                              src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
-                              alt={selectedImage.value.alt}
-                              class={`max-h-32 sm:max-h-64 object-contain mx-auto ease-in-out transform ${
-                                wizardCategories[activeTab.value].category.toLowerCase() === 'head'
-                                  ? 'scale-150'
-                                  : wizardCategories[activeTab.value].category.toLowerCase() === 'clothing'
-                                  ? '-translate-y-4 sm:-translate-y-6'
-                                  : ''
-                              }`}
-                              style={{
-                                transform:
-                                  wizardCategories[activeTab.value].category.toLowerCase() === 'head'
-                                    ? 'scale(1.5)' // Scale only, no translation
-                                    : wizardCategories[activeTab.value].category.toLowerCase() === 'clothing'
-                                    ? 'translateY(-1rem)'
-                                    : undefined,
-                              }}
-                              onError$={(e) => console.error('Image load error:', e, selectedImage.value?.src)}
-                            />
-                          </div>
-                          <div class="text-sm mt-2">
-                            <div class="font-semibold">{selectedImage.value.title}</div>
-                            <div class="text-gray-400 pt-1">
-                              Rarity:{' '}
-                              {selectedImage.value.rarity !== undefined && !isNaN(selectedImage.value.rarity)
-                                ? `${selectedImage.value.rarity}%`
-                                : 'Unknown'}{' '}
-                              –{' '}
-                              <span class={getRarityClass(selectedImage.value.rarity).color}>
-                                {getRarityClass(selectedImage.value.rarity).text}
-                              </span>
-                            </div>
-                          </div>
+                        <div class="flex-1 flex items-center justify-center w-full">
+                          <img
+                            src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
+                            alt={selectedImage.value.alt}
+                            class={twMerge(
+                              'max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out transition-transform duration-300',
+                              wizardCategories[activeTab.value].category === 'Head' && 'scale-75 translate-y-8'
+                            )}
+                          />
                         </div>
                       ) : (
                         <span class="text-gray-500">Select an image to preview</span>
                       )}
+                      {selectedImage.value && (
+                        <div class="text-sm mt-2 text-center">
+                          <div class="font-semibold">{selectedImage.value.title}</div>
+                          <div class="text-gray-400 pt-1">
+                            Rarity: {selectedImage.value.rarity}% –{' '}
+                            <span class={getRarityClass(selectedImage.value.rarity).color}>
+                              {getRarityClass(selectedImage.value.rarity).text}
+                            </span>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
 
+                  {/* Image Grid */}
                   <div class="w-full flex-1 px-1.5 sm:px-0 mx-auto">
                     <div class="grid grid-cols-4 sm:grid-cols-7 gap-2 mx-auto">
                       {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
                         <button
                           key={imgIndex}
-                          class={`p-2 flex items-center bg-white/70 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150 overflow-visible
+                          class={`p-1 flex items-center bg-white/70 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150
                             ${selectedImage.value?.src === img.src
                               ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
                               : 'border border-transparent'
                             }`}
-                          style={{ boxSizing: 'border-box' }}
-                          onClick$={() => {
-                            selectedImage.value = img;
-                            console.log(`Selected image in ${wizard.category}:`, {
-                              title: img.title,
-                              rarity: img.rarity,
-                              transform:
-                                wizard.category.toLowerCase() === 'head'
-                                  ? 'scale(1.5)'
-                                  : wizard.category.toLowerCase() === 'clothing'
-                                  ? 'translateY(-1rem)'
-                                  : 'none',
-                            });
-                          }}
+                          onClick$={() => (selectedImage.value = img)}
                         >
                           <img
                             src={getImagePath(img.src, wizard.category)}
                             alt={img.alt}
-                            class={`w-full h-full object-contain transform ${
-                              wizard.category.toLowerCase() === 'head'
-                                ? 'scale-150' // Scale only, no translation
-                                : wizard.category.toLowerCase() === 'clothing'
-                                ? '-translate-y-4 sm:-translate-y-6'
-                                : ''
-                            }`}
-                            style={{
-                              transform:
-                                wizard.category.toLowerCase() === 'head'
-                                  ? 'scale(1.5)' // Scale only, no translation
-                                  : wizard.category.toLowerCase() === 'clothing'
-                                  ? 'translateY(-1rem)'
-                                  : undefined,
-                            }}
-                            onError$={(e) => console.error('Image load error:', e, img.src)}
+                            class="w-full h-full object-contain"
                           />
                         </button>
                       ))}
                     </div>
 
-                    <div
-                      class={`flex justify-end space-x-2 mt-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''}`}
-                    >
+                    {/* Pagination */}
+                    <div class={`flex justify-end space-x-2 mt-2 ${wizard.images.length <= itemsPerPage.value ? 'opacity-0' : ''}`}>
                       <button
                         class="px-2 py-1 text-sm border rounded disabled:opacity-50"
                         onClick$={() => {
@@ -230,6 +177,7 @@ export const ItemTabs = component$(() => {
     </div>
   );
 });
+
 
 export const wizardCategories: WizardCategory[] = [
   {
