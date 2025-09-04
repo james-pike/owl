@@ -72,13 +72,13 @@ export default component$(() => {
           <div class="pb-3 bg-gray-900/50">
             <div class="mx-2 pt-3 flex flex-col w-4/5 sm:flex-row gap-3">
               <a
-                href="https://www.kaspa.com/nft/collections/OGMice"
+                href="https://kaspa.com/nft/collections/kaskritter"
                 class="border-2 border-black text-black text-xl px-5 py-3 rounded-lg bg-white/90 hover:bg-gray-100 flex items-center justify-center gap-2"
               >
                 <LuStar class="w-6 h-6" /> Mint OG Mice
               </a>
               <a
-                href="https://www.kaspa.com/nft/collections/KasKritter"
+                href="https://www.kaspa.com/nft/collections/bullzbearz"
                 class="bg-teal-400 text-white text-xl px-5 py-3 rounded-lg hover:bg-white hover:text-teal-400 flex items-center justify-center gap-2"
               >
                 <LuStar class="w-6 h-6" /> Mint Bullz vs Bearz

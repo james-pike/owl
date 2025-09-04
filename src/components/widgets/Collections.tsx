@@ -25,12 +25,12 @@ export default component$((props: Props) => {
   const { id, title = "Collections", subtitle = "", classes = {}, isDark = true } = props;
 
   const collections = [
-    { id: 1, title: "KasKritterz", description: "Hoarders? Sure. Paper hands? Never.", image: "/images/101.jpeg", link: "https://kaspa.com/mint" },
-    { id: 4, title: "KasBearz", description: "Even bearish, they know KAS is the endgame.", image: "/images/KasBEARZCS.png", link: "https://kaspa.com/mint" },
-    { id: 6, title: "KasBullz", description: "Horns up, charts up, bullish on KAS 24/7.", image: "/images/KasBULLZCS.png", link: "https://kaspa.com/mint" },
-    { id: 2, title: "KasDinoz", description: "Extinct? Nah. They evolved with KAS.", image: "/images/KasDINOZCS.png", link: "https://kaspa.com/mint" },
-    { id: 3, title: "KasKatz", description: "Nine lives, one blockdag. Cats land on KAS.", image: "/images/KasDOGZCS.png", link: "https://kaspa.com/mint" },
-    { id: 5, title: "KasDogz", description: "Always barking for KAS moonshots.", image: "/images/KasDOGZCS.png", link: "https://kaspa.com/mint" },
+    { id: 1, title: "KasKritterz", description: "Hoarders? Sure. Paper hands? Never.", image: "/images/101.jpeg", link: "https://kaspa.com/nft/collections/KASKRITTER" },
+    { id: 4, title: "KasBearz", description: "Even bearish, they know KAS is the endgame.", image: "/images/287.jpg", link: "https://kaspa.com/nft/collections/BULLZBEARZ" },
+    { id: 6, title: "KasBullz", description: "Horns up, charts up, bullish on KAS 24/7.", image: "/images/652.jpg", link: "https://kaspa.com/nft/collections/BULLZBEARZ" },
+    { id: 2, title: "KasDinoz", description: "Extinct? Nah. They evolved with KAS.", image: "/images/KasDINOZCS.png", link: "#" },
+    { id: 3, title: "KasKatz", description: "Nine lives, one blockdag. Cats land on KAS.", image: "/images/KasDOGZCS.png", link: "#" },
+    { id: 5, title: "KasDogz", description: "Always barking for KAS moonshots.", image: "/images/KasDOGZCS.png", link: "#" },
   ];
 
   return (

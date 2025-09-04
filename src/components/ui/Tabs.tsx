@@ -1,7 +1,6 @@
 import { Slot, component$, type PropsOf } from '@builder.io/qwik';
 import { Tabs as HeadlessTabs } from '@qwik-ui/headless';
 import { cn } from '@qwik-ui/utils';
-import { Card } from './Card';
 
 const Root = (props: PropsOf<typeof HeadlessTabs.Root>) => (
   <HeadlessTabs.Root
@@ -14,17 +13,15 @@ const Root = (props: PropsOf<typeof HeadlessTabs.Root>) => (
 
 const List = component$<PropsOf<typeof HeadlessTabs.List>>((props) => {
   return (
-    <Card.Content>
       <HeadlessTabs.List
         {...props}
         class={cn(
-          'flex flex-nowrap overflow-x-auto sm:grid sm:grid-cols-7 sm:overflow-visible scrollbar-hide  bg-muted p-0 text-muted-foreground shadow-sm',
+          'flex flex-nowrap bg-white/50 overflow-x-auto sm:grid sm:grid-cols-7 sm:overflow-visible scrollbar-hide  bg-muted p-0 text-muted-foreground shadow-sm',
           props.class,
         )}
       >
         <Slot />
       </HeadlessTabs.List>
-    </Card.Content>
   );
 });
 
@@ -33,7 +30,7 @@ const Tab = component$<PropsOf<typeof HeadlessTabs.Tab>>((props) => {
     <HeadlessTabs.Tab
       {...props}
       class={cn(
-        'inline-flex items-center justify-center !text-sm whitespace-nowrap rounded-md px-3 py-2 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=selected]:border-base data-[state=selected]:bg-teal-200 data-[state=selected]:text-foreground data-[state=selected]:shadow-inner flex-shrink-0',
+        'inline-flex items-center m-1 justify-center !text-sm whitespace-nowrap rounded-md px-3 py-2 font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=selected]:border-base data-[state=selected]:bg-teal-200 data-[state=selected]:text-foreground data-[state=selected]:shadow-inner flex-shrink-0',
         props.class,
       )}
     >

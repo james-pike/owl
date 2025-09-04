@@ -48,7 +48,7 @@ export default component$((props: Props) => {
       {
         title: "Phase 4 - Mobile Game",
         description: "• To Be Announced",
-        status: "<span class='text-orange-500 font-bold'>(Ongoing)</span>",
+        status: "<span class='text-orange-500 font-bold'></span>",
         icon: LuInfinity,
       },
     ],
@@ -204,7 +204,7 @@ export default component$((props: Props) => {
                       <div class="point-label text-teal-400 !text-xl !font-bold">Phase 4 - Mobile Game</div>
                       <div
                         class="point-status text-gray-700 !text-lg mb-2"
-                        dangerouslySetInnerHTML="<span class='text-orange-500 font-bold'>(Ongoing)</span>"
+                        dangerouslySetInnerHTML="<span class='text-orange-500 font-bold'></span>"
                       />
                       <div
                         class="point-text text-gray-700 !text-lg"

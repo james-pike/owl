@@ -95,7 +95,7 @@ export const ItemTabs = component$(() => {
               <Card.Content class="p-0 !text-sm">
                 <div class="flex flex-col sm:flex-row w-full m-0 gap-2 min-h-[28rem] md:min-h-[17rem]">
                   <div class="mx-auto sm:w-1/3 relative z-0">
-                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/20 items-center justify-between w-full border-gray-300">
+                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/70 items-center justify-between w-full border-gray-300">
                       {selectedImage.value ? (
                         <div class="text-center flex flex-col items-center">
                           <div class="flex-1 flex items-center justify-center w-full">
@@ -105,7 +105,7 @@ export const ItemTabs = component$(() => {
                               class={`max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out ${wizardCategories[activeTab.value].category === 'Clothing'
                                   ? 'transform -translate-y -10 sm:-translate-y-10 scale-125'
                                   : wizardCategories[activeTab.value].category === 'Head'
-                                    ? 'transform translate-y-10 sm:translate-y-16 motion-scale-loop-105'
+                                    ? 'transform translate-y-10 sm:translate-y-16'
                                     : ''
                                 }`}
                               onError$={(e) => console.error('Image load error:', e, selectedImage.value?.src)}
@@ -128,31 +128,26 @@ export const ItemTabs = component$(() => {
                   </div>
 
                   <div class="w-full flex-1 px-1.5 sm:px-0 mx-auto">
-                    <div class="grid grid-cols-4 sm:grid-cols-7 gap-1 mx-auto">
+                    <div class="grid grid-cols-4 sm:grid-cols-7 gap-2 mx-auto">
                       {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
-                        <button
-                          key={imgIndex}
-                          class={`p-1 flex items-center bg-white/20 shadow-md rounded-lg justify-center aspect-square max-w-[5rem] sm:max-w-[5rem] ${selectedImage.value?.src === img.src
-                              ? 'shadow-[0_0_0_4px_rgba(20,184,166,0.5)]'
-                              : ''
-                            }`}
-                          style={{ boxSizing: 'border-box' }}
-                          onClick$={() => (selectedImage.value = img)}
-                        >
-                          <img
-                            src={getImagePath(img.src, wizard.category)}
-                            alt={img.alt}
-                            class={`w-full h-full object-contain ${wizard.category === 'Clothing'
-                                ? 'transform -translate-y-4 scale-110'
-                                : wizard.category === 'Head'
-                                  ? 'transform translate-y-6 scale-150'
-                                  : wizard.category === 'Hand'
-                                    ? 'scale-90' // Scales the image down to fit within the new padding
-                                    : ''
-                              }`}
-                            onError$={(e) => console.error('Image load error:', e, img.src)}
-                          />
-                        </button>
+                     <button
+  key={imgIndex}
+  class={`p-1 flex items-center bg-white/70 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150
+    ${selectedImage.value?.src === img.src
+      ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
+      : 'border border-transparent'
+    }`}
+  style={{ boxSizing: 'border-box' }}
+  onClick$={() => (selectedImage.value = img)}
+>
+  <img
+    src={getImagePath(img.src, wizard.category)}
+    alt={img.alt}
+    class="w-full h-full object-contain"
+    onError$={(e) => console.error('Image load error:', e, img.src)}
+  />
+</button>
+
                       ))}
                     </div>
 
