@@ -208,7 +208,7 @@ export const wizardCategories: WizardCategory[] = [
     icon: LuUser, // Using LuUser as a placeholder since no specific icon provided
     images: [
       { src: '/images/Oneof1/1.png', alt: 'SompoBear', title: 'SompoBear', description: 'A unique SompoBear design.', rarity: 0.5 },
-      { src: '/images/Oneof1/2.jpeg', alt: 'SompoBull', title: 'SompoBull', description: 'A unique SompoBull design.', rarity: 0.5 },
+      { src: '/images/Oneof1/2.jpg', alt: 'SompoBull', title: 'SompoBull', description: 'A unique SompoBull design.', rarity: 0.5 },
       { src: '/images/Oneof1/3.jpeg', alt: 'SuttonBear', title: 'SuttonBear', description: 'A unique SuttonBear design.', rarity: 0.5 },
       { src: '/images/Oneof1/4.jpeg', alt: 'SuttonBull', title: 'SuttonBull', description: 'A unique SuttonBull design.', rarity: 0.5 },
       { src: '/images/Oneof1/5.jpeg', alt: 'ShaiBear', title: 'ShaiBear', description: 'A unique ShaiBear design.', rarity: 0.5 },

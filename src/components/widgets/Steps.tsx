@@ -174,10 +174,11 @@ export default component$((props: Props) => {
                       <div class="point-label text-teal-400 !text-xl !font-bold">Phase 2 - Expansion & Utility</div>
                       <div class="point-text text-gray-700 !text-lg">
                         • Release remaining collections: Bearz, Bullz, Katz, Dogz, Dinoz<br />
-                        • Holder-only perks & airdrops<br />
                         • Integrate community suggestions on comics
                         • Holders of all collections for Kritter Pass perks & airdrops
+                                                • Exclusive perks and airdrops for holders of current and previous collections, pluss KritterPass owners.
 
+                          
                       </div>
                     </div>
                   </div>
