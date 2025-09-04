@@ -89,15 +89,15 @@ export const ItemTabs = component$(() => {
                 <div class="flex flex-col sm:flex-row w-full gap-2 min-h-[28rem] md:min-h-[17rem]">
                   {/* Selected Image Preview */}
                   <div class="mx-auto sm:w-1/3 relative z-0">
-                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/70 items-center justify-center w-full border-gray-300">
+                    <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/50 items-center justify-center w-full border-gray-300">
                       {selectedImage.value ? (
                         <div class="flex-1 flex items-center justify-center w-full">
                           <img
                             src={getImagePath(selectedImage.value.src, wizardCategories[activeTab.value].category)}
                             alt={selectedImage.value.alt}
                             class={twMerge(
-                              'max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out transition-transform duration-300',
-                              wizardCategories[activeTab.value].category === 'Head' && 'scale-75 translate-y-8'
+                              'max-h-24 sm:max-h-48 object-contain mx-auto ease-in-out ',
+                              wizardCategories[activeTab.value].category === 'Head' && 'scale-100 translate-y-8'
                             )}
                           />
                         </div>
@@ -124,7 +124,7 @@ export const ItemTabs = component$(() => {
                       {getPaginatedImages(wizard.images, index).map((img, imgIndex) => (
                         <button
                           key={imgIndex}
-                          class={`p-1 flex items-center bg-white/70 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150
+                          class={`p-1 flex items-center bg-white/60 shadow-md rounded-lg justify-center aspect-square transition-transform duration-150
                             ${selectedImage.value?.src === img.src
                               ? 'border-2 border-teal-500 shadow-[0_0_12px_rgba(20,184,166,0.6)] scale-105'
                               : 'border border-transparent'
@@ -134,7 +134,10 @@ export const ItemTabs = component$(() => {
                           <img
                             src={getImagePath(img.src, wizard.category)}
                             alt={img.alt}
-                            class="w-full h-full object-contain"
+                            class={twMerge(
+                              'w-full h-full object-contain ',
+                              wizardCategories[activeTab.value].category === 'Head' && 'scale-100 translate-y-4'
+                            )}
                           />
                         </button>
                       ))}

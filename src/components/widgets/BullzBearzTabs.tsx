@@ -97,7 +97,7 @@ export const BullzBearzTabs = component$(() => {
                 <div class="flex flex-col sm:flex-row w-full m-0 gap-2 min-h-[28rem] md:min-h-[17rem]">
                  {/* Selected Image Preview */}
 <div class="mx-auto sm:w-1/3 relative z-0">
-  <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/70 items-center justify-center w-full border-gray-300 min-w-[9rem]">
+  <div class="p-2 shadow-xl rounded-lg flex flex-col bg-white/50 items-center justify-center w-full border-gray-300 min-w-[9rem]">
     {selectedImage.value ? (
       <div class="flex-1 flex items-center justify-center w-full">
         <img
