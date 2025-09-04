@@ -1,10 +1,15 @@
 import { component$, useSignal, $, useVisibleTask$ } from '@builder.io/qwik';
-import metadata from './metadata.json'; // Import metadata.json from the same directory
+import metadataKaskritterz from './metadata.json'; // KasKritterz metadata
+import metadataBullzbearz from './metadata2.json'; // Bullz vs Bearz metadata
 
-const TOTAL_NFTS = 250; // Total number of NFTs in the collection
-const IPFS_BASE_URL = 'https://gateway.pinata.cloud/ipfs/bafybeidqapglcihowufq4g2ro7pnaxyz2ekfcyvam33wmtt6vfvcxhnbdu';
-const IPFS_CID = 'bafybeidqapglcihowufq4g2ro7pnaxyz2ekfcyvam33wmtt6vfvcxhnbdu';
-const FILE_EXTENSION = 'jpeg'; // Confirmed working extension
+const TOTAL_NFTS_KASKRITTERZ = 250; // Total number of NFTs for KasKritterz
+const TOTAL_NFTS_BULLZBEARZ = 2000; // Total number of NFTs for Bullz vs Bearz
+const IPFS_BASE_URL_KASKRITTERZ = 'https://gateway.pinata.cloud/ipfs/bafybeidqapglcihowufq4g2ro7pnaxyz2ekfcyvam33wmtt6vfvcxhnbdu';
+const IPFS_CID_KASKRITTERZ = 'bafybeidqapglcihowufq4g2ro7pnaxyz2ekfcyvam33wmtt6vfvcxhnbdu';
+const IPFS_BASE_URL_BULLZBEARZ = 'https://gateway.lighthouse.storage/ipfs/bafybeicjqpbhl3u5gnakwcmqymsd2gdkay4mni6iuo2l6pkjet6msxarhq';
+const IPFS_CID_BULLZBEARZ = 'bafybeicjqpbhl3u5gnakwcmqymsd2gdkay4mni6iuo2l6pkjet6msxarhq';
+const FILE_EXTENSION_KASKRITTERZ = 'jpeg'; // File extension for KasKritterz
+const FILE_EXTENSION_BULLZBEARZ = 'jpg'; // File extension for Bullz vs Bearz
 
 const getRarityClass = (rarity: string) => {
   switch (rarity?.toLowerCase()) {
@@ -19,38 +24,85 @@ const getRarityClass = (rarity: string) => {
     case 'common':
       return 'text-amber-700';
     default:
-      return 'text-gray-700';
+      return 'text-gray-700'; // Default for Bullz vs Bearz since rarity is "Rank: #<number>"
   }
 };
 
+// Helper function to extract rarity number (e.g., "Rank: #987" -> "#987")
+const getRarityNumber = (rank: string | undefined) => {
+  if (typeof rank !== 'string' || !rank.includes('#')) return 'Unknown';
+  return rank.split('#')[1] ? `#${rank.split('#')[1]}` : 'Unknown';
+};
+
 export default component$(() => {
+  const activeTab = useSignal<'kaskritterz' | 'bullzbearz'>('kaskritterz'); // Default to KasKritterz
   const nftSearchId = useSignal('');
   const nftData = useSignal<any>(null);
   const error = useSignal<string | null>(null);
   const isLoading = useSignal(true);
 
-  // Set default NFT to ID #1 on component mount
+  // Load default NFT (ID #1) on component mount for the active tab
   useVisibleTask$(() => {
     isLoading.value = true;
-    const defaultId = 1; // Set default to ID #1
+    const defaultId = 1;
+    const metadata = activeTab.value === 'kaskritterz' ? metadataKaskritterz : metadataBullzbearz;
+    const ipfsBaseUrl = activeTab.value === 'kaskritterz' ? IPFS_BASE_URL_KASKRITTERZ : IPFS_BASE_URL_BULLZBEARZ;
+    const ipfsCid = activeTab.value === 'kaskritterz' ? IPFS_CID_KASKRITTERZ : IPFS_CID_BULLZBEARZ;
+    const fileExtension = activeTab.value === 'kaskritterz' ? FILE_EXTENSION_KASKRITTERZ : FILE_EXTENSION_BULLZBEARZ;
+    const collectionName = activeTab.value === 'kaskritterz' ? 'KasKritterz' : 'Bullz vs Bearz';
+
     const defaultNft = metadata.find((nft: { id: number }) => nft.id === defaultId);
 
     if (defaultNft) {
       nftData.value = {
         metadata: {
           id: defaultNft.id,
-          name: defaultNft.name,
-          image: `${IPFS_BASE_URL}/${defaultId}.${FILE_EXTENSION}`,
-          rank: defaultNft.rank,
-          rarity: defaultNft.rarity,
-          minted: defaultNft.minted,
+          name: defaultNft.name || `${collectionName} #${defaultId}`,
+          image: `${ipfsBaseUrl}/${defaultId}.${fileExtension}`,
+          rank: defaultNft.rank || defaultNft.rarity || 'Unknown', // Use rarity for Bullz vs Bearz
+          rarity: defaultNft.rarity || 'Unknown',
+          minted: defaultNft.minted || false,
         },
-        tokenURI: `ipfs://${IPFS_CID}/${defaultId}.${FILE_EXTENSION}`,
+        tokenURI: `ipfs://${ipfsCid}/${defaultId}.${fileExtension}`,
       };
       nftSearchId.value = String(defaultId);
-      console.log('Initial NFT loaded (ID #1):', nftData.value);
+      console.log(`Initial NFT loaded (ID #1 for ${collectionName}, extension: ${fileExtension}):`, nftData.value);
     } else {
-      error.value = `NFT (ID ${defaultId}) not found in metadata.`;
+      error.value = `NFT (ID ${defaultId}) not found in ${collectionName} metadata.`;
+      console.error('Metadata error:', error.value);
+    }
+    isLoading.value = false;
+  }, { strategy: 'document-ready' });
+
+  // Update NFT data when tab changes
+  useVisibleTask$(({ track }) => {
+    track(() => activeTab.value);
+    isLoading.value = true;
+    const defaultId = 1;
+    const metadata = activeTab.value === 'kaskritterz' ? metadataKaskritterz : metadataBullzbearz;
+    const ipfsBaseUrl = activeTab.value === 'kaskritterz' ? IPFS_BASE_URL_KASKRITTERZ : IPFS_BASE_URL_BULLZBEARZ;
+    const ipfsCid = activeTab.value === 'kaskritterz' ? IPFS_CID_KASKRITTERZ : IPFS_CID_BULLZBEARZ;
+    const fileExtension = activeTab.value === 'kaskritterz' ? FILE_EXTENSION_KASKRITTERZ : FILE_EXTENSION_BULLZBEARZ;
+    const collectionName = activeTab.value === 'kaskritterz' ? 'KasKritterz' : 'Bullz vs Bearz';
+
+    const defaultNft = metadata.find((nft: { id: number }) => nft.id === defaultId);
+
+    if (defaultNft) {
+      nftData.value = {
+        metadata: {
+          id: defaultNft.id,
+          name: defaultNft.name || `${collectionName} #${defaultId}`,
+          image: `${ipfsBaseUrl}/${defaultId}.${fileExtension}`,
+          rank: defaultNft.rank || defaultNft.rarity || 'Unknown', // Use rarity for Bullz vs Bearz
+          rarity: defaultNft.rarity || 'Unknown',
+          minted: defaultNft.minted || false,
+        },
+        tokenURI: `ipfs://${ipfsCid}/${defaultId}.${fileExtension}`,
+      };
+      nftSearchId.value = String(defaultId);
+      console.log(`Tab switched to ${collectionName}, loaded NFT ID #1 (extension: ${fileExtension}):`, nftData.value);
+    } else {
+      error.value = `NFT (ID ${defaultId}) not found in ${collectionName} metadata.`;
       console.error('Metadata error:', error.value);
     }
     isLoading.value = false;
@@ -63,30 +115,37 @@ export default component$(() => {
 
     try {
       const searchId = parseInt(nftSearchId.value);
-      if (isNaN(searchId) || searchId < 1 || searchId > TOTAL_NFTS) {
-        throw new Error(`Please enter a valid NFT ID between 1 and ${TOTAL_NFTS}.`);
+      const totalNfts = activeTab.value === 'kaskritterz' ? TOTAL_NFTS_KASKRITTERZ : TOTAL_NFTS_BULLZBEARZ;
+      const metadata = activeTab.value === 'kaskritterz' ? metadataKaskritterz : metadataBullzbearz;
+      const ipfsBaseUrl = activeTab.value === 'kaskritterz' ? IPFS_BASE_URL_KASKRITTERZ : IPFS_BASE_URL_BULLZBEARZ;
+      const ipfsCid = activeTab.value === 'kaskritterz' ? IPFS_CID_KASKRITTERZ : IPFS_CID_BULLZBEARZ;
+      const fileExtension = activeTab.value === 'kaskritterz' ? FILE_EXTENSION_KASKRITTERZ : FILE_EXTENSION_BULLZBEARZ;
+      const collectionName = activeTab.value === 'kaskritterz' ? 'KasKritterz' : 'Bullz vs Bearz';
+
+      if (isNaN(searchId) || searchId < 1 || searchId > totalNfts) {
+        throw new Error(`Please enter a valid NFT ID between 1 and ${totalNfts}.`);
       }
 
       const nft = metadata.find((n) => n.id === searchId);
       if (!nft) {
-        throw new Error(`KasKritter ID ${nftSearchId.value} not found`);
+        throw new Error(`${collectionName} ID ${nftSearchId.value} not found`);
       }
 
-      const imageUrl = `${IPFS_BASE_URL}/${searchId}.${FILE_EXTENSION}`;
-      const tokenURI = `ipfs://${IPFS_CID}/${searchId}.${FILE_EXTENSION}`;
+      const imageUrl = `${ipfsBaseUrl}/${searchId}.${fileExtension}`;
+      const tokenURI = `ipfs://${ipfsCid}/${searchId}.${fileExtension}`;
 
       nftData.value = {
         metadata: {
           id: nft.id,
-          name: nft.name,
+          name: nft.name || `${collectionName} #${searchId}`,
           image: imageUrl,
-          rank: nft.rank,
-          rarity: nft.rarity,
-          minted: nft.minted,
+          rank: nft.rank || nft.rarity || 'Unknown', // Use rarity for Bullz vs Bearz
+          rarity: nft.rarity || 'Unknown',
+          minted: nft.minted || false,
         },
         tokenURI: tokenURI,
       };
-      console.log('NFT search result:', nftData.value);
+      console.log(`NFT search result for ${collectionName} (extension: ${fileExtension}):`, nftData.value);
     } catch (err: any) {
       error.value = err.message || 'Failed to load NFT data. Check the ID and try again.';
       console.error('Search error:', err);
@@ -97,6 +156,22 @@ export default component$(() => {
 
   return (
     <section class="p-2 max-w-5xl mx-auto">
+      {/* Tab Navigation */}
+      <div class="flex border-b border-gray-200 mb-4">
+        <button
+          class={`px-4 py-2 font-semibold ${activeTab.value === 'kaskritterz' ? 'border-b-2 border-teal-500 text-teal-500' : 'text-gray-500'}`}
+          onClick$={() => (activeTab.value = 'kaskritterz')}
+        >
+          KasKritterz
+        </button>
+        <button
+          class={`px-4 py-2 font-semibold ${activeTab.value === 'bullzbearz' ? 'border-b-2 border-teal-500 text-teal-500' : 'text-gray-500'}`}
+          onClick$={() => (activeTab.value = 'bullzbearz')}
+        >
+          Bullz vs Bearz
+        </button>
+      </div>
+
       <div class="flex flex-col gap-4">
         {isLoading.value && <p class="text-gray-500">Loading NFT data...</p>}
         {!isLoading.value && error.value && <p class="text-red-500">{error.value}</p>}
@@ -133,10 +208,10 @@ export default component$(() => {
                     }
                   }}
                   onWheel$={(e) => e.preventDefault()}
-                  placeholder={`Enter NFT ID (1-${TOTAL_NFTS})`}
+                  placeholder={`Enter NFT ID (1-${activeTab.value === 'kaskritterz' ? TOTAL_NFTS_KASKRITTERZ : TOTAL_NFTS_BULLZBEARZ})`}
                   class="border p-2 rounded focus:ring-teal-700 bg-white border-gray-200 w-full"
                   min="1"
-                  max={TOTAL_NFTS}
+                  max={activeTab.value === 'kaskritterz' ? TOTAL_NFTS_KASKRITTERZ : TOTAL_NFTS_BULLZBEARZ}
                 />
                 <button
                   onClick$={handleNFTSearch}
@@ -149,12 +224,11 @@ export default component$(() => {
               {error.value && <p class="text-red-500">{error.value}</p>}
               <h2 class="text-xl font-semibold mb-1">{nftData.value.metadata.name}</h2>
               <p class="text-md font-semibold mb-1">
-                Rank: <span class={getRarityClass(nftData.value.metadata.rarity)}>{nftData.value.metadata.rank}</span> / {TOTAL_NFTS}
+                Rank: <span class={getRarityClass(nftData.value.metadata.rarity)}>{nftData.value.metadata.rank}</span> / {activeTab.value === 'kaskritterz' ? TOTAL_NFTS_KASKRITTERZ : TOTAL_NFTS_BULLZBEARZ}
               </p>
               <p class="text-md font-semibold mb-1">
                 Rarity: <span class={getRarityClass(nftData.value.metadata.rarity)}>{nftData.value.metadata.rarity}</span>
               </p>
-              {/* <p class="text-md font-semibold mb-1">Minted: {nftData.value.metadata.minted ? 'Yes' : 'No'}</p> */}
             </div>
           </div>
         )}
