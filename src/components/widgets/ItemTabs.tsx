@@ -6,7 +6,6 @@ import { Card } from '../ui/Card';
 const LuUser = $(() => import('@qwikest/icons/lucide').then((m) => m.LuUser));
 const LuShirt = $(() => import('@qwikest/icons/lucide').then((m) => m.LuShirt));
 const LuEye = $(() => import('@qwikest/icons/lucide').then((m) => m.LuEye));
-const LuHand = $(() => import('@qwikest/icons/lucide').then((m) => m.LuHand));
 const LuSparkles = $(() => import('@qwikest/icons/lucide').then((m) => m.LuSparkles));
 
 interface ImageItem {
