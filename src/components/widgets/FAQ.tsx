@@ -116,7 +116,7 @@ export default component$((props: Props) => {
                                         src={sideImg}
                                         width={532}
                                         height={500}
-                                        class="w-full h-full object-contain bg-gray-500 shadow-lg dark:bg-slate-700"
+                                        class="object-contain bg-gray-500 shadow-lg dark:bg-slate-700"
                                         style={{ transform: "scale(1)" }}
                                     />
                                 </div>
