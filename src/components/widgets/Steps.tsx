@@ -33,12 +33,14 @@ export default component$((props: Props) => {
         status: "<span class='text-green-500 font-bold'>(Completed)</span>",
         icon: LuCheck,
       },
-      {
-        title: "Phase 2 - Expansion & Utility",
-        description:
-          "• Release remaining collections: Bearz, Bullz, Katz, Dogz, Dinos\n• Holder-only perks & airdrops\n• Integrate community suggestions on comics",
-        icon: LuExpand,
-      },
+   {
+  title: "Phase 2 - Expansion & Utility",
+  description:
+    "• Release remaining collections: Bullz vs Bearz, Katz, Dogz, Dinoz<br />" +
+    "• Integrate community suggested comics<br />" +
+    "• Exclusive perks and airdrops for holders of current and previous collections",
+  icon: LuExpand,
+},
       {
         title: "Phase 3 - Kaspa Comics",
         description:
@@ -175,7 +177,6 @@ export default component$((props: Props) => {
                       <div class="point-text text-gray-700 !text-lg">
                         • Release remaining collections: Bearz, Bullz, Katz, Dogz, Dinoz<br />
                         • Integrate community suggestions on comics
-                        • Holders of all collections for Kritter Pass perks & airdrops
                                                 • Exclusive perks and airdrops for holders of current and previous collections, pluss KritterPass owners.
 
                           
