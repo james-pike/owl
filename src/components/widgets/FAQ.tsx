@@ -111,7 +111,7 @@ export default component$((props: Props) => {
 
                             {/* Side Image */}
                             <div class="relative md:order-1">
-                                <div class="w-full h-[600px] md:h-[600px]  overflow-hidden rounded-md">
+                                <div class="w-full   overflow-hidden rounded-md">
                                     <img
                                         src={sideImg}
                                         width={532}
