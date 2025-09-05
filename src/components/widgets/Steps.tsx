@@ -6,7 +6,7 @@ import { Headline } from "../ui/Headline";
 interface Item {
   title?: string;
   description?: string;
-  status?: string; // Added status field
+  status?: string; // Added status fields
   icon?: any;
   classes?: Record<string, string>;
 }
