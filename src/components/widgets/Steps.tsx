@@ -36,9 +36,9 @@ export default component$((props: Props) => {
    {
   title: "Phase 2 - Expansion & Utility",
   description:
-    "• Release remaining Katz, Dogz, & Dinoz<br />" +
+    "• Release remaining collections<br />" +
     "• Integrate community suggested comics<br />" +
-    "• Exclusive perks and airdrops for holders of current and previous collections, plus KritterPass owners.",
+    "• Exclusive perks and airdrops for holders of current and previous collections, KritterPass.",
   icon: LuExpand,
 },
       {
