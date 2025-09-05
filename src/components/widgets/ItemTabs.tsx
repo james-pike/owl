@@ -312,6 +312,15 @@ export const wizardCategories: WizardCategory[] = [
       { src: '/images/eyes/sunsetaviator5.png', alt: 'Sunset Aviator', title: 'Sunset Aviator', description: 'Aviator eyes with sunset hues.', rarity: 2.40 }, // Matches 'sunsetaviator5' (2.40%)
     ],
   },
+     {
+    category: 'Mouth',
+    icon: LuUser,
+    images: [
+      { src: '/images/mouth/zipper.png', alt: 'zipper', title: 'zipper', description: '', rarity: 1.6 },
+      { src: '/images/mouth/censured.png', alt: 'censured', title: 'censured', description: '', rarity: 2.8 },
+      { src: '/images/mouth/bubblegum.png', alt: 'bubblegum', title: 'bubblegum', description: '', rarity: 4.0 },
+    ],
+  },
   {
     category: 'Hand',
     icon: LuHand,
