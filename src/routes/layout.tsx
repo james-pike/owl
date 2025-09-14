@@ -1,5 +1,4 @@
 import { component$, Slot } from "@builder.io/qwik";
-import Footer from "~/components/widgets/Footer";
 import Header from "~/components/widgets/Header";
 
 export default component$(() => {
@@ -8,10 +7,10 @@ export default component$(() => {
   return (
     <>
       <Header />
-      <main class="bg-gray-200">
+      <main class="bg-black">
         <Slot />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 });

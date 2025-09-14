@@ -58,7 +58,7 @@ export default component$(() => {
   return (
     <header
       id="header"
-      class={`sticky top-0 z-40 flex-none mx-auto bg-[url('/images/background.webp')] bg-cover dark:from-gray-950 dark:to-gray-900 w-full border-gray-300 dark:border-gray-800 transition-[opacity] ease-in-out ${store.isScrolling ? "" : ""}`}
+      class={`sticky top-0 z-40 flex-none mx-auto bg-black bg-cover dark:from-gray-950 dark:to-gray-900 w-full border-gray-300 dark:border-gray-800 transition-[opacity] ease-in-out ${store.isScrolling ? "" : ""}`}
       window:onScroll$={() => {
         if (!store.isScrolling && window.scrollY >= 10) {
           store.isScrolling = true;
@@ -67,27 +67,27 @@ export default component$(() => {
         }
       }}
     >
-      <div class="relative text-default md:px-2 p-2 mx-auto w-full md:flex md:justify-between max-w-7xl">
+      <div class="relative text-default md:px-2 px-3 pt-3 mx-auto w-full md:flex md:justify-between max-w-7xl">
         <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
           <Link class="flex items-center" href="/">
             <img
-              src="/images/frontface-logo.jpg"
+              src="/images/owl.jpg"
               alt="KasKritterz Logo"
-              class="w-8 h-8 rounded-full md:mr-1"
+              class="w-12 h-10 rounded-full md:mr-1"
             />
-            <img
+            {/* <img
               src="/images/logo2.png"
               alt="KasKritterz Logo"
               class="h-8 rounded-full mr-2 -mt-1"
-            />
+            /> */}
           </Link>
           <div class="flex items-center md:hidden">
-            <a
+            {/* <a
               href="https://www.kaspa.com/nft/collections/KasKritter"
-              class="btn btn-primary dark:bg-secondary-800 dark:border-gray-900 rounded-sm mr-1 h-10 py-2 px-3 md:px-4 font-semibold shadow-none text-md w-auto"
+              class="btn btn-primary dark:bg-secondary-800 dark:border-gray-900 rounded-sm mr-2 h-10 py-2 px-3 md:px-4 font-semibold shadow-none text-md w-auto"
             >
               Mint
-            </a>
+            </a> */}
             <MenuModal />
           </div>
         </div>

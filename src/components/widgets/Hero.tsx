@@ -1,34 +1,30 @@
 import { component$ } from "@builder.io/qwik";
-import { LuStar, LuUsers } from "@qwikest/icons/lucide"; // Updated to import LuStar
+import { LuSparkle, LuStar } from "@qwikest/icons/lucide"; // Updated to import LuStar
 
 export default component$(() => {
   return (
     <section
-      class="md:min-h-[90vh] border-b-2 border-gray-300 flex items-center bg-[url('/images/mobile2.webp')] bg-cover bg-no-repeat md:bg-[url('/images/banner2.webp')] bg-[center_30%]"
+      class="md:min-h-[90vh] border-b-2 bg-black  border-gray-300 flex items-center  bg-cover bg-no-repeat md:bg-[url('/images/banner2.webp')] bg-[center_30%]"
     >
-      <div class="text-center w-full px-4 md:pt-96 pt-52">
+      <div class="text-center w-full px-6 md:pt-96 pt-4">
+<video src="/images/logo2.mp4" playsInline autoplay muted loop class="h-full w-full"></video>
 
-        <h2 class="!text-3xl md:!text-3xl text-white font-medium mb-4 mt-8 md:-mt-0">
-           KasKritterz is a community-powered NFT universe, built in a world where Kaspa leads the future.        </h2>
+        <h2 class="!text-3xl md:!text-3xl text-teal-200 font-medium mb-4 ">
+           First public Auto-Mint bot on KRC-20 / KRC-721. Never miss a mint again!       </h2>
        <div class="flex flex-col md:flex-row justify-center px-6 gap-4 md:gap-6 pt-4 pb-14">
               <a
-  href="https://www.kaspa.com/nft/collections/KasKritter"
-  class="border-2 hover:filter hover:invert border-black text-black text-xl px-5 py-3 rounded-lg bg-white/90 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
- <LuStar class="w-6 h-6 group-hover:text-teal-400" /> 
-Mint OG Mice
+  href=""
+  class="border-2 hover:filter hover:invert border-black text-black text-xl px-5 py-3 rounded-lg bg-white/85 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+ <LuSparkle class="w-6 h-6 group-hover:text-teal-400" /> 
+Mint Kaspa Owls
 </a>
 <a
-  href="https://www.kaspa.com/nft/collections/BullzBearz"
-  class="bg-teal-400 text-white text-xl px-5 py-3 rounded-lg hover:bg-white hover:text-teal-400 transition-colors flex items-center justify-center gap-2"
+  href=""
+  class="bg-teal-400 text-white text-xl px-5 py-3 rounded-lg hover:bg-teal-300 hover:text-white transition-colors flex items-center justify-center gap-2"
 >
-  <LuStar class="w-6 h-6 group-hover:text-teal-400" /> Mint Bullz vs Bearz
+  <LuStar class="w-6 h-6 group-hover:text-teal-400" /> Join Telegram
 </a>
-<a
-  href="https://t.me/KasKritterzOfficial"
-  class="bg-blue-300 text-white text-xl px-5 py-3 rounded-lg hover:bg-white hover:text-blue-300 transition-colors flex items-center justify-center gap-2"
->
-  <LuUsers class="w-6 h-6 group-hover:text-blue-300" /> Join Community
-</a>
+
  
 </div>
       </div>
