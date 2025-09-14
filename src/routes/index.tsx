@@ -7,8 +7,9 @@ import Hero from "~/components/widgets/Hero";
 export default component$(() => {
   return (
     <>
+    <div class="block sm:hidden">
       <Hero/>
-    
+    </div>
   
 
       
